@@ -4,7 +4,8 @@ import { useRef, useEffect, useState } from "react";
 import { useScroll } from "framer-motion";
 
 const TOTAL_FRAMES = 121;
-const FRAME_PATH = "/editorial-frames/frame-";
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const FRAME_PATH = `${BASE}/editorial-frames/frame-`;
 
 interface Segment {
   text: string;

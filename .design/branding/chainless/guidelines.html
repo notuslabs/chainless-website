@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chainless — Brand Guidelines</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..900;1,9..144,200..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ===== BRAND TOKENS ===== */
+    :root {
+      --yellow-50: #FFF8F0;
+      --yellow-100: #FFF5E8;
+      --yellow-200: #FFE8C6;
+      --yellow-300: #FFDEA9;
+      --yellow-400: #FFD486;
+      --yellow-500: #FFC73D;
+      --yellow-600: #CC9C00;
+      --yellow-700: #967200;
+      --yellow-800: #634A00;
+      --yellow-900: #372800;
+      --yellow-950: #201600;
+
+      --warm-50: #F0EEE9;
+      --warm-100: #E3DFD7;
+      --warm-200: #C6C0B6;
+      --warm-300: #A4A097;
+      --warm-400: #87837C;
+      --warm-500: #6B6862;
+      --warm-600: #55524D;
+      --warm-700: #3F3D3A;
+      --warm-800: #2D2C29;
+      --warm-900: #1A1917;
+      --warm-950: #0F0E0D;
+
+      --dark-50: #E8E5DF;
+      --dark-100: #D1CBC1;
+      --dark-200: #9F9B93;
+      --dark-300: #706D67;
+      --dark-400: #44423E;
+      --dark-500: #1C1B19;
+      --dark-600: #181716;
+      --dark-700: #141312;
+      --dark-800: #0F0E0D;
+      --dark-900: #080706;
+      --dark-950: #040403;
+
+      --surface: #FAFAF8;
+      --surface-warm: #F0EEE9;
+      --surface-dark: #1C1B19;
+      --surface-dark-elevated: #2A2926;
+
+      --success: #2D8A56;
+      --warning: #D4890D;
+      --error: #C93B3B;
+      --info: #3B7FC9;
+
+      --font-sans: 'Satoshi', 'General Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --font-serif: 'Fraunces', 'Newsreader', 'Georgia', 'Times New Roman', serif;
+      --font-mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+    }
+
+    /* ===== BASE ===== */
+    html {
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      line-height: 1.56;
+      color: var(--dark-500);
+      background: var(--surface);
+    }
+
+    ::selection {
+      background-color: var(--yellow-500);
+      color: var(--dark-500);
+    }
+
+    img { max-width: 100%; display: block; }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section--tight {
+      padding: 56px 0;
+    }
+
+    .section--dark {
+      background: var(--dark-500);
+      color: var(--surface);
+    }
+
+    .section--warm {
+      background: var(--surface-warm);
+    }
+
+    .section--elevated-dark {
+      background: var(--surface-dark-elevated);
+      color: var(--surface);
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    .display {
+      font-family: var(--font-serif);
+      font-size: clamp(2.75rem, 2.1rem + 2.7vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+    }
+
+    h1, .h1 {
+      font-family: var(--font-sans);
+      font-size: clamp(2.25rem, 1.7rem + 2.2vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.07;
+      letter-spacing: -0.025em;
+    }
+
+    h2, .h2 {
+      font-family: var(--font-sans);
+      font-size: clamp(1.875rem, 1.45rem + 1.7vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.09;
+      letter-spacing: -0.025em;
+    }
+
+    h3, .h3 {
+      font-family: var(--font-sans);
+      font-size: clamp(1.5rem, 1.17rem + 1.4vw, 2.25rem);
+      font-weight: 600;
+      line-height: 1.11;
+      letter-spacing: -0.015em;
+    }
+
+    h4, .h4 {
+      font-family: var(--font-sans);
+      font-size: clamp(1.25rem, 1.03rem + 0.9vw, 1.75rem);
+      font-weight: 600;
+      line-height: 1.14;
+      letter-spacing: -0.01em;
+    }
+
+    .body-large {
+      font-size: 1.3125rem;
+      line-height: 1.52;
+    }
+
+    .body-small {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+
+    .caption {
+      font-size: 0.8125rem;
+      line-height: 1.54;
+      letter-spacing: 0.015em;
+    }
+
+    .overline {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 1.33;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+    }
+
+    .data {
+      font-family: var(--font-mono);
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.33;
+      letter-spacing: -0.01em;
+    }
+
+    .text-muted { color: var(--warm-400); }
+    .text-secondary { color: var(--warm-500); }
+    .text-yellow { color: var(--yellow-500); }
+    .text-light-muted { color: var(--dark-300); }
+    .text-light-secondary { color: #B0ADA6; }
+
+    a { color: var(--yellow-600); text-decoration: none; }
+    a:hover { color: var(--yellow-700); text-decoration: underline; }
+
+    .section--dark a { color: var(--yellow-400); }
+    .section--dark a:hover { color: var(--yellow-500); }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: var(--dark-500);
+      color: var(--surface);
+      position: relative;
+      overflow: hidden;
+      padding: 96px 24px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,199,61,0.08) 0%, transparent 70%);
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      filter: blur(80px);
+    }
+
+    .hero__badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--yellow-400);
+      margin-bottom: 32px;
+    }
+
+    .hero__title {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 2.4rem + 3vw, 5rem);
+      font-weight: 700;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      max-width: 14ch;
+    }
+
+    .hero__title span {
+      color: var(--yellow-500);
+    }
+
+    .hero__subtitle {
+      font-size: 1.3125rem;
+      line-height: 1.52;
+      color: #B0ADA6;
+      max-width: 50ch;
+      margin-bottom: 40px;
+    }
+
+    .hero__meta {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--warm-400);
+      letter-spacing: 0.015em;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 248, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(28, 27, 25, 0.06);
+      padding: 16px 0;
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav__brand {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--dark-500);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav__links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav__links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--warm-500);
+      text-decoration: none;
+      transition: color 150ms ease;
+    }
+
+    .nav__links a:hover {
+      color: var(--dark-500);
+      text-decoration: none;
+    }
+
+    /* ===== COLOR SWATCHES ===== */
+    .palette-grid {
+      display: grid;
+      gap: 2px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .palette-grid--11 {
+      grid-template-columns: repeat(11, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      .palette-grid--11 {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+
+    .swatch {
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 8px;
+      min-height: 80px;
+      position: relative;
+      transition: transform 150ms ease;
+    }
+
+    .swatch:hover {
+      transform: scale(1.05);
+      z-index: 2;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(28,27,25,0.12);
+    }
+
+    .swatch__label {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      font-weight: 500;
+      line-height: 1.3;
+      opacity: 0.85;
+    }
+
+    .swatch__hex {
+      font-family: var(--font-mono);
+      font-size: 0.5625rem;
+      opacity: 0.65;
+    }
+
+    .swatch--light-text .swatch__label,
+    .swatch--light-text .swatch__hex {
+      color: var(--surface);
+    }
+
+    .swatch--dark-text .swatch__label,
+    .swatch--dark-text .swatch__hex {
+      color: var(--dark-500);
+    }
+
+    .palette-label {
+      margin-bottom: 12px;
+    }
+
+    /* ===== SEMANTIC COLOR DOTS ===== */
+    .semantic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+
+    .semantic-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      background: var(--surface-warm);
+      border-radius: 12px;
+    }
+
+    .semantic-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .semantic-card__label {
+      font-weight: 600;
+      font-size: 0.9375rem;
+    }
+
+    .semantic-card__hex {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--warm-500);
+    }
+
+    /* ===== TYPE SCALE TABLE ===== */
+    .type-scale-row {
+      display: flex;
+      align-items: baseline;
+      gap: 32px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(28,27,25,0.06);
+    }
+
+    .type-scale-row:last-child {
+      border-bottom: none;
+    }
+
+    .type-scale-meta {
+      flex-shrink: 0;
+      width: 140px;
+    }
+
+    .type-scale-meta__name {
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-bottom: 4px;
+    }
+
+    .type-scale-meta__size {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--warm-400);
+    }
+
+    .type-scale-sample {
+      flex: 1;
+      min-width: 0;
+    }
+
+    @media (max-width: 640px) {
+      .type-scale-row {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .type-scale-meta { width: auto; }
+    }
+
+    /* ===== SPACING SCALE ===== */
+    .spacing-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 12px 0;
+    }
+
+    .spacing-label {
+      flex-shrink: 0;
+      width: 80px;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--warm-500);
+    }
+
+    .spacing-bar {
+      height: 24px;
+      background: var(--yellow-500);
+      border-radius: 4px;
+      opacity: 0.85;
+      transition: opacity 150ms ease;
+    }
+
+    .spacing-bar:hover { opacity: 1; }
+
+    .spacing-value {
+      flex-shrink: 0;
+      width: 50px;
+      text-align: right;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--warm-400);
+    }
+
+    /* ===== RADIUS SCALE ===== */
+    .radius-grid {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: end;
+    }
+
+    .radius-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .radius-box {
+      width: 80px;
+      height: 80px;
+      background: var(--yellow-500);
+      opacity: 0.15;
+      border: 2px solid var(--yellow-500);
+    }
+
+    .radius-item__label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: var(--warm-500);
+      text-align: center;
+    }
+
+    /* ===== SHADOW DEMOS ===== */
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .shadow-card {
+      padding: 32px;
+      border-radius: 16px;
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .shadow-card--diffuse-warm {
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(28,27,25,0.04), 0 4px 8px rgba(28,27,25,0.02), 0 20px 40px -15px rgba(28,27,25,0.06);
+    }
+
+    .shadow-card--ambient-warm {
+      background: #fff;
+      box-shadow: 0 0 0 1px rgba(28,27,25,0.02), 0 1px 2px rgba(28,27,25,0.03), 0 4px 12px rgba(28,27,25,0.04), 0 16px 32px -8px rgba(28,27,25,0.06), 0 32px 64px -16px rgba(28,27,25,0.04);
+    }
+
+    .shadow-card--diffuse-dark {
+      background: var(--surface-dark-elevated);
+      color: var(--surface);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.06), 0 40px 80px -20px rgba(0,0,0,0.4);
+    }
+
+    .shadow-card--ambient-dark {
+      background: var(--surface-dark-elevated);
+      color: var(--surface);
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08), 0 24px 48px -12px rgba(0,0,0,0.2), 0 48px 96px -24px rgba(0,0,0,0.15);
+    }
+
+    .shadow-card__name {
+      font-weight: 600;
+      font-size: 0.9375rem;
+      margin-bottom: 4px;
+    }
+
+    .shadow-card__desc {
+      font-size: 0.8125rem;
+      opacity: 0.65;
+    }
+
+    /* ===== DOPPELRAND DEMO ===== */
+    .doppelrand-demo {
+      display: flex;
+      justify-content: center;
+      padding: 64px 24px;
+    }
+
+    .doppelrand-outer {
+      border-radius: 2.25rem;
+      background: rgba(255,255,255,0.02);
+      padding: 6px;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04);
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .doppelrand-inner {
+      border-radius: calc(2.25rem - 0.375rem);
+      background: linear-gradient(145deg, rgba(42,41,38,0.7), rgba(28,27,25,0.9) 50%, rgba(24,23,22,0.95));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), inset 0 0 0 1px rgba(255,255,255,0.03);
+      padding: 40px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .doppelrand-inner__overline {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--yellow-400);
+      margin-bottom: 12px;
+    }
+
+    .doppelrand-inner__title {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      color: var(--surface);
+      margin-bottom: 12px;
+    }
+
+    .doppelrand-inner__body {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: #B0ADA6;
+    }
+
+    /* ===== VOICE TABLE ===== */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .voice-card {
+      border: 1px solid rgba(28,27,25,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .voice-card__header {
+      padding: 20px 24px;
+      background: var(--surface-warm);
+      font-weight: 700;
+      font-size: 1.125rem;
+      border-bottom: 1px solid rgba(28,27,25,0.06);
+    }
+
+    .voice-card__body {
+      padding: 24px;
+    }
+
+    .voice-col {
+      margin-bottom: 16px;
+    }
+
+    .voice-col:last-child { margin-bottom: 0; }
+
+    .voice-col__label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--warm-400);
+      margin-bottom: 8px;
+    }
+
+    .voice-col__items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .voice-col__items li {
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .voice-col__items--means li::before {
+      content: '+';
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    .voice-col__items--doesnt li::before {
+      content: '\2013';
+      position: absolute;
+      left: 0;
+      color: var(--error);
+      font-weight: 600;
+    }
+
+    /* ===== PRINCIPLES ===== */
+    .principles-grid {
+      display: grid;
+      gap: 32px;
+    }
+
+    .principle {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    @media (max-width: 640px) {
+      .principle { grid-template-columns: 1fr; }
+    }
+
+    .principle__number {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--yellow-500);
+      line-height: 1;
+    }
+
+    .principle__title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .principle__tagline {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--warm-400);
+      margin-bottom: 8px;
+      font-size: 0.9375rem;
+    }
+
+    .principle__body {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--warm-600);
+    }
+
+    /* ===== MOTION TABLE ===== */
+    .motion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .motion-card {
+      padding: 24px;
+      background: var(--surface-warm);
+      border-radius: 16px;
+    }
+
+    .motion-card__name {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .motion-card__value {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--yellow-700);
+      margin-bottom: 8px;
+      word-break: break-all;
+    }
+
+    .motion-card__desc {
+      font-size: 0.875rem;
+      color: var(--warm-500);
+      line-height: 1.5;
+    }
+
+    /* ===== ARCHETYPE ===== */
+    .archetype-bar {
+      display: flex;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 48px;
+      margin-bottom: 16px;
+    }
+
+    .archetype-bar__magician {
+      flex: 7;
+      background: var(--yellow-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: var(--dark-500);
+    }
+
+    .archetype-bar__ruler {
+      flex: 3;
+      background: var(--dark-400);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: var(--surface);
+    }
+
+    /* ===== COMPOSITION DEMO ===== */
+    .composition-bar {
+      display: flex;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 48px;
+      margin-bottom: 16px;
+    }
+
+    .composition-bar__warm {
+      flex: 6;
+      background: var(--surface-warm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.8125rem;
+      color: var(--warm-600);
+    }
+
+    .composition-bar__dark {
+      flex: 3;
+      background: var(--dark-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.8125rem;
+      color: var(--surface);
+    }
+
+    .composition-bar__yellow {
+      flex: 1;
+      background: var(--yellow-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: var(--dark-500);
+    }
+
+    /* ===== ANTI-PATTERNS ===== */
+    .anti-patterns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 12px;
+    }
+
+    .anti-pattern {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 12px 16px;
+      background: rgba(201, 59, 59, 0.04);
+      border-radius: 8px;
+      border-left: 3px solid var(--error);
+      font-size: 0.9375rem;
+      line-height: 1.5;
+    }
+
+    .anti-pattern__x {
+      color: var(--error);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 40px 0;
+      border-top: 1px solid rgba(28,27,25,0.06);
+      text-align: center;
+    }
+
+    .footer__text {
+      font-size: 0.8125rem;
+      color: var(--warm-400);
+    }
+
+    .footer__brand {
+      font-weight: 700;
+      color: var(--dark-500);
+    }
+
+    /* ===== UTILITIES ===== */
+    .mt-4 { margin-top: 16px; }
+    .mt-6 { margin-top: 24px; }
+    .mt-8 { margin-top: 32px; }
+    .mt-10 { margin-top: 40px; }
+    .mt-16 { margin-top: 64px; }
+    .mb-2 { margin-bottom: 8px; }
+    .mb-3 { margin-bottom: 12px; }
+    .mb-4 { margin-bottom: 16px; }
+    .mb-6 { margin-bottom: 24px; }
+    .mb-8 { margin-bottom: 32px; }
+    .mb-10 { margin-bottom: 40px; }
+    .mb-16 { margin-bottom: 64px; }
+    .max-w-prose { max-width: 65ch; }
+    .flex { display: flex; }
+    .gap-2 { gap: 8px; }
+    .gap-4 { gap: 16px; }
+    .items-center { align-items: center; }
+
+    /* ===== PRINT ===== */
+    @media print {
+      .nav { position: static; background: white; backdrop-filter: none; }
+      .hero { min-height: auto; padding: 48px 24px; break-after: page; }
+      .section { padding: 32px 0; break-inside: avoid; }
+      .swatch:hover { transform: none; box-shadow: none; }
+      body { font-size: 12pt; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <div class="hero__badge">Brand Guidelines</div>
+    <h1 class="hero__title">Torne-se <span>Chainless.</span></h1>
+    <p class="hero__subtitle">
+      Sovereign digital wealth. Self-custody architecture + DeFi yield strategies + premium wealth management UX.
+    </p>
+    <p class="hero__meta">Magician 70% &middot; Ruler 30% &middot; Bold, Defiant, Warm</p>
+  </header>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__brand">Chainless</a>
+      <ul class="nav__links">
+        <li><a href="#color">Color</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#spacing">Spacing</a></li>
+        <li><a href="#shape">Shape</a></li>
+        <li><a href="#elevation">Elevation</a></li>
+        <li><a href="#motion">Motion</a></li>
+        <li><a href="#voice">Voice</a></li>
+        <li><a href="#principles">Principles</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== ARCHETYPE ===== -->
+  <section class="section" id="archetype">
+    <div class="container">
+      <p class="overline text-yellow mb-3">Archetype</p>
+      <h2 class="mb-6">Magician + Ruler</h2>
+      <p class="body-large max-w-prose mb-8" style="color: var(--warm-600);">
+        The Magician (70%) transforms perception &mdash; "Become Chainless" is an invitation to transformation, not a product pitch. The Ruler (30%) governs the architecture &mdash; self-custody is structural authority, not rebellion for its own sake.
+      </p>
+
+      <div class="archetype-bar">
+        <div class="archetype-bar__magician">Magician 70%</div>
+        <div class="archetype-bar__ruler">Ruler 30%</div>
+      </div>
+      <p class="caption text-secondary">
+        In visuals: 60% premium / 40% rebel. In voice: 70% premium / 30% rebel.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== COLOR ===== -->
+  <section class="section--warm section" id="color">
+    <div class="container">
+      <p class="overline text-yellow mb-3">Color</p>
+      <h2 class="mb-4">Warm authority. No cool grays.</h2>
+      <p class="body-large max-w-prose mb-10" style="color: var(--warm-600);">
+        Every surface leans amber. The 60-30-10 rule governs composition: warm neutrals dominate, dark values anchor, yellow accents punctuate at 10%.
+      </p>
+
+      <!-- Composition -->
+      <h3 class="mb-4">Composition</h3>
+      <div class="composition-bar mb-8">
+        <div class="composition-bar__warm">60% Warm Neutrals</div>
+        <div class="composition-bar__dark">30% Dark</div>
+        <div class="composition-bar__yellow">10%</div>
+      </div>
+
+      <!-- Yellow -->
+      <p class="overline mb-2 text-secondary">Brand Yellow</p>
+      <div class="palette-grid palette-grid--11 mb-10">
+        <div class="swatch swatch--dark-text" style="background: #FFF8F0;"><span class="swatch__label">50</span><span class="swatch__hex">#FFF8F0</span></div>
+        <div class="swatch swatch--dark-text" style="background: #FFF5E8;"><span class="swatch__label">100</span><span class="swatch__hex">#FFF5E8</span></div>
+        <div class="swatch swatch--dark-text" style="background: #FFE8C6;"><span class="swatch__label">200</span><span class="swatch__hex">#FFE8C6</span></div>
+        <div class="swatch swatch--dark-text" style="background: #FFDEA9;"><span class="swatch__label">300</span><span class="swatch__hex">#FFDEA9</span></div>
+        <div class="swatch swatch--dark-text" style="background: #FFD486;"><span class="swatch__label">400</span><span class="swatch__hex">#FFD486</span></div>
+        <div class="swatch swatch--dark-text" style="background: #FFC73D;"><span class="swatch__label">500</span><span class="swatch__hex">#FFC73D</span></div>
+        <div class="swatch swatch--light-text" style="background: #CC9C00;"><span class="swatch__label">600</span><span class="swatch__hex">#CC9C00</span></div>
+        <div class="swatch swatch--light-text" style="background: #967200;"><span class="swatch__label">700</span><span class="swatch__hex">#967200</span></div>
+        <div class="swatch swatch--light-text" style="background: #634A00;"><span class="swatch__label">800</span><span class="swatch__hex">#634A00</span></div>
+        <div class="swatch swatch--light-text" style="background: #372800;"><span class="swatch__label">900</span><span class="swatch__hex">#372800</span></div>
+        <div class="swatch swatch--light-text" style="background: #201600;"><span class="swatch__label">950</span><span class="swatch__hex">#201600</span></div>
+      </div>
+
+      <!-- Warm -->
+      <p class="overline mb-2 text-secondary">Warm Neutrals</p>
+      <div class="palette-grid palette-grid--11 mb-10">
+        <div class="swatch swatch--dark-text" style="background: #F0EEE9;"><span class="swatch__label">50</span><span class="swatch__hex">#F0EEE9</span></div>
+        <div class="swatch swatch--dark-text" style="background: #E3DFD7;"><span class="swatch__label">100</span><span class="swatch__hex">#E3DFD7</span></div>
+        <div class="swatch swatch--dark-text" style="background: #C6C0B6;"><span class="swatch__label">200</span><span class="swatch__hex">#C6C0B6</span></div>
+        <div class="swatch swatch--dark-text" style="background: #A4A097;"><span class="swatch__label">300</span><span class="swatch__hex">#A4A097</span></div>
+        <div class="swatch swatch--light-text" style="background: #87837C;"><span class="swatch__label">400</span><span class="swatch__hex">#87837C</span></div>
+        <div class="swatch swatch--light-text" style="background: #6B6862;"><span class="swatch__label">500</span><span class="swatch__hex">#6B6862</span></div>
+        <div class="swatch swatch--light-text" style="background: #55524D;"><span class="swatch__label">600</span><span class="swatch__hex">#55524D</span></div>
+        <div class="swatch swatch--light-text" style="background: #3F3D3A;"><span class="swatch__label">700</span><span class="swatch__hex">#3F3D3A</span></div>
+        <div class="swatch swatch--light-text" style="background: #2D2C29;"><span class="swatch__label">800</span><span class="swatch__hex">#2D2C29</span></div>
+        <div class="swatch swatch--light-text" style="background: #1A1917;"><span class="swatch__label">900</span><span class="swatch__hex">#1A1917</span></div>
+        <div class="swatch swatch--light-text" style="background: #0F0E0D;"><span class="swatch__label">950</span><span class="swatch__hex">#0F0E0D</span></div>
+      </div>
+
+      <!-- Dark -->
+      <p class="overline mb-2 text-secondary">Dark Neutrals (Espresso)</p>
+      <div class="palette-grid palette-grid--11 mb-10">
+        <div class="swatch swatch--dark-text" style="background: #E8E5DF;"><span class="swatch__label">50</span><span class="swatch__hex">#E8E5DF</span></div>
+        <div class="swatch swatch--dark-text" style="background: #D1CBC1;"><span class="swatch__label">100</span><span class="swatch__hex">#D1CBC1</span></div>
+        <div class="swatch swatch--dark-text" style="background: #9F9B93;"><span class="swatch__label">200</span><span class="swatch__hex">#9F9B93</span></div>
+        <div class="swatch swatch--light-text" style="background: #706D67;"><span class="swatch__label">300</span><span class="swatch__hex">#706D67</span></div>
+        <div class="swatch swatch--light-text" style="background: #44423E;"><span class="swatch__label">400</span><span class="swatch__hex">#44423E</span></div>
+        <div class="swatch swatch--light-text" style="background: #1C1B19;"><span class="swatch__label">500</span><span class="swatch__hex">#1C1B19</span></div>
+        <div class="swatch swatch--light-text" style="background: #181716;"><span class="swatch__label">600</span><span class="swatch__hex">#181716</span></div>
+        <div class="swatch swatch--light-text" style="background: #141312;"><span class="swatch__label">700</span><span class="swatch__hex">#141312</span></div>
+        <div class="swatch swatch--light-text" style="background: #0F0E0D;"><span class="swatch__label">800</span><span class="swatch__hex">#0F0E0D</span></div>
+        <div class="swatch swatch--light-text" style="background: #080706;"><span class="swatch__label">900</span><span class="swatch__hex">#080706</span></div>
+        <div class="swatch swatch--light-text" style="background: #040403;"><span class="swatch__label">950</span><span class="swatch__hex">#040403</span></div>
+      </div>
+
+      <!-- Semantic -->
+      <p class="overline mb-4 text-secondary">Semantic</p>
+      <div class="semantic-grid">
+        <div class="semantic-card">
+          <div class="semantic-dot" style="background: #2D8A56;"></div>
+          <div><div class="semantic-card__label">Success</div><div class="semantic-card__hex">#2D8A56</div></div>
+        </div>
+        <div class="semantic-card">
+          <div class="semantic-dot" style="background: #D4890D;"></div>
+          <div><div class="semantic-card__label">Warning</div><div class="semantic-card__hex">#D4890D</div></div>
+        </div>
+        <div class="semantic-card">
+          <div class="semantic-dot" style="background: #C93B3B;"></div>
+          <div><div class="semantic-card__label">Error</div><div class="semantic-card__hex">#C93B3B</div></div>
+        </div>
+        <div class="semantic-card">
+          <div class="semantic-dot" style="background: #3B7FC9;"></div>
+          <div><div class="semantic-card__label">Info</div><div class="semantic-card__hex">#3B7FC9</div></div>
+        </div>
+      </div>
+
+      <!-- WCAG -->
+      <div class="mt-10">
+        <h3 class="mb-4">WCAG Contrast</h3>
+        <p class="body-small max-w-prose mb-6" style="color: var(--warm-500);">
+          All primary pairings meet WCAG 2.2 AA minimum. Body text targets AAA (7:1+).
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+          <div style="padding: 16px 20px; border-radius: 12px; background: var(--dark-500); color: var(--surface);">
+            <div style="font-weight: 600; font-size: 0.9375rem;">FAFAF8 on 1C1B19</div>
+            <div class="mono" style="font-size: 0.75rem; color: var(--yellow-400);">15.4:1 AAA</div>
+          </div>
+          <div style="padding: 16px 20px; border-radius: 12px; background: var(--dark-500); color: var(--yellow-500);">
+            <div style="font-weight: 600; font-size: 0.9375rem;">FFC73D on 1C1B19</div>
+            <div class="mono" style="font-size: 0.75rem; color: #B0ADA6;">9.2:1 AAA</div>
+          </div>
+          <div style="padding: 16px 20px; border-radius: 12px; background: var(--surface); color: var(--warm-500); border: 1px solid rgba(28,27,25,0.06);">
+            <div style="font-weight: 600; font-size: 0.9375rem;">6B6862 on FAFAF8</div>
+            <div class="mono" style="font-size: 0.75rem; color: var(--warm-400);">5.8:1 AA</div>
+          </div>
+          <div style="padding: 16px 20px; border-radius: 12px; background: var(--dark-500); color: #B0ADA6;">
+            <div style="font-weight: 600; font-size: 0.9375rem;">B0ADA6 on 1C1B19</div>
+            <div class="mono" style="font-size: 0.75rem; color: var(--yellow-400);">7.6:1 AAA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TYPOGRAPHY ===== -->
+  <section class="section" id="typography">
+    <div class="container">
+      <p class="overline text-yellow mb-3">Typography</p>
+      <h2 class="mb-4">Dual Voice, One System</h2>
+      <p class="body-large max-w-prose mb-10" style="color: var(--warm-600);">
+        Fraunces speaks at brand moments. Satoshi governs everything functional. IBM Plex Mono presents data. The 70/30 archetype ratio manifests at the typographic level.
+      </p>
+
+      <!-- Font Families -->
+      <h3 class="mb-6">Font Families</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;" class="mb-16">
+        <div style="padding: 32px; background: var(--surface-warm); border-radius: 16px;">
+          <p class="overline mb-2 text-secondary">Primary &mdash; Sans</p>
+          <p style="font-family: var(--font-sans); font-size: 2rem; font-weight: 600; letter-spacing: -0.015em; margin-bottom: 8px;">Satoshi</p>
+          <p style="font-family: var(--font-sans); font-size: 0.9375rem; color: var(--warm-500);">Navigation, body text, buttons, forms, UI labels. The Ruler's typeface &mdash; functional clarity with warm geometry.</p>
+        </div>
+        <div style="padding: 32px; background: var(--surface-warm); border-radius: 16px;">
+          <p class="overline mb-2 text-secondary">Accent &mdash; Serif</p>
+          <p style="font-family: var(--font-serif); font-size: 2rem; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 8px;">Fraunces</p>
+          <p style="font-family: var(--font-sans); font-size: 0.9375rem; color: var(--warm-500);">Hero headlines, pull quotes, brand moments ONLY. The Magician's typeface &mdash; wonky, warm, transformative.</p>
+        </div>
+        <div style="padding: 32px; background: var(--surface-warm); border-radius: 16px;">
+          <p class="overline mb-2 text-secondary">Data &mdash; Mono</p>
+          <p style="font-family: var(--font-mono); font-size: 2rem; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 8px;">IBM Plex Mono</p>
+          <p style="font-family: var(--font-sans); font-size: 0.9375rem; color: var(--warm-500);">Yield percentages, wallet addresses, code, data values. The Architect's typeface &mdash; precision, transparency.</p>
+        </div>
+      </div>
+
+      <!-- Type Scale -->
+      <h3 class="mb-6">Type Scale</h3>
+      <p class="body-small max-w-prose mb-8" style="color: var(--warm-500);">
+        Base: 18px &middot; Ratio: 1.25 (Major Third) &middot; Grid: 4px &middot; Body line-height: 28px
+      </p>
+
+      <div class="mb-8">
+        <div class="type-scale-row">
+          <div class="type-scale-meta">
+            <div class="type-scale-meta__name">Display</div>
+            <div class="type-scale-meta__size">72px &middot; 700</div>
+          </div>
+          <div class="type-scale-sample display" style="font-size: clamp(2.75rem, 2.1rem + 2.7vw, 4.5rem);">Torne-se Chainless.</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-meta">
+            <div class="type-scale-meta__name">H1</div>
+            <div class="type-scale-meta__size">56px &middot; 700</div>
+          </div>
+          <div class="type-scale-sample h1" style="font-size: clamp(2.25rem, 1.7rem + 2.2vw, 3.5rem);">Sovereign Digital Wealth</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-meta">
+            <div class="type-scale-meta__name">H2</div>
+            <div class="type-scale-meta__size">44px &middot; 600</div>
+          </div>
+          <div class="type-scale-sample h2" style="font-size: clamp(1.875rem, 1.45rem + 1.7vw, 2.75rem);">Self-custody architecture</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-meta">
+            <div class="type-scale-meta__name">H3</div>
+            <div class="type-scale-meta__size">36px &middot; 600</div>
+          </div>
+          <div class="type-scale-sample h3" style="font-size: clamp(1.5rem, 1.17rem + 1.4vw, 2.25rem);">DeFi yield strategies</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-meta">
+            <div class="type-scale-meta__name">H4</div>
+            <div class="type-scale-meta__size">28px &middot; 600</div>
+          </div>
+          <div class="type-scale-sample h4" style="font-size: clamp(1.25rem, 1.03rem + 0.9vw, 1.75rem);">Premium wealth management</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-meta">
+            <div class="type-scale-meta__name">Body Large</div>
+            <div class="type-scale-meta__size">21px &middot; 400</div>
+          </div>
+          <div class="type-scale-sample body-large">A plataforma onde sua riqueza digital cresce com estrategias institucionais.</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-meta">
+            <div class="type-scale-meta__name">Body</div>
+            <div class="type-scale-meta__size">18px &middot; 400</div>
+          </div>
+          <div class="type-scale-sample">Chainless combina autocustodia com yield DeFi de nivel institucional em uma experiencia premium.</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-meta">
+            <div class="type-scale-meta__name">Body Small</div>
+            <div class="type-scale-meta__size">15px &middot; 400</div>
+          </div>
+          <div class="type-scale-sample body-small">Suas chaves. Seu patrimonio. Suas regras.</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-meta">
+            <div class="type-scale-meta__name">Caption</div>
+            <div class="type-scale-meta__size">13px &middot; 400</div>
+          </div>
+          <div class="type-scale-sample caption">Rendimentos atualizados em tempo real</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-meta">
+            <div class="type-scale-meta__name">Overline</div>
+            <div class="type-scale-meta__size">12px &middot; 600</div>
+          </div>
+          <div class="type-scale-sample overline">Riqueza Soberana</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-meta">
+            <div class="type-scale-meta__name">Data</div>
+            <div class="type-scale-meta__size">18px &middot; 500 mono</div>
+          </div>
+          <div class="type-scale-sample data">12.4% APY &middot; R$ 847.293,00</div>
+        </div>
+        <div class="type-scale-row">
+          <div class="type-scale-meta">
+            <div class="type-scale-meta__name">Code</div>
+            <div class="type-scale-meta__size">15px &middot; 400 mono</div>
+          </div>
+          <div class="type-scale-sample" style="font-family: var(--font-mono); font-size: 0.9375rem;">0x1a2B...9cDe</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPACING ===== -->
+  <section class="section--warm section" id="spacing">
+    <div class="container">
+      <p class="overline text-yellow mb-3">Spacing</p>
+      <h2 class="mb-4">Anchored on 28px</h2>
+      <p class="body-large max-w-prose mb-10" style="color: var(--warm-600);">
+        All spacing derives from the body line-height (28px). Grid unit: 4px. Every value snaps to the grid.
+      </p>
+
+      <div class="mb-10">
+        <div class="spacing-row">
+          <span class="spacing-label">xs</span>
+          <div class="spacing-bar" style="width: 4px;"></div>
+          <span class="spacing-value">4px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">sm</span>
+          <div class="spacing-bar" style="width: 8px;"></div>
+          <span class="spacing-value">8px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">md</span>
+          <div class="spacing-bar" style="width: 14px;"></div>
+          <span class="spacing-value">14px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">lg</span>
+          <div class="spacing-bar" style="width: 28px;"></div>
+          <span class="spacing-value">28px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">xl</span>
+          <div class="spacing-bar" style="width: 42px;"></div>
+          <span class="spacing-value">42px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">2xl</span>
+          <div class="spacing-bar" style="width: 56px;"></div>
+          <span class="spacing-value">56px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">3xl</span>
+          <div class="spacing-bar" style="width: 84px;"></div>
+          <span class="spacing-value">84px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">4xl</span>
+          <div class="spacing-bar" style="width: 112px;"></div>
+          <span class="spacing-value">112px</span>
+        </div>
+      </div>
+
+      <h3 class="mb-4">Section Boundaries</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+        <div style="padding: 20px; background: white; border-radius: 12px; border: 1px solid rgba(28,27,25,0.06);">
+          <div style="font-weight: 600; font-size: 0.9375rem; margin-bottom: 4px;">Light &rarr; Light</div>
+          <div class="data" style="color: var(--yellow-700);">96px</div>
+          <div class="caption text-secondary">Standard rhythm</div>
+        </div>
+        <div style="padding: 20px; background: white; border-radius: 12px; border: 1px solid rgba(28,27,25,0.06);">
+          <div style="font-weight: 600; font-size: 0.9375rem; margin-bottom: 4px;">Light &harr; Dark</div>
+          <div class="data" style="color: var(--yellow-700);">128px</div>
+          <div class="caption text-secondary">Inversion needs breathing room</div>
+        </div>
+        <div style="padding: 20px; background: white; border-radius: 12px; border: 1px solid rgba(28,27,25,0.06);">
+          <div style="font-weight: 600; font-size: 0.9375rem; margin-bottom: 4px;">Hero &rarr; Content</div>
+          <div class="data" style="color: var(--yellow-700);">112px</div>
+          <div class="caption text-secondary">Premium transition</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHAPE ===== -->
+  <section class="section" id="shape">
+    <div class="container">
+      <p class="overline text-yellow mb-3">Shape</p>
+      <h2 class="mb-4">Generous, soft radii</h2>
+      <p class="body-large max-w-prose mb-10" style="color: var(--warm-600);">
+        Larger surfaces get larger radii. Buttons are pills. Cards are generously rounded. The Doppelrand uses the largest radius in the system.
+      </p>
+
+      <div class="radius-grid mb-16">
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 4px;"></div>
+          <span class="radius-item__label">sm<br>4px</span>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 8px;"></div>
+          <span class="radius-item__label">md<br>8px</span>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 12px;"></div>
+          <span class="radius-item__label">lg<br>12px</span>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 16px;"></div>
+          <span class="radius-item__label">xl<br>16px</span>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 24px;"></div>
+          <span class="radius-item__label">2xl<br>24px</span>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 36px;"></div>
+          <span class="radius-item__label">3xl<br>36px</span>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 9999px; width: 80px; height: 40px;"></div>
+          <span class="radius-item__label">full<br>pill</span>
+        </div>
+      </div>
+
+      <!-- Doppelrand -->
+      <h3 class="mb-4">Doppelrand Card</h3>
+      <p class="max-w-prose mb-6" style="color: var(--warm-600);">
+        The signature double-border luxury card pattern. Outer shell (translucent bg + ring) wraps inner core (gradient + inner highlight). The 6px gap reveals the construction.
+      </p>
+    </div>
+    <div class="section--dark" style="padding: 48px 0;">
+      <div class="doppelrand-demo">
+        <div class="doppelrand-outer">
+          <div class="doppelrand-inner">
+            <div class="doppelrand-inner__overline">Signature Component</div>
+            <div class="doppelrand-inner__title">Doppelrand Card</div>
+            <div class="doppelrand-inner__body">
+              Outer: rounded-[2.25rem] bg-white/[0.02] p-1.5 ring-1 ring-white/[0.04]<br>
+              Inner: rounded-[calc(2.25rem-0.375rem)] inner-highlight-dark<br>
+              Gap: 6px &middot; Outer radius: 36px &middot; Inner radius: 30px
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ELEVATION ===== -->
+  <section class="section--warm section" id="elevation">
+    <div class="container">
+      <p class="overline text-yellow mb-3">Elevation</p>
+      <h2 class="mb-4">Multi-layer warm shadows</h2>
+      <p class="body-large max-w-prose mb-10" style="color: var(--warm-600);">
+        Every shadow uses warm-tinted rgba values. Never default Tailwind shadows. Light surfaces get warm shadows (rgba 28,27,25). Dark surfaces get deep shadows (rgba 0,0,0).
+      </p>
+
+      <div class="shadow-grid">
+        <div class="shadow-card shadow-card--diffuse-warm">
+          <div class="shadow-card__name">Diffuse Warm</div>
+          <div class="shadow-card__desc">Cards, inputs, dropdowns &mdash; everyday elevation</div>
+        </div>
+        <div class="shadow-card shadow-card--ambient-warm">
+          <div class="shadow-card__name">Ambient Warm</div>
+          <div class="shadow-card__desc">Featured cards, modals &mdash; premium elevation</div>
+        </div>
+      </div>
+
+      <div class="shadow-grid mt-6" style="background: var(--dark-500); padding: 32px; border-radius: 24px;">
+        <div class="shadow-card shadow-card--diffuse-dark">
+          <div class="shadow-card__name">Diffuse Dark</div>
+          <div class="shadow-card__desc">Everyday elevation on dark surfaces</div>
+        </div>
+        <div class="shadow-card shadow-card--ambient-dark">
+          <div class="shadow-card__name">Ambient Dark</div>
+          <div class="shadow-card__desc">Premium elevation on dark surfaces</div>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <h4 class="mb-4">Additional Effects</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+          <div style="padding: 20px; background: white; border-radius: 12px; border: 1px solid rgba(28,27,25,0.06);">
+            <div style="font-weight: 600; margin-bottom: 4px;">Inner Highlight</div>
+            <div class="mono" style="font-size: 0.75rem; color: var(--warm-400); margin-bottom: 8px;">inset 0 1px 0 rgba(255,255,255,0.06)</div>
+            <div class="body-small text-secondary">Subtle top edge glow on Doppelrand inner core</div>
+          </div>
+          <div style="padding: 20px; background: white; border-radius: 12px; border: 1px solid rgba(28,27,25,0.06);">
+            <div style="font-weight: 600; margin-bottom: 4px;">Noise Overlay</div>
+            <div class="mono" style="font-size: 0.75rem; color: var(--warm-400); margin-bottom: 8px;">opacity: 0.022 &middot; fractalNoise</div>
+            <div class="body-small text-secondary">Global analog grain texture that prevents digital flatness</div>
+          </div>
+          <div style="padding: 20px; background: white; border-radius: 12px; border: 1px solid rgba(28,27,25,0.06);">
+            <div style="font-weight: 600; margin-bottom: 4px;">Gradient Wash</div>
+            <div class="mono" style="font-size: 0.75rem; color: var(--warm-400); margin-bottom: 8px;">radial-gradient yellow at 2.5% opacity</div>
+            <div class="body-small text-secondary">Nearly invisible warmth layer positioned off-center</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MOTION ===== -->
+  <section class="section" id="motion">
+    <div class="container">
+      <p class="overline text-yellow mb-3">Motion</p>
+      <h2 class="mb-4">Reveal, Don't Announce</h2>
+      <p class="body-large max-w-prose mb-10" style="color: var(--warm-600);">
+        The Magician's entrance &mdash; elements emerge from depth, not slam into view. Blur-fade-up is the signature. Springs for interaction, easing for presentation.
+      </p>
+
+      <div class="motion-grid mb-10">
+        <div class="motion-card">
+          <div class="motion-card__name">Premium Easing</div>
+          <div class="motion-card__value">cubic-bezier(0.32, 0.72, 0, 1)</div>
+          <div class="motion-card__desc">Confident arrival. Moderate acceleration, slow deceleration to rest. No bounce, no overshoot.</div>
+        </div>
+        <div class="motion-card">
+          <div class="motion-card__name">Spring Snappy</div>
+          <div class="motion-card__value">stiffness: 200, damping: 20</div>
+          <div class="motion-card__desc">Quick response for buttons, magnetic interactions, tap feedback.</div>
+        </div>
+        <div class="motion-card">
+          <div class="motion-card__name">Spring Smooth</div>
+          <div class="motion-card__value">stiffness: 120, damping: 24</div>
+          <div class="motion-card__desc">Gentle organic motion for number reveals, scale-in effects.</div>
+        </div>
+        <div class="motion-card">
+          <div class="motion-card__name">Blur-Fade-Up (Signature)</div>
+          <div class="motion-card__value">opacity 0&rarr;1, y 40&rarr;0, blur 10&rarr;0, 0.9s</div>
+          <div class="motion-card__desc">The "materializing" entrance that maps to the Magician archetype. Scroll-triggered, once.</div>
+        </div>
+        <div class="motion-card">
+          <div class="motion-card__name">Stagger</div>
+          <div class="motion-card__value">120ms between children</div>
+          <div class="motion-card__desc">Sequential reveal of related elements. 60ms for word-by-word text.</div>
+        </div>
+        <div class="motion-card">
+          <div class="motion-card__name">Magnetic Button</div>
+          <div class="motion-card__value">15% offset, SPRING_SNAPPY, tap 0.97</div>
+          <div class="motion-card__desc">Cursor-tracking hover with spring physics. Subtle pull toward cursor position.</div>
+        </div>
+      </div>
+
+      <h3 class="mb-4">Duration Guidelines</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+        <div style="padding: 16px 20px; background: var(--surface-warm); border-radius: 12px;">
+          <div style="font-weight: 600; font-size: 0.875rem;">Micro-interaction</div>
+          <div class="data" style="font-size: 0.875rem; color: var(--yellow-700);">150ms</div>
+          <div class="caption text-secondary">Hover, focus, toggle</div>
+        </div>
+        <div style="padding: 16px 20px; background: var(--surface-warm); border-radius: 12px;">
+          <div style="font-weight: 600; font-size: 0.875rem;">Standard</div>
+          <div class="data" style="font-size: 0.875rem; color: var(--yellow-700);">250ms</div>
+          <div class="caption text-secondary">State transitions</div>
+        </div>
+        <div style="padding: 16px 20px; background: var(--surface-warm); border-radius: 12px;">
+          <div style="font-weight: 600; font-size: 0.875rem;">Entrance</div>
+          <div class="data" style="font-size: 0.875rem; color: var(--yellow-700);">900ms</div>
+          <div class="caption text-secondary">Scroll-triggered reveals</div>
+        </div>
+        <div style="padding: 16px 20px; background: var(--surface-warm); border-radius: 12px;">
+          <div style="font-weight: 600; font-size: 0.875rem;">Stagger Delay</div>
+          <div class="data" style="font-size: 0.875rem; color: var(--yellow-700);">120ms</div>
+          <div class="caption text-secondary">Between child elements</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VOICE ===== -->
+  <section class="section--dark section" id="voice">
+    <div class="container">
+      <p class="overline mb-3" style="color: var(--yellow-400);">Voice &amp; Tone</p>
+      <h2 class="mb-4">Bold. Defiant. Warm.</h2>
+      <p class="body-large max-w-prose mb-10 text-light-secondary">
+        The voice is 60% premium, 40% rebel. We speak with confidence about sovereignty. We never plead, never hedge, never use commodity crypto language.
+      </p>
+
+      <div class="voice-grid mb-16">
+        <div class="voice-card" style="border-color: rgba(255,255,255,0.06);">
+          <div class="voice-card__header" style="background: var(--dark-400); color: var(--surface);">Bold</div>
+          <div class="voice-card__body" style="color: var(--surface);">
+            <div class="voice-col">
+              <div class="voice-col__label" style="color: var(--warm-400);">Means</div>
+              <ul class="voice-col__items voice-col__items--means">
+                <li>Declarative statements, not suggestions</li>
+                <li>Strong verbs: "Build", "Own", "Transform"</li>
+                <li>Short, confident sentences</li>
+                <li>Direct address: "You" not "users"</li>
+              </ul>
+            </div>
+            <div class="voice-col">
+              <div class="voice-col__label" style="color: var(--warm-400);">Doesn't Mean</div>
+              <ul class="voice-col__items voice-col__items--doesnt">
+                <li>Aggressive or confrontational</li>
+                <li>ALL CAPS SHOUTING</li>
+                <li>Superlatives without substance</li>
+                <li>Hype language or urgency manipulation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="voice-card" style="border-color: rgba(255,255,255,0.06);">
+          <div class="voice-card__header" style="background: var(--dark-400); color: var(--surface);">Defiant</div>
+          <div class="voice-card__body" style="color: var(--surface);">
+            <div class="voice-col">
+              <div class="voice-col__label" style="color: var(--warm-400);">Means</div>
+              <ul class="voice-col__items voice-col__items--means">
+                <li>Question the status quo of custody</li>
+                <li>Challenge intermediaries, not people</li>
+                <li>"Why should someone else hold your keys?"</li>
+                <li>Sovereignty as an architectural fact</li>
+              </ul>
+            </div>
+            <div class="voice-col">
+              <div class="voice-col__label" style="color: var(--warm-400);">Doesn't Mean</div>
+              <ul class="voice-col__items voice-col__items--doesnt">
+                <li>Anti-government or conspiratorial</li>
+                <li>Fear-mongering about banks</li>
+                <li>Crypto-anarchist posturing</li>
+                <li>Attacking competitors by name</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="voice-card" style="border-color: rgba(255,255,255,0.06);">
+          <div class="voice-card__header" style="background: var(--dark-400); color: var(--surface);">Warm</div>
+          <div class="voice-card__body" style="color: var(--surface);">
+            <div class="voice-col">
+              <div class="voice-col__label" style="color: var(--warm-400);">Means</div>
+              <ul class="voice-col__items voice-col__items--means">
+                <li>Inviting tone: "Torne-se Chainless"</li>
+                <li>Acknowledge complexity, simplify it</li>
+                <li>Human language, not technical jargon</li>
+                <li>Brazilian warmth in Portuguese copy</li>
+              </ul>
+            </div>
+            <div class="voice-col">
+              <div class="voice-col__label" style="color: var(--warm-400);">Doesn't Mean</div>
+              <ul class="voice-col__items voice-col__items--doesnt">
+                <li>Casual or overly friendly</li>
+                <li>Emoji-heavy communication</li>
+                <li>Patronizing explanations</li>
+                <li>Softening sovereignty claims</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Messaging -->
+      <h3 class="mb-4">Platform &amp; Messaging</h3>
+      <div style="max-width: 65ch;">
+        <p class="mb-6 text-light-secondary">
+          <strong style="color: var(--surface);">Brand platform:</strong> "Torne-se Chainless." &mdash; Become unchained from every intermediary that stands between you and your wealth.
+        </p>
+        <p class="mb-6 text-light-secondary">
+          <strong style="color: var(--surface);">Category:</strong> Sovereign digital wealth &mdash; self-custody crypto wealth management for financially sophisticated Brazilians.
+        </p>
+        <p class="mb-6 text-light-secondary">
+          <strong style="color: var(--surface);">Core promise:</strong> Whenever someone interacts with Chainless, they should feel sovereign &mdash; in control, respected, and ahead.
+        </p>
+        <p class="text-light-secondary">
+          <strong style="color: var(--surface);">Manifesto line:</strong> "The entire financial system assumes someone else should hold your money. We disagree."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRINCIPLES ===== -->
+  <section class="section" id="principles">
+    <div class="container">
+      <p class="overline text-yellow mb-3">Design Principles</p>
+      <h2 class="mb-10">Five rules that break ties</h2>
+
+      <div class="principles-grid">
+        <div class="principle">
+          <div class="principle__number">1</div>
+          <div>
+            <div class="principle__title">Warm Authority</div>
+            <div class="principle__tagline">Premium without coldness. Confident without arrogance.</div>
+            <div class="principle__body">Every surface carries warm undertones. Blue-gray is institutional finance. Chainless is warm amber &mdash; the color of gold, of Brazilian sunlight. <code class="mono" style="font-size: 0.8125rem; color: var(--yellow-700);">#1C1B19</code> not <code class="mono" style="font-size: 0.8125rem; color: var(--warm-400);">#000000</code>.</div>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle__number">2</div>
+          <div>
+            <div class="principle__title">Restraint as Luxury</div>
+            <div class="principle__tagline">The 10% accent rule. Whitespace is breathing room.</div>
+            <div class="principle__body">Brand yellow appears at 10% of any composition. The remaining 90% is warm neutrals and dark surfaces. Every element on screen must justify its presence.</div>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle__number">3</div>
+          <div>
+            <div class="principle__title">Reveal, Don't Announce</div>
+            <div class="principle__tagline">The Magician's entrance &mdash; elements emerge from depth.</div>
+            <div class="principle__body">The blur-fade-up signature creates a "materializing" feel. Animations trigger once on scroll entry and stay. No bounce, no elastic, no attention-grabbing pulses.</div>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle__number">4</div>
+          <div>
+            <div class="principle__title">Architecture is the Brand</div>
+            <div class="principle__tagline">Self-custody is structural truth, not a feature checkbox.</div>
+            <div class="principle__body">Show the structure. Let the Doppelrand's double border reveal its construction. Let data values appear in monospace. No decorative dishonesty.</div>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle__number">5</div>
+          <div>
+            <div class="principle__title">Dual Voice, One System</div>
+            <div class="principle__tagline">The Magician writes the headlines. The Ruler builds the interface.</div>
+            <div class="principle__body">Fraunces speaks at brand moments. Satoshi governs product. IBM Plex Mono presents data. The 70/30 archetype ratio manifests at the typographic level.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ANTI-PATTERNS ===== -->
+  <section class="section--warm section">
+    <div class="container">
+      <p class="overline mb-3" style="color: var(--error);">Anti-Patterns</p>
+      <h2 class="mb-6">Never do this</h2>
+
+      <div class="anti-patterns">
+        <div class="anti-pattern">
+          <span class="anti-pattern__x">&times;</span>
+          <span>Use pure <code class="mono" style="font-size: 0.8125rem;">#000000</code> or <code class="mono" style="font-size: 0.8125rem;">black</code> &mdash; always warm dark</span>
+        </div>
+        <div class="anti-pattern">
+          <span class="anti-pattern__x">&times;</span>
+          <span>Use Tailwind default shadows &mdash; they break warm tinting</span>
+        </div>
+        <div class="anti-pattern">
+          <span class="anti-pattern__x">&times;</span>
+          <span>Use Fraunces for body text, nav, buttons, or forms</span>
+        </div>
+        <div class="anti-pattern">
+          <span class="anti-pattern__x">&times;</span>
+          <span>Use yellow as a section background fill</span>
+        </div>
+        <div class="anti-pattern">
+          <span class="anti-pattern__x">&times;</span>
+          <span>Use more than 3 dark/inverted sections per page</span>
+        </div>
+        <div class="anti-pattern">
+          <span class="anti-pattern__x">&times;</span>
+          <span>Use bounce, elastic, or spring-overshoot easing</span>
+        </div>
+        <div class="anti-pattern">
+          <span class="anti-pattern__x">&times;</span>
+          <span>Auto-play animations that can't be paused</span>
+        </div>
+        <div class="anti-pattern">
+          <span class="anti-pattern__x">&times;</span>
+          <span>Use cool-tinted grays (blue undertone)</span>
+        </div>
+        <div class="anti-pattern">
+          <span class="anti-pattern__x">&times;</span>
+          <span>Use "banco" in customer-facing content</span>
+        </div>
+        <div class="anti-pattern">
+          <span class="anti-pattern__x">&times;</span>
+          <span>Target people &mdash; target systems</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECH STACK ===== -->
+  <section class="section--tight" style="border-top: 1px solid rgba(28,27,25,0.06);">
+    <div class="container">
+      <p class="overline text-secondary mb-4">Tech Stack</p>
+      <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center;">
+        <span style="font-weight: 600;">Next.js 16</span>
+        <span style="color: var(--warm-300);">&middot;</span>
+        <span style="font-weight: 600;">Tailwind v4</span>
+        <span class="body-small text-secondary">(CSS-first @theme inline)</span>
+        <span style="color: var(--warm-300);">&middot;</span>
+        <span style="font-weight: 600;">Framer Motion 12</span>
+        <span style="color: var(--warm-300);">&middot;</span>
+        <span style="font-weight: 600;">Phosphor Icons</span>
+      </div>
+      <p class="body-small text-secondary mt-4">
+        All tokens live in <code class="mono" style="font-size: 0.8125rem;">globals.css</code> under <code class="mono" style="font-size: 0.8125rem;">@theme inline</code>. No <code class="mono" style="font-size: 0.8125rem;">tailwind.config.js</code>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">
+        <span class="footer__brand">Chainless</span> Brand Guidelines &middot; Generated 2026-03-24 &middot; Sovereign digital wealth
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -24,7 +24,7 @@ export function Hero() {
             transform: "scaleX(-1)",
           }}
         >
-          <source src="/hero-bg.mp4" type="video/mp4" />
+          <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-bg.mp4`} type="video/mp4" />
         </video>
         {/* Bottom fade — dissolves video into dark surface below */}
         <div

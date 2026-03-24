@@ -113,7 +113,7 @@ export function SpendCredit() {
               {/* Video + soft edge fades */}
               <div className="relative">
                 <video
-                  src="/card-hero-loop.mp4"
+                  src={`${process.env.__NEXT_ROUTER_BASEPATH || ""}/card-hero-loop.mp4`}
                   autoPlay
                   loop
                   muted

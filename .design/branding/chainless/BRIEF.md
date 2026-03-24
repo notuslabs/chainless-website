@@ -97,7 +97,7 @@
 - [x] Discovery & research
 - [x] Brand strategy & voice
 - [x] Visual identity
-- [ ] Design system
+- [x] Design system
 
 ## Notes
 Strategy and identity phases completed 2026-03-22 outside GSP structure, stored in /strategy and /identity directories. Brand work is being imported into GSP for the design system phase.
