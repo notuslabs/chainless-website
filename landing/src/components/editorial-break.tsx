@@ -31,6 +31,7 @@ const couplet1: Line[] = [
 const couplet2: Line[] = [
   {
     segments: [
+      { text: "A " },
       { text: "Chainless", highlight: true, bold: true },
       { text: " foi construída para " },
       { text: "você.", highlight: true, bold: true },
@@ -222,7 +223,7 @@ function CoupletLine({ line }: { line: Line }) {
       className="pull-quote font-serif text-xl italic leading-[1.4] tracking-tight md:text-3xl lg:text-[2.25rem]"
       style={{
         textShadow:
-          "0 2px 24px rgba(10,9,8,0.9), 0 4px 48px rgba(10,9,8,0.6)",
+          "0 2px 40px rgba(10,9,8,0.5), 0 4px 80px rgba(10,9,8,0.3)",
       }}
     >
       {line.segments.map((seg, j) =>
