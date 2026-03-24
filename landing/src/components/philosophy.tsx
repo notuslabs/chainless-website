@@ -75,7 +75,7 @@ export function Philosophy() {
             <FadeUp delay={0.1}>
               <h2
                 id="philosophy-heading"
-                className="max-w-[520px] font-serif text-[length:var(--text-section-heading)] font-bold leading-[1.06] tracking-[-0.03em] text-text-primary"
+                className="max-w-[520px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.03em] text-text-primary"
               >
                 Construído para
                 <br />
@@ -153,7 +153,7 @@ export function Philosophy() {
                       </div>
 
                       {/* Overline */}
-                      <span className="mb-4 block font-mono text-xs uppercase tracking-[0.2em] text-yellow-500/80">
+                      <span className="mb-4 block text-xs uppercase tracking-[0.2em] text-yellow-500/80">
                         {pillar.overline}
                       </span>
 
@@ -169,7 +169,7 @@ export function Philosophy() {
 
                       {/* Stat callout */}
                       <div className="mt-10 flex items-end gap-3 border-t border-warm-700/15 pt-8">
-                        <span className="font-mono text-3xl font-medium tabular-nums tracking-tight text-text-primary md:text-4xl">
+                        <span className="text-3xl font-medium tabular-nums tracking-tight text-text-primary md:text-4xl">
                           {pillar.stat}
                         </span>
                         <span className="mb-1 text-sm leading-snug text-warm-400/50">

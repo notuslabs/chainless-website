@@ -51,7 +51,7 @@ export function Hero() {
 
           {/* Eyebrow — pill badge */}
           <FadeUp delay={0.1}>
-            <span className="mb-10 inline-flex items-center gap-2.5 rounded-full border border-white/12 bg-dark-500/55 px-5 py-2 text-overline font-semibold uppercase tracking-[0.25em] text-warm-200 backdrop-blur-md">
+            <span className="mb-10 inline-flex items-center gap-2.5 rounded-full border border-white/12 bg-dark-500/55 px-4 py-1.5 text-overline font-semibold uppercase tracking-[0.25em] text-warm-200 backdrop-blur-md">
               <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/70" />
               Patrimonio digital soberano
             </span>
@@ -60,7 +60,7 @@ export function Hero() {
           {/* Headline — Fraunces, massive, left-aligned */}
           <FadeUp delay={0.2}>
             <h1
-              className="font-serif text-[clamp(2.75rem,2rem+3.3vw,5.25rem)] font-bold leading-[1.03] tracking-[-0.03em] text-text-primary"
+              className="font-serif text-[length:var(--text-hero-heading)] font-normal leading-[1.03] tracking-[-0.03em] text-text-primary"
               style={{
                 textShadow:
                   "0 0 60px rgba(10,9,8,0.45), 0 0 120px rgba(10,9,8,0.3), 0 0 200px rgba(10,9,8,0.2)",
@@ -121,12 +121,12 @@ export function Hero() {
               }}
             >
               <span className="flex items-center gap-2">
-                <span className="font-mono text-lg font-semibold tabular-nums text-yellow-500/90">150+</span>
+                <span className="text-lg font-semibold tabular-nums text-yellow-500/90">150+</span>
                 <span className="text-caption font-medium tracking-wide text-white/60">ativos digitais</span>
               </span>
               <span className="h-4 w-px bg-white/20" />
               <span className="flex items-center gap-2">
-                <span className="font-mono text-lg font-semibold tabular-nums text-yellow-500/90">Até 60%</span>
+                <span className="text-lg font-semibold tabular-nums text-yellow-500/90">Até 60%</span>
                 <span className="text-caption font-medium tracking-wide text-white/60">APY em DeFi</span>
               </span>
             </div>

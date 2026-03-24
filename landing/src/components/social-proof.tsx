@@ -185,7 +185,7 @@ export function SocialProof() {
               </span>
             </FadeUp>
             <FadeUp delay={0.1}>
-              <h2 className="max-w-[450px] font-serif text-[length:var(--text-section-heading)] font-bold leading-[1.06] tracking-[-0.03em] text-text-primary">
+              <h2 className="max-w-[450px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.03em] text-text-primary">
                 Vozes soberanas.
               </h2>
             </FadeUp>

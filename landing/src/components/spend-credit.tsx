@@ -38,7 +38,7 @@ export function SpendCredit() {
 
             <h2
               id="spend-heading"
-              className="font-serif text-[length:var(--text-section-heading)] font-bold leading-[1.06] tracking-[-0.03em] text-text-primary"
+              className="font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.03em] text-text-primary"
             >
               Compre dólares sem IOF{" "}
               <span className="text-warm-300/40">e gaste globalmente.</span>
@@ -55,10 +55,10 @@ export function SpendCredit() {
               className="mt-12 flex gap-6 md:mt-16 md:gap-10"
             >
               <div>
-                <dt className="mb-2 font-mono text-caption uppercase tracking-wider text-warm-400/50">
+                <dt className="mb-2 text-caption uppercase tracking-wider text-warm-400/50">
                   IOF bancário
                 </dt>
-                <dd className="font-mono text-3xl tabular-nums tracking-tight text-warm-300/40 md:text-4xl">
+                <dd className="text-3xl tabular-nums tracking-tight text-warm-300/40 md:text-4xl">
                   3,5%
                 </dd>
               </div>
@@ -67,10 +67,10 @@ export function SpendCredit() {
                 aria-hidden="true"
               />
               <div>
-                <dt className="mb-2 font-mono text-caption uppercase tracking-wider text-warm-400/50">
+                <dt className="mb-2 text-caption uppercase tracking-wider text-warm-400/50">
                   IOF via Chainless
                 </dt>
-                <dd className="font-mono text-3xl font-medium tabular-nums tracking-tight text-text-primary md:text-4xl">
+                <dd className="text-3xl font-medium tabular-nums tracking-tight text-text-primary md:text-4xl">
                   0%
                 </dd>
               </div>
@@ -146,7 +146,7 @@ export function SpendCredit() {
               </div>
 
               {/* Caption */}
-              <p className="mt-4 text-center font-mono text-caption uppercase tracking-[0.15em] text-warm-400/50">
+              <p className="mt-4 text-center text-caption uppercase tracking-[0.15em] text-warm-400/50">
                 Gaste USDC globalmente
               </p>
             </div>

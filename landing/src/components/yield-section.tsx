@@ -158,7 +158,7 @@ const PoolTicker = memo(function PoolTicker({
                 style={{ width: 14, height: 14 }}
               />
             )}
-            <span className="font-mono text-overline tracking-wider text-warm-400/50">
+            <span className="text-overline tracking-wider text-warm-400/50">
               {pool.protocol}
             </span>
           </div>
@@ -168,7 +168,7 @@ const PoolTicker = memo(function PoolTicker({
       {/* APY value */}
       <div className="text-right">
         <span
-          className={`font-mono text-lg font-semibold tabular-nums ${
+          className={`text-lg font-semibold tabular-nums ${
             isTopPool ? "text-yellow-500" : "text-text-primary/75"
           }`}
           aria-live="off"
@@ -176,7 +176,7 @@ const PoolTicker = memo(function PoolTicker({
         >
           {value.toFixed(1)}%
         </span>
-        <span className="block font-mono text-overline text-warm-400/40">
+        <span className="block text-overline text-warm-400/40">
           {pool.range}
         </span>
       </div>
@@ -217,7 +217,7 @@ export function YieldSection() {
             <FadeUp delay={0.1}>
               <h2
                 id="yield-heading"
-                className="max-w-[500px] font-serif text-[length:var(--text-section-heading)] font-bold leading-[1.06] tracking-[-0.03em] text-text-primary"
+                className="max-w-[500px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.03em] text-text-primary"
               >
                 Seu patrimônio.
                 <br />
@@ -286,7 +286,7 @@ export function YieldSection() {
                       className="text-warm-400/60 transition-colors duration-500 group-hover:text-yellow-500/80"
                     />
                   </div>
-                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-yellow-500/80">
+                  <span className="text-xs uppercase tracking-[0.2em] text-yellow-500/80">
                     Proteger
                   </span>
                 </div>
@@ -364,7 +364,7 @@ export function YieldSection() {
                     className="text-yellow-500"
                   />
                 </div>
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-yellow-500">
+                <span className="text-xs uppercase tracking-[0.2em] text-yellow-500">
                   Crescer
                 </span>
               </div>
@@ -387,7 +387,7 @@ export function YieldSection() {
                 }}
               >
                 <div className="mb-4 flex items-center justify-between">
-                  <span className="font-mono text-caption uppercase tracking-wider text-warm-400/50">
+                  <span className="text-caption uppercase tracking-wider text-warm-400/50">
                     Pools ativos
                   </span>
                   <div className="flex items-center gap-2">

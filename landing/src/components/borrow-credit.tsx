@@ -110,7 +110,7 @@ export function BorrowCredit() {
             <FadeUp delay={0.1}>
               <h2
                 id="credit-heading"
-                className="mt-8 max-w-[520px] font-serif text-[length:var(--text-section-heading)] font-bold leading-[1.06] tracking-[-0.03em] text-text-primary"
+                className="mt-8 max-w-[520px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.03em] text-text-primary"
               >
                 Acesse dólares
                 <br />
@@ -150,7 +150,7 @@ export function BorrowCredit() {
                 </span>
 
                 {/* Step label */}
-                <span className="mb-8 font-mono text-caption uppercase tracking-[0.2em] text-yellow-500/70">
+                <span className="mb-8 text-caption uppercase tracking-[0.2em] text-yellow-500/70">
                   {step.label}
                 </span>
 
@@ -168,7 +168,7 @@ export function BorrowCredit() {
                     <span className="block text-lg font-medium tracking-tight text-text-primary">
                       {step.tokenName}
                     </span>
-                    <span className="mt-0.5 block font-mono text-caption tracking-wider text-warm-400/45">
+                    <span className="mt-0.5 block text-caption tracking-wider text-warm-400/45">
                       {step.tokenTicker}
                     </span>
                   </div>
@@ -177,7 +177,7 @@ export function BorrowCredit() {
                 {/* Key metric */}
                 <div className="mt-auto min-h-[5rem]">
                   <span
-                    className={`block font-mono text-3xl font-semibold tabular-nums tracking-tight md:text-4xl ${
+                    className={`block text-3xl font-semibold tabular-nums tracking-tight md:text-4xl ${
                       step.metricAccent
                         ? "text-emerald-400"
                         : "text-text-primary/90"
@@ -186,12 +186,12 @@ export function BorrowCredit() {
                     {step.metric}
                   </span>
                   {step.subMetric && (
-                    <span className="mt-1 block font-mono text-caption text-warm-400/45">
+                    <span className="mt-1 block text-caption text-warm-400/45">
                       {step.subMetric}
                     </span>
                   )}
                   {step.badge && (
-                    <span className="mt-2.5 inline-flex rounded-full border border-yellow-500/20 bg-yellow-500/[0.07] px-3 py-1 font-mono text-caption font-medium text-yellow-500/80">
+                    <span className="mt-2.5 inline-flex rounded-full border border-yellow-500/20 bg-yellow-500/[0.07] px-3 py-1 text-caption font-medium text-yellow-500/80">
                       {step.badge}
                     </span>
                   )}

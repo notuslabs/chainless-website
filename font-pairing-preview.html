@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chainless — Fraunces + Sans Pairing Preview</title>
+
+  <!-- Fraunces (serif — constant across all slides) -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
+
+  <!-- Sans option 1: Satoshi (current) -->
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
+
+  <!-- Sans option 2: Geist -->
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet" />
+
+  <!-- Sans option 3: Switzer -->
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
+
+  <!-- Sans option 4: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Sans option 5: Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark-500: #1C1B19;
+      --dark-600: #181716;
+      --dark-800: #0F0E0D;
+      --warm-200: #C6C0B6;
+      --warm-400: #87837C;
+      --yellow-500: #FFC73D;
+      --yellow-400: #FFD486;
+      --text-primary: #FAFAF8;
+      --text-secondary: #B0ADA6;
+      --font-serif: 'Fraunces', Georgia, serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background: #0A0908;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background-color: var(--yellow-500);
+      color: var(--dark-500);
+    }
+
+    /* ── Sans family classes ── */
+    .sans-satoshi { font-family: 'Satoshi', 'General Sans', ui-sans-serif, system-ui, sans-serif; }
+    .sans-geist { font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; }
+    .sans-switzer { font-family: 'Switzer', ui-sans-serif, system-ui, sans-serif; }
+    .sans-inter { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+    .sans-jakarta { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif; }
+
+    /* ── Navigation ── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 24px;
+      background: rgba(10, 9, 8, 0.88);
+      backdrop-filter: blur(20px) saturate(1.4);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .nav-btn {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: transparent;
+      color: var(--warm-400);
+      font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+      white-space: nowrap;
+    }
+
+    .nav-btn:hover {
+      border-color: rgba(255, 199, 61, 0.3);
+      color: var(--text-primary);
+      background: rgba(255, 199, 61, 0.06);
+    }
+
+    .nav-btn.active {
+      border-color: var(--yellow-500);
+      color: var(--dark-500);
+      background: var(--yellow-500);
+      font-weight: 600;
+    }
+
+    /* ── Slide container ── */
+    .slide {
+      min-height: 100dvh;
+      display: none;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    /* ── Hero section ── */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 48px 80px;
+      position: relative;
+      background: var(--dark-500);
+    }
+
+    /* Atmospheric glow */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(255, 199, 61, 0.06) 0%, transparent 70%);
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Noise */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.025;
+      z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-inner {
+      max-width: 640px;
+    }
+
+    /* ── Eyebrow ── */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      padding: 8px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(28, 27, 25, 0.55);
+      backdrop-filter: blur(12px);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--warm-200);
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 199, 61, 0.7);
+    }
+
+    /* ── Headline (Fraunces always) ── */
+    .headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2.75rem, 2rem + 3.3vw, 5.25rem);
+      font-weight: 600;
+      line-height: 1.03;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      text-shadow:
+        0 0 60px rgba(10, 9, 8, 0.45),
+        0 0 120px rgba(10, 9, 8, 0.3),
+        0 0 200px rgba(10, 9, 8, 0.2);
+    }
+
+    /* ── Subheadline (inherits slide sans) ── */
+    .subheadline {
+      margin-top: 32px;
+      max-width: 460px;
+      font-size: clamp(1.1rem, 1rem + 0.45vw, 1.25rem);
+      font-weight: 400;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.88);
+      text-shadow: 0 1px 16px rgba(10, 9, 8, 0.9), 0 2px 40px rgba(10, 9, 8, 0.6);
+    }
+
+    /* ── CTA row ── */
+    .cta-row {
+      margin-top: 56px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px 16px 32px;
+      border-radius: 999px;
+      border: none;
+      background: var(--yellow-500);
+      color: var(--dark-500);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 30px rgba(255, 199, 61, 0.25);
+      transition: all 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--yellow-400);
+      box-shadow: 0 4px 40px rgba(255, 199, 61, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(28, 27, 25, 0.1);
+      transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+    }
+
+    .btn-primary:hover .btn-icon {
+      transform: translate(2px, -1px) scale(1.1);
+    }
+
+    .btn-secondary {
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: underline;
+      text-decoration-color: rgba(255, 255, 255, 0.3);
+      text-underline-offset: 4px;
+      transition: all 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .btn-secondary:hover {
+      color: var(--yellow-500);
+      text-decoration-color: rgba(255, 199, 61, 0.6);
+    }
+
+    /* ── Trust strip ── */
+    .trust-strip {
+      margin-top: 80px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trust-value {
+      font-size: 18px;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      color: rgba(255, 199, 61, 0.9);
+    }
+
+    .trust-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .trust-divider {
+      width: 1px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    /* ── Section samples ── */
+    .section-sample {
+      position: relative;
+      z-index: 2;
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .sample-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255, 199, 61, 0.5);
+      margin-bottom: 16px;
+    }
+
+    .section-heading-sample {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+      font-weight: 600;
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+    }
+
+    .pull-quote-sample {
+      margin-top: 24px;
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.6;
+      color: rgba(250, 250, 248, 0.85);
+      max-width: 500px;
+      text-wrap: pretty;
+    }
+
+    /* ── Body text sample — shows the sans at reading size ── */
+    .body-sample {
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .body-text-sample {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.56;
+      color: rgba(250, 250, 248, 0.8);
+      max-width: 520px;
+    }
+
+    .body-text-sample strong {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .data-row {
+      margin-top: 24px;
+      display: flex;
+      gap: 32px;
+      align-items: baseline;
+    }
+
+    .data-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .data-value {
+      font-size: 28px;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .data-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--warm-400);
+    }
+
+    /* ── Nav label sample ── */
+    .nav-sample {
+      margin-top: 32px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-sample-item {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-sample-item.active-sample {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ── Bottom info bar ── */
+    .info-bar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px 48px;
+      background: rgba(10, 9, 8, 0.6);
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(20px);
+    }
+
+    .font-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--yellow-500);
+      letter-spacing: 0.01em;
+    }
+
+    .font-meta {
+      font-size: 13px;
+      color: var(--warm-400);
+      line-height: 1.5;
+    }
+
+    .font-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .tag-current {
+      background: rgba(255, 199, 61, 0.12);
+      color: var(--yellow-500);
+      border: 1px solid rgba(255, 199, 61, 0.2);
+    }
+
+    .tag-recommended {
+      background: rgba(45, 138, 86, 0.12);
+      color: #5AE08A;
+      border: 1px solid rgba(45, 138, 86, 0.25);
+    }
+
+    .tag-option {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--warm-400);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .info-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .info-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .slide-counter {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--warm-400);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .personality-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 0;
+    }
+
+    .personality-tag {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--warm-400);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* ── Arrow icon ── */
+    .arrow-svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    /* ── Weight controller panel ── */
+    .weight-panel {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 14px 28px;
+      background: rgba(10, 9, 8, 0.88);
+      backdrop-filter: blur(24px) saturate(1.4);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+    }
+
+    .weight-control {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .weight-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--warm-400);
+      white-space: nowrap;
+    }
+
+    .weight-value {
+      font-size: 14px;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      color: var(--yellow-500);
+      min-width: 28px;
+      text-align: center;
+    }
+
+    .weight-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 140px;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.08);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .weight-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--yellow-500);
+      border: 2px solid var(--dark-500);
+      box-shadow: 0 0 12px rgba(255, 199, 61, 0.3);
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1), box-shadow 0.2s;
+    }
+
+    .weight-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 20px rgba(255, 199, 61, 0.5);
+    }
+
+    .weight-slider::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--yellow-500);
+      border: 2px solid var(--dark-500);
+      box-shadow: 0 0 12px rgba(255, 199, 61, 0.3);
+      cursor: pointer;
+    }
+
+    .weight-divider {
+      width: 1px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* ── Keyboard hint ── */
+    .keyboard-hint {
+      position: fixed;
+      bottom: 80px;
+      right: 16px;
+      z-index: 200;
+      font-size: 11px;
+      color: var(--warm-400);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    kbd {
+      display: inline-block;
+      padding: 2px 6px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.04);
+      font-family: 'Satoshi', ui-sans-serif, sans-serif;
+      font-size: 11px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .hero { padding: 100px 24px 60px; }
+      .info-bar { padding: 16px 24px; flex-direction: column; align-items: flex-start; }
+      .nav { gap: 4px; padding: 12px 16px; flex-wrap: wrap; justify-content: center; }
+      .nav-btn { font-size: 11px; padding: 6px 12px; }
+      .cta-row { gap: 20px; }
+      .trust-strip { gap: 16px; }
+      .info-right { align-self: flex-end; }
+      .weight-panel { flex-wrap: wrap; gap: 12px; padding: 12px 20px; bottom: 12px; }
+      .weight-slider { width: 100px; }
+      .data-row { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <button class="nav-btn active" data-slide="0">1 — Satoshi</button>
+    <button class="nav-btn" data-slide="1">2 — Geist</button>
+    <button class="nav-btn" data-slide="2">3 — Switzer</button>
+    <button class="nav-btn" data-slide="3">4 — Inter</button>
+    <button class="nav-btn" data-slide="4">5 — Plus Jakarta Sans</button>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- SLIDE 1: Fraunces + Satoshi (Current) -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <div class="slide active sans-satoshi" id="slide-0">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-inner">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Patrimônio digital soberano
+          </div>
+          <h1 class="headline">Torne-se Chainless.</h1>
+          <p class="subheadline">Cresça seu patrimônio com total controle.</p>
+          <div class="cta-row">
+            <a href="#" class="btn-primary">
+              Começar agora
+              <span class="btn-icon">
+                <svg class="arrow-svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+              </span>
+            </a>
+            <button class="btn-secondary">Entenda autocustódia</button>
+          </div>
+          <div class="trust-strip">
+            <span class="trust-item">
+              <span class="trust-value">150+</span>
+              <span class="trust-label">ativos digitais</span>
+            </span>
+            <span class="trust-divider"></span>
+            <span class="trust-item">
+              <span class="trust-value">Até 60%</span>
+              <span class="trust-label">APY em DeFi</span>
+            </span>
+          </div>
+
+          <div class="section-sample">
+            <div class="sample-label">Section heading</div>
+            <h2 class="section-heading-sample">Rentabilidade que desafia o convencional.</h2>
+            <p class="pull-quote-sample">"O dinheiro que você guarda deveria trabalhar por você — não contra você."</p>
+          </div>
+
+          <div class="body-sample">
+            <div class="sample-label">Body &amp; data</div>
+            <p class="body-text-sample">Autocustódia real significa que <strong>suas chaves são suas</strong>. Sem intermediários, sem permissões, sem limites de saque. Seu patrimônio digital sob seu controle absoluto.</p>
+            <div class="data-row">
+              <div class="data-item">
+                <span class="data-value">R$ 2.4M</span>
+                <span class="data-label">Volume 24h</span>
+              </div>
+              <div class="data-item">
+                <span class="data-value">12.8%</span>
+                <span class="data-label">APY médio</span>
+              </div>
+              <div class="data-item">
+                <span class="data-value">847</span>
+                <span class="data-label">Usuários ativos</span>
+              </div>
+            </div>
+            <div class="nav-sample">
+              <span class="nav-sample-item active-sample">Início</span>
+              <span class="nav-sample-item">Produtos</span>
+              <span class="nav-sample-item">Rendimentos</span>
+              <span class="nav-sample-item">Sobre</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <div class="info-left">
+        <span class="font-tag tag-current">Current</span>
+        <div>
+          <div class="font-name">Fraunces + Satoshi</div>
+          <div class="font-meta">Warm humanist geometry — friendly and approachable, but lacks the Ruler tension to discipline Fraunces</div>
+        </div>
+      </div>
+      <div class="info-right">
+        <div class="personality-row">
+          <span class="personality-tag">Contrast ●●○○○</span>
+          <span class="personality-tag">Ruler ●●○○○</span>
+          <span class="personality-tag">Trust ●●●○○</span>
+        </div>
+        <span class="slide-counter">1 / 5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- SLIDE 2: Fraunces + Geist (Recommended) -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <div class="slide sans-geist" id="slide-1">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-inner">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Patrimônio digital soberano
+          </div>
+          <h1 class="headline">Torne-se Chainless.</h1>
+          <p class="subheadline">Cresça seu patrimônio com total controle.</p>
+          <div class="cta-row">
+            <a href="#" class="btn-primary">
+              Começar agora
+              <span class="btn-icon">
+                <svg class="arrow-svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+              </span>
+            </a>
+            <button class="btn-secondary">Entenda autocustódia</button>
+          </div>
+          <div class="trust-strip">
+            <span class="trust-item">
+              <span class="trust-value">150+</span>
+              <span class="trust-label">ativos digitais</span>
+            </span>
+            <span class="trust-divider"></span>
+            <span class="trust-item">
+              <span class="trust-value">Até 60%</span>
+              <span class="trust-label">APY em DeFi</span>
+            </span>
+          </div>
+
+          <div class="section-sample">
+            <div class="sample-label">Section heading</div>
+            <h2 class="section-heading-sample">Rentabilidade que desafia o convencional.</h2>
+            <p class="pull-quote-sample">"O dinheiro que você guarda deveria trabalhar por você — não contra você."</p>
+          </div>
+
+          <div class="body-sample">
+            <div class="sample-label">Body &amp; data</div>
+            <p class="body-text-sample">Autocustódia real significa que <strong>suas chaves são suas</strong>. Sem intermediários, sem permissões, sem limites de saque. Seu patrimônio digital sob seu controle absoluto.</p>
+            <div class="data-row">
+              <div class="data-item">
+                <span class="data-value">R$ 2.4M</span>
+                <span class="data-label">Volume 24h</span>
+              </div>
+              <div class="data-item">
+                <span class="data-value">12.8%</span>
+                <span class="data-label">APY médio</span>
+              </div>
+              <div class="data-item">
+                <span class="data-value">847</span>
+                <span class="data-label">Usuários ativos</span>
+              </div>
+            </div>
+            <div class="nav-sample">
+              <span class="nav-sample-item active-sample">Início</span>
+              <span class="nav-sample-item">Produtos</span>
+              <span class="nav-sample-item">Rendimentos</span>
+              <span class="nav-sample-item">Sobre</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <div class="info-left">
+        <span class="font-tag tag-recommended">Recommended</span>
+        <div>
+          <div class="font-name">Fraunces + Geist</div>
+          <div class="font-meta">Tight mechanical sans — flat terminals, zero warmth in geometry. Pure Ruler discipline cages Fraunces's Magician. Geist Mono sibling included.</div>
+        </div>
+      </div>
+      <div class="info-right">
+        <div class="personality-row">
+          <span class="personality-tag">Contrast ●●●●●</span>
+          <span class="personality-tag">Ruler ●●●●●</span>
+          <span class="personality-tag">Trust ●●●●○</span>
+        </div>
+        <span class="slide-counter">2 / 5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- SLIDE 3: Fraunces + Switzer -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <div class="slide sans-switzer" id="slide-2">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-inner">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Patrimônio digital soberano
+          </div>
+          <h1 class="headline">Torne-se Chainless.</h1>
+          <p class="subheadline">Cresça seu patrimônio com total controle.</p>
+          <div class="cta-row">
+            <a href="#" class="btn-primary">
+              Começar agora
+              <span class="btn-icon">
+                <svg class="arrow-svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+              </span>
+            </a>
+            <button class="btn-secondary">Entenda autocustódia</button>
+          </div>
+          <div class="trust-strip">
+            <span class="trust-item">
+              <span class="trust-value">150+</span>
+              <span class="trust-label">ativos digitais</span>
+            </span>
+            <span class="trust-divider"></span>
+            <span class="trust-item">
+              <span class="trust-value">Até 60%</span>
+              <span class="trust-label">APY em DeFi</span>
+            </span>
+          </div>
+
+          <div class="section-sample">
+            <div class="sample-label">Section heading</div>
+            <h2 class="section-heading-sample">Rentabilidade que desafia o convencional.</h2>
+            <p class="pull-quote-sample">"O dinheiro que você guarda deveria trabalhar por você — não contra você."</p>
+          </div>
+
+          <div class="body-sample">
+            <div class="sample-label">Body &amp; data</div>
+            <p class="body-text-sample">Autocustódia real significa que <strong>suas chaves são suas</strong>. Sem intermediários, sem permissões, sem limites de saque. Seu patrimônio digital sob seu controle absoluto.</p>
+            <div class="data-row">
+              <div class="data-item">
+                <span class="data-value">R$ 2.4M</span>
+                <span class="data-label">Volume 24h</span>
+              </div>
+              <div class="data-item">
+                <span class="data-value">12.8%</span>
+                <span class="data-label">APY médio</span>
+              </div>
+              <div class="data-item">
+                <span class="data-value">847</span>
+                <span class="data-label">Usuários ativos</span>
+              </div>
+            </div>
+            <div class="nav-sample">
+              <span class="nav-sample-item active-sample">Início</span>
+              <span class="nav-sample-item">Produtos</span>
+              <span class="nav-sample-item">Rendimentos</span>
+              <span class="nav-sample-item">Sobre</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <div class="info-left">
+        <span class="font-tag tag-option">Option</span>
+        <div>
+          <div class="font-name">Fraunces + Switzer</div>
+          <div class="font-meta">Sharper neo-grotesque — crisper terminals than Satoshi, more corporate spine. Free via FontShare. Easy swap from current stack.</div>
+        </div>
+      </div>
+      <div class="info-right">
+        <div class="personality-row">
+          <span class="personality-tag">Contrast ●●●○○</span>
+          <span class="personality-tag">Ruler ●●●●○</span>
+          <span class="personality-tag">Trust ●●●●○</span>
+        </div>
+        <span class="slide-counter">3 / 5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- SLIDE 4: Fraunces + Inter -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <div class="slide sans-inter" id="slide-3">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-inner">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Patrimônio digital soberano
+          </div>
+          <h1 class="headline">Torne-se Chainless.</h1>
+          <p class="subheadline">Cresça seu patrimônio com total controle.</p>
+          <div class="cta-row">
+            <a href="#" class="btn-primary">
+              Começar agora
+              <span class="btn-icon">
+                <svg class="arrow-svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+              </span>
+            </a>
+            <button class="btn-secondary">Entenda autocustódia</button>
+          </div>
+          <div class="trust-strip">
+            <span class="trust-item">
+              <span class="trust-value">150+</span>
+              <span class="trust-label">ativos digitais</span>
+            </span>
+            <span class="trust-divider"></span>
+            <span class="trust-item">
+              <span class="trust-value">Até 60%</span>
+              <span class="trust-label">APY em DeFi</span>
+            </span>
+          </div>
+
+          <div class="section-sample">
+            <div class="sample-label">Section heading</div>
+            <h2 class="section-heading-sample">Rentabilidade que desafia o convencional.</h2>
+            <p class="pull-quote-sample">"O dinheiro que você guarda deveria trabalhar por você — não contra você."</p>
+          </div>
+
+          <div class="body-sample">
+            <div class="sample-label">Body &amp; data</div>
+            <p class="body-text-sample">Autocustódia real significa que <strong>suas chaves são suas</strong>. Sem intermediários, sem permissões, sem limites de saque. Seu patrimônio digital sob seu controle absoluto.</p>
+            <div class="data-row">
+              <div class="data-item">
+                <span class="data-value">R$ 2.4M</span>
+                <span class="data-label">Volume 24h</span>
+              </div>
+              <div class="data-item">
+                <span class="data-value">12.8%</span>
+                <span class="data-label">APY médio</span>
+              </div>
+              <div class="data-item">
+                <span class="data-value">847</span>
+                <span class="data-label">Usuários ativos</span>
+              </div>
+            </div>
+            <div class="nav-sample">
+              <span class="nav-sample-item active-sample">Início</span>
+              <span class="nav-sample-item">Produtos</span>
+              <span class="nav-sample-item">Rendimentos</span>
+              <span class="nav-sample-item">Sobre</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <div class="info-left">
+        <span class="font-tag tag-option">Option</span>
+        <div>
+          <div class="font-name">Fraunces + Inter</div>
+          <div class="font-meta">Engineered precision — highest x-height, clinical Swiss clarity. Strong institutional trust, but potentially generic at this point.</div>
+        </div>
+      </div>
+      <div class="info-right">
+        <div class="personality-row">
+          <span class="personality-tag">Contrast ●●●●○</span>
+          <span class="personality-tag">Ruler ●●●●○</span>
+          <span class="personality-tag">Trust ●●●●●</span>
+        </div>
+        <span class="slide-counter">4 / 5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- SLIDE 5: Fraunces + Plus Jakarta Sans -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <div class="slide sans-jakarta" id="slide-4">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-inner">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Patrimônio digital soberano
+          </div>
+          <h1 class="headline">Torne-se Chainless.</h1>
+          <p class="subheadline">Cresça seu patrimônio com total controle.</p>
+          <div class="cta-row">
+            <a href="#" class="btn-primary">
+              Começar agora
+              <span class="btn-icon">
+                <svg class="arrow-svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+              </span>
+            </a>
+            <button class="btn-secondary">Entenda autocustódia</button>
+          </div>
+          <div class="trust-strip">
+            <span class="trust-item">
+              <span class="trust-value">150+</span>
+              <span class="trust-label">ativos digitais</span>
+            </span>
+            <span class="trust-divider"></span>
+            <span class="trust-item">
+              <span class="trust-value">Até 60%</span>
+              <span class="trust-label">APY em DeFi</span>
+            </span>
+          </div>
+
+          <div class="section-sample">
+            <div class="sample-label">Section heading</div>
+            <h2 class="section-heading-sample">Rentabilidade que desafia o convencional.</h2>
+            <p class="pull-quote-sample">"O dinheiro que você guarda deveria trabalhar por você — não contra você."</p>
+          </div>
+
+          <div class="body-sample">
+            <div class="sample-label">Body &amp; data</div>
+            <p class="body-text-sample">Autocustódia real significa que <strong>suas chaves são suas</strong>. Sem intermediários, sem permissões, sem limites de saque. Seu patrimônio digital sob seu controle absoluto.</p>
+            <div class="data-row">
+              <div class="data-item">
+                <span class="data-value">R$ 2.4M</span>
+                <span class="data-label">Volume 24h</span>
+              </div>
+              <div class="data-item">
+                <span class="data-value">12.8%</span>
+                <span class="data-label">APY médio</span>
+              </div>
+              <div class="data-item">
+                <span class="data-value">847</span>
+                <span class="data-label">Usuários ativos</span>
+              </div>
+            </div>
+            <div class="nav-sample">
+              <span class="nav-sample-item active-sample">Início</span>
+              <span class="nav-sample-item">Produtos</span>
+              <span class="nav-sample-item">Rendimentos</span>
+              <span class="nav-sample-item">Sobre</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <div class="info-left">
+        <span class="font-tag tag-option">Option</span>
+        <div>
+          <div class="font-name">Fraunces + Plus Jakarta Sans</div>
+          <div class="font-meta">Geometric with soft precision — rounded dots, sharp stems. Contemporary fintech feel with just enough warmth to not feel cold.</div>
+        </div>
+      </div>
+      <div class="info-right">
+        <div class="personality-row">
+          <span class="personality-tag">Contrast ●●●○○</span>
+          <span class="personality-tag">Ruler ●●●○○</span>
+          <span class="personality-tag">Trust ●●●●○</span>
+        </div>
+        <span class="slide-counter">5 / 5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Keyboard hint -->
+  <div class="keyboard-hint">
+    <kbd>&larr;</kbd> <kbd>&rarr;</kbd> to navigate
+  </div>
+
+  <!-- Weight controller panel -->
+  <div class="weight-panel">
+    <div class="weight-control">
+      <span class="weight-label">Headline</span>
+      <input type="range" class="weight-slider" id="headline-weight" min="300" max="900" step="100" value="600" />
+      <span class="weight-value" id="headline-weight-value">600</span>
+    </div>
+    <div class="weight-divider"></div>
+    <div class="weight-control">
+      <span class="weight-label">Section</span>
+      <input type="range" class="weight-slider" id="section-weight" min="300" max="900" step="100" value="600" />
+      <span class="weight-value" id="section-weight-value">600</span>
+    </div>
+    <div class="weight-divider"></div>
+    <div class="weight-control">
+      <span class="weight-label">Quote</span>
+      <input type="range" class="weight-slider" id="quote-weight" min="300" max="900" step="100" value="400" />
+      <span class="weight-value" id="quote-weight-value">400</span>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var slides = document.querySelectorAll('.slide');
+      var navBtns = document.querySelectorAll('.nav-btn');
+      var current = 0;
+
+      function goTo(index) {
+        if (index < 0 || index >= slides.length) return;
+        slides[current].classList.remove('active');
+        navBtns[current].classList.remove('active');
+        current = index;
+        slides[current].classList.add('active');
+        navBtns[current].classList.add('active');
+      }
+
+      navBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          goTo(parseInt(btn.dataset.slide, 10));
+        });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          goTo(current + 1);
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          goTo(current - 1);
+        }
+      });
+
+      /* ── Weight controller ── */
+      var headlineSlider = document.getElementById('headline-weight');
+      var headlineValue = document.getElementById('headline-weight-value');
+      var sectionSlider = document.getElementById('section-weight');
+      var sectionValue = document.getElementById('section-weight-value');
+      var quoteSlider = document.getElementById('quote-weight');
+      var quoteValue = document.getElementById('quote-weight-value');
+
+      var headlines = document.querySelectorAll('.headline');
+      var sectionHeadings = document.querySelectorAll('.section-heading-sample');
+      var quotes = document.querySelectorAll('.pull-quote-sample');
+
+      headlineSlider.addEventListener('input', function () {
+        var w = headlineSlider.value;
+        headlineValue.textContent = w;
+        headlines.forEach(function (el) { el.style.fontWeight = w; });
+      });
+
+      sectionSlider.addEventListener('input', function () {
+        var w = sectionSlider.value;
+        sectionValue.textContent = w;
+        sectionHeadings.forEach(function (el) { el.style.fontWeight = w; });
+      });
+
+      quoteSlider.addEventListener('input', function () {
+        var w = quoteSlider.value;
+        quoteValue.textContent = w;
+        quotes.forEach(function (el) { el.style.fontWeight = w; });
+      });
+    })();
+  </script>
+
+</body>
+</html>

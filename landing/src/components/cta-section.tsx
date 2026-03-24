@@ -85,7 +85,7 @@ export function CTASection() {
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <h2 className="font-serif text-[clamp(2.5rem,1.8rem+2.8vw,4rem)] font-bold leading-[1.04] tracking-[-0.03em] text-text-primary">
+          <h2 className="font-serif text-[clamp(2.5rem,1.8rem+2.8vw,4rem)] font-normal leading-[1.04] tracking-[-0.03em] text-text-primary">
             <TextReveal delay={0.15}>
               Seu patrimônio merece ser só seu.
             </TextReveal>

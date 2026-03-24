@@ -1,26 +1,9 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Satoshi';
-  src: url('https://cdn.fontshare.com/wf/EKRUWEST5UPZM2SXO67CHYRBDKVL5YVFSRYAHIZXKFOXKJAC3NGA/GGBMWESBXAMTA7EWXSJUOO2BGFJW6VF4RJSGS3JGZZXZ3CSAVHAQ/SATOSHI-VARIABLE.woff2') format('woff2');
-  font-weight: 300 900;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Satoshi';
-  src: url('https://cdn.fontshare.com/wf/EKRUWEST5UPZM2SXO67CHYRBDKVL5YVFSRYAHIZXKFOXKJAC3NGA/GGBMWESBXAMTA7EWXSJUOO2BGFJW6VF4RJSGS3JGZZXZ3CSAVHAQ/SATOSHI-VARIABLEITALIC.woff2') format('woff2');
-  font-weight: 300 900;
-  font-display: swap;
-  font-style: italic;
-}
-
 @theme inline {
-  /* Typography */
-  --font-sans: 'Satoshi', 'General Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* Typography — Geist + Fraunces (2-font system) */
+  --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-serif: 'Fraunces', 'Newsreader', 'Georgia', 'Times New Roman', serif;
-  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
 
   /* Brand Yellow — warm gold, desaturated for luxury */
   --color-yellow-50: #FFF8F0;
@@ -91,12 +74,15 @@
   --container-content: 1200px;
 
   /* Micro type sizes (extend Tailwind's scale) */
-  --text-overline: 0.75rem;
+  --text-overline: 0.5625rem;
   --text-caption: 0.8125rem;
   --text-small: 0.9375rem;
 
   /* Section heading — fluid type */
   --text-section-heading: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+
+  /* Hero heading — fluid type, larger than section */
+  --text-hero-heading: clamp(3.5rem, 2.5rem + 4vw, 6.5rem);
 
   /* Doppelrand card system */
   --doppelrand-radius-outer: 2.25rem;

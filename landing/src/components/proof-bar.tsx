@@ -47,7 +47,7 @@ export function ProofBar() {
                   i > 0 ? "border-l border-warm-700/15" : ""
                 }`}
               >
-                <dd className="font-mono text-xl sm:text-2xl md:text-3xl font-medium text-text-primary tabular-nums tracking-tight">
+                <dd className="text-xl sm:text-2xl md:text-3xl font-medium text-text-primary tabular-nums tracking-tight">
                   <AnimatedCounter
                     target={item.numericValue}
                     prefix={item.prefix}
