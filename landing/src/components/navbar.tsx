@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import { List, X, ArrowUpRight } from "@phosphor-icons/react";
 import { ChainlessLogo } from "./chainless-logo";
+import { EASE_PREMIUM } from "./motion";
 
 const navItems = [
   { label: "Sobre", href: "#sobre" },
@@ -28,7 +29,7 @@ export function Navbar() {
         className="fixed left-1/2 z-[55] -translate-x-1/2"
         initial={{ opacity: 0, y: -20, filter: "blur(10px)", top: 20 }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)", top: scrolled ? 64 : 20 }}
-        transition={{ duration: 0.9, delay: 0.3, ease: [0.32, 0.72, 0, 1] }}
+        transition={{ duration: 0.9, delay: 0.3, ease: EASE_PREMIUM }}
       >
         <motion.div
           className="flex items-center gap-1 rounded-full px-2 py-2"
@@ -46,7 +47,7 @@ export function Navbar() {
               ? "blur(40px) saturate(1.8)"
               : "blur(20px) saturate(1.4)",
           }}
-          transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
+          transition={{ duration: 0.6, ease: EASE_PREMIUM }}
           style={{
             border: "1px solid",
             WebkitBackdropFilter: scrolled
@@ -68,7 +69,7 @@ export function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className="rounded-full px-4 py-2 text-[13px] font-medium text-warm-300/80 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-white/[0.06] hover:text-[#FAFAF8] active:scale-[0.98]"
+                className="rounded-full px-4 py-2 text-caption font-medium text-warm-300/80 transition-all duration-500 ease-premium hover:bg-white/[0.06] hover:text-text-primary active:scale-[0.98]"
               >
                 {item.label}
               </a>
@@ -78,10 +79,10 @@ export function Navbar() {
           {/* CTA — Button-in-Button trailing icon pattern */}
           <a
             href="#comecar"
-            className="group ml-1.5 hidden items-center gap-2 rounded-full bg-yellow-500 py-2 pl-5 pr-2 text-[13px] font-semibold text-dark-500 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-yellow-400 active:scale-[0.97] md:flex"
+            className="group ml-1.5 hidden items-center gap-2 rounded-full bg-yellow-500 py-2 pl-5 pr-2 text-caption font-semibold text-dark-500 transition-all duration-500 ease-premium hover:bg-yellow-400 active:scale-[0.97] md:flex"
           >
             Comecar agora
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-dark-500/10 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-105">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-dark-500/10 transition-transform duration-500 ease-premium group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-105">
               <ArrowUpRight size={13} weight="bold" />
             </span>
           </a>
@@ -89,7 +90,7 @@ export function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setOpen(true)}
-            className="flex items-center justify-center rounded-full p-2.5 text-[#FAFAF8] transition-colors duration-300 hover:bg-white/[0.06] md:hidden"
+            className="flex items-center justify-center rounded-full p-2.5 text-text-primary transition-colors duration-300 hover:bg-white/[0.06] md:hidden"
             aria-label="Abrir menu"
           >
             <List size={20} weight="light" />
@@ -105,12 +106,12 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
+            transition={{ duration: 0.4, ease: EASE_PREMIUM }}
           >
             {/* Close button with border ring */}
             <button
               onClick={() => setOpen(false)}
-              className="absolute right-6 top-6 flex h-12 w-12 items-center justify-center rounded-full border border-warm-700/30 text-[#FAFAF8] transition-colors duration-300 hover:bg-white/[0.06]"
+              className="absolute right-6 top-6 flex h-12 w-12 items-center justify-center rounded-full border border-warm-700/30 text-text-primary transition-colors duration-300 hover:bg-white/[0.06]"
               aria-label="Fechar menu"
             >
               <X size={22} weight="light" />
@@ -122,14 +123,14 @@ export function Navbar() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="text-3xl font-light tracking-tight text-[#FAFAF8]/80 transition-colors duration-300 hover:text-[#FAFAF8]"
+                  className="text-3xl font-light tracking-tight text-text-primary/80 transition-colors duration-300 hover:text-text-primary"
                   initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, y: 20, filter: "blur(4px)" }}
                   transition={{
                     duration: 0.6,
                     delay: 0.08 + i * 0.07,
-                    ease: [0.32, 0.72, 0, 1],
+                    ease: EASE_PREMIUM,
                   }}
                 >
                   {item.label}
@@ -146,7 +147,7 @@ export function Navbar() {
                 transition={{
                   duration: 0.6,
                   delay: 0.45,
-                  ease: [0.32, 0.72, 0, 1],
+                  ease: EASE_PREMIUM,
                 }}
               >
                 Comecar agora

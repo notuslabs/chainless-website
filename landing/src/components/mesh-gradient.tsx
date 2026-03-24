@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { EASE_PREMIUM } from "./motion";
 
 /**
  * Animated mesh gradient background for the Hero section.
@@ -45,7 +46,7 @@ export function MeshGradient() {
 
       {/* Tertiary center glow — very subtle, wide and horizontal */}
       <motion.div
-        className="absolute left-1/2 top-1/2 h-[400px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-500/[0.025] blur-[120px]"
+        className="absolute left-1/2 top-1/2 h-[var(--glow-md)] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-500/[0.025] blur-[120px]"
         animate={{
           scale: [1, 1.1, 0.93, 1],
           opacity: [0.025, 0.04, 0.02, 0.025],
@@ -88,7 +89,7 @@ export function MeshGradient() {
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 1 }}
           transition={{
-            pathLength: { duration: 3.5, delay: 1.2, ease: [0.32, 0.72, 0, 1] },
+            pathLength: { duration: 3.5, delay: 1.2, ease: EASE_PREMIUM },
             opacity: { duration: 1.2, delay: 1.2 },
           }}
         />
@@ -103,7 +104,7 @@ export function MeshGradient() {
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 0.35 }}
           transition={{
-            pathLength: { duration: 3.5, delay: 1.2, ease: [0.32, 0.72, 0, 1] },
+            pathLength: { duration: 3.5, delay: 1.2, ease: EASE_PREMIUM },
             opacity: { duration: 1.2, delay: 1.2 },
           }}
         />

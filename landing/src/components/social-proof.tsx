@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { FadeUp, StaggerContainer, StaggerItem } from "./motion";
+import { DoppelrandCard } from "./doppelrand-card";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -174,23 +175,23 @@ export function SocialProof() {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1200px]">
+      <div className="relative mx-auto max-w-[var(--container-content)]">
         {/* ── Section header ── */}
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <FadeUp>
-              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-warm-700/25 bg-warm-800/30 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-yellow-500/90 backdrop-blur-sm">
+              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-warm-700/25 bg-warm-800/30 px-4 py-1.5 text-overline font-semibold uppercase tracking-[0.25em] text-yellow-500/90 backdrop-blur-sm">
                 Quem já se tornou Chainless
               </span>
             </FadeUp>
             <FadeUp delay={0.1}>
-              <h2 className="max-w-[450px] font-serif text-[clamp(2rem,1.5rem+2vw,3.25rem)] font-bold leading-[1.06] tracking-[-0.03em] text-[#FAFAF8]">
+              <h2 className="max-w-[450px] font-serif text-[length:var(--text-section-heading)] font-bold leading-[1.06] tracking-[-0.03em] text-text-primary">
                 Vozes soberanas.
               </h2>
             </FadeUp>
           </div>
           <FadeUp delay={0.2}>
-            <p className="max-w-[300px] text-[15px] leading-[1.7] text-warm-300/60 md:text-right">
+            <p className="max-w-[300px] text-small leading-[1.7] text-warm-300/60 md:text-right">
               Pessoas que escolheram controle absoluto sobre seu patrimônio
               digital.
             </p>
@@ -204,67 +205,61 @@ export function SocialProof() {
               key={t.name}
               className="w-[85vw] shrink-0 snap-start md:w-auto"
             >
-              {/* Doppelrand outer shell */}
-              <div className="group h-full rounded-[2.25rem] bg-white/[0.02] p-1.5 ring-1 ring-white/[0.04] backdrop-blur-sm transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:ring-white/[0.08] hover:shadow-ambient-dark">
+              <DoppelrandCard
+                className="h-full backdrop-blur-sm"
+                innerClassName="flex h-full flex-col p-8 md:p-10"
+                variant={i === 0 ? "default" : "light"}
+                gradientAngle={i === 0 ? 165 : 155}
+              >
+                {/* ── Decorative giant quote mark — watermark ── */}
                 <div
-                  className="inner-highlight-dark relative flex h-full flex-col overflow-hidden rounded-[calc(2.25rem-0.375rem)] p-8 md:p-10"
-                  style={{
-                    background:
-                      i === 0
-                        ? "linear-gradient(165deg, rgba(42,41,38,0.75) 0%, rgba(28,27,25,0.92) 50%, rgba(24,23,22,0.97) 100%)"
-                        : "linear-gradient(155deg, rgba(42,41,38,0.65) 0%, rgba(28,27,25,0.88) 55%, rgba(24,23,22,0.93) 100%)",
-                  }}
+                  className="pointer-events-none absolute -right-2 -top-4 select-none font-serif text-[10rem] font-bold leading-none text-yellow-500/[0.05]"
+                  aria-hidden="true"
                 >
-                  {/* ── Decorative giant quote mark — watermark ── */}
-                  <div
-                    className="pointer-events-none absolute -right-2 -top-4 select-none font-serif text-[10rem] font-bold leading-none text-yellow-500/[0.05]"
-                    aria-hidden="true"
-                  >
-                    &ldquo;
-                  </div>
-
-                  {/* ── Subtle inner atmospheric glow ── */}
-                  <div
-                    className={`pointer-events-none absolute h-[200px] w-[200px] rounded-full blur-[100px] ${
-                      i === 0
-                        ? "-right-10 -top-10 bg-yellow-500/[0.06]"
-                        : i === 1
-                          ? "-left-10 bottom-0 bg-yellow-500/[0.04]"
-                          : "right-0 top-1/2 bg-yellow-500/[0.03]"
-                    }`}
-                    aria-hidden="true"
-                  />
-
-                  {/* ── Portrait ── */}
-                  <div className="mb-8">
-                    <Avatar
-                      src={t.photo}
-                      initials={t.initials}
-                      gradient={t.gradient}
-                      size={i === 0 ? 104 : 88}
-                    />
-                  </div>
-
-                  {/* ── Quote ── */}
-                  <blockquote
-                    className={`pull-quote flex-1 font-serif font-normal italic leading-[1.6] text-[#FAFAF8]/90 ${
-                      i === 0 ? "text-lg md:text-xl" : "text-base md:text-lg"
-                    }`}
-                  >
-                    &ldquo;{t.quote}&rdquo;
-                  </blockquote>
-
-                  {/* ── Attribution ── */}
-                  <div className="mt-8 border-t border-warm-700/15 pt-6">
-                    <p className="text-sm font-semibold tracking-tight text-[#FAFAF8]">
-                      {t.name}
-                    </p>
-                    <p className="mt-0.5 text-[11px] font-medium tracking-wide text-warm-400/50">
-                      {t.title}
-                    </p>
-                  </div>
+                  &ldquo;
                 </div>
-              </div>
+
+                {/* ── Subtle inner atmospheric glow ── */}
+                <div
+                  className={`pointer-events-none absolute h-[var(--glow-sm)] w-[var(--glow-sm)] rounded-full blur-[100px] ${
+                    i === 0
+                      ? "-right-10 -top-10 bg-yellow-500/[0.06]"
+                      : i === 1
+                        ? "-left-10 bottom-0 bg-yellow-500/[0.04]"
+                        : "right-0 top-1/2 bg-yellow-500/[0.03]"
+                  }`}
+                  aria-hidden="true"
+                />
+
+                {/* ── Portrait ── */}
+                <div className="mb-8">
+                  <Avatar
+                    src={t.photo}
+                    initials={t.initials}
+                    gradient={t.gradient}
+                    size={i === 0 ? 104 : 88}
+                  />
+                </div>
+
+                {/* ── Quote ── */}
+                <blockquote
+                  className={`pull-quote flex-1 font-serif font-normal italic leading-[1.6] text-text-primary/90 ${
+                    i === 0 ? "text-lg md:text-xl" : "text-base md:text-lg"
+                  }`}
+                >
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+
+                {/* ── Attribution ── */}
+                <div className="mt-8 border-t border-warm-700/15 pt-6">
+                  <p className="text-sm font-semibold tracking-tight text-text-primary">
+                    {t.name}
+                  </p>
+                  <p className="mt-0.5 text-caption font-medium tracking-wide text-warm-400/50">
+                    {t.title}
+                  </p>
+                </div>
+              </DoppelrandCard>
             </StaggerItem>
           ))}
         </StaggerContainer>

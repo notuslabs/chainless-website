@@ -177,8 +177,8 @@ export function EditorialBreak() {
           style={{ filter: "saturate(0.8) sepia(0.06)" }}
         />
 
-        {/* Scroll-driven dark overlay — starts pure black, reveals video as you scroll */}
-        <div ref={overlayRef} className="absolute inset-0 bg-black" style={{ opacity: 0.98 }} />
+        {/* Scroll-driven dark overlay — starts near-black, reveals video as you scroll */}
+        <div ref={overlayRef} className="absolute inset-0 bg-dark-950" style={{ opacity: 0.98 }} />
 
         {/* Edge blending — dissolve hard edges into adjacent sections */}
         <div
@@ -235,7 +235,7 @@ function CoupletLine({ line }: { line: Line }) {
             {seg.text}
           </span>
         ) : (
-          <span key={j} className="text-[#FAFAF8]">
+          <span key={j} className="text-text-primary">
             {seg.text}
           </span>
         )

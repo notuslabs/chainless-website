@@ -4,9 +4,13 @@ import { memo, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { ShieldCheck, TrendUp } from "@phosphor-icons/react";
-import { FadeUp, StaggerContainer, StaggerItem } from "./motion";
-
-const EASE_PREMIUM = [0.32, 0.72, 0, 1] as const;
+import {
+  EASE_PREMIUM,
+  FadeUp,
+  StaggerContainer,
+  StaggerItem,
+} from "./motion";
+import { DoppelrandCard } from "./doppelrand-card";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -140,7 +144,7 @@ const PoolTicker = memo(function PoolTicker({
           </div>
         </div>
         <div>
-          <span className="block text-sm font-medium leading-tight text-[#FAFAF8]/85">
+          <span className="block text-sm font-medium leading-tight text-text-primary/85">
             {pool.pair[0]}/{pool.pair[1]}
           </span>
           <div className="mt-0.5 flex items-center gap-1.5">
@@ -154,7 +158,7 @@ const PoolTicker = memo(function PoolTicker({
                 style={{ width: 14, height: 14 }}
               />
             )}
-            <span className="font-mono text-[10px] tracking-wider text-warm-400/50">
+            <span className="font-mono text-overline tracking-wider text-warm-400/50">
               {pool.protocol}
             </span>
           </div>
@@ -165,14 +169,14 @@ const PoolTicker = memo(function PoolTicker({
       <div className="text-right">
         <span
           className={`font-mono text-lg font-semibold tabular-nums ${
-            isTopPool ? "text-yellow-500" : "text-[#FAFAF8]/75"
+            isTopPool ? "text-yellow-500" : "text-text-primary/75"
           }`}
           aria-live="off"
           aria-label={`${value.toFixed(1)} porcento ao ano`}
         >
           {value.toFixed(1)}%
         </span>
-        <span className="block font-mono text-[10px] text-warm-400/40">
+        <span className="block font-mono text-overline text-warm-400/40">
           {pool.range}
         </span>
       </div>
@@ -193,27 +197,27 @@ export function YieldSection() {
     >
       {/* Atmospheric glows */}
       <div
-        className="pointer-events-none absolute left-0 top-1/4 h-[500px] w-[500px] rounded-full bg-yellow-500/[0.02] blur-[200px]"
+        className="pointer-events-none absolute left-0 top-1/4 h-[var(--glow-lg)] w-[var(--glow-lg)] rounded-full bg-yellow-500/[0.02] blur-[var(--glow-blur-lg)]"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-yellow-600/[0.015] blur-[180px]"
+        className="pointer-events-none absolute bottom-0 right-0 h-[var(--glow-md)] w-[var(--glow-md)] rounded-full bg-yellow-600/[0.015] blur-[var(--glow-blur-md)]"
         aria-hidden="true"
       />
 
-      <div className="mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-[var(--container-content)]">
         {/* ── Section header ── */}
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <FadeUp>
-              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-warm-700/25 bg-warm-800/30 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-yellow-500/90 backdrop-blur-sm">
+              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-warm-700/25 bg-warm-800/30 px-4 py-1.5 text-overline font-semibold uppercase tracking-[0.25em] text-yellow-500/90 backdrop-blur-sm">
                 Rendimentos
               </span>
             </FadeUp>
             <FadeUp delay={0.1}>
               <h2
                 id="yield-heading"
-                className="max-w-[500px] font-serif text-[clamp(2rem,1.5rem+2vw,3.25rem)] font-bold leading-[1.06] tracking-[-0.03em] text-[#FAFAF8]"
+                className="max-w-[500px] font-serif text-[length:var(--text-section-heading)] font-bold leading-[1.06] tracking-[-0.03em] text-text-primary"
               >
                 Seu patrimônio.
                 <br />
@@ -222,7 +226,7 @@ export function YieldSection() {
             </FadeUp>
           </div>
           <FadeUp delay={0.2}>
-            <p className="max-w-[320px] text-[15px] leading-[1.7] text-warm-300/60 md:text-right">
+            <p className="max-w-[320px] text-small leading-[1.7] text-warm-300/60 md:text-right">
               De stablecoins em dólar a pools de liquidez — cada rendimento sob
               sua custódia, cada protocolo auditado.
             </p>
@@ -233,195 +237,188 @@ export function YieldSection() {
         <StaggerContainer className="mt-20 grid gap-5 md:grid-cols-12 md:gap-6">
           {/* ▸ PROTEGER — 5 cols, Kling Bitcoin coin background */}
           <StaggerItem className="md:col-span-5">
-            <div className="group h-full rounded-[2.25rem] bg-white/[0.02] p-1.5 ring-1 ring-white/[0.04] transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:ring-white/[0.08] hover:shadow-ambient-dark">
+            <DoppelrandCard
+              className="h-full"
+              innerClassName="flex h-full flex-col"
+              gradientAngle={165}
+            >
+              {/* ── Kling Bitcoin coin photograph — shifted down, glassmorphism ── */}
               <div
-                className="inner-highlight-dark relative flex h-full flex-col overflow-hidden rounded-[calc(2.25rem-0.375rem)]"
+                className="pointer-events-none absolute inset-x-0 -bottom-0 top-[15%] md:top-[20%]"
+                aria-hidden="true"
+              >
+                <Image
+                  src={`${BASE}/bitcoin-coin.png`}
+                  alt=""
+                  fill
+                  className="object-cover object-[center_30%]"
+                  sizes="(max-width: 768px) 100vw, 42vw"
+                  style={{
+                    opacity: 0.3,
+                    filter:
+                      "saturate(0.5) sepia(0.15) brightness(0.55) blur(6px)",
+                  }}
+                />
+              </div>
+              {/* Glassmorphism overlay — frosted depth */}
+              <div
+                className="pointer-events-none absolute inset-0 backdrop-blur-[2px]"
+                aria-hidden="true"
                 style={{
                   background:
-                    "linear-gradient(165deg, rgba(42,41,38,0.7) 0%, rgba(28,27,25,0.9) 50%, rgba(24,23,22,0.95) 100%)",
+                    "linear-gradient(180deg, rgba(28,27,25,0.75) 0%, rgba(28,27,25,0.4) 35%, rgba(28,27,25,0.35) 60%, rgba(28,27,25,0.8) 100%)",
                 }}
-              >
-                {/* ── Kling Bitcoin coin photograph — shifted down, glassmorphism ── */}
-                <div
-                  className="pointer-events-none absolute inset-x-0 -bottom-0 top-[15%] md:top-[20%]"
-                  aria-hidden="true"
-                >
-                  <Image
-                    src={`${BASE}/bitcoin-coin.png`}
-                    alt=""
-                    fill
-                    className="object-cover object-[center_30%]"
-                    sizes="(max-width: 768px) 100vw, 42vw"
-                    style={{
-                      opacity: 0.3,
-                      filter:
-                        "saturate(0.5) sepia(0.15) brightness(0.55) blur(6px)",
+              />
+
+              {/* Warm atmospheric glow */}
+              <div
+                className="pointer-events-none absolute -right-10 -top-10 h-[180px] w-[180px] rounded-full bg-yellow-500/[0.06] blur-[80px]"
+                aria-hidden="true"
+              />
+
+              {/* Content — above image */}
+              <div className="relative z-[1] flex h-full flex-col p-8 md:p-10">
+                <div className="mb-6 flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-warm-700/25 bg-warm-800/50 backdrop-blur-sm transition-all duration-500 group-hover:border-yellow-500/20 group-hover:bg-yellow-500/10">
+                    <ShieldCheck
+                      size={20}
+                      weight="regular"
+                      className="text-warm-400/60 transition-colors duration-500 group-hover:text-yellow-500/80"
+                    />
+                  </div>
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-yellow-500/80">
+                    Proteger
+                  </span>
+                </div>
+
+                <h3 className="mb-6 text-xl font-medium leading-[1.15] tracking-tight text-text-primary md:text-2xl">
+                  150+ ativos digitais. Sob seu controle absoluto.
+                </h3>
+
+                <ul className="space-y-4">
+                  {/* Token row — with official crypto logos */}
+                  <li className="flex items-start gap-3 text-sm leading-relaxed text-warm-300/70">
+                    <div className="mt-0.5 flex shrink-0 -space-x-1.5">
+                      <TokenIcon token="BTC" size={20} />
+                      <TokenIcon token="ETH" size={20} />
+                      <TokenIcon token="SOL" size={20} />
+                    </div>
+                    <span>
+                      Bitcoin, Ethereum, Solana e tokens globais
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm leading-relaxed text-warm-300/70">
+                    <span
+                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-yellow-500/40"
+                      aria-hidden="true"
+                    />
+                    Ouro tokenizado — metal precioso sem custódia física
+                  </li>
+                  <li className="flex items-start gap-3 text-sm leading-relaxed text-warm-300/70">
+                    <span
+                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-yellow-500/40"
+                      aria-hidden="true"
+                    />
+                    Chaves geradas no seu dispositivo. Sempre.
+                  </li>
+                </ul>
+
+                {/* Bottom accent hairline */}
+                <div className="mt-auto pt-8">
+                  <motion.div
+                    className="h-px w-16 bg-gradient-to-r from-yellow-500/25 to-transparent"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    style={{ originX: 0 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.5,
+                      ease: EASE_PREMIUM,
                     }}
                   />
                 </div>
-                {/* Glassmorphism overlay — frosted depth */}
-                <div
-                  className="pointer-events-none absolute inset-0 backdrop-blur-[2px]"
-                  aria-hidden="true"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, rgba(28,27,25,0.75) 0%, rgba(28,27,25,0.4) 35%, rgba(28,27,25,0.35) 60%, rgba(28,27,25,0.8) 100%)",
-                  }}
-                />
-
-                {/* Warm atmospheric glow */}
-                <div
-                  className="pointer-events-none absolute -right-10 -top-10 h-[180px] w-[180px] rounded-full bg-yellow-500/[0.06] blur-[80px]"
-                  aria-hidden="true"
-                />
-
-                {/* Content — above image */}
-                <div className="relative z-[1] flex h-full flex-col p-8 md:p-10">
-                  <div className="mb-6 flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-warm-700/25 bg-warm-800/50 backdrop-blur-sm transition-all duration-500 group-hover:border-yellow-500/20 group-hover:bg-yellow-500/10">
-                      <ShieldCheck
-                        size={20}
-                        weight="regular"
-                        className="text-warm-400/60 transition-colors duration-500 group-hover:text-yellow-500/80"
-                      />
-                    </div>
-                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-yellow-500/80">
-                      Proteger
-                    </span>
-                  </div>
-
-                  <h3 className="mb-6 text-xl font-medium leading-[1.15] tracking-tight text-[#FAFAF8] md:text-2xl">
-                    150+ ativos digitais. Sob seu controle absoluto.
-                  </h3>
-
-                  <ul className="space-y-4">
-                    {/* Token row — with official crypto logos */}
-                    <li className="flex items-start gap-3 text-sm leading-relaxed text-warm-300/70">
-                      <div className="mt-0.5 flex shrink-0 -space-x-1.5">
-                        <TokenIcon token="BTC" size={20} />
-                        <TokenIcon token="ETH" size={20} />
-                        <TokenIcon token="SOL" size={20} />
-                      </div>
-                      <span>
-                        Bitcoin, Ethereum, Solana e tokens globais
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm leading-relaxed text-warm-300/70">
-                      <span
-                        className="mt-2 h-1 w-1 shrink-0 rounded-full bg-yellow-500/40"
-                        aria-hidden="true"
-                      />
-                      Ouro tokenizado — metal precioso sem custódia física
-                    </li>
-                    <li className="flex items-start gap-3 text-sm leading-relaxed text-warm-300/70">
-                      <span
-                        className="mt-2 h-1 w-1 shrink-0 rounded-full bg-yellow-500/40"
-                        aria-hidden="true"
-                      />
-                      Chaves geradas no seu dispositivo. Sempre.
-                    </li>
-                  </ul>
-
-                  {/* Bottom accent hairline */}
-                  <div className="mt-auto pt-8">
-                    <motion.div
-                      className="h-px w-16 bg-gradient-to-r from-yellow-500/25 to-transparent"
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      viewport={{ once: true }}
-                      style={{ originX: 0 }}
-                      transition={{
-                        duration: 1,
-                        delay: 0.5,
-                        ease: EASE_PREMIUM,
-                      }}
-                    />
-                  </div>
-                </div>
               </div>
-            </div>
+            </DoppelrandCard>
           </StaggerItem>
 
           {/* ▸ CRESCER — 7 cols, live pools with official token logos */}
           <StaggerItem className="md:col-span-7">
-            <div className="group h-full rounded-[2.25rem] bg-white/[0.02] p-1.5 ring-1 ring-white/[0.04] transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:ring-white/[0.08] hover:shadow-ambient-dark">
+            <DoppelrandCard
+              className="h-full"
+              innerClassName="flex h-full flex-col p-8 md:p-10"
+              variant="light"
+              gradientAngle={155}
+            >
+              {/* Atmospheric blur */}
               <div
-                className="inner-highlight-dark relative flex h-full flex-col overflow-hidden rounded-[calc(2.25rem-0.375rem)] p-8 md:p-10"
+                className="pointer-events-none absolute -left-10 bottom-0 h-[var(--glow-sm)] w-[var(--glow-sm)] rounded-full bg-yellow-500/[0.05] blur-[var(--glow-blur-sm)]"
+                aria-hidden="true"
+              />
+
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-yellow-500/20 bg-yellow-500/10 transition-all duration-500 group-hover:bg-yellow-500/15">
+                  <TrendUp
+                    size={20}
+                    weight="regular"
+                    className="text-yellow-500"
+                  />
+                </div>
+                <span className="font-mono text-xs uppercase tracking-[0.2em] text-yellow-500">
+                  Crescer
+                </span>
+              </div>
+
+              <h3 className="mb-3 text-xl font-medium leading-[1.15] tracking-tight text-text-primary md:text-2xl">
+                Acesse rendimento DeFi.
+              </h3>
+
+              <p className="mb-8 max-w-[44ch] text-sm leading-relaxed text-warm-300/60">
+                Protocolos auditados, retornos transparentes. Em poucos
+                cliques, direto da sua carteira.
+              </p>
+
+              {/* ── Live pool list ── */}
+              <div
+                className="rounded-2xl border border-warm-700/20 bg-warm-800/25 p-5 md:p-6"
                 style={{
-                  background:
-                    "linear-gradient(155deg, rgba(42,41,38,0.6) 0%, rgba(28,27,25,0.85) 55%, rgba(24,23,22,0.9) 100%)",
+                  boxShadow:
+                    "inset 0 1px 0 rgba(255,255,255,0.03), inset 0 0 0 1px rgba(255,255,255,0.015)",
                 }}
               >
-                {/* Atmospheric blur */}
-                <div
-                  className="pointer-events-none absolute -left-10 bottom-0 h-[200px] w-[200px] rounded-full bg-yellow-500/[0.05] blur-[90px]"
-                  aria-hidden="true"
-                />
-
-                <div className="mb-6 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-yellow-500/20 bg-yellow-500/10 transition-all duration-500 group-hover:bg-yellow-500/15">
-                    <TrendUp
-                      size={20}
-                      weight="regular"
-                      className="text-yellow-500"
-                    />
-                  </div>
-                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-yellow-500">
-                    Crescer
+                <div className="mb-4 flex items-center justify-between">
+                  <span className="font-mono text-caption uppercase tracking-wider text-warm-400/50">
+                    Pools ativos
                   </span>
-                </div>
-
-                <h3 className="mb-3 text-xl font-medium leading-[1.15] tracking-tight text-[#FAFAF8] md:text-2xl">
-                  Acesse rendimento DeFi.
-                </h3>
-
-                <p className="mb-8 max-w-[44ch] text-sm leading-relaxed text-warm-300/60">
-                  Protocolos auditados, retornos transparentes. Em poucos
-                  cliques, direto da sua carteira.
-                </p>
-
-                {/* ── Live pool list ── */}
-                <div
-                  className="rounded-2xl border border-warm-700/20 bg-warm-800/25 p-5 md:p-6"
-                  style={{
-                    boxShadow:
-                      "inset 0 1px 0 rgba(255,255,255,0.03), inset 0 0 0 1px rgba(255,255,255,0.015)",
-                  }}
-                >
-                  <div className="mb-4 flex items-center justify-between">
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-warm-400/50">
-                      Pools ativos
+                  <div className="flex items-center gap-2">
+                    {/* Live pulse dot */}
+                    <span className="relative flex h-1.5 w-1.5">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/50" />
+                      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400/70" />
                     </span>
-                    <div className="flex items-center gap-2">
-                      {/* Live pulse dot */}
-                      <span className="relative flex h-1.5 w-1.5">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/50" />
-                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400/70" />
-                      </span>
-                      <span className="text-[11px] text-warm-400/50">
-                        APY ao vivo
-                      </span>
-                    </div>
-                  </div>
-
-                  <div aria-label="Pools de liquidez com rendimentos ao vivo">
-                    {pools.map((pool, i) => (
-                      <PoolTicker
-                        key={pool.pair.join("-")}
-                        pool={pool}
-                        index={i}
-                      />
-                    ))}
+                    <span className="text-caption text-warm-400/50">
+                      APY ao vivo
+                    </span>
                   </div>
                 </div>
 
-                {/* Disclaimer */}
-                <p className="mt-5 text-[11px] leading-relaxed text-warm-400/40">
-                  Rendimentos variáveis. Riscos de mercado e smart contract
-                  aplicáveis.
-                </p>
+                <div aria-label="Pools de liquidez com rendimentos ao vivo">
+                  {pools.map((pool, i) => (
+                    <PoolTicker
+                      key={pool.pair.join("-")}
+                      pool={pool}
+                      index={i}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+
+              {/* Disclaimer */}
+              <p className="mt-5 text-caption leading-relaxed text-warm-400/40">
+                Rendimentos variáveis. Riscos de mercado e smart contract
+                aplicáveis.
+              </p>
+            </DoppelrandCard>
           </StaggerItem>
         </StaggerContainer>
       </div>

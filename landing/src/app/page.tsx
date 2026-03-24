@@ -52,7 +52,7 @@ function SectionFade({ from, to }: { from: string; to: string }) {
  */
 function SectionRule() {
   return (
-    <div className="relative z-10 mx-auto w-full max-w-[1200px] px-4" aria-hidden="true">
+    <div className="relative z-10 mx-auto w-full max-w-[var(--container-content)] px-4" aria-hidden="true">
       <div
         className="h-px w-full"
         style={{
@@ -81,7 +81,7 @@ export default function Home() {
         <BorrowCredit />
         <SectionRule />
         <SocialProof />
-        <SectionFade from="#181716" to="#1C1B19" />
+        <SectionFade from="var(--color-dark-600)" to="var(--color-dark-500)" />
         <HowItWorks />
         <CTASection />
       </main>
