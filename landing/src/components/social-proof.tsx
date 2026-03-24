@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { FadeUp, StaggerContainer, StaggerItem } from "./motion";
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const testimonials = [
   {
     quote:
@@ -11,7 +13,7 @@ const testimonials = [
     name: "Renato Amoedo",
     title: "Perito Criminal, Polícia Técnica da Bahia",
     initials: "RA",
-    photo: "/testimonial-renato.jpg",
+    photo: `${BASE}/testimonial-renato.jpg`,
     gradient: "from-yellow-600/40 to-amber-900/60",
   },
   {
@@ -20,7 +22,7 @@ const testimonials = [
     name: "Mychel Mendes",
     title: "Contador Especializado em Crypto",
     initials: "MM",
-    photo: "/testimonial-mychel.jpg",
+    photo: `${BASE}/testimonial-mychel.jpg`,
     gradient: "from-warm-600/40 to-warm-800/60",
   },
   {
@@ -29,7 +31,7 @@ const testimonials = [
     name: "Ramon Cunha",
     title: "Investidor Cripto & Educador DeFi",
     initials: "RC",
-    photo: "/testimonial-ramon.jpg",
+    photo: `${BASE}/testimonial-ramon.jpg`,
     gradient: "from-yellow-700/30 to-warm-700/50",
   },
 ];

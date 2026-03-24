@@ -4,7 +4,7 @@ import { motion, useMotionValue, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 
 /* ── Premium easing — custom cubic-bezier per soft-skill ── */
-const EASE_PREMIUM = [0.32, 0.72, 0, 1] as const;
+export const EASE_PREMIUM = [0.32, 0.72, 0, 1] as const;
 
 /* ── Spring configs ── */
 const SPRING_SNAPPY = { type: "spring" as const, stiffness: 200, damping: 20 };

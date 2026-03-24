@@ -81,7 +81,7 @@ export function Hero() {
                   "0 1px 16px rgba(10,9,8,0.9), 0 2px 40px rgba(10,9,8,0.6)",
               }}
             >
-              Construído para quem exige controle.
+              Cresça seu patrimônio com total controle.
             </p>
           </FadeUp>
 
@@ -115,19 +115,19 @@ export function Hero() {
           {/* Trust signal strip */}
           <FadeUp delay={0.7}>
             <div
-              className="mt-20 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-medium tracking-wide text-white/60"
+              className="mt-20 flex flex-wrap items-center gap-x-8 gap-y-3"
               style={{
                 textShadow: "0 1px 10px rgba(10,9,8,0.9)",
               }}
             >
-              <span className="flex items-center gap-2">
-                <span className="font-mono font-semibold text-yellow-500/80">150+</span>
-                ativos digitais
+              <span className="flex items-center gap-2.5">
+                <span className="font-mono text-2xl font-semibold tabular-nums text-yellow-500/90 md:text-3xl">150+</span>
+                <span className="text-sm font-medium tracking-wide text-white/60">ativos digitais</span>
               </span>
-              <span className="h-3 w-px bg-white/25" />
-              <span className="flex items-center gap-2">
-                <span className="font-mono font-semibold text-yellow-500/80">Até 60%</span>
-                APY em DeFi
+              <span className="h-6 w-px bg-white/20" />
+              <span className="flex items-center gap-2.5">
+                <span className="font-mono text-2xl font-semibold tabular-nums text-yellow-500/90 md:text-3xl">Até 60%</span>
+                <span className="text-sm font-medium tracking-wide text-white/60">APY em DeFi</span>
               </span>
             </div>
           </FadeUp>

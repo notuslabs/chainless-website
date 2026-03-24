@@ -8,6 +8,8 @@ import { FadeUp, StaggerContainer, StaggerItem } from "./motion";
 
 const EASE_PREMIUM = [0.32, 0.72, 0, 1] as const;
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 interface PhilosophyPillar {
   icon: PhosphorIcon;
   overline: string;
@@ -28,7 +30,7 @@ const pillars: PhilosophyPillar[] = [
       "Após a FTX, R$40B+ ficaram presos em custodiantes. Seus ativos vivem na blockchain, controlados pela sua chave. Sem função de congelamento no contrato.",
     stat: "R$40B+",
     statLabel: "presos em custodiantes após FTX",
-    image: "/philosophy-1.jpg",
+    image: `${BASE}/philosophy-1.jpg`,
     imageAlt: "Detalhe arquitetônico de concreto com luz natural quente",
   },
   {
@@ -39,7 +41,7 @@ const pillars: PhilosophyPillar[] = [
       "Yield DeFi flui para você no instante em que é gerado. Sem custódia oculta, sem atrasos, sem repasse.",
     stat: "0",
     statLabel: "intermediários entre você e seu yield",
-    image: "/philosophy-2.jpg",
+    image: `${BASE}/philosophy-2.jpg`,
     imageAlt: "Interior com luz natural quente entrando por janelas amplas",
   },
 ];

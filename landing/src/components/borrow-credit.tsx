@@ -6,6 +6,8 @@ import { FadeUp, StaggerContainer, StaggerItem } from "./motion";
 
 const EASE_PREMIUM = [0.32, 0.72, 0, 1] as const;
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 /* ─────────────────────────────────────────────────────────
  * StatusBadge — "Em breve" pulse indicator
  * ───────────────────────────────────────────────────────── */
@@ -33,7 +35,7 @@ const STEPS = [
   {
     number: "01",
     label: "Deposite",
-    icon: "/tokens/btc.png",
+    icon: `${BASE}/tokens/btc.png`,
     tokenName: "Bitcoin",
     tokenTicker: "BTC",
     metric: "1 BTC",
@@ -47,7 +49,7 @@ const STEPS = [
   {
     number: "02",
     label: "Receba",
-    icon: "/tokens/usdc.png",
+    icon: `${BASE}/tokens/usdc.png`,
     tokenName: "USDC",
     tokenTicker: "Dólar digital",
     metric: "$3.000",
@@ -61,7 +63,7 @@ const STEPS = [
   {
     number: "03",
     label: "Mantenha",
-    icon: "/tokens/btc.png",
+    icon: `${BASE}/tokens/btc.png`,
     tokenName: "Bitcoin",
     tokenTicker: "Sua garantia",
     metric: "+2,4%",

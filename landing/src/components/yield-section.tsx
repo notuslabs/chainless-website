@@ -8,23 +8,25 @@ import { FadeUp, StaggerContainer, StaggerItem } from "./motion";
 
 const EASE_PREMIUM = [0.32, 0.72, 0, 1] as const;
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 /* ─────────────────────────────────────────────────────────
  * Token & protocol logo paths — official CoinGecko assets
  * ───────────────────────────────────────────────────────── */
 
 const TOKEN_LOGOS: Record<string, string> = {
-  BTC: "/tokens/btc.png",
-  wBTC: "/tokens/wbtc.png",
-  ETH: "/tokens/eth.png",
-  USDC: "/tokens/usdc.png",
-  USDT: "/tokens/usdt.png",
-  SOL: "/tokens/sol.png",
+  BTC: `${BASE}/tokens/btc.png`,
+  wBTC: `${BASE}/tokens/wbtc.png`,
+  ETH: `${BASE}/tokens/eth.png`,
+  USDC: `${BASE}/tokens/usdc.png`,
+  USDT: `${BASE}/tokens/usdt.png`,
+  SOL: `${BASE}/tokens/sol.png`,
 };
 
 const PROTOCOL_LOGOS: Record<string, string> = {
-  Curve: "/tokens/curve.png",
-  Uniswap: "/tokens/uniswap.png",
-  Aave: "/tokens/aave.png",
+  Curve: `${BASE}/tokens/curve.png`,
+  Uniswap: `${BASE}/tokens/uniswap.png`,
+  Aave: `${BASE}/tokens/aave.png`,
 };
 
 function TokenIcon({
@@ -245,7 +247,7 @@ export function YieldSection() {
                   aria-hidden="true"
                 >
                   <Image
-                    src="/bitcoin-coin.png"
+                    src={`${BASE}/bitcoin-coin.png`}
                     alt=""
                     fill
                     className="object-cover object-[center_30%]"
