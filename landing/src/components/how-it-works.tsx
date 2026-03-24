@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FadeUp, StaggerContainer, StaggerItem } from "./motion";
-
-const EASE_PREMIUM = [0.32, 0.72, 0, 1] as const;
+import { FadeUp, StaggerContainer, StaggerItem, EASE_PREMIUM } from "./motion";
+import { DoppelrandCard } from "./doppelrand-card";
 
 const steps = [
   {
@@ -192,7 +191,7 @@ export function HowItWorks() {
 
       {/* Atmospheric glow — right side, upper */}
       <div
-        className="pointer-events-none absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full blur-[200px]"
+        className="pointer-events-none absolute right-0 top-1/4 h-[var(--glow-lg)] w-[var(--glow-lg)] rounded-full blur-[var(--glow-blur-lg)]"
         aria-hidden="true"
         style={{ background: "rgba(255, 199, 61, 0.035)" }}
       />
@@ -207,23 +206,23 @@ export function HowItWorks() {
         }}
       />
 
-      <div className="mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-[var(--container-content)]">
         {/* Section header — editorial, with counter */}
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <FadeUp>
-              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-warm-700/25 bg-warm-800/30 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-yellow-500/90 backdrop-blur-sm">
+              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-warm-700/25 bg-warm-800/30 px-4 py-1.5 text-overline font-semibold uppercase tracking-[0.25em] text-yellow-500/90 backdrop-blur-sm">
                 Como funciona
               </span>
             </FadeUp>
             <FadeUp delay={0.1}>
-              <h2 className="max-w-[550px] font-serif text-[clamp(2rem,1.5rem+2vw,3.25rem)] font-bold leading-[1.06] tracking-[-0.03em] text-[#FAFAF8]">
+              <h2 className="max-w-[550px] font-serif text-[length:var(--text-section-heading)] font-bold leading-[1.06] tracking-[-0.03em] text-text-primary">
                 Quatro passos para soberania.
               </h2>
             </FadeUp>
           </div>
           <FadeUp delay={0.2}>
-            <p className="max-w-[300px] text-[15px] leading-[1.7] text-warm-300/60 md:text-right">
+            <p className="max-w-[300px] text-small leading-[1.7] text-warm-300/60 md:text-right">
               Da criação da carteira ao rendimento ativo — sem intermediários em nenhum momento.
             </p>
           </FadeUp>
@@ -240,70 +239,72 @@ export function HowItWorks() {
 
             return (
               <StaggerItem key={step.number} className={colSpan}>
-                <div className="group h-full rounded-[2.25rem] bg-white/[0.02] p-1.5 ring-1 ring-white/[0.04] transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:ring-white/[0.08] hover:shadow-ambient-dark">
-                  <div className="inner-highlight-dark relative flex h-full flex-col overflow-hidden rounded-[calc(2.25rem-0.375rem)] p-8 md:p-10" style={{ background: `linear-gradient(${155 + i * 15}deg, rgba(42,41,38,0.7) 0%, rgba(28,27,25,0.9) ${45 + i * 5}%, rgba(24,23,22,0.95) 100%)` }}>
-                    {/* Atmospheric blurred accent — varies position per card */}
-                    <div
-                      className="pointer-events-none absolute h-[140px] w-[140px] rounded-full bg-yellow-500/[0.04] blur-[70px]"
-                      aria-hidden="true"
-                      style={{
-                        right: i % 2 === 0 ? "-2rem" : "auto",
-                        left: i % 2 !== 0 ? "-2rem" : "auto",
-                        top: i < 2 ? "-2rem" : "auto",
-                        bottom: i >= 2 ? "-2rem" : "auto",
-                      }}
-                    />
-                    {/* Top row: illustration + editorial number */}
-                    <div className="flex items-start justify-between">
-                      {/* SVG icon */}
-                      <div className="text-white/[0.15] transition-colors duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:text-white/[0.3]">
-                        <step.icon />
-                      </div>
-                      {/* Number — editorial serif treatment */}
-                      <div className="flex flex-col items-end">
-                        <span className="font-serif text-[2.5rem] font-bold leading-none tracking-[-0.04em] text-white/[0.05] transition-colors duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:text-white/[0.08]">
-                          {step.number}
-                        </span>
-                        <motion.div
-                          className="mt-2 h-px w-8 bg-yellow-500/25"
-                          initial={{ scaleX: 0 }}
-                          whileInView={{ scaleX: 1 }}
-                          viewport={{ once: true }}
-                          style={{ originX: 1 }}
-                          transition={{
-                            duration: 0.8,
-                            delay: 0.3 + i * 0.1,
-                            ease: EASE_PREMIUM,
-                          }}
-                        />
-                      </div>
+                <DoppelrandCard
+                  className="h-full"
+                  innerClassName="flex h-full flex-col p-8 md:p-10"
+                  gradientAngle={155 + i * 15}
+                >
+                  {/* Atmospheric blurred accent — varies position per card */}
+                  <div
+                    className="pointer-events-none absolute h-[140px] w-[140px] rounded-full bg-yellow-500/[0.04] blur-[70px]"
+                    aria-hidden="true"
+                    style={{
+                      right: i % 2 === 0 ? "-2rem" : "auto",
+                      left: i % 2 !== 0 ? "-2rem" : "auto",
+                      top: i < 2 ? "-2rem" : "auto",
+                      bottom: i >= 2 ? "-2rem" : "auto",
+                    }}
+                  />
+                  {/* Top row: illustration + editorial number */}
+                  <div className="flex items-start justify-between">
+                    {/* SVG icon */}
+                    <div className="text-white/[0.15] transition-colors duration-700 ease-premium group-hover:text-white/[0.3]">
+                      <step.icon />
                     </div>
-
-                    {/* Content */}
-                    <h3 className="mt-8 text-lg font-semibold tracking-[-0.01em] text-[#FAFAF8] md:text-xl">
-                      {step.title}
-                    </h3>
-                    <p className="mt-3 text-[14px] leading-[1.75] text-warm-300/60">
-                      {step.description}
-                    </p>
-
-                    {/* Bottom accent — animated gold rule */}
-                    <div className="mt-auto pt-8">
+                    {/* Number — editorial serif treatment */}
+                    <div className="flex flex-col items-end">
+                      <span className="font-serif text-[2.5rem] font-bold leading-none tracking-[-0.04em] text-white/[0.05] transition-colors duration-700 ease-premium group-hover:text-white/[0.08]">
+                        {step.number}
+                      </span>
                       <motion.div
-                        className="h-px w-16 bg-gradient-to-r from-yellow-500/25 to-transparent"
+                        className="mt-2 h-px w-8 bg-yellow-500/25"
                         initial={{ scaleX: 0 }}
                         whileInView={{ scaleX: 1 }}
                         viewport={{ once: true }}
-                        style={{ originX: 0 }}
+                        style={{ originX: 1 }}
                         transition={{
-                          duration: 1,
-                          delay: 0.5 + i * 0.1,
+                          duration: 0.8,
+                          delay: 0.3 + i * 0.1,
                           ease: EASE_PREMIUM,
                         }}
                       />
                     </div>
                   </div>
-                </div>
+
+                  {/* Content */}
+                  <h3 className="mt-8 text-lg font-semibold tracking-[-0.01em] text-text-primary md:text-xl">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-[14px] leading-[1.75] text-warm-300/60">
+                    {step.description}
+                  </p>
+
+                  {/* Bottom accent — animated gold rule */}
+                  <div className="mt-auto pt-8">
+                    <motion.div
+                      className="h-px w-16 bg-gradient-to-r from-yellow-500/25 to-transparent"
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      viewport={{ once: true }}
+                      style={{ originX: 0 }}
+                      transition={{
+                        duration: 1,
+                        delay: 0.5 + i * 0.1,
+                        ease: EASE_PREMIUM,
+                      }}
+                    />
+                  </div>
+                </DoppelrandCard>
               </StaggerItem>
             );
           })}

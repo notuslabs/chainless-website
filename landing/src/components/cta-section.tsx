@@ -1,10 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FadeUp, MagneticButton, TextReveal } from "./motion";
+import { FadeUp, MagneticButton, TextReveal, EASE_PREMIUM } from "./motion";
 import { ArrowUpRight } from "@phosphor-icons/react";
-
-const EASE_PREMIUM = [0.32, 0.72, 0, 1] as const;
 
 export function CTASection() {
   return (
@@ -52,7 +50,7 @@ export function CTASection() {
         >
           <motion.circle
             cx="200" cy="200" r="195"
-            stroke="#FAFAF8" strokeWidth="0.5"
+            stroke="var(--color-text-primary)" strokeWidth="0.5"
             initial={{ pathLength: 0, opacity: 0 }}
             whileInView={{ pathLength: 1, opacity: 1 }}
             viewport={{ once: true }}
@@ -60,7 +58,7 @@ export function CTASection() {
           />
           <motion.circle
             cx="200" cy="200" r="150"
-            stroke="#FAFAF8" strokeWidth="0.5"
+            stroke="var(--color-text-primary)" strokeWidth="0.5"
             initial={{ pathLength: 0, opacity: 0 }}
             whileInView={{ pathLength: 0.75, opacity: 1 }}
             viewport={{ once: true }}
@@ -80,14 +78,14 @@ export function CTASection() {
       <div className="relative z-10 mx-auto flex max-w-[800px] flex-col items-center text-center">
         {/* Eyebrow */}
         <FadeUp>
-          <span className="mb-8 inline-flex items-center gap-2 rounded-full border border-warm-700/20 bg-warm-800/25 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-yellow-500/80 backdrop-blur-sm">
+          <span className="mb-8 inline-flex items-center gap-2 rounded-full border border-warm-700/20 bg-warm-800/25 px-4 py-1.5 text-overline font-semibold uppercase tracking-[0.25em] text-yellow-500/80 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/60" />
             Comece agora
           </span>
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <h2 className="font-serif text-[clamp(2.5rem,1.8rem+2.8vw,4rem)] font-bold leading-[1.04] tracking-[-0.03em] text-[#FAFAF8]">
+          <h2 className="font-serif text-[clamp(2.5rem,1.8rem+2.8vw,4rem)] font-bold leading-[1.04] tracking-[-0.03em] text-text-primary">
             <TextReveal delay={0.15}>
               Seu patrimônio merece ser só seu.
             </TextReveal>
@@ -104,10 +102,10 @@ export function CTASection() {
           <div className="mt-14">
             <MagneticButton
               href="#"
-              className="group inline-flex items-center gap-3 rounded-full bg-yellow-500 py-4 pl-8 pr-4 text-base font-semibold text-dark-500 shadow-[0_4px_30px_rgba(255,199,61,0.2)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-yellow-400 hover:shadow-[0_4px_50px_rgba(255,199,61,0.3)] active:scale-[0.97]"
+              className="group inline-flex items-center gap-3 rounded-full bg-yellow-500 py-4 pl-8 pr-4 text-base font-semibold text-dark-500 shadow-[0_4px_30px_rgba(255,199,61,0.2)] transition-all duration-500 ease-premium hover:bg-yellow-400 hover:shadow-[0_4px_50px_rgba(255,199,61,0.3)] active:scale-[0.97]"
             >
               Torne-se Chainless
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-dark-500/10 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-110">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-dark-500/10 transition-transform duration-500 ease-premium group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-110">
                 <ArrowUpRight size={15} weight="bold" />
               </span>
             </MagneticButton>
@@ -124,7 +122,7 @@ export function CTASection() {
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.6, ease: EASE_PREMIUM }}
             />
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-medium tracking-wide text-warm-500/35">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-caption font-medium tracking-wide text-warm-500/35">
               <span>Sem custódia</span>
               <span className="h-3 w-px bg-warm-700/15" />
               <span>Sem lock-up</span>
