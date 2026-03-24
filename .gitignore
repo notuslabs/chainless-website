@@ -1,0 +1,39 @@
+# dependencies
+landing/node_modules
+landing/.pnp
+landing/.pnp.*
+landing/.yarn/*
+!landing/.yarn/patches
+!landing/.yarn/plugins
+!landing/.yarn/releases
+!landing/.yarn/versions
+
+# testing
+landing/coverage
+
+# next.js
+landing/.next/
+landing/out/
+
+# production
+landing/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*
+
+# vercel
+landing/.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

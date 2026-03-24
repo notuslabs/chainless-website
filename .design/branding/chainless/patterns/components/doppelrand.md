@@ -1,0 +1,183 @@
+# Doppelrand Card — Component Spec
+
+> Phase: patterns | Brand: chainless | Generated: 2026-03-24
+
+---
+
+## Overview
+
+The Doppelrand ("double border") card is Chainless's signature surface treatment. It creates a luxury packaging feel through a double-shell construction: an outer translucent shell containing an inner elevated core, separated by a visible gap.
+
+The pattern appears in 6 components and is copy-pasted identically each time. This spec formalizes it as a shared component.
+
+---
+
+## Anatomy
+
+```
+┌─────────────────────────────────────────┐  ← Outer shell
+│  ┌───────────────────────────────────┐  │  ← Gap (6px)
+│  │                                   │  │  ← Inner core
+│  │        Content goes here          │  │
+│  │                                   │  │
+│  └───────────────────────────────────┘  │
+└─────────────────────────────────────────┘
+```
+
+### Outer Shell
+
+| Property | Value | Token |
+|----------|-------|-------|
+| Border radius | 36px | `--doppelrand-radius-outer` / `rounded-[2.25rem]` |
+| Background | `rgba(255, 255, 255, 0.02)` | `--doppelrand-bg` / `bg-white/[0.02]` |
+| Padding | 6px (gap) | `--doppelrand-gap` / `p-1.5` |
+| Ring | 1px `rgba(255, 255, 255, 0.04)` | `ring-1 ring-white/[0.04]` |
+| Ring hover | `rgba(255, 255, 255, 0.08)` | `ring-white/[0.08]` |
+
+### Inner Core
+
+| Property | Value | Token |
+|----------|-------|-------|
+| Border radius | ~30px | `--doppelrand-radius-inner` / `rounded-[calc(2.25rem-0.375rem)]` |
+| Background | Gradient (see below) | `.doppelrand-inner-gradient` |
+| Inner highlight | `inset 0 1px 0 rgba(255,255,255,0.06), inset 0 0 0 1px rgba(255,255,255,0.03)` | `.inner-highlight-dark` |
+| Padding | 32px or 40px | `p-8` or `p-10` |
+| Overflow | hidden | `overflow-hidden` |
+| Position | relative | `relative` (for glow positioning) |
+
+### Inner Background Gradient
+
+The standard Doppelrand inner gradient creates subtle dimensionality:
+
+```css
+background: linear-gradient(
+  145deg,
+  rgba(42, 41, 38, 0.7) 0%,
+  rgba(28, 27, 25, 0.9) 50%,
+  rgba(24, 23, 22, 0.95) 100%
+);
+```
+
+Lighter variant (used in some cards):
+```css
+background: linear-gradient(
+  145deg,
+  rgba(42, 41, 38, 0.6) 0%,
+  rgba(28, 27, 25, 0.85) 50%,
+  rgba(24, 23, 22, 0.9) 100%
+);
+```
+
+---
+
+## Component API
+
+```tsx
+interface DoppelrandCardProps {
+  children: React.ReactNode;
+  className?: string;           // Applied to outer shell
+  innerClassName?: string;      // Applied to inner core
+  variant?: 'default' | 'light'; // Gradient intensity
+  hover?: boolean;              // Enable ring-hover effect
+  glow?: boolean;               // Enable atmospheric glow orb
+  as?: React.ElementType;       // Polymorphic element
+}
+```
+
+### Usage
+
+```tsx
+<DoppelrandCard hover glow>
+  <div className="p-8">
+    <h3>Card Title</h3>
+    <p>Card content</p>
+  </div>
+</DoppelrandCard>
+```
+
+---
+
+## Atmospheric Glow (Optional)
+
+Many Doppelrand cards include an atmospheric glow orb positioned behind or within:
+
+```tsx
+{/* Typical glow pattern */}
+<div className="pointer-events-none absolute -top-1/4 -right-1/4 h-[500px] w-[500px] rounded-full bg-yellow-500/[0.02] blur-[200px]" />
+```
+
+Standard glow sizes:
+
+| Size | Dimensions | Blur | Opacity Pattern |
+|------|:----------:|:----:|-----------------|
+| Large | 500x500px | 200px | `bg-yellow-500/[0.02]` |
+| Medium | 400x400px | 180px | `bg-yellow-600/[0.015]` |
+| Small | 200x200px | 80px | `bg-yellow-500/[0.04]` |
+
+---
+
+## Current Implementations
+
+| Component | Doppelrand Cards | Variant |
+|-----------|:----------------:|---------|
+| `borrow-credit.tsx` | 3 (steps) | default |
+| `how-it-works.tsx` | 4 (bento grid) | default |
+| `social-proof.tsx` | 3 (testimonials) | default + conic border variant |
+| `yield-section.tsx` | 2 (protect + grow) | default |
+| `philosophy.tsx` | 2 (pillars) | default + light variant |
+| `spend-credit-legacy.tsx` | 1 (card visual) | default (DEAD CODE) |
+
+### Social Proof Variant: Conic Border
+
+`social-proof.tsx` adds a rotating conic-gradient border effect on the featured testimonial:
+
+```css
+conic-gradient(
+  from 180deg,
+  rgba(255, 199, 61, 0.3),
+  rgba(255, 199, 61, 0.05) 50%,
+  rgba(255, 199, 61, 0.3)
+)
+```
+
+This could be a `variant="featured"` or `accent` prop on the shared component.
+
+---
+
+## Tailwind Classes (Copy-Paste Reference)
+
+### Outer Shell
+
+```
+rounded-[2.25rem] bg-white/[0.02] p-1.5 ring-1 ring-white/[0.04]
+```
+
+With hover:
+```
+rounded-[2.25rem] bg-white/[0.02] p-1.5 ring-1 ring-white/[0.04] transition-shadow hover:ring-white/[0.08]
+```
+
+### Inner Core
+
+```
+relative overflow-hidden rounded-[calc(2.25rem-0.375rem)] inner-highlight-dark
+```
+
+With inline gradient style:
+```tsx
+style={{
+  background: 'linear-gradient(145deg, rgba(42,41,38,0.7) 0%, rgba(28,27,25,0.9) 50%, rgba(24,23,22,0.95) 100%)'
+}}
+```
+
+---
+
+## Design Rationale
+
+The Doppelrand pattern serves three purposes:
+
+1. **Luxury packaging metaphor** — The double shell evokes physical product packaging (box within a box). Premium physical goods use this — Apple product boxes, watch cases, jewelry presentation. It signals "this content is precious."
+
+2. **Depth without shadow** — On dark surfaces, traditional drop shadows are nearly invisible. The double-border construction creates depth through structural layering instead of shadow opacity.
+
+3. **Brand distinctiveness** — No competitor uses this pattern. It's immediately recognizable as Chainless. The combination of translucent outer shell + inner highlight + gradient creates a surface treatment that can't be replicated with a single CSS property.

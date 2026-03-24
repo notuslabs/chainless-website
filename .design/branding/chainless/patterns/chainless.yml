@@ -1,0 +1,81 @@
+name: chainless
+description: Sovereign digital wealth — warm authority, restrained gold accent, Doppelrand luxury cards, blur-fade motion
+tags: [fintech, crypto, premium, warm, dark-mode, self-custody, brazilian]
+
+tokens:
+  color:
+    primary: "#FFC73D"
+    secondary: "#6B6862"
+    accent: "#FFD486"
+    background: "#FAFAF8"
+    surface: "#F0EEE9"
+    on-primary: "#1C1B19"
+    on-background: "#1C1B19"
+    error: "#C93B3B"
+    success: "#2D8A56"
+    warning: "#D4890D"
+    info: "#3B7FC9"
+    muted: "#87837C"
+
+  typography:
+    font-family-primary: "'Satoshi', 'General Sans', ui-sans-serif, system-ui, sans-serif"
+    font-family-accent: "'Fraunces', 'Newsreader', 'Georgia', serif"
+    font-family-mono: "'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace"
+    font-weight-heading: 700
+    font-weight-subheading: 600
+    font-weight-body: 400
+    font-size-base: "18px"
+    line-height-base: 1.56
+    type-ratio: 1.25
+    type-scale: "major-third"
+
+  shape:
+    border-radius-sm: "4px"
+    border-radius-md: "8px"
+    border-radius-lg: "12px"
+    border-radius-xl: "16px"
+    border-radius-2xl: "24px"
+    border-radius-3xl: "36px"
+    border-width: "1px"
+    border-color: "rgba(255, 255, 255, 0.04)"
+    doppelrand-outer: "36px"
+    doppelrand-inner: "30px"
+    doppelrand-gap: "6px"
+
+  elevation:
+    shadow-diffuse-warm: "0 1px 2px rgba(28,27,25,0.04), 0 4px 8px rgba(28,27,25,0.02), 0 20px 40px -15px rgba(28,27,25,0.06)"
+    shadow-ambient-warm: "0 0 0 1px rgba(28,27,25,0.02), 0 1px 2px rgba(28,27,25,0.03), 0 4px 12px rgba(28,27,25,0.04), 0 16px 32px -8px rgba(28,27,25,0.06), 0 32px 64px -16px rgba(28,27,25,0.04)"
+    shadow-diffuse-dark: "0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.06), 0 40px 80px -20px rgba(0,0,0,0.4)"
+    shadow-ambient-dark: "0 0 0 1px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08), 0 24px 48px -12px rgba(0,0,0,0.2), 0 48px 96px -24px rgba(0,0,0,0.15)"
+    inner-highlight-dark: "inset 0 1px 0 rgba(255,255,255,0.06), inset 0 0 0 1px rgba(255,255,255,0.03)"
+    noise-opacity: 0.022
+
+  spacing:
+    base: 4
+    scale: [4, 8, 14, 28, 42, 56, 84, 112]
+    section-padding-default: "96px"
+    section-padding-transition: "128px"
+
+  motion:
+    duration-fast: "150ms"
+    duration-normal: "250ms"
+    duration-entrance: "900ms"
+    duration-stagger: "120ms"
+    easing: "cubic-bezier(0.32, 0.72, 0, 1)"
+    spring-snappy: "stiffness:200 damping:20"
+    spring-smooth: "stiffness:120 damping:24"
+    signature: "blur-fade-up"
+
+dark_mode:
+  color:
+    background: "#1C1B19"
+    surface: "#2A2926"
+    on-background: "#FAFAF8"
+    on-surface: "#FAFAF8"
+    accent: "#FFD486"
+    border-color: "#3F3D3A"
+    muted: "#87837C"
+    secondary: "#B0ADA6"
+
+compatibility: [doppelrand-cards, blur-fade-motion, atmospheric-glow, noise-overlay, magnetic-buttons, scroll-progress, editorial-serif-accent]
+clashes: [cyberpunk, vaporwave, neubrutalism, cold-corporate, neon, flat-material]

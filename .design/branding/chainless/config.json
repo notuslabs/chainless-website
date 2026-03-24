@@ -1,0 +1,20 @@
+{
+  "version": "0.5.0",
+  "project_type": "brand",
+  "brand": {
+    "name": "chainless",
+    "created": "2026-03-22"
+  },
+  "brand_mode": "evolve",
+  "evolution_scope": {
+    "preserve": ["logo", "yellow-500", "dark-500", "name", "torne-se-chainless"],
+    "evolve": ["messaging-hierarchy", "audience-framing", "category-language", "visual-premium"],
+    "replace": ["feature-first-positioning", "old-tagline"]
+  },
+  "system_config": {
+    "tech_stack": "Next.js 16 + Tailwind v4 + Framer Motion",
+    "system_strategy": "extend",
+    "style_preset": "",
+    "style_base": []
+  }
+}

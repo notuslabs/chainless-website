@@ -1,0 +1,86 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { FadeUp } from "./motion";
+import { ChainlessLogo } from "./chainless-logo";
+
+const EASE_PREMIUM = [0.32, 0.72, 0, 1] as const;
+
+const footerLinks = {
+  Produto: ["Rendimento DeFi", "Autocustódia", "Pix", "Multichain"],
+  Empresa: ["Sobre", "Blog", "Carreiras", "Imprensa"],
+  Recursos: ["Central de ajuda", "Segurança", "Documentação", "Status"],
+  Legal: ["Privacidade", "Termos de uso", "Compliance"],
+};
+
+export function Footer() {
+  return (
+    <footer className="relative bg-dark-500 px-4 pb-16 pt-32" id="sobre">
+      {/* Subtle top bleed from CTA section */}
+      <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2" aria-hidden="true">
+        <div className="h-[200px] w-[400px] rounded-full bg-yellow-500/[0.02] blur-[120px]" />
+      </div>
+
+      <div className="relative mx-auto max-w-[1200px]">
+        <FadeUp>
+          <div className="grid gap-14 md:grid-cols-12">
+            {/* Brand column — generous breathing room */}
+            <div className="md:col-span-4">
+              <ChainlessLogo color="#FAFAF8" size={24} />
+              <p className="mt-6 max-w-[260px] text-[14px] leading-[1.75] text-warm-400/60">
+                Plataforma de patrimônio digital com autocustódia. Seu
+                patrimônio cresce. Suas chaves continuam suas.
+              </p>
+              {/* Brand tagline — editorial serif treatment */}
+              <p className="mt-8 font-serif text-[15px] italic text-warm-400/30">
+                Patrimônio digital soberano.
+              </p>
+            </div>
+
+            {/* Link columns */}
+            {Object.entries(footerLinks).map(([category, links]) => (
+              <div key={category} className="md:col-span-2">
+                <h4 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-warm-300/50">
+                  {category}
+                </h4>
+                <motion.div
+                  className="mt-3 mb-5 h-px w-6 bg-yellow-500/15"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  style={{ originX: 0 }}
+                  transition={{ duration: 0.8, ease: EASE_PREMIUM }}
+                />
+                <ul className="flex flex-col gap-3.5">
+                  {links.map((link) => (
+                    <li key={link}>
+                      <a
+                        href="#"
+                        className="text-[13px] text-warm-400/50 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:text-[#FAFAF8] active:scale-[0.98]"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </FadeUp>
+
+        {/* Premium divider — gradient fade */}
+        <div className="mt-24 h-px bg-gradient-to-r from-transparent via-warm-700/25 to-transparent" />
+
+        {/* Bottom bar — refined spacing */}
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 md:flex-row">
+          <p className="text-[11px] font-medium tracking-wide text-warm-500/35">
+            &copy; {new Date().getFullYear()} Chainless. Patrimônio digital soberano.
+          </p>
+          <p className="max-w-[400px] text-[11px] tracking-wide text-warm-600/30 md:text-right">
+            Chainless não é uma instituição financeira. Não custodiamos ativos.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
