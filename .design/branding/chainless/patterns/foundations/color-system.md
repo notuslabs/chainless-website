@@ -78,10 +78,10 @@ Source: `#1C1B19` — warm black, 30% of 60-30-10.
 
 | Role | Hex | CSS Variable | WCAG on dark-500 | Usage |
 |------|-----|-------------|:-:|-------|
-| **Success** | `#2D8A56` | `--color-success` | — | Positive yields, confirmations |
-| **Warning** | `#D4890D` | `--color-warning` | — | Caution states, pending txns |
-| **Error** | `#C93B3B` | `--color-error` | — | Failed transactions, errors |
-| **Info** | `#3B7FC9` | `--color-info` | — | Informational states |
+| **Success** | `#3DA66A` | `--color-success` | 5.75:1 AA | Positive yields, confirmations |
+| **Warning** | `#D4890D` | `--color-warning` | 6.05:1 AA | Caution states, pending txns |
+| **Error** | `#E05555` | `--color-error` | 4.60:1 AA | Failed transactions, errors |
+| **Info** | `#4A90DA` | `--color-info` | 5.16:1 AA | Informational states |
 
 Full 11-stop scales for each in `identity/palettes.json`.
 
@@ -123,7 +123,7 @@ The current landing is all-dark. Identity spec defines light-mode as default. Bo
 | Card / elevated | `#FFFFFF` | `#2A2926` |
 | Primary text | `#1C1B19` | `#FAFAF8` |
 | Secondary text | `#6B6862` | `#B0ADA6` |
-| Tertiary text | `#9C9890` | `#87837C` |
+| Tertiary text | `#9C9890` | `#9E9A93` |
 | Brand accent | `#FFC73D` (yellow-500) | `#FFD486` (yellow-400) |
 | Accent hover | `#CC9C00` (yellow-600) | `#FFC73D` (yellow-500) |
 | Border subtle | `#E5E3DF` | `#3F3D3A` |
@@ -139,12 +139,14 @@ All combinations meet AA minimum. Body text targets AAA (7:1).
 
 | Combination | Ratio | Grade |
 |-------------|:-----:|:-----:|
-| `#1C1B19` on `#FAFAF8` | 15.4:1 | AAA |
-| `#FAFAF8` on `#1C1B19` | 15.4:1 | AAA |
-| `#FFC73D` on `#1C1B19` | 9.2:1 | AAA |
-| `#6B6862` on `#FAFAF8` | 5.8:1 | AA |
-| `#B0ADA6` on `#1C1B19` | 7.6:1 | AAA |
-| `#FFD486` on `#1C1B19` | 11.3:1 | AAA |
+| `#1C1B19` on `#FAFAF8` | 16.5:1 | AAA |
+| `#FAFAF8` on `#1C1B19` | 16.5:1 | AAA |
+| `#FFC73D` on `#1C1B19` | 11.1:1 | AAA |
+| `#6B6862` on `#FAFAF8` | 5.3:1 | AA |
+| `#B0ADA6` on `#1C1B19` | 7.7:1 | AAA |
+| `#FFD486` on `#1C1B19` | 12.3:1 | AAA |
+| `#9A9590` on `#1C1B19` | 5.2:1 | AA (text-muted, a11y-fixed) |
+| `#9E9A93` on `#2A2926` | 5.2:1 | AA (text-tertiary, a11y-fixed) |
 
 ### Selection Color
 

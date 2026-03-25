@@ -3,7 +3,6 @@
 import { memo, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ShieldCheck, TrendUp } from "@phosphor-icons/react";
 import {
   EASE_PREMIUM,
   FadeUp,
@@ -271,25 +270,12 @@ export function YieldSection() {
               />
 
               {/* Warm atmospheric glow */}
-              <div
-                className="pointer-events-none absolute -right-10 -top-10 h-[180px] w-[180px] rounded-full bg-yellow-500/[0.06] blur-[80px]"
-                aria-hidden="true"
-              />
 
               {/* Content — above image */}
               <div className="relative z-[1] flex h-full flex-col p-8 md:p-10">
-                <div className="mb-6 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-warm-700/25 bg-warm-800/50 backdrop-blur-sm transition-all duration-500 group-hover:border-yellow-500/20 group-hover:bg-yellow-500/10">
-                    <ShieldCheck
-                      size={20}
-                      weight="regular"
-                      className="text-warm-400/60 transition-colors duration-500 group-hover:text-yellow-500/80"
-                    />
-                  </div>
-                  <span className="text-xs uppercase tracking-[0.2em] text-yellow-500/80">
-                    Proteger
-                  </span>
-                </div>
+                <span className="mb-6 text-xs uppercase tracking-[0.2em] text-yellow-500/80">
+                  Proteger
+                </span>
 
                 <h3 className="mb-6 text-xl font-medium leading-[1.15] tracking-tight text-text-primary md:text-2xl">
                   150+ ativos digitais. Sob seu controle absoluto.
@@ -351,23 +337,10 @@ export function YieldSection() {
               gradientAngle={155}
             >
               {/* Atmospheric blur */}
-              <div
-                className="pointer-events-none absolute -left-10 bottom-0 h-[var(--glow-sm)] w-[var(--glow-sm)] rounded-full bg-yellow-500/[0.05] blur-[var(--glow-blur-sm)]"
-                aria-hidden="true"
-              />
 
-              <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-yellow-500/20 bg-yellow-500/10 transition-all duration-500 group-hover:bg-yellow-500/15">
-                  <TrendUp
-                    size={20}
-                    weight="regular"
-                    className="text-yellow-500"
-                  />
-                </div>
-                <span className="text-xs uppercase tracking-[0.2em] text-yellow-500">
-                  Crescer
-                </span>
-              </div>
+              <span className="mb-6 text-xs uppercase tracking-[0.2em] text-yellow-500">
+                Crescer
+              </span>
 
               <h3 className="mb-3 text-xl font-medium leading-[1.15] tracking-tight text-text-primary md:text-2xl">
                 Acesse rendimento DeFi.

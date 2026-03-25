@@ -219,18 +219,6 @@ export function SocialProof() {
                   &ldquo;
                 </div>
 
-                {/* ── Subtle inner atmospheric glow ── */}
-                <div
-                  className={`pointer-events-none absolute h-[var(--glow-sm)] w-[var(--glow-sm)] rounded-full blur-[100px] ${
-                    i === 0
-                      ? "-right-10 -top-10 bg-yellow-500/[0.06]"
-                      : i === 1
-                        ? "-left-10 bottom-0 bg-yellow-500/[0.04]"
-                        : "right-0 top-1/2 bg-yellow-500/[0.03]"
-                  }`}
-                  aria-hidden="true"
-                />
-
                 {/* ── Portrait ── */}
                 <div className="mb-8">
                   <Avatar

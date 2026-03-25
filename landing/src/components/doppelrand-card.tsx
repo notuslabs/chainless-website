@@ -8,7 +8,6 @@ interface DoppelrandCardProps {
   innerClassName?: string;
   variant?: "default" | "light";
   hover?: boolean;
-  glow?: boolean;
   gradientAngle?: number;
   as?: ElementType;
 }
@@ -16,11 +15,15 @@ interface DoppelrandCardProps {
 /**
  * Doppelrand ("double border") card — Chainless's signature surface treatment.
  *
- * Double-shell construction: translucent outer shell containing an inner elevated core,
- * separated by a visible 6px gap. Creates a luxury packaging feel.
+ * Double-shell construction: outer shell containing an inner elevated core,
+ * separated by a visible 6px gap. Reframed as "matting in a picture frame."
  *
- * Outer shell: rounded-[2.25rem], bg-white/[0.02], p-1.5, ring-1 ring-white/[0.04]
- * Inner core: rounded-[calc(2.25rem-0.375rem)], gradient background, inner-highlight-dark
+ * Old Money refinement:
+ * - 18px radius (architectural, not pillowy)
+ * - No glow orbs (wealth absorbs light)
+ * - Gold hallmark accent at inner top edge
+ * - Quieter 2-stop gradient
+ * - Hover: subtle 1px lift, barely perceptible
  */
 export function DoppelrandCard({
   children,
@@ -28,33 +31,26 @@ export function DoppelrandCard({
   innerClassName = "",
   variant = "default",
   hover = true,
-  glow = false,
-  gradientAngle = 145,
+  gradientAngle = 160,
   as: Component = "div",
 }: DoppelrandCardProps) {
   const gradientStyle =
     variant === "light"
-      ? `linear-gradient(${gradientAngle}deg, rgba(42,41,38,0.6) 0%, rgba(28,27,25,0.85) 50%, rgba(24,23,22,0.9) 100%)`
-      : `linear-gradient(${gradientAngle}deg, rgba(42,41,38,0.7) 0%, rgba(28,27,25,0.9) 50%, rgba(24,23,22,0.95) 100%)`;
+      ? `linear-gradient(${gradientAngle}deg, rgba(38,37,34,0.75) 0%, rgba(26,25,23,0.92) 100%)`
+      : `linear-gradient(${gradientAngle}deg, rgba(38,37,34,0.85) 0%, rgba(26,25,23,0.95) 100%)`;
 
   return (
     <Component
-      className={`group rounded-[2.25rem] bg-white/[0.02] p-1.5 ring-1 ring-white/[0.04] ${
+      className={`group rounded-[1.125rem] bg-white/[0.03] p-1.5 ring-1 ring-white/[0.05] ${
         hover
-          ? "transition-all duration-700 ease-premium hover:ring-white/[0.08] hover:shadow-ambient-dark"
+          ? "transition-all duration-700 ease-premium hover:ring-white/[0.07] hover:-translate-y-px"
           : ""
       } ${className}`}
     >
       <div
-        className={`inner-highlight-dark relative overflow-hidden rounded-[calc(2.25rem-0.375rem)] ${innerClassName}`}
+        className={`doppelrand-hallmark inner-highlight-dark relative overflow-hidden rounded-[calc(1.125rem-0.375rem)] ${innerClassName}`}
         style={{ background: gradientStyle }}
       >
-        {glow && (
-          <div
-            className="pointer-events-none absolute -right-10 -top-10 h-[200px] w-[200px] rounded-full bg-yellow-500/[0.04] blur-[90px]"
-            aria-hidden="true"
-          />
-        )}
         {children}
       </div>
     </Component>

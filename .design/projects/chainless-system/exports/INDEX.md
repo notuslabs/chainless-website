@@ -73,7 +73,12 @@ This file is the entry point for coding agents consuming GSP design output.
 <!-- BEGIN:critique -->
 | Section | File |
 |---------|------|
-| _(populated by /gsp-project-critique)_ | |
+| Critique | [critique.md](../critique/critique.md) |
+| Prioritized Fixes | [prioritized-fixes.md](../critique/prioritized-fixes.md) |
+| Alternative Directions | [alternative-directions.md](../critique/alternative-directions.md) |
+| Strengths | [strengths.md](../critique/strengths.md) |
+| Accessibility Audit | [accessibility-audit.md](../critique/accessibility-audit.md) |
+| Accessibility Fixes | [accessibility-fixes.md](../critique/accessibility-fixes.md) |
 <!-- END:critique -->
 
 ## Build
@@ -81,7 +86,7 @@ This file is the entry point for coding agents consuming GSP design output.
 <!-- BEGIN:build -->
 | Section | File |
 |---------|------|
-| _(populated by /gsp-project-build)_ | |
+| Build Log | [BUILD-LOG.md](../build/BUILD-LOG.md) |
 <!-- END:build -->
 
 ## QA Review

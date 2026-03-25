@@ -42,8 +42,6 @@ const STEPS = [
     badge: null,
     subMetric: null,
     description: "Seus BTC ficam como garantia on-chain, sempre sob sua custódia.",
-    glowColor: "bg-yellow-500/[0.05]",
-    glowPosition: "-right-10 -top-10",
   },
   {
     number: "02",
@@ -56,8 +54,6 @@ const STEPS = [
     badge: "3,5% a.a.",
     subMetric: null,
     description: "Receba crédito em dólar digital, instantaneamente.",
-    glowColor: "bg-yellow-600/[0.04]",
-    glowPosition: "-left-10 -bottom-10",
   },
   {
     number: "03",
@@ -70,8 +66,6 @@ const STEPS = [
     badge: null,
     subMetric: "este mês",
     description: "Seu Bitcoin continua valorizando. Você não vendeu nada.",
-    glowColor: "bg-emerald-500/[0.04]",
-    glowPosition: "-right-10 bottom-0",
   },
 ] as const;
 
@@ -135,12 +129,6 @@ export function BorrowCredit() {
                 innerClassName="flex h-full flex-col p-8 md:p-10"
                 gradientAngle={165}
               >
-                {/* Atmospheric glow */}
-                <div
-                  className={`pointer-events-none absolute ${step.glowPosition} h-[160px] w-[160px] rounded-full ${step.glowColor} blur-[70px]`}
-                  aria-hidden="true"
-                />
-
                 {/* Ghost number watermark */}
                 <span
                   className="pointer-events-none absolute right-8 top-6 select-none font-serif text-[72px] font-bold leading-none text-white/[0.025]"

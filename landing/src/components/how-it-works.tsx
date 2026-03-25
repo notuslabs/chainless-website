@@ -244,17 +244,6 @@ export function HowItWorks() {
                   innerClassName="flex h-full flex-col p-8 md:p-10"
                   gradientAngle={155 + i * 15}
                 >
-                  {/* Atmospheric blurred accent — varies position per card */}
-                  <div
-                    className="pointer-events-none absolute h-[140px] w-[140px] rounded-full bg-yellow-500/[0.04] blur-[70px]"
-                    aria-hidden="true"
-                    style={{
-                      right: i % 2 === 0 ? "-2rem" : "auto",
-                      left: i % 2 !== 0 ? "-2rem" : "auto",
-                      top: i < 2 ? "-2rem" : "auto",
-                      bottom: i >= 2 ? "-2rem" : "auto",
-                    }}
-                  />
                   {/* Top row: illustration + editorial number */}
                   <div className="flex items-start justify-between">
                     {/* SVG icon */}

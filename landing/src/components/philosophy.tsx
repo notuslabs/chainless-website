@@ -2,15 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Lock, Wallet } from "@phosphor-icons/react";
-import type { Icon as PhosphorIcon } from "@phosphor-icons/react";
 import { EASE_PREMIUM, FadeUp, StaggerContainer, StaggerItem } from "./motion";
 import { DoppelrandCard } from "./doppelrand-card";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 interface PhilosophyPillar {
-  icon: PhosphorIcon;
   overline: string;
   title: string;
   description: string;
@@ -22,7 +19,6 @@ interface PhilosophyPillar {
 
 const pillars: PhilosophyPillar[] = [
   {
-    icon: Lock,
     overline: "Soberania dos ativos",
     title: "Ninguém pode congelar seus ativos",
     description:
@@ -33,12 +29,11 @@ const pillars: PhilosophyPillar[] = [
     imageAlt: "Detalhe arquitetônico de concreto com luz natural quente",
   },
   {
-    icon: Wallet,
     overline: "Sem intermediários",
     title: "Rendimentos direto na sua carteira",
     description:
       "Yield DeFi flui para você no instante em que é gerado. Sem custódia oculta, sem atrasos, sem repasse.",
-    stat: "0",
+    stat: "ZERO",
     statLabel: "intermediários entre você e seu yield",
     image: `${BASE}/philosophy-2.jpg`,
     imageAlt: "Interior com luz natural quente entrando por janelas amplas",
@@ -94,20 +89,12 @@ export function Philosophy() {
         {/* ── Pillar cards ── */}
         <StaggerContainer className="mt-20 space-y-6">
           {pillars.map((pillar, i) => {
-            const IconComponent = pillar.icon;
-
             return (
               <StaggerItem key={pillar.title}>
                 <DoppelrandCard
                   gradientAngle={i === 0 ? 165 : 195}
                   variant={i === 0 ? "default" : "light"}
                 >
-                  {/* Atmospheric blur inside card */}
-                  <div
-                    className="pointer-events-none absolute -right-10 top-1/4 h-[220px] w-[220px] rounded-full bg-yellow-500/[0.04] blur-[var(--glow-blur-sm)]"
-                    aria-hidden="true"
-                  />
-
                   <div className="grid grid-cols-1 md:grid-cols-12">
                     {/* Image area — always left */}
                     <div className="relative h-[280px] md:col-span-5 md:h-full md:min-h-[420px]">
@@ -143,15 +130,6 @@ export function Philosophy() {
 
                     {/* Content area — always right */}
                     <div className="relative flex flex-col justify-center p-8 md:col-span-7 md:p-12 lg:p-16">
-                      {/* Icon container */}
-                      <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-xl border border-warm-700/25 bg-warm-800/50 transition-all duration-500 group-hover:border-yellow-500/20 group-hover:bg-yellow-500/10">
-                        <IconComponent
-                          size={20}
-                          weight="regular"
-                          className="text-warm-400/60 transition-colors duration-500 group-hover:text-yellow-500/80"
-                        />
-                      </div>
-
                       {/* Overline */}
                       <span className="mb-4 block text-xs uppercase tracking-[0.2em] text-yellow-500/80">
                         {pillar.overline}

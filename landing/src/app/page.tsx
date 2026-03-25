@@ -77,12 +77,15 @@ export default function Home() {
         <EditorialBreak />
         <SectionGlow intensity="normal" />
         <YieldSection />
+        <SectionRule />
         <SpendCredit />
+        <SectionRule />
         <BorrowCredit />
         <SectionRule />
         <SocialProof />
-        <SectionFade from="var(--color-dark-600)" to="var(--color-dark-500)" />
+        <SectionRule />
         <HowItWorks />
+        <SectionRule />
         <CTASection />
       </main>
       <Footer />

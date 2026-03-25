@@ -21,13 +21,13 @@ Warm undertones everywhere. No cool grays, no blue-tinted neutrals. Every surfac
 
 Yellow is accent, never background. Selection color: `#FFC73D` on `#1C1B19`.
 
-Semantic: Success `#2D8A56`, Warning `#D4890D`, Error `#C93B3B`, Info `#3B7FC9`.
+Semantic: Success `#3DA66A`, Warning `#D4890D`, Error `#E05555`, Info `#4A90DA`.
 
 Dark mode uses `#1C1B19` base, `#2A2926` elevated. Yellow shifts to `#FFD486` for dark bg contrast.
 
 ## Typography
 
-**Primary**: Satoshi (humanist sans-serif, warm geometry) — all UI, body, nav, buttons
+**Primary**: Geist (humanist sans-serif, clean geometry) — all UI, body, nav, buttons
 **Accent**: Fraunces (wonky serif) — hero headlines, pull quotes, brand moments ONLY
 **Mono**: IBM Plex Mono — data values, addresses, yields, code
 
