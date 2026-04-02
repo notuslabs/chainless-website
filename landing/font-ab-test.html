@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Blind Test — Chainless</title>
+<style>
+  /* ── Font Loading ── */
+  @font-face {
+    font-family: 'Geist';
+    src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Geist';
+    src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Geist';
+    src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Geist';
+    src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Switzer';
+    src: url('https://cdn.fontshare.com/wf/ZFIWZSBA3LKPTGZRZ2XWTLRL4JJXREAP/VVOHCKYUF5PXIXBQXVFHYC5HW3K6CMQS/OPBWBHKW46UDEZKC6FPIOC2YJBCFCPXZ.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Switzer';
+    src: url('https://cdn.fontshare.com/wf/ZFIWZSBA3LKPTGZRZ2XWTLRL4JJXREAP/6SJYXLQZHOHEYM3OE3XBEJXUGN3MFLW5/OPBWBHKW46UDEZKC6FPIOC2YJBCFCPXZ.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Switzer';
+    src: url('https://cdn.fontshare.com/wf/ZFIWZSBA3LKPTGZRZ2XWTLRL4JJXREAP/7NZHGFQNTWF6UW6FVJNKF3AGXKWJEBGA/OPBWBHKW46UDEZKC6FPIOC2YJBCFCPXZ.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Switzer';
+    src: url('https://cdn.fontshare.com/wf/ZFIWZSBA3LKPTGZRZ2XWTLRL4JJXREAP/ED4RHS5FWZXQBLXJNQSHXDQB3NBNFQAL/OPBWBHKW46UDEZKC6FPIOC2YJBCFCPXZ.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+  }
+
+  /* ── Base ── */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --dark-500: #1C1B19;
+    --dark-600: #181716;
+    --dark-800: #0F0E0D;
+    --warm-300: #A4A097;
+    --warm-400: #87837C;
+    --warm-500: #6B6862;
+    --warm-700: #3F3D3A;
+    --yellow-500: #FFC73D;
+    --yellow-400: #FFD486;
+    --text-primary: #FAFAF8;
+    --text-secondary: #B0ADA6;
+  }
+
+  body {
+    background: var(--dark-500);
+    color: var(--text-primary);
+    font-family: system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow: hidden;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+  }
+
+  /* ── Progress bar ── */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--yellow-500);
+    transition: width 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+    z-index: 100;
+    opacity: 0.6;
+  }
+
+  /* ── Header ── */
+  .header {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .header-title {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm-400);
+  }
+  .header-counter {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--warm-500);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ── Main area ── */
+  .arena {
+    flex: 1;
+    display: flex;
+    gap: 1px;
+    position: relative;
+  }
+
+  /* ── Card (each side) ── */
+  .card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 40px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s ease;
+  }
+  .card:hover {
+    background: rgba(255,255,255,0.02);
+  }
+  .card:active {
+    background: rgba(255,199,61,0.03);
+  }
+  .card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+    pointer-events: none;
+  }
+  .card:hover::after {
+    border-color: rgba(255,199,61,0.1);
+  }
+
+  /* Divider between cards */
+  .divider {
+    width: 1px;
+    background: rgba(255,255,255,0.06);
+    align-self: stretch;
+  }
+
+  /* ── Labels ── */
+  .card-label {
+    position: absolute;
+    top: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-500);
+    opacity: 0.5;
+  }
+  .card:first-child .card-label { left: 24px; }
+  .card:last-child .card-label { right: 24px; }
+
+  /* ── Keyboard hints ── */
+  .key-hint {
+    position: absolute;
+    bottom: 20px;
+    font-size: 11px;
+    color: var(--warm-500);
+    opacity: 0.3;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card:first-child .key-hint { left: 24px; }
+  .card:last-child .key-hint { right: 24px; }
+  .key-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  /* ── Content container ── */
+  .content {
+    max-width: 480px;
+    width: 100%;
+  }
+
+  /* ── Context label ── */
+  .context-label {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-500);
+    opacity: 0.4;
+    white-space: nowrap;
+  }
+
+  /* ── Animation ── */
+  .arena {
+    opacity: 1;
+    transition: opacity 0.25s ease;
+  }
+  .arena.transitioning {
+    opacity: 0;
+  }
+
+  /* ── Flash feedback ── */
+  .flash {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  .card.chosen .flash {
+    opacity: 1;
+    background: rgba(255,199,61,0.04);
+  }
+
+  /* ── Results screen ── */
+  .results {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    padding: 48px;
+    text-align: center;
+    gap: 32px;
+  }
+  .results.visible {
+    display: flex;
+  }
+  .results h2 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm-400);
+  }
+  .result-bar-container {
+    width: 100%;
+    max-width: 500px;
+  }
+  .result-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .result-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.06);
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .result-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 1.5s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .result-fill.geist { background: var(--text-secondary); }
+  .result-fill.switzer { background: var(--yellow-500); }
+  .result-verdict {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 440px;
+  }
+  .result-verdict strong {
+    color: var(--yellow-500);
+    font-weight: 600;
+  }
+  .result-breakdown {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--warm-500);
+    line-height: 1.8;
+  }
+  .restart-btn {
+    margin-top: 16px;
+    padding: 10px 24px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .restart-btn:hover {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.15);
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+
+<div class="header" id="header">
+  <span class="header-title">Blind font test</span>
+  <span class="header-counter" id="counter">1 / 24</span>
+</div>
+
+<div class="arena" id="arena">
+  <div class="card" id="card-left" onclick="choose('left')">
+    <span class="card-label">A</span>
+    <div class="flash"></div>
+    <div class="content" id="content-left"></div>
+    <span class="key-hint"><span class="key-box">←</span></span>
+  </div>
+  <div class="divider"></div>
+  <div class="card" id="card-right" onclick="choose('right')">
+    <span class="card-label">B</span>
+    <div class="flash"></div>
+    <div class="content" id="content-right"></div>
+    <span class="key-hint"><span class="key-box">→</span></span>
+  </div>
+</div>
+
+<div class="context-label" id="context"></div>
+
+<div class="results" id="results">
+  <h2>Results</h2>
+  <div class="result-bar-container">
+    <div class="result-label">
+      <span id="label-a" style="color:var(--text-secondary)">Font A</span>
+      <span id="score-a">0%</span>
+    </div>
+    <div class="result-bar"><div class="result-fill geist" id="fill-a" style="width:0%"></div></div>
+    <div class="result-label">
+      <span id="label-b" style="color:var(--yellow-500)">Font B</span>
+      <span id="score-b">0%</span>
+    </div>
+    <div class="result-bar"><div class="result-fill switzer" id="fill-b" style="width:0%"></div></div>
+  </div>
+  <p class="result-verdict" id="verdict"></p>
+  <div class="result-breakdown" id="breakdown"></div>
+  <button class="restart-btn" onclick="restart()">Run again</button>
+</div>
+
+<script>
+const FONT_A = 'Geist';
+const FONT_B = 'Switzer';
+
+// Each round: context label, HTML content, CSS to apply
+const rounds = [
+  {
+    context: 'Navigation · 13px · semibold',
+    html: `<div style="display:flex;gap:20px;align-items:center">
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.01em;color:#FAFAF8">Sobre</span>
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.01em;color:rgba(164,160,151,0.8)">Rendimentos</span>
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.01em;color:rgba(164,160,151,0.8)">Cartão</span>
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.01em;color:rgba(164,160,151,0.8)">Como funciona</span>
+    </div>`
+  },
+  {
+    context: 'CTA Button · 16px · semibold',
+    html: `<div style="display:inline-flex;align-items:center;gap:12px;background:#FFC73D;color:#1C1B19;padding:16px 24px 16px 32px;border-radius:999px;font-size:16px;font-weight:600">
+      Comecar agora
+      <span style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:rgba(28,27,25,0.1)">→</span>
+    </div>`
+  },
+  {
+    context: 'Body paragraph · 18px · regular',
+    html: `<p style="font-size:18px;font-weight:400;line-height:1.56;color:rgba(164,160,151,0.6);max-width:44ch">Cresça seu patrimônio com total controle. Toda plataforma de patrimônio pede que você entregue seus ativos a um custodiante.</p>`
+  },
+  {
+    context: 'Overline label · 9px · semibold · uppercase',
+    html: `<span style="font-size:9px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,199,61,0.9)">Rendimentos</span>`
+  },
+  {
+    context: 'Section heading support · 15px · regular',
+    html: `<p style="font-size:15px;font-weight:400;line-height:1.7;color:rgba(164,160,151,0.6);max-width:320px;text-align:right">De stablecoins em dólar a pools de liquidez — cada rendimento sob sua custódia, cada protocolo auditado.</p>`
+  },
+  {
+    context: 'Data label · 13px · medium · uppercase',
+    html: `<div style="display:flex;gap:40px">
+      <div>
+        <div style="font-size:13px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:rgba(135,131,124,0.5);margin-bottom:8px">IOF bancário</div>
+        <div style="font-size:36px;font-weight:400;letter-spacing:-0.02em;color:rgba(164,160,151,0.4);font-variant-numeric:tabular-nums">3,5%</div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:rgba(135,131,124,0.5);margin-bottom:8px">IOF via Chainless</div>
+        <div style="font-size:36px;font-weight:500;letter-spacing:-0.02em;color:#FAFAF8;font-variant-numeric:tabular-nums">0%</div>
+      </div>
+    </div>`
+  },
+  {
+    context: 'Card title · 20px · normal',
+    html: `<div>
+      <span style="display:block;font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,199,61,0.8);margin-bottom:16px">Proteger</span>
+      <h3 style="font-size:20px;font-weight:400;line-height:1.15;letter-spacing:-0.01em;color:#FAFAF8">150+ ativos digitais. Sob seu controle absoluto.</h3>
+    </div>`
+  },
+  {
+    context: 'Testimonial attribution · 14px + 13px',
+    html: `<div style="border-top:1px solid rgba(63,61,58,0.15);padding-top:24px">
+      <p style="font-size:14px;font-weight:600;letter-spacing:-0.01em;color:#FAFAF8">Renato Amoedo</p>
+      <p style="font-size:13px;font-weight:500;letter-spacing:0.02em;color:rgba(135,131,124,0.5);margin-top:4px">Perito Criminal, Polícia Técnica da Bahia</p>
+    </div>`
+  },
+  {
+    context: 'Trust strip · 13px · medium',
+    html: `<div style="display:flex;align-items:center;gap:24px;font-size:13px;font-weight:500;letter-spacing:0.02em;color:rgba(107,104,98,0.35)">
+      <span>Sem custódia</span>
+      <span style="width:1px;height:12px;background:rgba(63,61,58,0.15)"></span>
+      <span>Sem lock-up</span>
+      <span style="width:1px;height:12px;background:rgba(63,61,58,0.15)"></span>
+      <span>Sem intermediários</span>
+    </div>`
+  },
+  {
+    context: 'Hero stat · 18px numeral + 13px label',
+    html: `<div style="display:flex;align-items:center;gap:8px">
+      <span style="font-size:18px;font-weight:600;font-variant-numeric:tabular-nums;color:rgba(255,199,61,0.9)">150+</span>
+      <span style="font-size:13px;font-weight:500;letter-spacing:0.02em;color:rgba(255,255,255,0.6)">ativos digitais</span>
+    </div>`
+  },
+  {
+    context: 'Pool row · 14px + 9px',
+    html: `<div style="display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(63,61,58,0.12)">
+      <div>
+        <span style="font-size:14px;font-weight:500;color:rgba(250,250,248,0.85)">wBTC/ETH</span>
+        <div style="font-size:9px;letter-spacing:0.05em;color:rgba(135,131,124,0.5);margin-top:4px">Curve</div>
+      </div>
+      <div style="text-align:right">
+        <span style="font-size:18px;font-weight:600;font-variant-numeric:tabular-nums;color:#FFC73D">42.5%</span>
+        <div style="font-size:9px;color:rgba(135,131,124,0.4)">30–60%+</div>
+      </div>
+    </div>`
+  },
+  {
+    context: 'Subheadline · 20px · regular',
+    html: `<p style="font-size:20px;font-weight:400;line-height:1.7;color:rgba(255,255,255,0.9)">Cresça seu patrimônio com total controle.</p>`
+  },
+  {
+    context: 'Footer description · 14px · regular',
+    html: `<p style="font-size:14px;font-weight:400;line-height:1.75;color:rgba(135,131,124,0.6);max-width:260px">Plataforma de patrimônio digital com autocustódia. Seu patrimônio cresce. Suas chaves continuam suas.</p>`
+  },
+  {
+    context: 'Footer tagline · 15px · italic',
+    html: `<p style="font-size:15px;font-weight:400;font-style:italic;color:rgba(135,131,124,0.3)">Patrimônio digital soberano.</p>`
+  },
+  {
+    context: 'Disclaimer · 13px · regular',
+    html: `<p style="font-size:13px;font-weight:400;line-height:1.6;color:rgba(135,131,124,0.35);max-width:520px">Taxas estimadas com base no protocolo Aave e sujeitas a variação de mercado. Este serviço não constitui oferta de crédito.</p>`
+  },
+  {
+    context: 'Step card · mixed sizes',
+    html: `<div>
+      <span style="display:block;font-size:13px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,199,61,0.7);margin-bottom:24px">Deposite</span>
+      <span style="display:block;font-size:18px;font-weight:500;letter-spacing:-0.01em;color:#FAFAF8;margin-bottom:8px">Bitcoin</span>
+      <span style="display:block;font-size:13px;letter-spacing:0.03em;color:rgba(135,131,124,0.45);margin-bottom:24px">BTC</span>
+      <span style="display:block;font-size:32px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-0.02em;color:rgba(250,250,248,0.9)">1 BTC</span>
+    </div>`
+  },
+  {
+    context: 'Section description · 15px body',
+    html: `<p style="font-size:15px;font-weight:400;line-height:1.7;color:rgba(164,160,151,0.6);max-width:48ch">USDC ao câmbio real, sem spread oculto. Após a conversão, os ativos são seus — na blockchain, sob sua chave.</p>`
+  },
+  {
+    context: 'Card benefit list · 16px · regular',
+    html: `<ul style="list-style:none;display:flex;flex-direction:column;gap:16px">
+      <li style="display:flex;align-items:center;gap:12px;font-size:16px;color:rgba(164,160,151,0.6)">
+        <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,199,61,0.4);flex-shrink:0"></span>
+        1 USDC = 1 USD no exterior
+      </li>
+      <li style="display:flex;align-items:center;gap:12px;font-size:16px;color:rgba(164,160,151,0.6)">
+        <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,199,61,0.4);flex-shrink:0"></span>
+        Até 5% cashback em compras
+      </li>
+      <li style="display:flex;align-items:center;gap:12px;font-size:16px;color:rgba(164,160,151,0.6)">
+        <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,199,61,0.4);flex-shrink:0"></span>
+        Pix via BRZ no Brasil
+      </li>
+    </ul>`
+  },
+  {
+    context: 'Status badge · 12px · medium',
+    html: `<span style="display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,199,61,0.2);background:rgba(255,199,61,0.1);font-size:12px;font-weight:500;color:rgba(255,199,61,0.8)">
+      <span style="width:8px;height:8px;border-radius:50%;background:#FFC73D"></span>
+      Em breve
+    </span>`
+  },
+  {
+    context: 'How it works title · 20px',
+    html: `<h3 style="font-size:20px;font-weight:400;letter-spacing:-0.01em;color:#FAFAF8;line-height:1.2">Crie sua carteira</h3>
+    <p style="font-size:14px;font-weight:400;line-height:1.75;color:rgba(164,160,151,0.6);margin-top:12px;max-width:38ch">Suas chaves privadas são geradas no seu dispositivo. Chainless nunca as vê, nunca as armazena.</p>`
+  },
+  {
+    context: 'Section eyebrow pill · 9px',
+    html: `<span style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;border:1px solid rgba(63,61,58,0.25);background:rgba(42,41,38,0.3);font-size:9px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,199,61,0.9)">Quem já se tornou Chainless</span>`
+  },
+  {
+    context: 'Copyright · 13px · medium',
+    html: `<div style="display:flex;justify-content:space-between;align-items:center;gap:24px">
+      <p style="font-size:13px;font-weight:500;letter-spacing:0.02em;color:rgba(107,104,98,0.35)">© 2026 Chainless. Patrimônio digital soberano.</p>
+      <p style="font-size:13px;letter-spacing:0.02em;color:rgba(85,82,77,0.3);max-width:300px;text-align:right">Chainless não é uma instituição financeira. Não custodiamos ativos.</p>
+    </div>`
+  },
+  {
+    context: 'Large numeral · 36px · medium',
+    html: `<div style="display:flex;align-items:end;gap:12px;border-top:1px solid rgba(63,61,58,0.15);padding-top:32px">
+      <span style="font-size:36px;font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:-0.02em;color:#FAFAF8">R$40B+</span>
+      <span style="font-size:14px;line-height:1.4;color:rgba(135,131,124,0.5);margin-bottom:4px">presos em custodiantes após FTX</span>
+    </div>`
+  },
+  {
+    context: 'Yield metric · 18px semibold',
+    html: `<div style="display:flex;flex-direction:column;gap:2px">
+      <span style="font-size:18px;font-weight:600;font-variant-numeric:tabular-nums;color:rgba(250,250,248,0.75)">18.2%</span>
+      <span style="font-size:9px;color:rgba(135,131,124,0.4)">12–25%</span>
+    </div>`
+  }
+];
+
+// State
+let currentRound = 0;
+let scores = { geist: 0, switzer: 0 };
+let categoryScores = {};
+let order = []; // which font is on which side per round
+let shuffledRounds = [];
+let transitioning = false;
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function init() {
+  shuffledRounds = shuffle(rounds);
+  // Randomize which side each font appears on per round
+  order = shuffledRounds.map(() => Math.random() < 0.5 ? 'left' : 'right');
+  currentRound = 0;
+  scores = { geist: 0, switzer: 0 };
+  categoryScores = {};
+  document.getElementById('results').classList.remove('visible');
+  document.getElementById('header').style.display = 'flex';
+  document.getElementById('arena').style.display = 'flex';
+  document.getElementById('context').style.display = 'block';
+  render();
+}
+
+function render() {
+  const round = shuffledRounds[currentRound];
+  const geistSide = order[currentRound]; // 'left' or 'right'
+  const switzerSide = geistSide === 'left' ? 'right' : 'left';
+
+  document.getElementById(`content-${geistSide}`).innerHTML = round.html;
+  document.getElementById(`content-${geistSide}`).style.fontFamily = `'${FONT_A}', system-ui, sans-serif`;
+
+  document.getElementById(`content-${switzerSide}`).innerHTML = round.html;
+  document.getElementById(`content-${switzerSide}`).style.fontFamily = `'${FONT_B}', system-ui, sans-serif`;
+
+  document.getElementById('counter').textContent = `${currentRound + 1} / ${shuffledRounds.length}`;
+  document.getElementById('progress').style.width = `${((currentRound) / shuffledRounds.length) * 100}%`;
+  document.getElementById('context').textContent = round.context;
+}
+
+function choose(side) {
+  if (transitioning) return;
+  transitioning = true;
+
+  const round = shuffledRounds[currentRound];
+  const geistSide = order[currentRound];
+  const chosenFont = side === geistSide ? 'geist' : 'switzer';
+  scores[chosenFont]++;
+
+  // Track per-category
+  const cat = round.context.split('·')[0].trim();
+  if (!categoryScores[cat]) categoryScores[cat] = { geist: 0, switzer: 0 };
+  categoryScores[cat][chosenFont]++;
+
+  // Flash feedback
+  const card = document.getElementById(`card-${side}`);
+  card.classList.add('chosen');
+
+  setTimeout(() => {
+    card.classList.remove('chosen');
+    currentRound++;
+
+    if (currentRound >= shuffledRounds.length) {
+      showResults();
+      transitioning = false;
+      return;
+    }
+
+    const arena = document.getElementById('arena');
+    arena.classList.add('transitioning');
+
+    setTimeout(() => {
+      render();
+      arena.classList.remove('transitioning');
+      transitioning = false;
+    }, 250);
+  }, 200);
+}
+
+function showResults() {
+  const total = scores.geist + scores.switzer;
+  const geistPct = Math.round((scores.geist / total) * 100);
+  const switzerPct = 100 - geistPct;
+
+  document.getElementById('header').style.display = 'none';
+  document.getElementById('arena').style.display = 'none';
+  document.getElementById('context').style.display = 'none';
+  document.getElementById('progress').style.width = '100%';
+
+  document.getElementById('label-a').textContent = `Geist — ${scores.geist} picks`;
+  document.getElementById('label-b').textContent = `Switzer — ${scores.switzer} picks`;
+  document.getElementById('score-a').textContent = `${geistPct}%`;
+  document.getElementById('score-b').textContent = `${switzerPct}%`;
+
+  const results = document.getElementById('results');
+  results.classList.add('visible');
+
+  setTimeout(() => {
+    document.getElementById('fill-a').style.width = `${geistPct}%`;
+    document.getElementById('fill-b').style.width = `${switzerPct}%`;
+  }, 100);
+
+  // Verdict
+  const winner = geistPct > switzerPct ? 'Geist' : switzerPct > geistPct ? 'Switzer' : null;
+  const margin = Math.abs(geistPct - switzerPct);
+  let verdictText;
+  if (!winner) {
+    verdictText = `Dead even. Both fonts performed identically across all contexts. The difference between them may not matter for your brand.`;
+  } else if (margin <= 12) {
+    verdictText = `Slight preference for <strong>${winner}</strong>, but within noise range. You're split — either font works. Pick based on principle, not gut.`;
+  } else if (margin <= 30) {
+    verdictText = `Clear preference for <strong>${winner}</strong>. Your eye consistently chose it across multiple contexts. That's signal.`;
+  } else {
+    verdictText = `Strong preference for <strong>${winner}</strong>. The difference was obvious to you even without knowing which was which.`;
+  }
+  document.getElementById('verdict').innerHTML = verdictText;
+
+  // Category breakdown
+  let breakdownHTML = '';
+  for (const [cat, s] of Object.entries(categoryScores)) {
+    const catTotal = s.geist + s.switzer;
+    if (catTotal === 1) {
+      const w = s.geist > s.switzer ? 'Geist' : 'Switzer';
+      breakdownHTML += `${cat}: ${w}<br>`;
+    }
+  }
+  // Group wins by font
+  let geistWins = [], switzerWins = [];
+  for (const [cat, s] of Object.entries(categoryScores)) {
+    if (s.geist > s.switzer) geistWins.push(cat);
+    else if (s.switzer > s.geist) switzerWins.push(cat);
+  }
+  let bd = '';
+  if (geistWins.length) bd += `Geist won: ${geistWins.join(', ')}<br>`;
+  if (switzerWins.length) bd += `Switzer won: ${switzerWins.join(', ')}`;
+  document.getElementById('breakdown').innerHTML = bd;
+}
+
+function restart() {
+  init();
+}
+
+// Keyboard support
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') choose('left');
+  if (e.key === 'ArrowRight') choose('right');
+});
+
+// Wait for fonts to load then init
+document.fonts.ready.then(() => {
+  setTimeout(init, 200);
+});
+</script>
+
+</body>
+</html>

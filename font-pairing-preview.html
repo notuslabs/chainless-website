@@ -3,28 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chainless — Fraunces + Sans Pairing Preview</title>
+  <title>Chainless — Font Pairing Lab</title>
 
-  <!-- Fraunces (serif — constant across all slides) -->
+  <!-- Title fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nohemi:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Flaviotte — no Google/FontShare hosted version; using a fallback import approach -->
+  <link href="https://api.fontshare.com/v2/css?f[]=flaviotte@400&display=swap" rel="stylesheet" />
 
-  <!-- Sans option 1: Satoshi (current) -->
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@300,400,500,600,700,800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=sentient@300,400,500,600,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet" />
 
-  <!-- Sans option 2: Geist -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+
+  <!-- Body fonts -->
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet" />
 
-  <!-- Sans option 3: Switzer -->
-  <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
-
-  <!-- Sans option 4: Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- Sans option 5: Plus Jakarta Sans -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-
   <style>
-    /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -37,17 +49,16 @@
       --yellow-400: #FFD486;
       --text-primary: #FAFAF8;
       --text-secondary: #B0ADA6;
-      --font-serif: 'Fraunces', Georgia, serif;
+      --font-title: 'Fraunces', Georgia, serif;
+      --font-body: 'Switzer', ui-sans-serif, system-ui, sans-serif;
     }
 
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-    }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
     body {
       background: #0A0908;
       color: var(--text-primary);
+      font-family: var(--font-body);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
@@ -59,15 +70,8 @@
       color: var(--dark-500);
     }
 
-    /* ── Sans family classes ── */
-    .sans-satoshi { font-family: 'Satoshi', 'General Sans', ui-sans-serif, system-ui, sans-serif; }
-    .sans-geist { font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; }
-    .sans-switzer { font-family: 'Switzer', ui-sans-serif, system-ui, sans-serif; }
-    .sans-inter { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
-    .sans-jakarta { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif; }
-
-    /* ── Navigation ── */
-    .nav {
+    /* ── Selector bar ── */
+    .selector-bar {
       position: fixed;
       top: 0;
       left: 0;
@@ -76,57 +80,109 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 16px 24px;
-      background: rgba(10, 9, 8, 0.88);
-      backdrop-filter: blur(20px) saturate(1.4);
+      gap: 32px;
+      padding: 14px 24px;
+      background: rgba(10, 9, 8, 0.92);
+      backdrop-filter: blur(24px) saturate(1.4);
       border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     }
 
-    .nav-btn {
-      padding: 8px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: transparent;
+    .selector-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .selector-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
       color: var(--warm-400);
-      font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.32, 0.72, 0, 1);
       white-space: nowrap;
     }
 
-    .nav-btn:hover {
-      border-color: rgba(255, 199, 61, 0.3);
+    .font-select {
+      appearance: none;
+      -webkit-appearance: none;
+      padding: 8px 36px 8px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
       color: var(--text-primary);
-      background: rgba(255, 199, 61, 0.06);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2387837C' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      min-width: 160px;
     }
 
-    .nav-btn.active {
+    .font-select:hover {
+      border-color: rgba(255, 199, 61, 0.3);
+      background-color: rgba(255, 199, 61, 0.04);
+    }
+
+    .font-select:focus {
+      outline: none;
+      border-color: var(--yellow-500);
+      box-shadow: 0 0 0 2px rgba(255, 199, 61, 0.15);
+    }
+
+    .font-select option {
+      background: #1C1B19;
+      color: #FAFAF8;
+    }
+
+    .caps-toggle {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: transparent;
+      color: var(--warm-400);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+
+    .caps-toggle:hover {
+      border-color: rgba(255, 199, 61, 0.3);
+      color: var(--text-primary);
+    }
+
+    .caps-toggle.active {
       border-color: var(--yellow-500);
       color: var(--dark-500);
       background: var(--yellow-500);
+    }
+
+    .caps-on .headline,
+    .caps-on .section-heading-sample {
+      text-transform: uppercase;
+    }
+
+    .selector-divider {
+      width: 1px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .pairing-name {
+      font-size: 14px;
       font-weight: 600;
-    }
-
-    /* ── Slide container ── */
-    .slide {
-      min-height: 100dvh;
-      display: none;
-      flex-direction: column;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .slide.active {
-      display: flex;
+      color: var(--yellow-500);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
     }
 
     /* ── Hero section ── */
     .hero {
-      flex: 1;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -135,7 +191,6 @@
       background: var(--dark-500);
     }
 
-    /* Atmospheric glow */
     .hero::before {
       content: '';
       position: absolute;
@@ -149,7 +204,6 @@
       z-index: 0;
     }
 
-    /* Noise */
     .hero::after {
       content: '';
       position: absolute;
@@ -169,9 +223,7 @@
       width: 100%;
     }
 
-    .hero-inner {
-      max-width: 640px;
-    }
+    .hero-inner { max-width: 640px; }
 
     /* ── Eyebrow ── */
     .eyebrow {
@@ -198,9 +250,14 @@
       background: rgba(255, 199, 61, 0.7);
     }
 
-    /* ── Headline (Fraunces always) ── */
+    /* ── Size compensation for small x-height fonts ── */
+    .size-up .headline { font-size: clamp(3.25rem, 2.4rem + 3.8vw, 6rem); }
+    .size-up .section-heading-sample { font-size: clamp(2.4rem, 1.8rem + 2.4vw, 3.75rem); }
+    .size-up .pull-quote-sample { font-size: 1.55rem; }
+
+    /* ── Headline (uses title font) ── */
     .headline {
-      font-family: var(--font-serif);
+      font-family: var(--font-title);
       font-size: clamp(2.75rem, 2rem + 3.3vw, 5.25rem);
       font-weight: 600;
       line-height: 1.03;
@@ -212,7 +269,7 @@
         0 0 200px rgba(10, 9, 8, 0.2);
     }
 
-    /* ── Subheadline (inherits slide sans) ── */
+    /* ── Subheadline (uses body font) ── */
     .subheadline {
       margin-top: 32px;
       max-width: 460px;
@@ -241,6 +298,7 @@
       border: none;
       background: var(--yellow-500);
       color: var(--dark-500);
+      font-family: var(--font-body);
       font-size: 16px;
       font-weight: 600;
       cursor: pointer;
@@ -271,6 +329,7 @@
     }
 
     .btn-secondary {
+      font-family: var(--font-body);
       font-size: 15px;
       font-weight: 500;
       color: rgba(255, 255, 255, 0.8);
@@ -342,7 +401,7 @@
     }
 
     .section-heading-sample {
-      font-family: var(--font-serif);
+      font-family: var(--font-title);
       font-size: clamp(2rem, 1.5rem + 2vw, 3.25rem);
       font-weight: 600;
       line-height: 1.06;
@@ -352,7 +411,7 @@
 
     .pull-quote-sample {
       margin-top: 24px;
-      font-family: var(--font-serif);
+      font-family: var(--font-title);
       font-size: 1.35rem;
       font-style: italic;
       font-weight: 400;
@@ -362,7 +421,7 @@
       text-wrap: pretty;
     }
 
-    /* ── Body text sample — shows the sans at reading size ── */
+    /* ── Body text sample ── */
     .body-sample {
       margin-top: 48px;
       padding-top: 48px;
@@ -431,7 +490,7 @@
       font-weight: 600;
     }
 
-    /* ── Bottom info bar ── */
+    /* ── Info bar ── */
     .info-bar {
       position: relative;
       z-index: 2;
@@ -443,48 +502,6 @@
       background: rgba(10, 9, 8, 0.6);
       border-top: 1px solid rgba(255, 255, 255, 0.04);
       backdrop-filter: blur(20px);
-    }
-
-    .font-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--yellow-500);
-      letter-spacing: 0.01em;
-    }
-
-    .font-meta {
-      font-size: 13px;
-      color: var(--warm-400);
-      line-height: 1.5;
-    }
-
-    .font-tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 12px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .tag-current {
-      background: rgba(255, 199, 61, 0.12);
-      color: var(--yellow-500);
-      border: 1px solid rgba(255, 199, 61, 0.2);
-    }
-
-    .tag-recommended {
-      background: rgba(45, 138, 86, 0.12);
-      color: #5AE08A;
-      border: 1px solid rgba(45, 138, 86, 0.25);
-    }
-
-    .tag-option {
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--warm-400);
-      border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .info-left {
@@ -499,18 +516,24 @@
       gap: 20px;
     }
 
-    .slide-counter {
+    .font-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--yellow-500);
+      letter-spacing: 0.01em;
+    }
+
+    .font-meta {
       font-size: 13px;
-      font-weight: 500;
       color: var(--warm-400);
-      font-variant-numeric: tabular-nums;
+      line-height: 1.5;
+      max-width: 600px;
     }
 
     .personality-row {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      margin-top: 0;
     }
 
     .personality-tag {
@@ -523,7 +546,6 @@
       background: rgba(255, 255, 255, 0.02);
     }
 
-    /* ── Arrow icon ── */
     .arrow-svg {
       width: 15px;
       height: 15px;
@@ -636,7 +658,7 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 4px;
       background: rgba(255, 255, 255, 0.04);
-      font-family: 'Satoshi', ui-sans-serif, sans-serif;
+      font-family: ui-sans-serif, sans-serif;
       font-size: 11px;
     }
 
@@ -644,8 +666,8 @@
     @media (max-width: 768px) {
       .hero { padding: 100px 24px 60px; }
       .info-bar { padding: 16px 24px; flex-direction: column; align-items: flex-start; }
-      .nav { gap: 4px; padding: 12px 16px; flex-wrap: wrap; justify-content: center; }
-      .nav-btn { font-size: 11px; padding: 6px 12px; }
+      .selector-bar { gap: 12px; padding: 12px 16px; flex-wrap: wrap; }
+      .font-select { min-width: 120px; font-size: 13px; }
       .cta-row { gap: 20px; }
       .trust-strip { gap: 16px; }
       .info-right { align-self: flex-end; }
@@ -657,448 +679,161 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="nav" id="nav">
-    <button class="nav-btn active" data-slide="0">1 — Satoshi</button>
-    <button class="nav-btn" data-slide="1">2 — Geist</button>
-    <button class="nav-btn" data-slide="2">3 — Switzer</button>
-    <button class="nav-btn" data-slide="3">4 — Inter</button>
-    <button class="nav-btn" data-slide="4">5 — Plus Jakarta Sans</button>
+  <!-- Font selector bar -->
+  <nav class="selector-bar">
+    <div class="selector-group">
+      <span class="selector-label">Title</span>
+      <select class="font-select" id="title-select">
+        <optgroup label="Serif">
+          <option value="fraunces" selected>Fraunces</option>
+          <option value="flaviotte">Flaviotte</option>
+          <option value="boska">Boska</option>
+          <option value="cormorant">Cormorant Garamond</option>
+          <option value="zodiak">Zodiak</option>
+          <option value="dmserif">DM Serif Display</option>
+          <option value="newsreader">Newsreader</option>
+          <option value="sourceserif">Source Serif 4</option>
+          <option value="librecaslon">Libre Caslon Display</option>
+          <option value="lora">Lora</option>
+          <option value="sentient">Sentient</option>
+          <option value="playfair">Playfair Display</option>
+          <option value="baskervville">Baskervville</option>
+        </optgroup>
+        <optgroup label="Sans-Serif">
+          <option value="switzer">Switzer</option>
+          <option value="geist">Geist</option>
+          <option value="nohemi">Nohemi</option>
+          <option value="ubuntu">Ubuntu</option>
+          <option value="ibmplex">IBM Plex Sans</option>
+          <option value="roboto">Roboto</option>
+          <option value="opensans">Open Sans</option>
+          <option value="oswald">Oswald</option>
+          <option value="barlow">Barlow</option>
+          <option value="satoshi">Satoshi</option>
+          <option value="generalsans">General Sans</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="selector-divider"></div>
+    <div class="selector-group">
+      <span class="selector-label">Body</span>
+      <select class="font-select" id="body-select">
+        <optgroup label="Sans-Serif">
+          <option value="switzer" selected>Switzer</option>
+          <option value="geist">Geist</option>
+          <option value="nohemi">Nohemi</option>
+          <option value="ubuntu">Ubuntu</option>
+          <option value="ibmplex">IBM Plex Sans</option>
+          <option value="roboto">Roboto</option>
+          <option value="opensans">Open Sans</option>
+          <option value="oswald">Oswald</option>
+          <option value="barlow">Barlow</option>
+          <option value="satoshi">Satoshi</option>
+          <option value="generalsans">General Sans</option>
+        </optgroup>
+        <optgroup label="Serif">
+          <option value="fraunces">Fraunces</option>
+          <option value="flaviotte">Flaviotte</option>
+          <option value="boska">Boska</option>
+          <option value="cormorant">Cormorant Garamond</option>
+          <option value="zodiak">Zodiak</option>
+          <option value="dmserif">DM Serif Display</option>
+          <option value="newsreader">Newsreader</option>
+          <option value="sourceserif">Source Serif 4</option>
+          <option value="librecaslon">Libre Caslon Display</option>
+          <option value="lora">Lora</option>
+          <option value="sentient">Sentient</option>
+          <option value="playfair">Playfair Display</option>
+          <option value="baskervville">Baskervville</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="selector-divider"></div>
+    <button class="caps-toggle" id="caps-toggle">Aa</button>
+    <div class="selector-divider"></div>
+    <span class="pairing-name" id="pairing-label">Fraunces + Switzer</span>
   </nav>
 
-  <!-- ════════════════════════════════════════════════════ -->
-  <!-- SLIDE 1: Fraunces + Satoshi (Current) -->
-  <!-- ════════════════════════════════════════════════════ -->
-  <div class="slide active sans-satoshi" id="slide-0">
-    <div class="hero">
-      <div class="hero-content">
-        <div class="hero-inner">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Patrimônio digital soberano
-          </div>
-          <h1 class="headline">Torne-se Chainless.</h1>
-          <p class="subheadline">Cresça seu patrimônio com total controle.</p>
-          <div class="cta-row">
-            <a href="#" class="btn-primary">
-              Começar agora
-              <span class="btn-icon">
-                <svg class="arrow-svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-              </span>
-            </a>
-            <button class="btn-secondary">Entenda autocustódia</button>
-          </div>
-          <div class="trust-strip">
-            <span class="trust-item">
-              <span class="trust-value">150+</span>
-              <span class="trust-label">ativos digitais</span>
+  <!-- Preview -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-inner">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Patrimônio digital soberano
+        </div>
+        <h1 class="headline">Torne-se<br>Chainless.</h1>
+        <p class="subheadline">Cresça seu patrimônio com total controle.</p>
+        <div class="cta-row">
+          <a href="#" class="btn-primary">
+            Começar agora
+            <span class="btn-icon">
+              <svg class="arrow-svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
             </span>
-            <span class="trust-divider"></span>
-            <span class="trust-item">
-              <span class="trust-value">Até 60%</span>
-              <span class="trust-label">APY em DeFi</span>
-            </span>
-          </div>
+          </a>
+          <button class="btn-secondary">Entenda autocustódia</button>
+        </div>
+        <div class="trust-strip">
+          <span class="trust-item">
+            <span class="trust-value">150+</span>
+            <span class="trust-label">ativos digitais</span>
+          </span>
+          <span class="trust-divider"></span>
+          <span class="trust-item">
+            <span class="trust-value">Até 60%</span>
+            <span class="trust-label">APY em DeFi</span>
+          </span>
+        </div>
 
-          <div class="section-sample">
-            <div class="sample-label">Section heading</div>
-            <h2 class="section-heading-sample">Rentabilidade que desafia o convencional.</h2>
-            <p class="pull-quote-sample">"O dinheiro que você guarda deveria trabalhar por você — não contra você."</p>
-          </div>
+        <div class="section-sample">
+          <div class="sample-label">Section heading</div>
+          <h2 class="section-heading-sample">Rentabilidade que desafia o convencional.</h2>
+          <p class="pull-quote-sample">"O dinheiro que você guarda deveria trabalhar por você — não contra você."</p>
+        </div>
 
-          <div class="body-sample">
-            <div class="sample-label">Body &amp; data</div>
-            <p class="body-text-sample">Autocustódia real significa que <strong>suas chaves são suas</strong>. Sem intermediários, sem permissões, sem limites de saque. Seu patrimônio digital sob seu controle absoluto.</p>
-            <div class="data-row">
-              <div class="data-item">
-                <span class="data-value">R$ 2.4M</span>
-                <span class="data-label">Volume 24h</span>
-              </div>
-              <div class="data-item">
-                <span class="data-value">12.8%</span>
-                <span class="data-label">APY médio</span>
-              </div>
-              <div class="data-item">
-                <span class="data-value">847</span>
-                <span class="data-label">Usuários ativos</span>
-              </div>
+        <div class="body-sample">
+          <div class="sample-label">Body &amp; data</div>
+          <p class="body-text-sample">Autocustódia real significa que <strong>suas chaves são suas</strong>. Sem intermediários, sem permissões, sem limites de saque. Seu patrimônio digital sob seu controle absoluto.</p>
+          <div class="data-row">
+            <div class="data-item">
+              <span class="data-value">R$ 2.4M</span>
+              <span class="data-label">Volume 24h</span>
             </div>
-            <div class="nav-sample">
-              <span class="nav-sample-item active-sample">Início</span>
-              <span class="nav-sample-item">Produtos</span>
-              <span class="nav-sample-item">Rendimentos</span>
-              <span class="nav-sample-item">Sobre</span>
+            <div class="data-item">
+              <span class="data-value">12.8%</span>
+              <span class="data-label">APY médio</span>
+            </div>
+            <div class="data-item">
+              <span class="data-value">847</span>
+              <span class="data-label">Usuários ativos</span>
             </div>
           </div>
+          <div class="nav-sample">
+            <span class="nav-sample-item active-sample">Início</span>
+            <span class="nav-sample-item">Produtos</span>
+            <span class="nav-sample-item">Rendimentos</span>
+            <span class="nav-sample-item">Sobre</span>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="info-bar">
-      <div class="info-left">
-        <span class="font-tag tag-current">Current</span>
-        <div>
-          <div class="font-name">Fraunces + Satoshi</div>
-          <div class="font-meta">Warm humanist geometry — friendly and approachable, but lacks the Ruler tension to discipline Fraunces</div>
-        </div>
-      </div>
-      <div class="info-right">
-        <div class="personality-row">
-          <span class="personality-tag">Contrast ●●○○○</span>
-          <span class="personality-tag">Ruler ●●○○○</span>
-          <span class="personality-tag">Trust ●●●○○</span>
-        </div>
-        <span class="slide-counter">1 / 5</span>
       </div>
     </div>
   </div>
 
-  <!-- ════════════════════════════════════════════════════ -->
-  <!-- SLIDE 2: Fraunces + Geist (Recommended) -->
-  <!-- ════════════════════════════════════════════════════ -->
-  <div class="slide sans-geist" id="slide-1">
-    <div class="hero">
-      <div class="hero-content">
-        <div class="hero-inner">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Patrimônio digital soberano
-          </div>
-          <h1 class="headline">Torne-se Chainless.</h1>
-          <p class="subheadline">Cresça seu patrimônio com total controle.</p>
-          <div class="cta-row">
-            <a href="#" class="btn-primary">
-              Começar agora
-              <span class="btn-icon">
-                <svg class="arrow-svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-              </span>
-            </a>
-            <button class="btn-secondary">Entenda autocustódia</button>
-          </div>
-          <div class="trust-strip">
-            <span class="trust-item">
-              <span class="trust-value">150+</span>
-              <span class="trust-label">ativos digitais</span>
-            </span>
-            <span class="trust-divider"></span>
-            <span class="trust-item">
-              <span class="trust-value">Até 60%</span>
-              <span class="trust-label">APY em DeFi</span>
-            </span>
-          </div>
-
-          <div class="section-sample">
-            <div class="sample-label">Section heading</div>
-            <h2 class="section-heading-sample">Rentabilidade que desafia o convencional.</h2>
-            <p class="pull-quote-sample">"O dinheiro que você guarda deveria trabalhar por você — não contra você."</p>
-          </div>
-
-          <div class="body-sample">
-            <div class="sample-label">Body &amp; data</div>
-            <p class="body-text-sample">Autocustódia real significa que <strong>suas chaves são suas</strong>. Sem intermediários, sem permissões, sem limites de saque. Seu patrimônio digital sob seu controle absoluto.</p>
-            <div class="data-row">
-              <div class="data-item">
-                <span class="data-value">R$ 2.4M</span>
-                <span class="data-label">Volume 24h</span>
-              </div>
-              <div class="data-item">
-                <span class="data-value">12.8%</span>
-                <span class="data-label">APY médio</span>
-              </div>
-              <div class="data-item">
-                <span class="data-value">847</span>
-                <span class="data-label">Usuários ativos</span>
-              </div>
-            </div>
-            <div class="nav-sample">
-              <span class="nav-sample-item active-sample">Início</span>
-              <span class="nav-sample-item">Produtos</span>
-              <span class="nav-sample-item">Rendimentos</span>
-              <span class="nav-sample-item">Sobre</span>
-            </div>
-          </div>
-        </div>
+  <div class="info-bar">
+    <div class="info-left">
+      <div>
+        <div class="font-name" id="info-pairing">Fraunces + Switzer</div>
+        <div class="font-meta" id="info-meta">Warm old-style serif meets neutral neo-grotesque — maximum contrast, editorial warmth grounded by Swiss clarity</div>
       </div>
     </div>
-    <div class="info-bar">
-      <div class="info-left">
-        <span class="font-tag tag-recommended">Recommended</span>
-        <div>
-          <div class="font-name">Fraunces + Geist</div>
-          <div class="font-meta">Tight mechanical sans — flat terminals, zero warmth in geometry. Pure Ruler discipline cages Fraunces's Magician. Geist Mono sibling included.</div>
-        </div>
-      </div>
-      <div class="info-right">
-        <div class="personality-row">
-          <span class="personality-tag">Contrast ●●●●●</span>
-          <span class="personality-tag">Ruler ●●●●●</span>
-          <span class="personality-tag">Trust ●●●●○</span>
-        </div>
-        <span class="slide-counter">2 / 5</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ════════════════════════════════════════════════════ -->
-  <!-- SLIDE 3: Fraunces + Switzer -->
-  <!-- ════════════════════════════════════════════════════ -->
-  <div class="slide sans-switzer" id="slide-2">
-    <div class="hero">
-      <div class="hero-content">
-        <div class="hero-inner">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Patrimônio digital soberano
-          </div>
-          <h1 class="headline">Torne-se Chainless.</h1>
-          <p class="subheadline">Cresça seu patrimônio com total controle.</p>
-          <div class="cta-row">
-            <a href="#" class="btn-primary">
-              Começar agora
-              <span class="btn-icon">
-                <svg class="arrow-svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-              </span>
-            </a>
-            <button class="btn-secondary">Entenda autocustódia</button>
-          </div>
-          <div class="trust-strip">
-            <span class="trust-item">
-              <span class="trust-value">150+</span>
-              <span class="trust-label">ativos digitais</span>
-            </span>
-            <span class="trust-divider"></span>
-            <span class="trust-item">
-              <span class="trust-value">Até 60%</span>
-              <span class="trust-label">APY em DeFi</span>
-            </span>
-          </div>
-
-          <div class="section-sample">
-            <div class="sample-label">Section heading</div>
-            <h2 class="section-heading-sample">Rentabilidade que desafia o convencional.</h2>
-            <p class="pull-quote-sample">"O dinheiro que você guarda deveria trabalhar por você — não contra você."</p>
-          </div>
-
-          <div class="body-sample">
-            <div class="sample-label">Body &amp; data</div>
-            <p class="body-text-sample">Autocustódia real significa que <strong>suas chaves são suas</strong>. Sem intermediários, sem permissões, sem limites de saque. Seu patrimônio digital sob seu controle absoluto.</p>
-            <div class="data-row">
-              <div class="data-item">
-                <span class="data-value">R$ 2.4M</span>
-                <span class="data-label">Volume 24h</span>
-              </div>
-              <div class="data-item">
-                <span class="data-value">12.8%</span>
-                <span class="data-label">APY médio</span>
-              </div>
-              <div class="data-item">
-                <span class="data-value">847</span>
-                <span class="data-label">Usuários ativos</span>
-              </div>
-            </div>
-            <div class="nav-sample">
-              <span class="nav-sample-item active-sample">Início</span>
-              <span class="nav-sample-item">Produtos</span>
-              <span class="nav-sample-item">Rendimentos</span>
-              <span class="nav-sample-item">Sobre</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="info-bar">
-      <div class="info-left">
-        <span class="font-tag tag-option">Option</span>
-        <div>
-          <div class="font-name">Fraunces + Switzer</div>
-          <div class="font-meta">Sharper neo-grotesque — crisper terminals than Satoshi, more corporate spine. Free via FontShare. Easy swap from current stack.</div>
-        </div>
-      </div>
-      <div class="info-right">
-        <div class="personality-row">
-          <span class="personality-tag">Contrast ●●●○○</span>
-          <span class="personality-tag">Ruler ●●●●○</span>
-          <span class="personality-tag">Trust ●●●●○</span>
-        </div>
-        <span class="slide-counter">3 / 5</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ════════════════════════════════════════════════════ -->
-  <!-- SLIDE 4: Fraunces + Inter -->
-  <!-- ════════════════════════════════════════════════════ -->
-  <div class="slide sans-inter" id="slide-3">
-    <div class="hero">
-      <div class="hero-content">
-        <div class="hero-inner">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Patrimônio digital soberano
-          </div>
-          <h1 class="headline">Torne-se Chainless.</h1>
-          <p class="subheadline">Cresça seu patrimônio com total controle.</p>
-          <div class="cta-row">
-            <a href="#" class="btn-primary">
-              Começar agora
-              <span class="btn-icon">
-                <svg class="arrow-svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-              </span>
-            </a>
-            <button class="btn-secondary">Entenda autocustódia</button>
-          </div>
-          <div class="trust-strip">
-            <span class="trust-item">
-              <span class="trust-value">150+</span>
-              <span class="trust-label">ativos digitais</span>
-            </span>
-            <span class="trust-divider"></span>
-            <span class="trust-item">
-              <span class="trust-value">Até 60%</span>
-              <span class="trust-label">APY em DeFi</span>
-            </span>
-          </div>
-
-          <div class="section-sample">
-            <div class="sample-label">Section heading</div>
-            <h2 class="section-heading-sample">Rentabilidade que desafia o convencional.</h2>
-            <p class="pull-quote-sample">"O dinheiro que você guarda deveria trabalhar por você — não contra você."</p>
-          </div>
-
-          <div class="body-sample">
-            <div class="sample-label">Body &amp; data</div>
-            <p class="body-text-sample">Autocustódia real significa que <strong>suas chaves são suas</strong>. Sem intermediários, sem permissões, sem limites de saque. Seu patrimônio digital sob seu controle absoluto.</p>
-            <div class="data-row">
-              <div class="data-item">
-                <span class="data-value">R$ 2.4M</span>
-                <span class="data-label">Volume 24h</span>
-              </div>
-              <div class="data-item">
-                <span class="data-value">12.8%</span>
-                <span class="data-label">APY médio</span>
-              </div>
-              <div class="data-item">
-                <span class="data-value">847</span>
-                <span class="data-label">Usuários ativos</span>
-              </div>
-            </div>
-            <div class="nav-sample">
-              <span class="nav-sample-item active-sample">Início</span>
-              <span class="nav-sample-item">Produtos</span>
-              <span class="nav-sample-item">Rendimentos</span>
-              <span class="nav-sample-item">Sobre</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="info-bar">
-      <div class="info-left">
-        <span class="font-tag tag-option">Option</span>
-        <div>
-          <div class="font-name">Fraunces + Inter</div>
-          <div class="font-meta">Engineered precision — highest x-height, clinical Swiss clarity. Strong institutional trust, but potentially generic at this point.</div>
-        </div>
-      </div>
-      <div class="info-right">
-        <div class="personality-row">
-          <span class="personality-tag">Contrast ●●●●○</span>
-          <span class="personality-tag">Ruler ●●●●○</span>
-          <span class="personality-tag">Trust ●●●●●</span>
-        </div>
-        <span class="slide-counter">4 / 5</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ════════════════════════════════════════════════════ -->
-  <!-- SLIDE 5: Fraunces + Plus Jakarta Sans -->
-  <!-- ════════════════════════════════════════════════════ -->
-  <div class="slide sans-jakarta" id="slide-4">
-    <div class="hero">
-      <div class="hero-content">
-        <div class="hero-inner">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Patrimônio digital soberano
-          </div>
-          <h1 class="headline">Torne-se Chainless.</h1>
-          <p class="subheadline">Cresça seu patrimônio com total controle.</p>
-          <div class="cta-row">
-            <a href="#" class="btn-primary">
-              Começar agora
-              <span class="btn-icon">
-                <svg class="arrow-svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-              </span>
-            </a>
-            <button class="btn-secondary">Entenda autocustódia</button>
-          </div>
-          <div class="trust-strip">
-            <span class="trust-item">
-              <span class="trust-value">150+</span>
-              <span class="trust-label">ativos digitais</span>
-            </span>
-            <span class="trust-divider"></span>
-            <span class="trust-item">
-              <span class="trust-value">Até 60%</span>
-              <span class="trust-label">APY em DeFi</span>
-            </span>
-          </div>
-
-          <div class="section-sample">
-            <div class="sample-label">Section heading</div>
-            <h2 class="section-heading-sample">Rentabilidade que desafia o convencional.</h2>
-            <p class="pull-quote-sample">"O dinheiro que você guarda deveria trabalhar por você — não contra você."</p>
-          </div>
-
-          <div class="body-sample">
-            <div class="sample-label">Body &amp; data</div>
-            <p class="body-text-sample">Autocustódia real significa que <strong>suas chaves são suas</strong>. Sem intermediários, sem permissões, sem limites de saque. Seu patrimônio digital sob seu controle absoluto.</p>
-            <div class="data-row">
-              <div class="data-item">
-                <span class="data-value">R$ 2.4M</span>
-                <span class="data-label">Volume 24h</span>
-              </div>
-              <div class="data-item">
-                <span class="data-value">12.8%</span>
-                <span class="data-label">APY médio</span>
-              </div>
-              <div class="data-item">
-                <span class="data-value">847</span>
-                <span class="data-label">Usuários ativos</span>
-              </div>
-            </div>
-            <div class="nav-sample">
-              <span class="nav-sample-item active-sample">Início</span>
-              <span class="nav-sample-item">Produtos</span>
-              <span class="nav-sample-item">Rendimentos</span>
-              <span class="nav-sample-item">Sobre</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="info-bar">
-      <div class="info-left">
-        <span class="font-tag tag-option">Option</span>
-        <div>
-          <div class="font-name">Fraunces + Plus Jakarta Sans</div>
-          <div class="font-meta">Geometric with soft precision — rounded dots, sharp stems. Contemporary fintech feel with just enough warmth to not feel cold.</div>
-        </div>
-      </div>
-      <div class="info-right">
-        <div class="personality-row">
-          <span class="personality-tag">Contrast ●●●○○</span>
-          <span class="personality-tag">Ruler ●●●○○</span>
-          <span class="personality-tag">Trust ●●●●○</span>
-        </div>
-        <span class="slide-counter">5 / 5</span>
-      </div>
+    <div class="info-right">
+      <div class="personality-row" id="info-tags"></div>
     </div>
   </div>
 
   <!-- Keyboard hint -->
   <div class="keyboard-hint">
-    <kbd>&larr;</kbd> <kbd>&rarr;</kbd> to navigate
+    <kbd>&larr;</kbd> <kbd>&rarr;</kbd> cycle title &nbsp; <kbd>&uarr;</kbd> <kbd>&darr;</kbd> cycle body
   </div>
 
   <!-- Weight controller panel -->
@@ -1124,36 +859,225 @@
 
   <script>
     (function () {
-      var slides = document.querySelectorAll('.slide');
-      var navBtns = document.querySelectorAll('.nav-btn');
-      var current = 0;
+      var titleSelect = document.getElementById('title-select');
+      var bodySelect = document.getElementById('body-select');
+      var pairingLabel = document.getElementById('pairing-label');
+      var infoPairing = document.getElementById('info-pairing');
+      var infoMeta = document.getElementById('info-meta');
+      var infoTags = document.getElementById('info-tags');
 
-      function goTo(index) {
-        if (index < 0 || index >= slides.length) return;
-        slides[current].classList.remove('active');
-        navBtns[current].classList.remove('active');
-        current = index;
-        slides[current].classList.add('active');
-        navBtns[current].classList.add('active');
+      var allFonts = {
+        fraunces: { family: "'Fraunces', Georgia, serif", name: 'Fraunces' },
+        flaviotte: { family: "'Flaviotte', Georgia, serif", name: 'Flaviotte' },
+        boska: { family: "'Boska', Georgia, serif", name: 'Boska' },
+        nohemi: { family: "'Nohemi', ui-sans-serif, system-ui, sans-serif", name: 'Nohemi' },
+        cormorant: { family: "'Cormorant Garamond', Georgia, serif", name: 'Cormorant Garamond' },
+        zodiak: { family: "'Zodiak', Georgia, serif", name: 'Zodiak' },
+        dmserif: { family: "'DM Serif Display', Georgia, serif", name: 'DM Serif Display' },
+        newsreader: { family: "'Newsreader', Georgia, serif", name: 'Newsreader' },
+        sourceserif: { family: "'Source Serif 4', Georgia, serif", name: 'Source Serif 4' },
+        librecaslon: { family: "'Libre Caslon Display', Georgia, serif", name: 'Libre Caslon Display' },
+        lora: { family: "'Lora', Georgia, serif", name: 'Lora' },
+        sentient: { family: "'Sentient', Georgia, serif", name: 'Sentient' },
+        switzer: { family: "'Switzer', ui-sans-serif, system-ui, sans-serif", name: 'Switzer' },
+        geist: { family: "'Geist', ui-sans-serif, system-ui, sans-serif", name: 'Geist' },
+        ubuntu: { family: "'Ubuntu', ui-sans-serif, system-ui, sans-serif", name: 'Ubuntu' },
+        playfair: { family: "'Playfair Display', Georgia, serif", name: 'Playfair Display' },
+        baskervville: { family: "'Baskervville', Georgia, serif", name: 'Baskervville' },
+        ibmplex: { family: "'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif", name: 'IBM Plex Sans' },
+        roboto: { family: "'Roboto', ui-sans-serif, system-ui, sans-serif", name: 'Roboto' },
+        opensans: { family: "'Open Sans', ui-sans-serif, system-ui, sans-serif", name: 'Open Sans' },
+        oswald: { family: "'Oswald', ui-sans-serif, system-ui, sans-serif", name: 'Oswald' },
+        barlow: { family: "'Barlow', ui-sans-serif, system-ui, sans-serif", name: 'Barlow' },
+        satoshi: { family: "'Satoshi', ui-sans-serif, system-ui, sans-serif", name: 'Satoshi' },
+        generalsans: { family: "'General Sans', ui-sans-serif, system-ui, sans-serif", name: 'General Sans' }
+      };
+
+      var pairingMeta = {
+        'fraunces+switzer': {
+          meta: 'Warm old-style serif meets neutral neo-grotesque — maximum contrast, editorial warmth grounded by Swiss clarity',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●●○', 'Trust ●●●●○']
+        },
+        'fraunces+geist': {
+          meta: 'Wonky soft serif meets tight mechanical sans — warm meets cold, Magician vs Ruler. Geist Mono sibling available.',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●○○', 'Trust ●●●●●']
+        },
+        'flaviotte+switzer': {
+          meta: 'Decorative high-contrast display serif with neutral workhorse body — dramatic for hero use, needs restraint at smaller sizes',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●○○', 'Trust ●●●○○']
+        },
+        'flaviotte+geist': {
+          meta: 'Ornamental display + mechanical sans — bold editorial tension, but two strong personalities may compete',
+          tags: ['Contrast ●●●●○', 'Warmth ●●○○○', 'Trust ●●●○○']
+        },
+        'boska+switzer': {
+          meta: 'High stroke-contrast editorial serif meets crisp neo-grotesque — print magazine energy, sophisticated and serious',
+          tags: ['Contrast ●●●●○', 'Warmth ●●●○○', 'Trust ●●●●○']
+        },
+        'boska+geist': {
+          meta: 'Two precise, technical fonts — cohesive but potentially monotone. Less serif/sans tension than other pairings.',
+          tags: ['Contrast ●●●○○', 'Warmth ●●○○○', 'Trust ●●●●○']
+        },
+        'nohemi+switzer': {
+          meta: 'Geometric display sans + grotesque body — sans-on-sans pairing, relies on weight/size contrast rather than structural contrast',
+          tags: ['Contrast ●●○○○', 'Warmth ●●○○○', 'Trust ●●●●○']
+        },
+        'nohemi+geist': {
+          meta: 'Two modern sans-serifs — minimal structural contrast, cohesive but may blur together. Best if brand is pure tech.',
+          tags: ['Contrast ●○○○○', 'Warmth ●○○○○', 'Trust ●●●●●']
+        },
+        'cormorant+switzer': {
+          meta: 'Refined high-contrast Garamond revival meets neutral grotesque — classical elegance with modern grounding. Luxurious and literary.',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●●○', 'Trust ●●●●○']
+        },
+        'cormorant+geist': {
+          meta: 'Delicate old-style serif meets mechanical sans — strong classical/modern tension. Feels like heritage brand meeting fintech.',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●○○', 'Trust ●●●●○']
+        },
+        'zodiak+switzer': {
+          meta: 'High-contrast editorial serif meets neutral neo-grotesque — dramatic thick-thin transitions grounded by Swiss restraint. Closest free Canela vibe.',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●●○', 'Trust ●●●●○']
+        },
+        'zodiak+geist': {
+          meta: 'Editorial luxury serif meets mechanical sans — fashion magazine meets fintech dashboard. Rich contrast pairing.',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●○○', 'Trust ●●●●○']
+        },
+        'dmserif+switzer': {
+          meta: 'Sharp transitional display serif meets neutral grotesque — contemporary editorial crispness with clean body text. Designed for hero sizes.',
+          tags: ['Contrast ●●●●○', 'Warmth ●●●○○', 'Trust ●●●●○']
+        },
+        'dmserif+geist': {
+          meta: 'High-contrast display serif meets tight mechanical sans — both designed for digital-first. Modern, precise, slightly cold.',
+          tags: ['Contrast ●●●●○', 'Warmth ●●○○○', 'Trust ●●●●●']
+        },
+        'newsreader+switzer': {
+          meta: 'Editorial display serif by Production Type meets neutral grotesque — designed for content-rich digital products. Elegant, contemporary, highly readable.',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●●○', 'Trust ●●●●●']
+        },
+        'newsreader+geist': {
+          meta: 'French editorial craft meets Vercel precision — luxury publishing meets tech platform. Beautiful italics as a bonus.',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●○○', 'Trust ●●●●●']
+        },
+        'sourceserif+switzer': {
+          meta: 'Adobe transitional serif meets Swiss grotesque — the closest free Tiempos alternative. Tight, condensed display cut feels premium.',
+          tags: ['Contrast ●●●●○', 'Warmth ●●●○○', 'Trust ●●●●●']
+        },
+        'sourceserif+geist': {
+          meta: 'Two precision-engineered typefaces — Adobe meets Vercel. Clean, authoritative, slightly corporate but never boring.',
+          tags: ['Contrast ●●●●○', 'Warmth ●●○○○', 'Trust ●●●●●']
+        },
+        'librecaslon+switzer': {
+          meta: 'High-contrast Caslon revival meets neutral grotesque — warm heritage charm with modern grounding. Single weight, best for heroes.',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●●○', 'Trust ●●●●○']
+        },
+        'librecaslon+geist': {
+          meta: 'Delicate Caslon display meets mechanical sans — classical warmth disciplined by digital precision.',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●○○', 'Trust ●●●●○']
+        },
+        'lora+switzer': {
+          meta: 'Contemporary brushed serif meets neutral grotesque — warm, readable, calligraphic energy grounded by Swiss restraint. Versatile across all sizes.',
+          tags: ['Contrast ●●●●○', 'Warmth ●●●●●', 'Trust ●●●●○']
+        },
+        'lora+geist': {
+          meta: 'Calligraphic warmth meets mechanical precision — organic curves vs flat terminals. Good tension without conflict.',
+          tags: ['Contrast ●●●●○', 'Warmth ●●●●○', 'Trust ●●●●○']
+        },
+        'sentient+switzer': {
+          meta: 'Quiet luxury serif meets neutral grotesque — soft curves, wide proportions, understated elegance. The "old money" pairing.',
+          tags: ['Contrast ●●●○○', 'Warmth ●●●●●', 'Trust ●●●●○']
+        },
+        'sentient+geist': {
+          meta: 'Warm approachable serif meets tight mechanical sans — soft vs sharp, but both modern. Comfortable digital luxury.',
+          tags: ['Contrast ●●●●○', 'Warmth ●●●●○', 'Trust ●●●●○']
+        },
+        'oswald+barlow': {
+          meta: 'Condensed industrial display meets light grotesque body — strong vertical rhythm, athletic energy. Both from the same design lineage (Vernon Adams). Best in uppercase.',
+          tags: ['Contrast ●●●○○', 'Warmth ●●○○○', 'Trust ●●●○○']
+        },
+        'oswald+switzer': {
+          meta: 'Condensed gothic display meets Swiss neo-grotesque — bold/narrow headlines over clean body. Sports and editorial energy.',
+          tags: ['Contrast ●●●○○', 'Warmth ●●○○○', 'Trust ●●●○○']
+        },
+        'oswald+geist': {
+          meta: 'Condensed industrial meets Vercel precision — sans-on-sans with strong width contrast. Works if headlines are uppercase.',
+          tags: ['Contrast ●●●○○', 'Warmth ●○○○○', 'Trust ●●●●○']
+        },
+        'fraunces+barlow': {
+          meta: 'Warm wonky serif meets clean light grotesque — organic display grounded by airy, legible body text. Friendly luxury.',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●●○', 'Trust ●●●●○']
+        },
+        'cormorant+barlow': {
+          meta: 'Refined Garamond revival meets light grotesque — classical elegance with modern, breathable body. Heritage finance energy.',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●○○', 'Trust ●●●●●']
+        },
+        'zodiak+barlow': {
+          meta: 'Contemporary editorial serif meets light grotesque — high-fashion display with neutral, legible body. Modern luxury.',
+          tags: ['Contrast ●●●●●', 'Warmth ●●●○○', 'Trust ●●●●○']
+        },
+        'playfair+barlow': {
+          meta: 'High-contrast transitional serif meets light grotesque — decorative display with clean body. Wedding-to-fashion editorial range.',
+          tags: ['Contrast ●●●●○', 'Warmth ●●●○○', 'Trust ●●●○○']
+        }
+      };
+
+      function update() {
+        var t = titleSelect.value;
+        var b = bodySelect.value;
+        var titleFont = allFonts[t];
+        var bodyFont = allFonts[b];
+
+        document.documentElement.style.setProperty('--font-title', titleFont.family);
+        document.documentElement.style.setProperty('--font-body', bodyFont.family);
+        document.body.style.fontFamily = bodyFont.family;
+
+        // Compensate for small x-height fonts
+        var smallXHeight = ['cormorant', 'librecaslon'];
+        document.body.classList.toggle('size-up', smallXHeight.indexOf(t) !== -1);
+
+        var label = titleFont.name + ' + ' + bodyFont.name;
+        pairingLabel.textContent = label;
+        infoPairing.textContent = label;
+
+        var key = t + '+' + b;
+        var meta = pairingMeta[key] || { meta: '', tags: [] };
+        infoMeta.textContent = meta.meta;
+        infoTags.innerHTML = meta.tags.map(function (tag) {
+          return '<span class="personality-tag">' + tag + '</span>';
+        }).join('');
       }
 
-      navBtns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          goTo(parseInt(btn.dataset.slide, 10));
-        });
-      });
+      titleSelect.addEventListener('change', update);
+      bodySelect.addEventListener('change', update);
+
+      // Keyboard navigation: left/right cycles title, up/down cycles body
+      var titleOptions = Array.from(titleSelect.options).map(function (o) { return o.value; });
+      var bodyOptions = Array.from(bodySelect.options).map(function (o) { return o.value; });
 
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        if (e.key === 'ArrowRight') {
           e.preventDefault();
-          goTo(current + 1);
-        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          var i = titleOptions.indexOf(titleSelect.value);
+          titleSelect.value = titleOptions[(i + 1) % titleOptions.length];
+          update();
+        } else if (e.key === 'ArrowLeft') {
           e.preventDefault();
-          goTo(current - 1);
+          var i = titleOptions.indexOf(titleSelect.value);
+          titleSelect.value = titleOptions[(i - 1 + titleOptions.length) % titleOptions.length];
+          update();
+        } else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          var i = bodyOptions.indexOf(bodySelect.value);
+          bodySelect.value = bodyOptions[(i + 1) % bodyOptions.length];
+          update();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          var i = bodyOptions.indexOf(bodySelect.value);
+          bodySelect.value = bodyOptions[(i - 1 + bodyOptions.length) % bodyOptions.length];
+          update();
         }
       });
 
-      /* ── Weight controller ── */
+      // Weight controllers
       var headlineSlider = document.getElementById('headline-weight');
       var headlineValue = document.getElementById('headline-weight-value');
       var sectionSlider = document.getElementById('section-weight');
@@ -1161,27 +1085,31 @@
       var quoteSlider = document.getElementById('quote-weight');
       var quoteValue = document.getElementById('quote-weight-value');
 
-      var headlines = document.querySelectorAll('.headline');
-      var sectionHeadings = document.querySelectorAll('.section-heading-sample');
-      var quotes = document.querySelectorAll('.pull-quote-sample');
-
       headlineSlider.addEventListener('input', function () {
-        var w = headlineSlider.value;
-        headlineValue.textContent = w;
-        headlines.forEach(function (el) { el.style.fontWeight = w; });
+        headlineValue.textContent = headlineSlider.value;
+        document.querySelector('.headline').style.fontWeight = headlineSlider.value;
       });
 
       sectionSlider.addEventListener('input', function () {
-        var w = sectionSlider.value;
-        sectionValue.textContent = w;
-        sectionHeadings.forEach(function (el) { el.style.fontWeight = w; });
+        sectionValue.textContent = sectionSlider.value;
+        document.querySelector('.section-heading-sample').style.fontWeight = sectionSlider.value;
       });
 
       quoteSlider.addEventListener('input', function () {
-        var w = quoteSlider.value;
-        quoteValue.textContent = w;
-        quotes.forEach(function (el) { el.style.fontWeight = w; });
+        quoteValue.textContent = quoteSlider.value;
+        document.querySelector('.pull-quote-sample').style.fontWeight = quoteSlider.value;
       });
+
+      // Caps toggle
+      var capsBtn = document.getElementById('caps-toggle');
+      capsBtn.addEventListener('click', function () {
+        document.body.classList.toggle('caps-on');
+        capsBtn.classList.toggle('active');
+        capsBtn.textContent = capsBtn.classList.contains('active') ? 'AA' : 'Aa';
+      });
+
+      // Initial render
+      update();
     })();
   </script>
 
