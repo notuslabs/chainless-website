@@ -28,17 +28,18 @@ The pattern appears in 6 components and is copy-pasted identically each time. Th
 
 | Property | Value | Token |
 |----------|-------|-------|
-| Border radius | 36px | `--doppelrand-radius-outer` / `rounded-[2.25rem]` |
-| Background | `rgba(255, 255, 255, 0.02)` | `--doppelrand-bg` / `bg-white/[0.02]` |
+| Border radius | 18px | `--doppelrand-radius-outer` / `rounded-[1.125rem]` |
+| Background | `rgba(255, 255, 255, 0.03)` | `--doppelrand-bg` / `bg-white/[0.03]` |
 | Padding | 6px (gap) | `--doppelrand-gap` / `p-1.5` |
-| Ring | 1px `rgba(255, 255, 255, 0.04)` | `ring-1 ring-white/[0.04]` |
-| Ring hover | `rgba(255, 255, 255, 0.08)` | `ring-white/[0.08]` |
+| Ring | 1px `rgba(255, 255, 255, 0.05)` | `ring-1 ring-white/[0.05]` |
+| Ring hover | `rgba(255, 255, 255, 0.07)` | `ring-white/[0.07]` |
+| Hover lift | `-translate-y-px` | Subtle 1px upward shift on hover |
 
 ### Inner Core
 
 | Property | Value | Token |
 |----------|-------|-------|
-| Border radius | ~30px | `--doppelrand-radius-inner` / `rounded-[calc(2.25rem-0.375rem)]` |
+| Border radius | ~12px | `--doppelrand-radius-inner` / `rounded-[calc(1.125rem-0.375rem)]` |
 | Background | Gradient (see below) | `.doppelrand-inner-gradient` |
 | Inner highlight | `inset 0 1px 0 rgba(255,255,255,0.06), inset 0 0 0 1px rgba(255,255,255,0.03)` | `.inner-highlight-dark` |
 | Padding | 32px or 40px | `p-8` or `p-10` |
@@ -47,26 +48,40 @@ The pattern appears in 6 components and is copy-pasted identically each time. Th
 
 ### Inner Background Gradient
 
-The standard Doppelrand inner gradient creates subtle dimensionality:
+Old Money refinement — quieter 2-stop gradient replacing the original 3-stop:
 
 ```css
 background: linear-gradient(
-  145deg,
-  rgba(42, 41, 38, 0.7) 0%,
-  rgba(28, 27, 25, 0.9) 50%,
-  rgba(24, 23, 22, 0.95) 100%
+  160deg,
+  rgba(38, 37, 34, 0.85) 0%,
+  rgba(26, 25, 23, 0.95) 100%
 );
 ```
 
-Lighter variant (used in some cards):
+Lighter variant:
 ```css
 background: linear-gradient(
-  145deg,
-  rgba(42, 41, 38, 0.6) 0%,
-  rgba(28, 27, 25, 0.85) 50%,
-  rgba(24, 23, 22, 0.9) 100%
+  160deg,
+  rgba(38, 37, 34, 0.75) 0%,
+  rgba(26, 25, 23, 0.92) 100%
 );
 ```
+
+### Gold Hallmark Accent
+
+A foil-edge hairline at the inner top edge — `.doppelrand-hallmark::before`:
+
+```css
+background: linear-gradient(90deg,
+  transparent 0%,
+  rgba(255, 199, 61, 0.25) 30%,
+  rgba(255, 199, 61, 0.35) 50%,
+  rgba(255, 199, 61, 0.25) 70%,
+  transparent 100%
+);
+```
+
+Applied automatically via the `doppelrand-hallmark` class on the inner core.
 
 ---
 
@@ -149,24 +164,24 @@ This could be a `variant="featured"` or `accent` prop on the shared component.
 ### Outer Shell
 
 ```
-rounded-[2.25rem] bg-white/[0.02] p-1.5 ring-1 ring-white/[0.04]
+rounded-[1.125rem] bg-white/[0.03] p-1.5 ring-1 ring-white/[0.05]
 ```
 
 With hover:
 ```
-rounded-[2.25rem] bg-white/[0.02] p-1.5 ring-1 ring-white/[0.04] transition-shadow hover:ring-white/[0.08]
+rounded-[1.125rem] bg-white/[0.03] p-1.5 ring-1 ring-white/[0.05] transition-all duration-700 ease-premium hover:ring-white/[0.07] hover:-translate-y-px
 ```
 
 ### Inner Core
 
 ```
-relative overflow-hidden rounded-[calc(2.25rem-0.375rem)] inner-highlight-dark
+doppelrand-hallmark inner-highlight-dark relative overflow-hidden rounded-[calc(1.125rem-0.375rem)]
 ```
 
 With inline gradient style:
 ```tsx
 style={{
-  background: 'linear-gradient(145deg, rgba(42,41,38,0.7) 0%, rgba(28,27,25,0.9) 50%, rgba(24,23,22,0.95) 100%)'
+  background: 'linear-gradient(160deg, rgba(38,37,34,0.85) 0%, rgba(26,25,23,0.95) 100%)'
 }}
 ```
 

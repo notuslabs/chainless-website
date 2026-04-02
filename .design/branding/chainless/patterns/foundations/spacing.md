@@ -48,7 +48,7 @@ These patterns are observed in the existing codebase:
 |---------|-----------------|----------|---------|
 | Section vertical | `py-24` / `py-32` | 96px / 128px | Most sections |
 | Section horizontal | `px-6` | 24px | All sections (mobile) |
-| Container max-width | `max-w-7xl mx-auto` | 1280px centered | All sections |
+| Container max-width | `max-w-[var(--container-content)]` | 1200px centered | All sections |
 
 ### Card Padding
 
