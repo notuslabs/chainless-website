@@ -1,6 +1,7 @@
 "use client";
 
 import { FadeUp } from "./motion";
+import { Eyebrow } from "./eyebrow";
 
 const cardBenefits = [
   "1 USDC = 1 USD no exterior",
@@ -32,16 +33,13 @@ export function SpendCredit() {
           {/* Left: Copy column */}
           <FadeUp className="lg:col-span-5">
             {/* Eyebrow */}
-            <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-warm-700/25 bg-warm-800/30 px-4 py-1.5 text-overline font-semibold uppercase tracking-[0.25em] text-yellow-500/90 backdrop-blur-sm">
-              Cartão Chainless
-            </span>
+            <Eyebrow className="mb-5">Cartão Chainless</Eyebrow>
 
             <h2
               id="spend-heading"
-              className="font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.03em] text-text-primary"
+              className="font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.02em] text-text-primary"
             >
-              Compre dólares sem IOF{" "}
-              <span className="text-warm-300/40">e gaste globalmente.</span>
+              Compre dólares sem IOF e gaste globalmente.
             </h2>
 
             <p className="mt-6 max-w-[48ch] text-small leading-[1.7] text-warm-300/60">

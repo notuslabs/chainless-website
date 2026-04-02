@@ -5,25 +5,25 @@ import { AnimatedCounter } from "./animated-counter";
 
 const proof = [
   {
-    numericValue: 500,
-    prefix: "R$",
-    suffix: "M+",
-    displayValue: "R$500M+",
-    label: "em ativos protegidos",
-  },
-  {
-    numericValue: 12000,
+    numericValue: 30000,
     prefix: "",
     suffix: "+",
-    displayValue: "12.000+",
+    displayValue: "30.000+",
     label: "carteiras soberanas",
   },
   {
-    numericValue: 8,
+    numericValue: 300,
+    prefix: "R$",
+    suffix: "M+",
+    displayValue: "R$300M+",
+    label: "movimentados",
+  },
+  {
+    numericValue: 100,
     prefix: "",
-    suffix: "",
-    displayValue: "8",
-    label: "protocolos auditados",
+    suffix: "%",
+    displayValue: "100%",
+    label: "autocustódia",
   },
 ];
 

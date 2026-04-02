@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { EASE_PREMIUM, FadeUp, StaggerContainer, StaggerItem } from "./motion";
+import { Eyebrow } from "./eyebrow";
 import { DoppelrandCard } from "./doppelrand-card";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -19,22 +20,22 @@ interface PhilosophyPillar {
 
 const pillars: PhilosophyPillar[] = [
   {
-    overline: "Soberania dos ativos",
-    title: "Ninguém pode congelar seus ativos",
+    overline: "Por que não somos uma corretora",
+    title: "Nós não temos acesso ao seu patrimônio.",
     description:
-      "Após a FTX, R$40B+ ficaram presos em custodiantes. Seus ativos vivem na blockchain, controlados pela sua chave. Sem função de congelamento no contrato.",
-    stat: "R$40B+",
-    statLabel: "presos em custodiantes após FTX",
+      "Corretoras custodiam seus ativos e você depende da solvência delas. A Chainless foi desenhada fora dessa lógica. Seus ativos vivem na blockchain, na sua chave. Não é uma promessa. É a arquitetura.",
+    stat: "",
+    statLabel: "",
     image: `${BASE}/philosophy-1.jpg`,
     imageAlt: "Detalhe arquitetônico de concreto com luz natural quente",
   },
   {
-    overline: "Sem intermediários",
-    title: "Rendimentos direto na sua carteira",
+    overline: "Por que não somos uma carteira",
+    title: "Uma plataforma financeira completa, sem complexidade.",
     description:
-      "Yield DeFi flui para você no instante em que é gerado. Sem custódia oculta, sem atrasos, sem repasse.",
-    stat: "ZERO",
-    statLabel: "intermediários entre você e seu yield",
+      "Autocustódia sempre foi sinônimo de complexidade. A Chainless provou que não precisa ser assim. Pix, cartão, rendimento, crédito. Tudo em um único app.",
+    stat: "",
+    statLabel: "",
     image: `${BASE}/philosophy-2.jpg`,
     imageAlt: "Interior com luz natural quente entrando por janelas amplas",
   },
@@ -63,25 +64,20 @@ export function Philosophy() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <FadeUp>
-              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-warm-700/25 bg-warm-800/30 px-4 py-1.5 text-overline font-semibold uppercase tracking-[0.25em] text-yellow-500/90 backdrop-blur-sm">
-                Sobre
-              </span>
+              <Eyebrow className="mb-5">Sobre</Eyebrow>
             </FadeUp>
             <FadeUp delay={0.1}>
               <h2
                 id="philosophy-heading"
-                className="max-w-[520px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.03em] text-text-primary"
+                className="max-w-[520px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.02em] text-text-primary"
               >
-                Construído para
-                <br />
-                <span className="text-warm-300/40">quem exige controle.</span>
+                Patrimônio digital soberano.
               </h2>
             </FadeUp>
           </div>
           <FadeUp delay={0.2}>
             <p className="max-w-[320px] text-small leading-[1.7] text-warm-300/60 md:text-right">
-              Cada decisão de arquitetura existe para eliminar intermediários
-              entre você e seu patrimônio.
+              Sem a custódia centralizada das corretoras, sem a fricção das carteiras.
             </p>
           </FadeUp>
         </div>
@@ -136,7 +132,7 @@ export function Philosophy() {
                       </span>
 
                       {/* Title */}
-                      <h3 className="mb-5 text-2xl font-semibold leading-[1.1] tracking-tight text-text-primary md:text-[1.75rem]">
+                      <h3 className="mb-5 font-serif text-2xl font-normal leading-[1.1] tracking-[-0.01em] text-text-primary md:text-[1.75rem]">
                         {pillar.title}
                       </h3>
 
@@ -146,14 +142,16 @@ export function Philosophy() {
                       </p>
 
                       {/* Stat callout */}
-                      <div className="mt-10 flex items-end gap-3 border-t border-warm-700/15 pt-8">
-                        <span className="text-3xl font-medium tabular-nums tracking-tight text-text-primary md:text-4xl">
-                          {pillar.stat}
-                        </span>
-                        <span className="mb-1 text-sm leading-snug text-warm-400/50">
-                          {pillar.statLabel}
-                        </span>
-                      </div>
+                      {pillar.stat && (
+                        <div className="mt-10 flex items-end gap-3 border-t border-warm-700/15 pt-8">
+                          <span className="text-3xl font-medium tabular-nums tracking-tight text-text-primary md:text-4xl">
+                            {pillar.stat}
+                          </span>
+                          <span className="mb-1 text-sm leading-snug text-warm-400/50">
+                            {pillar.statLabel}
+                          </span>
+                        </div>
+                      )}
 
                       {/* Bottom accent hairline */}
                       <motion.div

@@ -104,11 +104,9 @@ export function BorrowCredit() {
             <FadeUp delay={0.1}>
               <h2
                 id="credit-heading"
-                className="mt-8 max-w-[520px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.03em] text-text-primary"
+                className="mt-8 max-w-[520px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.02em] text-text-primary"
               >
-                Acesse dólares
-                <br />
-                <span className="text-warm-300/40">sem vender seu Bitcoin.</span>
+                Acesse dólares sem vender seu Bitcoin.
               </h2>
             </FadeUp>
           </div>

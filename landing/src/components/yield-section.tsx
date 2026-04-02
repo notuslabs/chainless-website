@@ -10,6 +10,7 @@ import {
   StaggerItem,
 } from "./motion";
 import { DoppelrandCard } from "./doppelrand-card";
+import { Eyebrow } from "./eyebrow";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -209,18 +210,14 @@ export function YieldSection() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <FadeUp>
-              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-warm-700/25 bg-warm-800/30 px-4 py-1.5 text-overline font-semibold uppercase tracking-[0.25em] text-yellow-500/90 backdrop-blur-sm">
-                Rendimentos
-              </span>
+              <Eyebrow className="mb-5">Rendimentos</Eyebrow>
             </FadeUp>
             <FadeUp delay={0.1}>
               <h2
                 id="yield-heading"
-                className="max-w-[500px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.03em] text-text-primary"
+                className="max-w-[500px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.02em] text-text-primary"
               >
-                Seu patrimônio.
-                <br />
-                <span className="text-warm-300/40">Seus rendimentos.</span>
+                Seu patrimônio. Seus rendimentos.
               </h2>
             </FadeUp>
           </div>
@@ -277,7 +274,7 @@ export function YieldSection() {
                   Proteger
                 </span>
 
-                <h3 className="mb-6 text-xl font-medium leading-[1.15] tracking-tight text-text-primary md:text-2xl">
+                <h3 className="mb-6 font-serif text-xl font-normal leading-[1.15] tracking-[-0.01em] text-text-primary md:text-2xl">
                   150+ ativos digitais. Sob seu controle absoluto.
                 </h3>
 
@@ -342,7 +339,7 @@ export function YieldSection() {
                 Crescer
               </span>
 
-              <h3 className="mb-3 text-xl font-medium leading-[1.15] tracking-tight text-text-primary md:text-2xl">
+              <h3 className="mb-3 font-serif text-xl font-normal leading-[1.15] tracking-[-0.01em] text-text-primary md:text-2xl">
                 Acesse rendimento DeFi.
               </h3>
 

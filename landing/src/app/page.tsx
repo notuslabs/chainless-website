@@ -1,3 +1,4 @@
+import { FontSelector } from "@/components/font-selector";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { ProofBar } from "@/components/proof-bar";
@@ -89,6 +90,7 @@ export default function Home() {
         <CTASection />
       </main>
       <Footer />
+      <FontSelector />
     </>
   );
 }

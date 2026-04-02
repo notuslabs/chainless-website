@@ -1,8 +1,8 @@
 "use client";
 
-import { MagneticButton, FadeUp, TextReveal } from "./motion";
+import { motion } from "framer-motion";
+import { FadeUp, TextReveal, EASE_PREMIUM } from "./motion";
 import { MeshGradient } from "./mesh-gradient";
-import { ArrowUpRight } from "@phosphor-icons/react";
 
 export function Hero() {
   return (
@@ -49,25 +49,18 @@ export function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-[var(--container-content)] px-4 md:px-8">
         <div className="max-w-[600px]">
 
-          {/* Eyebrow — pill badge */}
-          <FadeUp delay={0.1}>
-            <span className="mb-10 inline-flex items-center gap-2.5 rounded-full border border-white/12 bg-dark-500/55 px-4 py-1.5 text-overline font-semibold uppercase tracking-[0.25em] text-warm-200 backdrop-blur-md">
-              <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/70" />
-              Patrimonio digital soberano
-            </span>
-          </FadeUp>
-
-          {/* Headline — Fraunces, massive, left-aligned */}
+          {/* Headline — Lora, massive, left-aligned */}
           <FadeUp delay={0.2}>
             <h1
-              className="font-serif text-[length:var(--text-hero-heading)] font-normal leading-[1.03] tracking-[-0.03em] text-text-primary"
+              data-weight-tier="hero"
+              className="font-serif text-[length:var(--text-hero-heading)] font-normal leading-[1.03] tracking-[-0.02em] text-text-primary"
               style={{
                 textShadow:
-                  "0 0 60px rgba(10,9,8,0.45), 0 0 120px rgba(10,9,8,0.3), 0 0 200px rgba(10,9,8,0.2)",
+                  "0 0 40px rgba(10,9,8,0.4), 0 0 80px rgba(10,9,8,0.3), 0 0 160px rgba(10,9,8,0.25), 0 0 300px rgba(10,9,8,0.2)",
               }}
             >
               <TextReveal delay={0.3}>
-                Torne-se Chainless.
+                Torne-se Chainless
               </TextReveal>
             </h1>
           </FadeUp>
@@ -75,7 +68,7 @@ export function Hero() {
           {/* Subheadline */}
           <FadeUp delay={0.4}>
             <p
-              className="mt-8 max-w-[460px] text-[clamp(1.1rem,1rem+0.45vw,1.25rem)] font-normal leading-[1.7] text-white/90"
+              className="mt-8 ml-[0.3em] max-w-[460px] text-[clamp(1.1rem,1rem+0.45vw,1.25rem)] font-normal leading-[1.7] text-white/90"
               style={{
                 textShadow:
                   "0 1px 16px rgba(10,9,8,0.9), 0 2px 40px rgba(10,9,8,0.6)",
@@ -85,32 +78,70 @@ export function Hero() {
             </p>
           </FadeUp>
 
-          {/* CTAs */}
-          <FadeUp delay={0.55}>
-            <div className="mt-14 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-8">
-              {/* Primary CTA — Button-in-Button trailing icon */}
-              <MagneticButton
-                href="#comecar"
-                className="group flex items-center gap-3 rounded-full bg-yellow-500 py-4 pl-8 pr-4 text-base font-semibold text-dark-500 shadow-[0_4px_30px_rgba(255,199,61,0.25)] transition-all duration-500 ease-premium hover:bg-yellow-400 hover:shadow-[0_4px_40px_rgba(255,199,61,0.35)] active:scale-[0.97]"
-              >
-                Comecar agora
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-dark-500/10 transition-transform duration-500 ease-premium group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-110">
-                  <ArrowUpRight size={15} weight="bold" />
-                </span>
-              </MagneticButton>
-
-              {/* Secondary CTA */}
-              <a
-                href="#sobre"
-                className="text-small font-medium text-white/80 underline decoration-white/30 underline-offset-4 transition-all duration-500 ease-premium hover:text-yellow-500 hover:decoration-yellow-500/60 active:scale-[0.98]"
+          {/* Store buttons */}
+          <div className="mt-14 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+              {/* App Store */}
+              <motion.a
+                href="#"
+                aria-label="Baixar na App Store"
+                className="group relative inline-flex items-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97]"
+                initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.55, ease: EASE_PREMIUM }}
                 style={{
-                  textShadow: "0 1px 12px rgba(10,9,8,0.9)",
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 50%, rgba(255,255,255,0.08) 100%)",
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(255,255,255,0.03), 0 4px 20px -4px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.15)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                  backdropFilter: "blur(12px) saturate(1.4)",
+                  WebkitBackdropFilter: "blur(12px) saturate(1.4)",
                 }}
               >
-                Entenda autocustódia
-              </a>
+                {/* Specular highlight — top-left refraction */}
+                <div
+                  className="pointer-events-none absolute -left-4 -top-4 h-20 w-20 rounded-full opacity-60 transition-opacity duration-500 group-hover:opacity-80"
+                  style={{ background: "radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%)" }}
+                />
+                <svg viewBox="0 0 24 24" fill="currentColor" className="relative h-8 w-8 shrink-0 text-yellow-500 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                <div className="relative flex flex-col">
+                  <span className="text-[11px] font-medium leading-none tracking-wide text-white/70">Disponível na</span>
+                  <span className="text-base font-semibold leading-tight text-text-primary drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">App Store</span>
+                </div>
+              </motion.a>
+
+              {/* Google Play */}
+              <motion.a
+                href="#"
+                aria-label="Baixar no Google Play"
+                className="group relative inline-flex items-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97]"
+                initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.7, ease: EASE_PREMIUM }}
+                style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 50%, rgba(255,255,255,0.08) 100%)",
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(255,255,255,0.03), 0 4px 20px -4px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.15)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                  backdropFilter: "blur(12px) saturate(1.4)",
+                  WebkitBackdropFilter: "blur(12px) saturate(1.4)",
+                }}
+              >
+                {/* Specular highlight — top-left refraction */}
+                <div
+                  className="pointer-events-none absolute -left-4 -top-4 h-20 w-20 rounded-full opacity-60 transition-opacity duration-500 group-hover:opacity-80"
+                  style={{ background: "radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%)" }}
+                />
+                <svg viewBox="0 0 24 24" fill="currentColor" className="relative h-8 w-8 shrink-0 text-yellow-500 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                  <path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm.46-.374L14.5 7.5l-2.5 2.5L4.07 1.44zM14.5 16.5L4.07 22.56 12 14.5l2.5 2zm.5-.5l5.4-3.06c.36-.2.6-.56.6-.94s-.24-.74-.6-.94L15 8l-3 4 3 4z"/>
+                </svg>
+                <div className="relative flex flex-col">
+                  <span className="text-[11px] font-medium leading-none tracking-wide text-white/70">Disponível no</span>
+                  <span className="text-base font-semibold leading-tight text-text-primary drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">Google Play</span>
+                </div>
+              </motion.a>
             </div>
-          </FadeUp>
 
           {/* Trust signal strip */}
           <FadeUp delay={0.7}>

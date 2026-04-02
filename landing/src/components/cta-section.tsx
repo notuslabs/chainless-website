@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FadeUp, MagneticButton, TextReveal, EASE_PREMIUM } from "./motion";
+import { Eyebrow } from "./eyebrow";
 import { ArrowUpRight } from "@phosphor-icons/react";
 
 export function CTASection() {
@@ -78,14 +79,14 @@ export function CTASection() {
       <div className="relative z-10 mx-auto flex max-w-[800px] flex-col items-center text-center">
         {/* Eyebrow */}
         <FadeUp>
-          <span className="mb-8 inline-flex items-center gap-2 rounded-full border border-warm-700/20 bg-warm-800/25 px-4 py-1.5 text-overline font-semibold uppercase tracking-[0.25em] text-yellow-500/80 backdrop-blur-sm">
+          <Eyebrow className="mb-8">
             <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/60" />
             Comece agora
-          </span>
+          </Eyebrow>
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <h2 className="font-serif text-[clamp(2.5rem,1.8rem+2.8vw,4rem)] font-normal leading-[1.04] tracking-[-0.03em] text-text-primary">
+          <h2 className="font-serif text-[clamp(2.5rem,1.8rem+2.8vw,4rem)] font-normal leading-[1.04] tracking-[-0.02em] text-text-primary">
             <TextReveal delay={0.15}>
               Seu patrimônio merece ser só seu.
             </TextReveal>
@@ -102,7 +103,7 @@ export function CTASection() {
           <div className="mt-14">
             <MagneticButton
               href="#"
-              className="group inline-flex items-center gap-3 rounded-full bg-yellow-500 py-4 pl-8 pr-4 text-base font-semibold text-dark-500 shadow-[0_4px_30px_rgba(255,199,61,0.2)] transition-all duration-500 ease-premium hover:bg-yellow-400 hover:shadow-[0_4px_50px_rgba(255,199,61,0.3)] active:scale-[0.97]"
+              className="group inline-flex items-center gap-3 rounded-2xl bg-yellow-500 py-4 pl-8 pr-4 text-base font-semibold text-dark-500 shadow-[0_4px_30px_rgba(255,199,61,0.2)] transition-all duration-500 ease-premium hover:bg-yellow-400 hover:shadow-[0_4px_50px_rgba(255,199,61,0.3)] active:scale-[0.97]"
             >
               Torne-se Chainless
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-dark-500/10 transition-transform duration-500 ease-premium group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-110">

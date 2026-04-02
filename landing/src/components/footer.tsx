@@ -30,7 +30,7 @@ export function Footer() {
                 patrimônio cresce. Suas chaves continuam suas.
               </p>
               {/* Brand tagline — editorial serif treatment */}
-              <p className="mt-8 font-serif text-small italic text-warm-400/30">
+              <p className="mt-8 text-small italic text-warm-400/30">
                 Patrimônio digital soberano.
               </p>
             </div>

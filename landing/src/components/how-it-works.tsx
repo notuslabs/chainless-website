@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FadeUp, StaggerContainer, StaggerItem, EASE_PREMIUM } from "./motion";
+import { Eyebrow } from "./eyebrow";
 import { DoppelrandCard } from "./doppelrand-card";
 
 const steps = [
@@ -211,12 +212,10 @@ export function HowItWorks() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <FadeUp>
-              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-warm-700/25 bg-warm-800/30 px-4 py-1.5 text-overline font-semibold uppercase tracking-[0.25em] text-yellow-500/90 backdrop-blur-sm">
-                Como funciona
-              </span>
+              <Eyebrow className="mb-5">Como funciona</Eyebrow>
             </FadeUp>
             <FadeUp delay={0.1}>
-              <h2 className="max-w-[550px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.03em] text-text-primary">
+              <h2 className="max-w-[550px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.02em] text-text-primary">
                 Quatro passos para soberania.
               </h2>
             </FadeUp>
@@ -271,7 +270,7 @@ export function HowItWorks() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="mt-8 text-lg font-semibold tracking-[-0.01em] text-text-primary md:text-xl">
+                  <h3 className="mt-8 font-serif text-lg font-normal tracking-[-0.01em] text-text-primary md:text-xl">
                     {step.title}
                   </h3>
                   <p className="mt-3 text-[14px] leading-[1.75] text-warm-300/60">

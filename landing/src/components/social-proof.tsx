@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { FadeUp, StaggerContainer, StaggerItem } from "./motion";
+import { Eyebrow } from "./eyebrow";
 import { DoppelrandCard } from "./doppelrand-card";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -180,12 +181,10 @@ export function SocialProof() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <FadeUp>
-              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-warm-700/25 bg-warm-800/30 px-4 py-1.5 text-overline font-semibold uppercase tracking-[0.25em] text-yellow-500/90 backdrop-blur-sm">
-                Quem já se tornou Chainless
-              </span>
+              <Eyebrow className="mb-5">Quem já se tornou Chainless</Eyebrow>
             </FadeUp>
             <FadeUp delay={0.1}>
-              <h2 className="max-w-[450px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.03em] text-text-primary">
+              <h2 className="max-w-[450px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.02em] text-text-primary">
                 Vozes soberanas.
               </h2>
             </FadeUp>
@@ -231,7 +230,7 @@ export function SocialProof() {
 
                 {/* ── Quote ── */}
                 <blockquote
-                  className={`pull-quote flex-1 font-serif font-normal italic leading-[1.6] text-text-primary/90 ${
+                  className={`pull-quote flex-1 font-normal italic leading-[1.6] text-text-primary/90 ${
                     i === 0 ? "text-lg md:text-xl" : "text-base md:text-lg"
                   }`}
                 >
