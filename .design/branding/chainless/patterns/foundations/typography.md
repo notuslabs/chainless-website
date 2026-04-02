@@ -17,25 +17,31 @@ Typography tokens are implemented and working. Two known divergences from identi
 
 ## Font Stacks
 
-| Role | Identity Spec | Implementation | CSS Variable | Status |
-|------|--------------|----------------|-------------|--------|
-| **Primary** | Sohne (Klim, commercial) | **Satoshi** (FontShare, free) | `--font-sans` | KEEP — licensing decision |
-| **Accent Serif** | Fraunces (Google Fonts) | Fraunces | `--font-serif` | KEEP |
-| **Monospace** | IBM Plex Mono | IBM Plex Mono | `--font-mono` | KEEP |
+| Role | Font | CSS Variable | Status |
+|------|------|-------------|--------|
+| **Primary** | Switzer (FontShare, free) | `--font-sans` | ADOPTED — Swiss neutrality, institutional warmth |
+| **Display Serif** | Zodiak (local woff2) | `--font-serif` | ADOPTED — ink-trap display, editorial precision |
+| **Monospace** | IBM Plex Mono | `--font-mono` | SPEC'd (not yet imported in landing) |
 
 ### Font Stack Definitions
 
 ```css
---font-sans:  'Satoshi', 'General Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
---font-serif: 'Fraunces', 'Newsreader', 'Georgia', 'Times New Roman', serif;
+--font-sans:  var(--font-switzer), ui-sans-serif, system-ui, -apple-system, sans-serif;
+--font-serif: var(--font-zodiak), Georgia, serif;
 --font-mono:  'IBM Plex Mono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
 ```
 
-### Known Divergence: Sohne vs Satoshi
+### Rationale: Switzer
 
-Identity spec prescribes Sohne (Klim Type Foundry, commercial license ~$300+). Implementation uses Satoshi by Indian Type Foundry via FontShare (free, commercial use). Both are humanist sans-serifs with warm geometry. General Sans sits in the fallback chain as a bridge.
+Neo-grotesque with Swiss typographic heritage. More open apertures and softer stroke junctions than Geist (previous implementation), without Satoshi's rounded playfulness. Reads as "European private bank" — invisible infrastructure that lets the palette and Zodiak carry brand personality. Self-hosted via FontShare (free, commercial use).
 
-**Decision**: KEEP Satoshi until Sohne licensing is acquired. The design system tokens are font-agnostic — swapping requires only changing the `@font-face` declaration and the first entry in `--font-sans`.
+### Rationale: Zodiak
+
+Indie display serif by Pangram Pangram with ink-trap details. At display sizes (48px+), ink traps create distinctive negative spaces that signal editorial precision and contemporary craft. More unexpected than Fraunces (prev spec), aligns with the "rebel" half of the 60/40 premium/rebel split.
+
+**Known limitation:** No italic cuts in current local files. Serif italic contexts (pull quotes, editorial taglines) use browser-synthesized oblique. Source italic cuts if they become available.
+
+**Known weight gap:** Available weights are Light (300), Regular (400), Bold (700), ExtraBold (800). No 500/600 semibold — browser will synthesize or round to 700 for semibold contexts.
 
 ---
 
@@ -63,17 +69,18 @@ Base: **18px** | Ratio: **1.25** (Major Third) | Grid: **4px**
 
 ## Font Pairing Rules
 
-**Serif (Fraunces) is for brand moments only.** Never body text, never UI labels, never buttons, never forms.
+**Zodiak (serif) is for brand moments only.** Never body text, never UI labels, never buttons, never forms.
 
 | Context | Font | Weight | Rationale |
 |---------|------|:------:|-----------|
-| Hero headline ("Torne-se Chainless.") | Fraunces | 700 | Magician speaks — transformation |
-| Campaign headlines | Fraunces | 700 | High Magician energy |
-| Pull quotes, testimonials | Fraunces Italic | 400-500 | Editorial warmth |
-| Section headings (product) | Satoshi | 600 | Ruler governs — structure |
-| Body text | Satoshi | 400 | Clarity and readability |
-| Navigation | Satoshi | 500 | Medium weight, functional |
-| Buttons | Satoshi | 600 | Semibold, action-oriented |
+| Hero headline ("Torne-se Chainless.") | Zodiak | 400 | Magician speaks — ink traps as precision metaphor |
+| Section headings (aspirational) | Zodiak | 400 | Transformation moments, editorial authority |
+| Campaign headlines | Zodiak | 700 | High Magician energy |
+| Pull quotes, editorial couplets | Zodiak | 300 | Light weight, editorial restraint |
+| Section headings (product) | Switzer | 600 | Ruler governs — structure |
+| Body text | Switzer | 400 | Swiss neutrality, invisible infrastructure |
+| Navigation | Switzer | 500 | Medium weight, institutional |
+| Buttons | Switzer | 600 | Semibold, action-oriented |
 | Data values, addresses | IBM Plex Mono | 500 | Architect's precision |
 
 ---
@@ -148,15 +155,14 @@ Plus `text-wrap: pretty` and `hanging-punctuation: first last` on `.pull-quote` 
 
 ## Font Loading
 
-Satoshi is loaded via `@font-face` in `globals.css` pointing to FontShare CDN WOFF2 files. Variable font covers weights 300-900.
+Both primary fonts are self-hosted as local WOFF2 files in `src/fonts/`.
 
+**Switzer** — 5 weight cuts: Light (300), Regular (400), Medium (500), SemiBold (600), Bold (700). Loaded via `next/font/local` with `--font-switzer` CSS variable.
+
+**Zodiak** — 4 weight cuts: Light (300), Regular (400), Bold (700), ExtraBold (800). Loaded via `next/font/local` with `--font-zodiak` CSS variable. No italic cuts available.
+
+CSS mapping in `globals.css`:
 ```css
-@font-face {
-  font-family: 'Satoshi';
-  src: url('https://cdn.fontshare.com/...SATOSHI-VARIABLE.woff2') format('woff2');
-  font-weight: 300 900;
-  font-display: swap;
-}
+--font-sans: var(--font-switzer), ui-sans-serif, system-ui, -apple-system, sans-serif;
+--font-serif: var(--font-zodiak), Georgia, serif;
 ```
-
-**Future upgrade path**: When Sohne license is acquired, replace CDN URL with self-hosted WOFF2 and update first entry in `--font-sans`. No other code changes needed.

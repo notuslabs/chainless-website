@@ -18,9 +18,10 @@ tokens:
     muted: "#87837C"
 
   typography:
-    font-family-primary: "'Satoshi', 'General Sans', ui-sans-serif, system-ui, sans-serif"
-    font-family-accent: "'Fraunces', 'Newsreader', 'Georgia', serif"
+    font-family-primary: "'Switzer', ui-sans-serif, system-ui, sans-serif"
+    font-family-accent: "'Zodiak', 'Georgia', serif"
     font-family-mono: "'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace"
+    container-content: "1200px"
     font-weight-heading: 700
     font-weight-subheading: 600
     font-weight-body: 400
@@ -37,9 +38,9 @@ tokens:
     border-radius-2xl: "24px"
     border-radius-3xl: "36px"
     border-width: "1px"
-    border-color: "rgba(255, 255, 255, 0.04)"
-    doppelrand-outer: "36px"
-    doppelrand-inner: "30px"
+    border-color: "rgba(255, 255, 255, 0.05)"
+    doppelrand-outer: "18px"
+    doppelrand-inner: "12px"
     doppelrand-gap: "6px"
 
   elevation:

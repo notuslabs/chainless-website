@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Typography — Geist + Fraunces (2-font system) */
-  --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-serif: 'Fraunces', 'Newsreader', 'Georgia', 'Times New Roman', serif;
+  /* Typography — Zodiak (display) + Geist (body) */
+  --font-sans: var(--font-switzer), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-zodiak), Georgia, serif;
 
   /* Brand Yellow — warm gold, desaturated for luxury */
   --color-yellow-50: #FFF8F0;
