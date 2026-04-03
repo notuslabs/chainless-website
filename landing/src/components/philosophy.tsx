@@ -20,7 +20,7 @@ interface PhilosophyPillar {
 
 const pillars: PhilosophyPillar[] = [
   {
-    overline: "Por que não somos uma corretora",
+    overline: "Não somos uma corretora",
     title: "Nós não temos acesso ao seu patrimônio.",
     description:
       "Corretoras custodiam seus ativos e você depende da solvência delas. A Chainless foi desenhada fora dessa lógica. Seus ativos vivem na blockchain, na sua chave. Não é uma promessa. É a arquitetura.",
@@ -30,10 +30,10 @@ const pillars: PhilosophyPillar[] = [
     imageAlt: "Detalhe arquitetônico de concreto com luz natural quente",
   },
   {
-    overline: "Por que não somos uma carteira",
+    overline: "Não somos uma simples carteira",
     title: "Uma plataforma financeira completa, sem complexidade.",
     description:
-      "Autocustódia sempre foi sinônimo de complexidade. A Chainless provou que não precisa ser assim. Pix, cartão, rendimento, crédito. Tudo em um único app.",
+      "Carteiras tradicionais te entregam 12 palavras e uma promessa: não perca. A Chainless te entrega um app completo: Pix, cartão, rendimento, bitcoin, com recuperação de acesso integrada.",
     stat: "",
     statLabel: "",
     image: `${BASE}/philosophy-2.jpg`,
