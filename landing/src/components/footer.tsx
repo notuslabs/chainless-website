@@ -25,12 +25,12 @@ export function Footer() {
             {/* Brand column — generous breathing room */}
             <div className="md:col-span-4">
               <ChainlessLogo color="#FAFAF8" size={24} />
-              <p className="mt-6 max-w-[260px] text-sm leading-[1.75] text-warm-400/60">
+              <p className="mt-6 max-w-[260px] text-sm leading-[1.75] text-warm-300/70">
                 Plataforma de patrimônio digital com autocustódia. Seu
                 patrimônio cresce. Suas chaves continuam suas.
               </p>
               {/* Brand tagline — editorial serif treatment */}
-              <p className="mt-8 text-small italic text-warm-400/30">
+              <p className="mt-8 text-small italic text-warm-400/50">
                 Patrimônio digital soberano.
               </p>
             </div>
@@ -38,7 +38,7 @@ export function Footer() {
             {/* Link columns */}
             {Object.entries(footerLinks).map(([category, links]) => (
               <div key={category} className="md:col-span-2">
-                <h4 className="text-overline font-semibold uppercase tracking-[0.2em] text-warm-300/50">
+                <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-warm-300/60">
                   {category}
                 </h4>
                 <motion.div
@@ -54,7 +54,7 @@ export function Footer() {
                     <li key={link}>
                       <a
                         href="#"
-                        className="text-caption text-warm-400/50 transition-all duration-500 ease-premium hover:text-text-primary active:scale-[0.98]"
+                        className="text-sm text-warm-300/60 transition-all duration-500 ease-premium hover:text-text-primary active:scale-[0.98]"
                       >
                         {link}
                       </a>
@@ -71,10 +71,10 @@ export function Footer() {
 
         {/* Bottom bar — refined spacing */}
         <div className="mt-8 flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-caption font-medium tracking-wide text-warm-500/35">
+          <p className="text-sm font-medium tracking-wide text-warm-400/50">
             &copy; {new Date().getFullYear()} Chainless. Patrimônio digital soberano.
           </p>
-          <p className="max-w-[400px] text-caption tracking-wide text-warm-600/30 md:text-right">
+          <p className="max-w-[400px] text-sm tracking-wide text-warm-400/50 md:text-right">
             Chainless não é uma instituição financeira. Não custodiamos ativos.
           </p>
         </div>

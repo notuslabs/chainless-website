@@ -76,7 +76,7 @@ export function Philosophy() {
             </FadeUp>
           </div>
           <FadeUp delay={0.2}>
-            <p className="max-w-[320px] text-small leading-[1.7] text-warm-300/60 md:text-right">
+            <p className="max-w-[320px] text-small leading-[1.7] text-warm-300/70 md:text-right">
               Sem a custódia centralizada das corretoras, sem a fricção das carteiras.
             </p>
           </FadeUp>
@@ -137,7 +137,7 @@ export function Philosophy() {
                       </h3>
 
                       {/* Description */}
-                      <p className="max-w-[42ch] text-small leading-[1.7] text-warm-300/60">
+                      <p className="max-w-[42ch] text-small leading-[1.7] text-warm-300/70">
                         {pillar.description}
                       </p>
 
@@ -147,7 +147,7 @@ export function Philosophy() {
                           <span className="text-3xl font-medium tabular-nums tracking-tight text-text-primary md:text-4xl">
                             {pillar.stat}
                           </span>
-                          <span className="mb-1 text-sm leading-snug text-warm-400/50">
+                          <span className="mb-1 text-sm leading-snug text-warm-300/60">
                             {pillar.statLabel}
                           </span>
                         </div>

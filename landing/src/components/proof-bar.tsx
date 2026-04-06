@@ -56,7 +56,7 @@ export function ProofBar() {
                     ariaLabel={item.displayValue}
                   />
                 </dd>
-                <dt className="mt-1.5 text-overline sm:text-caption text-warm-400/50 tracking-wide">
+                <dt className="mt-1.5 text-xs sm:text-sm text-warm-300/60 tracking-wide">
                   {item.label}
                 </dt>
               </div>

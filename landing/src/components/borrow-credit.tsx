@@ -82,7 +82,7 @@ export function BorrowCredit() {
     <section
       id="credito"
       aria-labelledby="credit-heading"
-      className="relative bg-dark-500 px-4 py-32 md:py-44"
+      className="relative bg-dark-600 px-4 py-32 md:py-44"
     >
       {/* Atmospheric glows */}
       <div
@@ -106,12 +106,12 @@ export function BorrowCredit() {
                 id="credit-heading"
                 className="mt-8 max-w-[520px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.02em] text-text-primary"
               >
-                Acesse dólares sem vender seu Bitcoin.
+                Receba dólares sem vender seu Bitcoin.
               </h2>
             </FadeUp>
           </div>
           <FadeUp delay={0.2}>
-            <p className="max-w-[320px] text-small leading-[1.7] text-warm-300/60 md:text-right">
+            <p className="max-w-[320px] text-small leading-[1.7] text-warm-300/70 md:text-right">
               Deposite BTC como garantia e receba crédito em USDC — a 3,5% ao
               ano, sem prazo fixo.
             </p>
@@ -154,7 +154,7 @@ export function BorrowCredit() {
                     <span className="block text-lg font-medium tracking-tight text-text-primary">
                       {step.tokenName}
                     </span>
-                    <span className="mt-0.5 block text-caption tracking-wider text-warm-400/45">
+                    <span className="mt-0.5 block text-sm tracking-wider text-warm-300/60">
                       {step.tokenTicker}
                     </span>
                   </div>
@@ -172,7 +172,7 @@ export function BorrowCredit() {
                     {step.metric}
                   </span>
                   {step.subMetric && (
-                    <span className="mt-1 block text-caption text-warm-400/45">
+                    <span className="mt-1 block text-sm text-warm-300/60">
                       {step.subMetric}
                     </span>
                   )}
@@ -198,7 +198,7 @@ export function BorrowCredit() {
                 />
 
                 {/* Description */}
-                <p className="mt-4 text-caption leading-relaxed text-warm-300/50">
+                <p className="mt-4 text-sm leading-relaxed text-warm-300/70">
                   {step.description}
                 </p>
               </DoppelrandCard>
@@ -208,7 +208,7 @@ export function BorrowCredit() {
 
         {/* ── Legal disclaimer ── */}
         <FadeUp delay={0.5}>
-          <p className="mt-10 max-w-[680px] text-caption leading-relaxed text-warm-400/35">
+          <p className="mt-10 max-w-[680px] text-sm leading-relaxed text-warm-400/50">
             Taxas estimadas com base no protocolo Aave e sujeitas a variação de
             mercado. Este serviço não constitui oferta de crédito — trata-se de
             uma integração com protocolo descentralizado de empréstimo.

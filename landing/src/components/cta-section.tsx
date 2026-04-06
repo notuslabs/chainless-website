@@ -93,7 +93,7 @@ export function CTASection() {
           </h2>
         </FadeUp>
         <FadeUp delay={0.25}>
-          <p className="mt-8 max-w-[460px] text-lg font-light leading-[1.7] text-warm-300/60">
+          <p className="mt-8 max-w-[460px] text-lg font-light leading-[1.7] text-warm-300/70">
             Toda plataforma de patrimônio pede que você entregue seus ativos a
             um custodiante. Chainless é a primeira onde isso é{" "}
             <span className="font-medium text-yellow-500/90">impossível</span>.
@@ -123,7 +123,7 @@ export function CTASection() {
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.6, ease: EASE_PREMIUM }}
             />
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-caption font-medium tracking-wide text-warm-500/35">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium tracking-wide text-warm-300/50">
               <span>Sem custódia</span>
               <span className="h-3 w-px bg-warm-700/15" />
               <span>Sem lock-up</span>

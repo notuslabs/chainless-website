@@ -1,6 +1,8 @@
 "use client";
 
+import { type ElementType } from "react";
 import { motion } from "framer-motion";
+import { Wallet, Lightning, ChartLineUp, CreditCard } from "@phosphor-icons/react";
 import { FadeUp, StaggerContainer, StaggerItem, EASE_PREMIUM } from "./motion";
 import { Eyebrow } from "./eyebrow";
 import { DoppelrandCard } from "./doppelrand-card";
@@ -11,166 +13,48 @@ const steps = [
     title: "Crie sua carteira",
     description:
       "Suas chaves privadas são geradas no seu dispositivo. Chainless nunca as vê, nunca as armazena, nunca tem acesso.",
-    icon: WalletIcon,
+    icon: Wallet,
   },
   {
     number: "02",
     title: "Deposite via Pix",
     description:
       "Transfira reais direto da sua conta bancária. Conversão instantânea para ativos digitais na sua carteira.",
-    icon: PixIcon,
+    icon: Lightning,
   },
   {
     number: "03",
     title: "Veja crescer",
     description:
       "Escolha estratégias DeFi curadas — Aave, Compound, Lido. Ative com um toque e acompanhe seu patrimônio crescer, sob seu controle.",
-    icon: StrategyIcon,
+    icon: ChartLineUp,
   },
   {
     number: "04",
     title: "Gaste globalmente",
     description:
       "Use seu cartão USDC para compras no mundo inteiro. Sem IOF, sem conversões ocultas, sem taxas escondidas.",
-    icon: GrowthIcon,
+    icon: CreditCard,
   },
 ];
 
-/* ── Step illustration SVGs with draw-on animation ── */
+/* ── Animated icon container — matches security section treatment ── */
 
-function WalletIcon() {
+function StepIcon({ icon: Icon, index }: { icon: ElementType; index: number }) {
   return (
-    <svg viewBox="0 0 80 80" fill="none" className="h-16 w-16">
-      <motion.rect
-        x="8" y="20" width="56" height="44" rx="8"
-        stroke="currentColor" strokeWidth="1.5"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.2, ease: EASE_PREMIUM }}
-      />
-      <motion.path
-        d="M16 20V16a8 8 0 0 1 8-8h32a8 8 0 0 1 8 8v4"
-        stroke="currentColor" strokeWidth="1.5"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, delay: 0.3, ease: EASE_PREMIUM }}
-      />
-      <motion.circle
-        cx="52" cy="42" r="6"
-        stroke="var(--color-yellow-500)" strokeWidth="1.5" fill="none"
-        initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.8, ease: EASE_PREMIUM }}
-      />
-      <motion.path
-        d="M46 42h-8m4 0v6"
-        stroke="var(--color-yellow-500)" strokeWidth="1.5" strokeLinecap="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 1.1, ease: EASE_PREMIUM }}
-      />
-    </svg>
-  );
-}
-
-function PixIcon() {
-  return (
-    <svg viewBox="0 0 80 80" fill="none" className="h-16 w-16">
-      <motion.path
-        d="M44 8L28 40h12L32 72l24-40H44L52 8z"
-        stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" fill="none"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, ease: EASE_PREMIUM }}
-      />
-      <motion.path
-        d="M44 8L28 40h12L32 72l24-40H44L52 8z"
-        fill="var(--color-yellow-500)" fillOpacity="0.08"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.9, ease: EASE_PREMIUM }}
-      />
-      <motion.circle
-        cx="20" cy="24" r="1.5" fill="var(--color-yellow-500)"
-        initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 0.5 }}
-        viewport={{ once: true }} transition={{ delay: 1.2, duration: 0.4, ease: EASE_PREMIUM }}
-      />
-      <motion.circle
-        cx="62" cy="56" r="1" fill="var(--color-yellow-500)"
-        initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 0.4 }}
-        viewport={{ once: true }} transition={{ delay: 1.3, duration: 0.4, ease: EASE_PREMIUM }}
-      />
-    </svg>
-  );
-}
-
-function StrategyIcon() {
-  return (
-    <svg viewBox="0 0 80 80" fill="none" className="h-16 w-16">
-      {[
-        { x: 10, y: 14, w: 24, h: 20, delay: 0 },
-        { x: 40, y: 14, w: 30, h: 20, delay: 0.15 },
-        { x: 10, y: 40, w: 30, h: 20, delay: 0.25 },
-        { x: 46, y: 40, w: 24, h: 20, delay: 0.35 },
-      ].map((block, i) => (
-        <motion.rect
-          key={i} x={block.x} y={block.y} width={block.w} height={block.h}
-          rx="4" stroke="currentColor" strokeWidth="1.5" fill="none"
-          initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 + block.delay, ease: EASE_PREMIUM }}
-        />
-      ))}
-      <motion.rect
-        x="14" y="18" width="16" height="3" rx="1.5"
-        fill="var(--color-yellow-500)"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} style={{ originX: 0 }}
-        transition={{ duration: 0.6, delay: 0.8, ease: EASE_PREMIUM }}
-      />
-      <motion.circle
-        cx="56" cy="50" r="3.5"
-        fill="var(--color-yellow-500)" fillOpacity="0.2"
-        stroke="var(--color-yellow-500)" strokeWidth="1"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 1, ease: EASE_PREMIUM }}
-      />
-    </svg>
-  );
-}
-
-function GrowthIcon() {
-  return (
-    <svg viewBox="0 0 80 80" fill="none" className="h-16 w-16">
-      <motion.path
-        d="M8 64C20 60 30 52 40 40s14-20 20-24 12-6 12-4"
-        stroke="var(--color-yellow-500)" strokeWidth="2" strokeLinecap="round" fill="none"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.4, ease: EASE_PREMIUM }}
-      />
-      <motion.path
-        d="M8 64C20 60 30 52 40 40s14-20 20-24 12-6 12-4V72H8z"
-        fill="var(--color-yellow-500)" fillOpacity="0.04"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 1, ease: EASE_PREMIUM }}
-      />
-      <motion.circle
-        cx="72" cy="12" r="3.5" fill="var(--color-yellow-500)"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ type: "spring", stiffness: 200, damping: 12, delay: 1.2 }}
-      />
-      <motion.path
-        d="M8 72h64M8 16v56"
-        stroke="currentColor" strokeWidth="1" strokeOpacity="0.15"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: EASE_PREMIUM }}
-      />
-    </svg>
+    <motion.div
+      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-yellow-500/20 bg-yellow-500/[0.07]"
+      initial={{ opacity: 0, scale: 0.6 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.6,
+        delay: 0.3 + index * 0.1,
+        ease: EASE_PREMIUM,
+      }}
+    >
+      <Icon size={26} weight="duotone" className="text-yellow-500/80" />
+    </motion.div>
   );
 }
 
@@ -243,12 +127,10 @@ export function HowItWorks() {
                   innerClassName="flex h-full flex-col p-8 md:p-10"
                   gradientAngle={155 + i * 15}
                 >
-                  {/* Top row: illustration + editorial number */}
+                  {/* Top row: icon + editorial number */}
                   <div className="flex items-start justify-between">
-                    {/* SVG icon */}
-                    <div className="text-white/[0.15] transition-colors duration-700 ease-premium group-hover:text-white/[0.3]">
-                      <step.icon />
-                    </div>
+                    {/* Phosphor icon in styled container */}
+                    <StepIcon icon={step.icon} index={i} />
                     {/* Number — editorial serif treatment */}
                     <div className="flex flex-col items-end">
                       <span className="font-serif text-[2.5rem] font-bold leading-none tracking-[-0.04em] text-white/[0.05] transition-colors duration-700 ease-premium group-hover:text-white/[0.08]">

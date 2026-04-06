@@ -181,16 +181,16 @@ export function SocialProof() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <FadeUp>
-              <Eyebrow className="mb-5">Quem já se tornou Chainless</Eyebrow>
+              <Eyebrow className="mb-5">Depoimentos</Eyebrow>
             </FadeUp>
             <FadeUp delay={0.1}>
               <h2 className="max-w-[450px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.02em] text-text-primary">
-                Vozes soberanas.
+                Quem já é Chainless.
               </h2>
             </FadeUp>
           </div>
           <FadeUp delay={0.2}>
-            <p className="max-w-[300px] text-small leading-[1.7] text-warm-300/60 md:text-right">
+            <p className="max-w-[300px] text-small leading-[1.7] text-warm-300/70 md:text-right">
               Pessoas que escolheram controle absoluto sobre seu patrimônio
               digital.
             </p>
@@ -242,7 +242,7 @@ export function SocialProof() {
                   <p className="text-sm font-semibold tracking-tight text-text-primary">
                     {t.name}
                   </p>
-                  <p className="mt-0.5 text-caption font-medium tracking-wide text-warm-400/50">
+                  <p className="mt-0.5 text-sm font-medium tracking-wide text-warm-300/60">
                     {t.title}
                   </p>
                 </div>

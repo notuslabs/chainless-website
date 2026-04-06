@@ -53,14 +53,14 @@ function DoppelrandRenderer({
 
   return (
     <Component
-      className={`group rounded-[1.125rem] bg-white/[0.03] p-1.5 ring-1 ring-white/[0.05] ${
+      className={`group flex flex-col rounded-[1.125rem] bg-white/[0.03] p-1.5 ring-1 ring-white/[0.05] ${
         hover
           ? "transition-all duration-700 ease-premium hover:ring-white/[0.07] hover:-translate-y-px"
           : ""
       } ${className}`}
     >
       <div
-        className={`doppelrand-hallmark inner-highlight-dark relative overflow-hidden rounded-[calc(1.125rem-0.375rem)] ${innerClassName}`}
+        className={`doppelrand-hallmark inner-highlight-dark relative flex-1 overflow-hidden rounded-[calc(1.125rem-0.375rem)] ${innerClassName}`}
         style={{ background: gradientStyle }}
       >
         {children}
