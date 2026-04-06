@@ -7,10 +7,10 @@ import { ChainlessLogo } from "./chainless-logo";
 import { EASE_PREMIUM } from "./motion";
 
 const navItems = [
-  { label: "Sobre", href: "/#sobre" },
-  { label: "Rendimentos", href: "/#rendimentos" },
-  { label: "Cartão", href: "/#dolar" },
-  { label: "Como funciona", href: "/#como-funciona" },
+  { label: "Rendimentos", href: "#rendimentos" },
+  { label: "Cartão", href: "#cartao" },
+  { label: "Empréstimo BTC", href: "#credito" },
+  { label: "Segurança", href: "#seguranca" },
 ];
 
 export function Navbar() {
@@ -32,7 +32,7 @@ export function Navbar() {
         transition={{ duration: 0.9, delay: 0.3, ease: EASE_PREMIUM }}
       >
         <motion.div
-          className="relative flex items-center gap-1 overflow-hidden rounded-2xl px-2 py-2"
+          className="doppelrand-hallmark-narrow relative flex items-center gap-1 overflow-hidden rounded-2xl px-2 py-2"
           animate={{
             background: scrolled
               ? "linear-gradient(135deg, rgba(28,27,25,0.88) 0%, rgba(28,27,25,0.75) 50%, rgba(28,27,25,0.85) 100%)"
@@ -86,7 +86,7 @@ export function Navbar() {
             <a
               href="#"
               aria-label="App Store"
-              className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl text-yellow-500 transition-all duration-500 ease-premium hover:brightness-125 active:scale-[0.95]"
+              className="doppelrand-hallmark-tiny relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl text-yellow-500 transition-all duration-500 ease-premium hover:brightness-125 active:scale-[0.95]"
               style={{
                 background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 50%, rgba(255,255,255,0.08) 100%)",
                 boxShadow: "inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(255,255,255,0.03)",
@@ -100,7 +100,7 @@ export function Navbar() {
             <a
               href="#"
               aria-label="Google Play"
-              className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl text-yellow-500 transition-all duration-500 ease-premium hover:brightness-125 active:scale-[0.95]"
+              className="doppelrand-hallmark-tiny relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl text-yellow-500 transition-all duration-500 ease-premium hover:brightness-125 active:scale-[0.95]"
               style={{
                 background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 50%, rgba(255,255,255,0.08) 100%)",
                 boxShadow: "inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(255,255,255,0.03)",

@@ -3,6 +3,7 @@ import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { ProofBar } from "@/components/proof-bar";
 import { Philosophy } from "@/components/philosophy";
+import { Security } from "@/components/security";
 import { EditorialBreak } from "@/components/editorial-break";
 import { YieldSection } from "@/components/yield-section";
 import { SpendCredit } from "@/components/spend-credit";
@@ -83,10 +84,11 @@ export default function Home() {
         <SectionRule />
         <BorrowCredit />
         <SectionRule />
+        <Security />
+        <SectionRule />
         <SocialProof />
         <SectionRule />
-        <HowItWorks />
-        <SectionRule />
+        {/* <HowItWorks /> */}
         <CTASection />
       </main>
       <Footer />
