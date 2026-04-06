@@ -12,9 +12,9 @@ const cardBenefits = [
 export function SpendCredit() {
   return (
     <section
-      id="dolar"
+      id="cartao"
       aria-labelledby="spend-heading"
-      className="relative bg-dark-950 px-4 py-32 md:py-44"
+      className="relative bg-black px-4 py-32 md:py-44"
     >
       {/* Warm yellow atmospheric glows — left side, away from video */}
       <div
@@ -42,44 +42,41 @@ export function SpendCredit() {
               Compre dólares sem IOF e gaste globalmente.
             </h2>
 
-            <p className="mt-6 max-w-[48ch] text-small leading-[1.7] text-warm-300/60">
+            <p className="mt-6 max-w-[48ch] text-small leading-[1.7] text-warm-300/70">
               USDC ao câmbio real, sem spread oculto. Após a conversão, os
               ativos são seus — na blockchain, sob sua chave.
             </p>
 
-            {/* IOF Comparison */}
-            <dl
+            {/* IOF Comparison — glass card */}
+            <div
+              className="doppelrand-hallmark-narrow mt-12 inline-block rounded-2xl border border-white/[0.08] px-6 pb-7 pt-6 backdrop-blur-md md:mt-16"
               aria-label="Comparação de IOF"
-              className="mt-12 flex gap-6 md:mt-16 md:gap-10"
+              style={{
+                background: "linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06), 0 4px 24px -4px rgba(0,0,0,0.3)",
+              }}
             >
-              <div>
-                <dt className="mb-2 text-caption uppercase tracking-wider text-warm-400/50">
-                  IOF bancário
-                </dt>
-                <dd className="text-3xl tabular-nums tracking-tight text-warm-300/40 md:text-4xl">
+              <p className="text-xs uppercase tracking-wider text-warm-300/60">IOF</p>
+              <p className="mt-2 flex items-baseline gap-4">
+                <span className="text-2xl tabular-nums tracking-tight text-warm-400/50 line-through decoration-warm-400/30 md:text-3xl">
                   3,5%
-                </dd>
-              </div>
-              <div
-                className="w-px self-stretch bg-warm-700/20"
-                aria-hidden="true"
-              />
-              <div>
-                <dt className="mb-2 text-caption uppercase tracking-wider text-warm-400/50">
-                  IOF via Chainless
-                </dt>
-                <dd className="text-3xl font-medium tabular-nums tracking-tight text-text-primary md:text-4xl">
+                </span>
+                <span className="text-sm text-warm-300/50" aria-hidden="true">→</span>
+                <span className="text-3xl font-semibold tabular-nums tracking-tight text-yellow-500 md:text-4xl">
                   0%
-                </dd>
-              </div>
-            </dl>
+                </span>
+                <span className="text-sm font-medium text-yellow-500/70">
+                  via Chainless
+                </span>
+              </p>
+            </div>
 
             {/* Card benefits */}
-            <ul className="mt-10 space-y-4 md:mt-12">
+            <ul className="mt-12 space-y-4 md:mt-16">
               {cardBenefits.map((point) => (
                 <li
                   key={point}
-                  className="flex items-start gap-3 text-base leading-relaxed text-warm-300/60"
+                  className="flex items-start gap-3 text-base leading-relaxed text-warm-300/70"
                 >
                   <span
                     className="mt-2 h-1 w-1 shrink-0 rounded-full bg-yellow-500/40"
@@ -90,19 +87,6 @@ export function SpendCredit() {
               ))}
             </ul>
 
-            {/* Status */}
-            <div className="mt-10">
-              <span
-                role="status"
-                className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1.5 text-xs font-medium text-emerald-400"
-              >
-                <span
-                  className="h-2 w-2 rounded-full bg-emerald-500"
-                  aria-hidden="true"
-                />
-                Disponível
-              </span>
-            </div>
           </FadeUp>
 
           {/* Right: Card hero video */}
@@ -124,27 +108,27 @@ export function SpendCredit() {
                 <div
                   className="pointer-events-none absolute inset-x-0 top-0 h-[15%]"
                   aria-hidden="true"
-                  style={{ background: "linear-gradient(to bottom, var(--color-dark-950), transparent)" }}
+                  style={{ background: "linear-gradient(to bottom, #000000, transparent)" }}
                 />
                 <div
                   className="pointer-events-none absolute inset-x-0 bottom-0 h-[15%]"
                   aria-hidden="true"
-                  style={{ background: "linear-gradient(to top, var(--color-dark-950), transparent)" }}
+                  style={{ background: "linear-gradient(to top, #000000, transparent)" }}
                 />
                 <div
                   className="pointer-events-none absolute inset-y-0 left-0 w-[12%]"
                   aria-hidden="true"
-                  style={{ background: "linear-gradient(to right, var(--color-dark-950), transparent)" }}
+                  style={{ background: "linear-gradient(to right, #000000, transparent)" }}
                 />
                 <div
                   className="pointer-events-none absolute inset-y-0 right-0 w-[12%]"
                   aria-hidden="true"
-                  style={{ background: "linear-gradient(to left, var(--color-dark-950), transparent)" }}
+                  style={{ background: "linear-gradient(to left, #000000, transparent)" }}
                 />
               </div>
 
               {/* Caption */}
-              <p className="mt-4 text-center text-caption uppercase tracking-[0.15em] text-warm-400/50">
+              <p className="mt-4 text-center text-sm uppercase tracking-[0.15em] text-warm-300/60">
                 Gaste USDC globalmente
               </p>
             </div>

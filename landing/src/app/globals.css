@@ -193,6 +193,40 @@ body {
   background: linear-gradient(90deg, transparent 0%, rgba(255, 199, 61, 0.25) 30%, rgba(255, 199, 61, 0.35) 50%, rgba(255, 199, 61, 0.25) 70%, transparent 100%);
 }
 
+/* Narrow variant — for compact elements like the nav pill */
+.doppelrand-hallmark-narrow {
+  position: relative;
+}
+
+.doppelrand-hallmark-narrow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12px;
+  right: 12px;
+  height: 1px;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 199, 61, 0.12) 25%, rgba(255, 199, 61, 0.18) 50%, rgba(255, 199, 61, 0.12) 75%, transparent 100%);
+}
+
+/* Tiny variant — for icon buttons and small interactive elements */
+.doppelrand-hallmark-tiny {
+  position: relative;
+}
+
+.doppelrand-hallmark-tiny::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 6px;
+  right: 6px;
+  height: 1px;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 199, 61, 0.18) 25%, rgba(255, 199, 61, 0.25) 50%, rgba(255, 199, 61, 0.18) 75%, transparent 100%);
+}
+
 /* ── Premium scrollbar ── */
 ::-webkit-scrollbar {
   width: 6px;
@@ -285,4 +319,31 @@ body {
   height: 1px;
   background: linear-gradient(90deg, var(--color-yellow-500) 0%, transparent 100%);
   opacity: 0.2;
+}
+
+/* ── MPC shard pulse — decorative node animation ── */
+@keyframes shard-pulse-1 {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+@keyframes shard-pulse-2 {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.5; }
+}
+@keyframes shard-pulse-3 {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.35; }
+}
+
+.shard-pulse-1 { animation: shard-pulse-1 1.5s ease-in-out infinite; }
+.shard-pulse-2 { animation: shard-pulse-2 2.2s ease-in-out infinite; }
+.shard-pulse-3 { animation: shard-pulse-3 3s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .shard-pulse-1,
+  .shard-pulse-2,
+  .shard-pulse-3 {
+    animation: none;
+    opacity: 0.4;
+  }
 }

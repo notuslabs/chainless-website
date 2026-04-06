@@ -84,7 +84,7 @@ export function Hero() {
               <motion.a
                 href="#"
                 aria-label="Baixar na App Store"
-                className="group relative inline-flex items-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97]"
+                className="doppelrand-hallmark-narrow group relative inline-flex items-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97]"
                 initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true }}
@@ -115,7 +115,7 @@ export function Hero() {
               <motion.a
                 href="#"
                 aria-label="Baixar no Google Play"
-                className="group relative inline-flex items-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97]"
+                className="doppelrand-hallmark-narrow group relative inline-flex items-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97]"
                 initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true }}
@@ -153,12 +153,12 @@ export function Hero() {
             >
               <span className="flex items-center gap-2">
                 <span className="text-lg font-semibold tabular-nums text-yellow-500/90">150+</span>
-                <span className="text-caption font-medium tracking-wide text-white/60">ativos digitais</span>
+                <span className="text-sm font-medium tracking-wide text-white/70">ativos digitais</span>
               </span>
               <span className="h-4 w-px bg-white/20" />
               <span className="flex items-center gap-2">
                 <span className="text-lg font-semibold tabular-nums text-yellow-500/90">Até 60%</span>
-                <span className="text-caption font-medium tracking-wide text-white/60">APY em DeFi</span>
+                <span className="text-sm font-medium tracking-wide text-white/70">APY em DeFi</span>
               </span>
             </div>
           </FadeUp>
