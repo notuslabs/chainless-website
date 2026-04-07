@@ -3,6 +3,15 @@
 
 <!-- newest first -->
 
+## [chainless-system] — 2026-04-07
+> Brand: chainless | Scope: Design system QA review + Security section + Transparency page
+
+**Added:** Security section (security.tsx), Transparency page (transparencia/page.tsx, transparency-content.tsx), legal-prose CSS, doppelrand hallmark variants (narrow, tiny)
+**Modified:** footer.tsx (regulatory disclaimer), globals.css (legal prose styles), security.tsx (copy refinements)
+**Patterns:** Legal prose typography, regulatory disclosure footer pattern
+**PR:** --
+**Files:** 5 files touched -> [manifest pending]
+
 ## 2026-03-24 — Brand Patterns Phase Complete
 
 **Phase**: Branding > Patterns (Phase 4 of 4)

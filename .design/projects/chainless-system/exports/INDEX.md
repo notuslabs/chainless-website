@@ -94,7 +94,8 @@ This file is the entry point for coding agents consuming GSP design output.
 <!-- BEGIN:review -->
 | Section | File |
 |---------|------|
-| _(populated by /gsp-project-review)_ | |
+| Acceptance Report | [acceptance-report.md](../review/acceptance-report.md) |
+| Issues | [issues.md](../review/issues.md) |
 <!-- END:review -->
 
 ## Launch Campaign (Optional)
