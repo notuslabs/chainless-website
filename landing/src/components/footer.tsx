@@ -8,7 +8,7 @@ const footerLinks = {
   Produto: ["Rendimento DeFi", "Autocustódia", "Pix", "Multichain"],
   Empresa: ["Sobre", "Blog", "Carreiras", "Imprensa"],
   Recursos: ["Central de ajuda", "Segurança", "Documentação", "Status"],
-  Legal: ["Privacidade", "Termos de uso", "Compliance"],
+  Legal: ["Privacidade", "Termos de uso", "Transparência"],
 };
 
 export function Footer() {
@@ -74,8 +74,11 @@ export function Footer() {
           <p className="text-sm font-medium tracking-wide text-warm-400/50">
             &copy; {new Date().getFullYear()} Chainless. Patrimônio digital soberano.
           </p>
-          <p className="max-w-[400px] text-sm tracking-wide text-warm-400/50 md:text-right">
-            Chainless não é uma instituição financeira. Não custodiamos ativos.
+          <p className="max-w-[520px] text-sm leading-relaxed tracking-wide text-warm-400/50 md:text-right">
+            Notus Labs Ltda. não é instituição autorizada pelo Banco Central
+            do Brasil, não custodia ativos virtuais nem possui acesso a
+            chaves privadas de usuários. Provedor de tecnologia nos termos
+            do art. 9º, §6º da Resolução BCB nº 520/2025.
           </p>
         </div>
       </div>
