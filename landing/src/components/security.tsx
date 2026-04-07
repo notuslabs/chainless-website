@@ -20,31 +20,26 @@ const layers: {
   icon: ElementType;
   label: string;
   title: string;
-  detail: string;
 }[] = [
   {
     icon: Fingerprint,
     label: "Biometria obrigatória",
-    title: "Cada transação exige a sua confirmação biométrica.",
-    detail: "Verificação no hardware, não por software.",
+    title: "Cada transação exige confirmação biométrica no hardware.",
   },
   {
     icon: Cpu,
     label: "Isolamento no hardware",
-    title: "Sua chave privada nunca sai do chip dedicado.",
-    detail: "Apple Secure Enclave · Android StrongBox.",
+    title: "Sua chave nunca sai do Secure Enclave ou StrongBox.",
   },
   {
     icon: ShareNetwork,
     label: "Fragmentação criptográfica",
-    title: "Ninguém possui sua chave. Nem nós.",
-    detail: "Fragmentos criptografados, regenerados continuamente.",
+    title: "MPC divide sua chave. Ninguém a detém por completo.",
   },
   {
     icon: ArrowCounterClockwise,
     label: "Recuperação integrada",
-    title: "Autocustódia sem o risco de perder acesso.",
-    detail: "Recuperação via sua conta Google ou Apple — sem seed phrases.",
+    title: "Recupere acesso via Google ou Apple — sem seed phrases.",
   },
 ];
 
@@ -54,7 +49,7 @@ const layers: {
 function LayerIcon({ icon: Icon, index }: { icon: ElementType; index: number }) {
   return (
     <motion.div
-      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-yellow-500/20 bg-yellow-500/[0.07]"
+      className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-yellow-500/20 bg-yellow-500/[0.07]"
       initial={{ opacity: 0, scale: 0.6 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
@@ -64,7 +59,7 @@ function LayerIcon({ icon: Icon, index }: { icon: ElementType; index: number }) 
         ease: EASE_PREMIUM,
       }}
     >
-      <Icon size={26} weight="duotone" className="text-yellow-500/80" />
+      <Icon size={28} weight="duotone" className="text-yellow-500/80" />
     </motion.div>
   );
 }
@@ -149,7 +144,7 @@ function ShardDiagram() {
       ].map((pos, i) => (
         <motion.span
           key={i}
-          className={`absolute ${pos} font-mono text-[10px] uppercase tracking-[0.15em] text-yellow-500/30`}
+          className={`absolute ${pos} font-mono text-xs uppercase tracking-[0.15em] text-yellow-500/30`}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -198,7 +193,7 @@ export function Security() {
             </FadeUp>
           </div>
           <FadeUp delay={0.2}>
-            <p className="max-w-[340px] text-small leading-[1.7] text-warm-300/70 md:text-right">
+            <p className="max-w-[320px] text-small leading-[1.7] text-warm-300/70 md:text-right">
               Camadas de proteção que operam em silêncio — para que seu
               patrimônio nunca dependa de confiança.
             </p>
@@ -212,35 +207,31 @@ export function Security() {
             <FadeUp delay={0.15} className="flex h-full w-full">
               <DoppelrandCard className="h-full w-full" gradientAngle={165}>
                 <StaggerContainer className="p-8 md:p-10" staggerDelay={0.08}>
-                  {layers.map((layer, i) => (
-                    <StaggerItem key={layer.label}>
-                      <div
-                        className={`flex items-start gap-5 py-6 ${
-                          i === 0 ? "pt-0" : ""
-                        } ${
-                          i < layers.length - 1
-                            ? "border-b border-warm-700/[0.12]"
-                            : "pb-0"
-                        }`}
-                      >
-                        {/* Animated icon container — larger */}
-                        <LayerIcon icon={layer.icon} index={i} />
-
-                        {/* Content */}
-                        <div className="min-w-0 pt-0.5">
-                          <span className="block text-caption uppercase tracking-[0.2em] text-yellow-500/70">
-                            {layer.label}
-                          </span>
-                          <p className="mt-1.5 text-base font-medium leading-snug text-text-primary/90">
-                            {layer.title}
-                          </p>
-                          <p className="mt-1 text-sm leading-[1.6] text-warm-300/60">
-                            {layer.detail}
-                          </p>
+                  <dl>
+                    {layers.map((layer, i) => (
+                      <StaggerItem key={layer.label}>
+                        <div
+                          className={`flex items-center gap-6 py-7 ${
+                            i === 0 ? "pt-0" : ""
+                          } ${
+                            i < layers.length - 1
+                              ? "border-b border-warm-700/[0.12]"
+                              : "pb-0"
+                          }`}
+                        >
+                          <LayerIcon icon={layer.icon} index={i} />
+                          <div className="min-w-0">
+                            <dt className="text-caption uppercase tracking-[0.2em] text-yellow-500/70">
+                              {layer.label}
+                            </dt>
+                            <dd className="mt-1.5 text-base font-medium leading-snug text-text-primary/90">
+                              {layer.title}
+                            </dd>
+                          </div>
                         </div>
-                      </div>
-                    </StaggerItem>
-                  ))}
+                      </StaggerItem>
+                    ))}
+                  </dl>
 
                   {/* Bottom accent hairline */}
                   <motion.div
@@ -281,9 +272,9 @@ export function Security() {
 
                 {/* Body */}
                 <p className="mt-4 text-sm leading-relaxed text-warm-300/70">
-                  Sua chave é dividida em fragmentos criptografados, distribuídos
-                  em locais separados e regenerados continuamente. Ninguém — nem
-                  a Chainless — consegue reconstituí-la sozinho.
+                  Sua chave é dividida em fragmentos distribuídos em locais
+                  separados. Ninguém — nem a Chainless — consegue
+                  reconstituí-la sozinho.
                 </p>
 
                 {/* Shard diagram */}
