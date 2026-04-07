@@ -9,39 +9,41 @@
 ---
 
 ## Phase 1: Brief
-**Status:** pending
+**Status:** complete
 **Command:** `/gsp-project-brief`
 **Input:** Brand system + BRIEF.md + INVENTORY.md
 **Output:** `brief/` (scope, adaptations, conditionals)
-**Goal:** Scope the design system — token categories, component inventory, pattern taxonomy, gap analysis between identity spec and implementation.
+**Completed:** 2026-03-24
+**Summary:** Scoped design system extraction — token categories, component inventory, pattern taxonomy, gap analysis.
 
 ## Phase 2: Research
-**Status:** pending
+**Status:** skipped
 **Command:** `/gsp-project-research`
-**Input:** Brief scope + brand system + BRIEF.md
-**Output:** `research/` (design system patterns, token architecture approaches, motion system references)
-**Goal:** Research design system patterns — token architecture best practices, Tailwind v4 theming patterns, motion system documentation approaches, OKLCH color management.
+**Note:** Research folded into the brief and design phases. No standalone research output produced.
 
 ## Phase 3: Design
-**Status:** pending
+**Status:** complete
 **Command:** `/gsp-project-design`
-**Input:** Research + brief + brand system
-**Output:** `design/` (token specifications, component API designs, motion guidelines)
-**Goal:** Design the system architecture — token naming conventions, component API surfaces, composition rules, dark/light mode strategy.
+**Input:** Brief + brand system
+**Output:** Design specifications embedded in patterns/ foundation and component documents
+**Completed:** 2026-03-24
+**Summary:** Token architecture designed, component API surfaces defined, motion system documented.
 
 ## Phase 4: Critique
-**Status:** pending
+**Status:** complete
 **Command:** `/gsp-project-critique`
 **Input:** All prior artifacts
-**Output:** `critique/` (system critique + accessibility audit)
-**Goal:** Critique system coherence, token completeness, accessibility compliance, brand-code alignment.
+**Output:** `critique/prioritized-fixes.md`
+**Completed:** 2026-03-24
+**Summary:** 5 critical + 7 important issues + 5 P0 a11y issues identified.
 
 ## Phase 5: Build
-**Status:** pending
+**Status:** complete
 **Command:** `/gsp-project-build`
-**Input:** Design + brief + brand system
-**Output:** `build/CODE.md` + `build/components/`
-**Goal:** Implement the design system — generate token files, document components, create the system reference.
+**Input:** Design + brief + brand system + critique
+**Output:** `build/BUILD-LOG.md` + codebase changes
+**Completed:** 2026-03-24
+**Summary:** A11y color token fixes, extracted hardcoded text-[#FAFAF8] to semantic tokens, centralized EASE_PREMIUM motion, killed dead code, formalized 25 delta tokens.
 
 ## Phase 6: Review
 **Status:** pending
@@ -49,6 +51,7 @@
 **Input:** Built deliverables + design intent
 **Output:** `review/` (acceptance report + issues)
 **Goal:** Validate the design system against the identity spec and existing codebase.
+**Note:** Review loop 1 found issues (2026-03-24); build addressed a11y and cross-cutting fixes. Needs final review pass.
 
 ---
 

@@ -1,0 +1,145 @@
+FINTECH & CRYPTO NAVIGATION PATTERNS RESEARCH
+================================================
+Date: 2026-04-06
+Scope: Top nav labels, section flow, grouping conventions
+Sites analyzed: Nubank, Wise, N26, Revolut, Kraken, Ledger, Phantom, Exodus, Coinbase
+
+
+1. ACTUAL NAV LABELS FOUND
+--------------------------
+
+Nubank:         Ultravioleta | Nu Empresas | Seguranca (Security)
+                (3 items + CTA button)
+
+Wise:           Personal | Business | Platform
+                (3 items + Help, Login, Sign up)
+
+N26:            Plans | Bank | Save | Invest | Travel
+                (5 items)
+
+Kraken:         Individuals | Businesses | VIP | Affiliates | Markets | About
+                (6 items)
+
+Ledger:         Products | Apps and Services | Learn | For Business | For Developers | Support
+                (6 items)
+
+Phantom:        Features | Learn | Explore | Company | Developers | Support
+                (6 items)
+
+Coinbase:       Explore | Individuals | Businesses | Developers | Company
+                (5 items, confirmed via design system sidebar: Home, Assets, Trade, Pay, Earn, Borrow, DeFi)
+
+
+2. NAV ITEM COUNT: INDUSTRY STANDARD
+-------------------------------------
+
+Range:      3-6 items (excluding Login/CTA)
+Sweet spot: 4-5 items
+Neobanks:   Lean toward fewer (3-5)
+Crypto:     Lean toward more (5-6), often with mega-menus
+
+Key: The CTA button ("Sign Up", "Get Started", "Download") is ALWAYS separate
+from nav items, never counted as one.
+
+
+3. LABEL STYLE: NOUN-BASED DOMINATES
+--------------------------------------
+
+NOUN-BASED (vast majority):
+  Products, Features, Markets, Plans, Company, Support, Learn
+
+VERB-BASED (rare in top nav, common in sub-nav or app nav):
+  Explore (Coinbase, Phantom), Send money (Wise sub-nav)
+
+BENEFIT-BASED (almost never in top nav):
+  Only N26 approaches this with "Save", "Invest", "Travel" — but these
+  are still essentially product category nouns
+
+PATTERN: Top nav = nouns. Verbs/benefits reserved for sub-menus, in-app
+navigation, or landing page sections.
+
+
+4. PRODUCT FEATURE GROUPING
+-----------------------------
+
+TWO MODELS OBSERVED:
+
+A) UMBRELLA MODEL (most common for multi-product platforms):
+   Single "Products" or "Features" top-level item with mega-menu underneath.
+   Used by: Ledger, Phantom, Coinbase, Wise
+   Sub-items then split into: Earn / Spend / Trade / Borrow / etc.
+
+B) FLAT MODEL (used when product categories ARE the nav):
+   Each product vertical gets its own top-level label.
+   Used by: N26 (Bank | Save | Invest | Travel)
+   Only works when categories are <=5 and crystal clear.
+
+C) AUDIENCE MODEL (segments by user type, not feature):
+   Individuals | Businesses | Developers
+   Used by: Kraken, Coinbase, Wise
+   Product features live inside each audience segment.
+
+FOR CHAINLESS (4 distinct verticals: yield, card, credit, security):
+- Umbrella model under "Products" risks hiding the value prop
+- Flat model (Yield | Card | Credit) is viable since there are only 3-4
+- N26's approach is the closest analog: direct product-category labels
+
+
+5. LANDING PAGE SECTION FLOW (INDUSTRY CONSENSUS)
+---------------------------------------------------
+
+Canonical order from high-converting fintech pages:
+
+1. Hero (headline + value prop + CTA)
+2. Trust/Proof bar (logos, stats, regulatory badges)
+3. Product overview / Philosophy (what makes this different)
+4. Feature sections (individual product verticals)
+5. How It Works (onboarding steps — high activation correlation)
+6. Social proof (testimonials, case studies)
+7. Final CTA (conversion section)
+8. Footer (compliance, links)
+
+SECURITY PLACEMENT:
+- Security is almost NEVER a standalone top-nav item
+- It appears as: (a) a landing page section between features and social proof,
+  (b) a trust badge bar near the hero, or (c) a sub-page under "Learn" or "Company"
+- Exception: Nubank puts "Seguranca" in top nav — but Nubank is a bank,
+  not a crypto product. For crypto/self-custody, security is woven into
+  the narrative rather than siloed.
+
+"HOW IT WORKS":
+- Never in top nav. Always a landing page section.
+- Positioned after features, before social proof.
+- Typically 3-step process with icons.
+
+
+6. WHAT THIS MEANS FOR CHAINLESS
+----------------------------------
+
+CURRENT CHAINLESS NAV:
+  Sobre | Rendimentos | Cartao | Como funciona
+  (4 items, Portuguese)
+
+RECOMMENDATIONS BASED ON PATTERNS:
+
+Nav structure (4-5 items):
+  Option A (N26-style flat):   Yield | Card | Credit | Security
+  Option B (hybrid):           Products | Security | How it works | Company
+  Option C (benefit-anchored): Earn | Spend | Borrow | Security
+
+Key observations:
+- "Sobre" (About) is rarely a nav item on product landing pages — it belongs
+  in footer or under "Company". Landing pages assume the whole page IS the about.
+- "Como funciona" (How it works) is a section anchor, not a nav destination
+  on most sites. But for a single-page landing, anchor links are fine.
+- "Security" as a nav item is unusual for crypto — BUT for a self-custody
+  platform where security IS the differentiator, promoting it to nav-level
+  follows Nubank's playbook of leading with trust.
+- "Rendimentos" and "Cartao" map well to the N26 flat model.
+
+The strongest pattern for Chainless specifically:
+  Yield | Card | Credit | Security  (with How it Works as scroll section)
+
+This follows N26's direct-category approach, keeps it to 4 items,
+and elevates security — which is Chainless's key differentiator
+against both CEXs (not your keys) and raw DeFi (too complex).
