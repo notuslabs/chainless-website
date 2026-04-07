@@ -70,7 +70,7 @@ interface Pool {
 const pools: Pool[] = [
   {
     pair: ["wBTC", "ETH"],
-    protocol: "Uniswap",
+    protocol: "Curve",
     apy: 42.5,
     range: "30–60%+",
   },
@@ -82,7 +82,7 @@ const pools: Pool[] = [
   },
   {
     pair: ["USDC", "USDT"],
-    protocol: "Uniswap",
+    protocol: "Aave",
     apy: 4.8,
     range: "3–6%",
   },
@@ -145,21 +145,21 @@ const PoolTicker = memo(function PoolTicker({
           </div>
         </div>
         <div>
-          <span className="block text-base font-medium leading-tight text-text-primary/90">
+          <span className="block text-sm font-medium leading-tight text-text-primary/85">
             {pool.pair[0]}/{pool.pair[1]}
           </span>
-          <div className="mt-1 flex items-center gap-1.5">
+          <div className="mt-0.5 flex items-center gap-1.5">
             {protocolLogo && (
               <Image
                 src={protocolLogo}
                 alt={pool.protocol}
-                width={16}
-                height={16}
+                width={14}
+                height={14}
                 className="rounded-full"
-                style={{ width: 16, height: 16 }}
+                style={{ width: 14, height: 14 }}
               />
             )}
-            <span className="text-xs tracking-wider text-warm-400/60">
+            <span className="text-overline tracking-wider text-warm-400/50">
               {pool.protocol}
             </span>
           </div>
@@ -177,7 +177,7 @@ const PoolTicker = memo(function PoolTicker({
         >
           {value.toFixed(1)}%
         </span>
-        <span className="block text-xs text-warm-400/50">
+        <span className="block text-overline text-warm-400/40">
           {pool.range}
         </span>
       </div>
@@ -194,7 +194,7 @@ export function YieldSection() {
     <section
       id="rendimentos"
       aria-labelledby="yield-heading"
-      className="relative bg-dark-600 px-4 py-32 md:py-44"
+      className="relative bg-dark-500 px-4 py-32 md:py-44"
     >
       {/* Atmospheric glows */}
       <div
@@ -223,8 +223,9 @@ export function YieldSection() {
             </FadeUp>
           </div>
           <FadeUp delay={0.2}>
-            <p className="max-w-[320px] text-small leading-[1.7] text-warm-300/70 md:text-right">
-              Estratégias DeFi de grau institucional — simplificadas em um toque, sob sua custódia.
+            <p className="max-w-[320px] text-small leading-[1.7] text-warm-300/60 md:text-right">
+              De stablecoins em dólar a pools de liquidez — cada rendimento sob
+              sua custódia, cada protocolo auditado.
             </p>
           </FadeUp>
         </div>
@@ -266,50 +267,41 @@ export function YieldSection() {
                 }}
               />
 
-              {/* Warm atmospheric glow */}
-
               {/* Content — above image */}
               <div className="relative z-[1] flex h-full flex-col p-8 md:p-10">
                 <span className="mb-6 text-xs uppercase tracking-[0.2em] text-yellow-500/80">
                   Proteger
                 </span>
 
-                <h3 className="mb-8 font-serif text-xl font-normal leading-[1.15] tracking-[-0.01em] text-text-primary md:text-2xl">
-                  150+ ativos digitais. Suas chaves.
+                <h3 className="mb-6 font-serif text-xl font-normal leading-[1.15] tracking-[-0.01em] text-text-primary md:text-2xl">
+                  150+ ativos digitais. Sob seu controle absoluto.
                 </h3>
 
-                {/* Asset categories */}
-                <ul className="mt-12 space-y-5">
-                  <li className="flex items-center gap-3.5">
-                    <div className="flex -space-x-2">
-                      <TokenIcon token="BTC" size={28} />
-                      <TokenIcon token="ETH" size={28} />
-                      <TokenIcon token="SOL" size={28} />
+                <ul className="space-y-4">
+                  {/* Token row — with official crypto logos */}
+                  <li className="flex items-start gap-3 text-sm leading-relaxed text-warm-300/70">
+                    <div className="mt-0.5 flex shrink-0 -space-x-1.5">
+                      <TokenIcon token="BTC" size={20} />
+                      <TokenIcon token="ETH" size={20} />
+                      <TokenIcon token="SOL" size={20} />
                     </div>
-                    <span className="text-base text-text-primary/80">
-                      Bitcoin, Ethereum, Solana
+                    <span>
+                      Bitcoin, Ethereum, Solana e tokens globais
                     </span>
                   </li>
-                  <li className="flex items-center gap-3.5">
-                    <div className="flex -space-x-2">
-                      <TokenIcon token="USDC" size={28} />
-                      <TokenIcon token="USDT" size={28} />
-                    </div>
-                    <span className="text-base text-text-primary/80">
-                      Stablecoins em dólar
-                    </span>
+                  <li className="flex items-start gap-3 text-sm leading-relaxed text-warm-300/70">
+                    <span
+                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-yellow-500/40"
+                      aria-hidden="true"
+                    />
+                    Ouro tokenizado — metal precioso sem custódia física
                   </li>
-                  <li className="flex items-center gap-3.5">
-                    <TokenIcon token="PAXG" size={28} />
-                    <span className="text-base text-text-primary/80">
-                      Ouro tokenizado
-                    </span>
-                  </li>
-                  <li className="flex items-center gap-3.5">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-warm-700/20 text-xs text-warm-300/60">+</span>
-                    <span className="text-base text-warm-300/60">
-                      150+ tokens globais
-                    </span>
+                  <li className="flex items-start gap-3 text-sm leading-relaxed text-warm-300/70">
+                    <span
+                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-yellow-500/40"
+                      aria-hidden="true"
+                    />
+                    Chaves geradas no seu dispositivo. Sempre.
                   </li>
                 </ul>
 
@@ -340,15 +332,18 @@ export function YieldSection() {
               variant="light"
               gradientAngle={155}
             >
-              {/* Atmospheric blur */}
-
               <span className="mb-6 text-xs uppercase tracking-[0.2em] text-yellow-500">
                 Crescer
               </span>
 
-              <h3 className="mb-8 font-serif text-xl font-normal leading-[1.15] tracking-[-0.01em] text-text-primary md:text-2xl">
-                Rendimento DeFi em um toque.
+              <h3 className="mb-3 font-serif text-xl font-normal leading-[1.15] tracking-[-0.01em] text-text-primary md:text-2xl">
+                Acesse rendimento DeFi.
               </h3>
+
+              <p className="mb-8 max-w-[44ch] text-sm leading-relaxed text-warm-300/60">
+                Protocolos auditados, retornos transparentes. Em poucos
+                cliques, direto da sua carteira.
+              </p>
 
               {/* ── Live pool list ── */}
               <div
@@ -359,7 +354,7 @@ export function YieldSection() {
                 }}
               >
                 <div className="mb-4 flex items-center justify-between">
-                  <span className="text-xs uppercase tracking-wider text-warm-400/60">
+                  <span className="text-caption uppercase tracking-wider text-warm-400/50">
                     Pools ativos
                   </span>
                   <div className="flex items-center gap-2">
@@ -368,7 +363,7 @@ export function YieldSection() {
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/50" />
                       <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400/70" />
                     </span>
-                    <span className="text-xs text-warm-400/60">
+                    <span className="text-caption text-warm-400/50">
                       APY ao vivo
                     </span>
                   </div>
@@ -386,8 +381,9 @@ export function YieldSection() {
               </div>
 
               {/* Disclaimer */}
-              <p className="mt-5 text-xs leading-relaxed text-warm-400/50">
-                Rendimentos variáveis. Riscos de mercado e smart contract aplicáveis.
+              <p className="mt-5 text-caption leading-relaxed text-warm-400/40">
+                Rendimentos variáveis. Riscos de mercado e smart contract
+                aplicáveis.
               </p>
             </DoppelrandCard>
           </StaggerItem>
