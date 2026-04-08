@@ -1,0 +1,21 @@
+{
+  "version": "0.5.0",
+  "project_type": "design",
+  "project": {
+    "name": "chainless-fees",
+    "created": "2026-04-07"
+  },
+  "preferences": {
+    "platform": "web",
+    "tech_stack": "Next.js 16 + Tailwind v4 + Framer Motion 12",
+    "accessibility_level": "WCAG 2.2 AA",
+    "implementation_target": "existing",
+    "codebase_type": "existing",
+    "design_scope": "screen",
+    "style_preset": ""
+  },
+  "git": {
+    "branch": "main",
+    "pr": ""
+  }
+}
