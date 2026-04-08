@@ -1,14 +1,27 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { EASE_PREMIUM, FadeUp } from "./motion";
 import { ChainlessLogo } from "./chainless-logo";
 
 const footerLinks = {
-  Produto: ["Rendimento DeFi", "Autocustódia", "Pix", "Multichain"],
-  Empresa: ["Sobre", "Blog", "Carreiras", "Imprensa"],
-  Recursos: ["Central de ajuda", "Segurança", "Documentação", "Status"],
-  Legal: ["Privacidade", "Termos de uso", "Transparência"],
+  Produto: [
+    { label: "Rendimento DeFi", href: "/#rendimentos" },
+    { label: "Cartão", href: "/#cartao" },
+    { label: "Empréstimo BTC", href: "/#credito" },
+    { label: "Segurança", href: "/#seguranca" },
+  ],
+  Recursos: [
+    { label: "Central de ajuda", href: "https://support.devrev.ai/pt-BR/chainless" },
+    { label: "Taxas", href: "/taxas" },
+  ],
+  Legal: [
+    { label: "Privacidade", href: "/politica-de-privacidade" },
+    { label: "Termos de uso", href: "/termos-de-uso" },
+    { label: "Política AML", href: "/politica-aml" },
+    { label: "Regulamentação", href: "/transparencia" },
+  ],
 };
 
 export function Footer() {
@@ -23,7 +36,7 @@ export function Footer() {
         <FadeUp>
           <div className="grid gap-14 md:grid-cols-12">
             {/* Brand column — generous breathing room */}
-            <div className="md:col-span-4">
+            <div className="md:col-span-6">
               <ChainlessLogo color="#FAFAF8" size={24} />
               <p className="mt-6 max-w-[260px] text-sm leading-[1.75] text-warm-300/70">
                 Plataforma de patrimônio digital com autocustódia. Seu
@@ -50,16 +63,23 @@ export function Footer() {
                   transition={{ duration: 0.8, ease: EASE_PREMIUM }}
                 />
                 <ul className="flex flex-col gap-3.5">
-                  {links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-sm text-warm-300/60 transition-all duration-500 ease-premium hover:text-text-primary active:scale-[0.98]"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ))}
+                  {links.map((link) => {
+                    const isExternal = link.href.startsWith("http");
+                    const className = "text-sm text-warm-300/60 transition-all duration-500 ease-premium hover:text-text-primary active:scale-[0.98]";
+                    return (
+                      <li key={link.label}>
+                        {isExternal ? (
+                          <a href={link.href} className={className}>
+                            {link.label}
+                          </a>
+                        ) : (
+                          <Link href={link.href} className={className}>
+                            {link.label}
+                          </Link>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}
@@ -75,10 +95,11 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Chainless. Patrimônio digital soberano.
           </p>
           <p className="max-w-[520px] text-sm leading-relaxed tracking-wide text-warm-400/50 md:text-right">
-            Notus Labs Ltda. não é instituição autorizada pelo Banco Central
-            do Brasil, não custodia ativos virtuais nem possui acesso a
-            chaves privadas de usuários. Provedor de tecnologia nos termos
-            do art. 9º, §6º da Resolução BCB nº 520/2025.
+            Chainless é um produto da Notus Labs Ltda. (CNPJ 41.212.785/0001-43). Não é instituição
+            autorizada pelo Banco Central do Brasil, não custodia ativos
+            virtuais nem possui acesso a chaves privadas de usuários.
+            Provedor de tecnologia nos termos do art. 9º, §6º da Resolução
+            BCB nº 520/2025.
           </p>
         </div>
       </div>
