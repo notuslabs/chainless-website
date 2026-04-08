@@ -112,7 +112,7 @@ export function BorrowCredit() {
           </div>
           <FadeUp delay={0.2}>
             <p className="max-w-[320px] text-small leading-[1.7] text-warm-300/70 md:text-right">
-              Deposite BTC como garantia e receba crédito em USDC — a 3,5% ao
+              Deposite BTC como garantia e receba crédito em USDC a 3,5% ao
               ano, sem prazo fixo.
             </p>
           </FadeUp>
@@ -208,10 +208,11 @@ export function BorrowCredit() {
 
         {/* ── Legal disclaimer ── */}
         <FadeUp delay={0.5}>
-          <p className="mt-10 max-w-[680px] text-sm leading-relaxed text-warm-400/50">
-            Taxas estimadas com base no protocolo Aave e sujeitas a variação de
-            mercado. Este serviço não constitui oferta de crédito — trata-se de
-            uma integração com protocolo descentralizado de empréstimo.
+          <p className="mt-10 max-w-[680px] text-caption leading-relaxed text-warm-400/40">
+            Valores meramente ilustrativos. A taxa de 3,5% a.a. e a
+            valorização de +2,4% são estimativas baseadas em desempenho
+            passado e condições de mercado. Não constituem promessa nem
+            garantia de resultado. Dados atualizados disponíveis no app.
           </p>
         </FadeUp>
       </div>

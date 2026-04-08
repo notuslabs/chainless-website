@@ -44,7 +44,7 @@ export function SpendCredit() {
 
             <p className="mt-6 max-w-[48ch] text-small leading-[1.7] text-warm-300/70">
               USDC ao câmbio real, sem spread oculto. Após a conversão, os
-              ativos são seus — na blockchain, sob sua chave.
+              ativos são seus. Na blockchain, sob sua chave.
             </p>
 
             {/* IOF Comparison — glass card */}

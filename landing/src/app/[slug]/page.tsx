@@ -19,7 +19,7 @@ export async function generateMetadata({
   if (!influencer) return {};
 
   return {
-    title: `Chainless — Convite de ${influencer.name}`,
+    title: `Chainless | Convite de ${influencer.name}`,
     description:
       "Seu patrimônio cresce. Suas chaves continuam suas. Patrimônio digital soberano com autocustódia.",
   };

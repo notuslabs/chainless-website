@@ -70,7 +70,7 @@ interface Pool {
 const pools: Pool[] = [
   {
     pair: ["wBTC", "ETH"],
-    protocol: "Curve",
+    protocol: "Uniswap",
     apy: 42.5,
     range: "30–60%+",
   },
@@ -82,7 +82,7 @@ const pools: Pool[] = [
   },
   {
     pair: ["USDC", "USDT"],
-    protocol: "Aave",
+    protocol: "Uniswap",
     apy: 4.8,
     range: "3–6%",
   },
@@ -224,7 +224,7 @@ export function YieldSection() {
           </div>
           <FadeUp delay={0.2}>
             <p className="max-w-[320px] text-small leading-[1.7] text-warm-300/60 md:text-right">
-              De stablecoins em dólar a pools de liquidez — cada rendimento sob
+              De stablecoins em dólar a pools de liquidez. Cada rendimento sob
               sua custódia, cada protocolo auditado.
             </p>
           </FadeUp>
@@ -294,7 +294,7 @@ export function YieldSection() {
                       className="mt-2 h-1 w-1 shrink-0 rounded-full bg-yellow-500/40"
                       aria-hidden="true"
                     />
-                    Ouro tokenizado — metal precioso sem custódia física
+                    Ouro tokenizado, metal precioso sem custódia física
                   </li>
                   <li className="flex items-start gap-3 text-sm leading-relaxed text-warm-300/70">
                     <span
@@ -353,20 +353,10 @@ export function YieldSection() {
                     "inset 0 1px 0 rgba(255,255,255,0.03), inset 0 0 0 1px rgba(255,255,255,0.015)",
                 }}
               >
-                <div className="mb-4 flex items-center justify-between">
+                <div className="mb-4">
                   <span className="text-caption uppercase tracking-wider text-warm-400/50">
                     Pools ativos
                   </span>
-                  <div className="flex items-center gap-2">
-                    {/* Live pulse dot */}
-                    <span className="relative flex h-1.5 w-1.5">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/50" />
-                      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400/70" />
-                    </span>
-                    <span className="text-caption text-warm-400/50">
-                      APY ao vivo
-                    </span>
-                  </div>
                 </div>
 
                 <div aria-label="Pools de liquidez com rendimentos ao vivo">
@@ -382,8 +372,9 @@ export function YieldSection() {
 
               {/* Disclaimer */}
               <p className="mt-5 text-caption leading-relaxed text-warm-400/40">
-                Rendimentos variáveis. Riscos de mercado e smart contract
-                aplicáveis.
+                Valores meramente ilustrativos, baseados em desempenho
+                passado de smart contracts. Não constituem promessa de
+                rendimento. Estimativas atualizadas disponíveis no app.
               </p>
             </DoppelrandCard>
           </StaggerItem>

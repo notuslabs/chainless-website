@@ -36,7 +36,7 @@ const layers = [
     icon: GitFork,
     title: "Fragmentação criptográfica",
     description:
-      "MPC divide sua chave em fragmentos distribuídos. Ninguém — nem a Chainless — a detém por completo.",
+      "MPC divide sua chave em fragmentos distribuídos. Ninguém, nem a Chainless, a detém por completo.",
     detail: "MPC-TSS · Threshold Signatures",
   },
   {
@@ -44,7 +44,7 @@ const layers = [
     icon: ArrowsClockwise,
     title: "Recuperação integrada",
     description:
-      "Recupere acesso via Google ou Apple — sem seed phrases, sem custódia de terceiros, sem pontos únicos de falha.",
+      "Recupere acesso via Google ou Apple. Sem seed phrases, sem custódia de terceiros, sem pontos únicos de falha.",
     detail: "OAuth Recovery · Zero Seed Phrases",
   },
 ];
@@ -106,7 +106,7 @@ export function Security() {
           </div>
           <FadeUp delay={0.2}>
             <p className="max-w-[300px] text-small leading-[1.7] text-warm-300/60 md:text-right">
-              Camadas de proteção que operam em silêncio — para que seu
+              Camadas de proteção que operam em silêncio, para que seu
               patrimônio nunca dependa de confiança.
             </p>
           </FadeUp>

@@ -26,7 +26,7 @@ const steps = [
     number: "03",
     title: "Veja crescer",
     description:
-      "Escolha estratégias DeFi curadas — Aave, Compound, Lido. Ative com um toque e acompanhe seu patrimônio crescer, sob seu controle.",
+      "Escolha estratégias DeFi curadas como Aave, Compound e Lido. Ative com um toque e acompanhe seu patrimônio crescer, sob seu controle.",
     icon: ChartLineUp,
   },
   {
@@ -106,7 +106,7 @@ export function HowItWorks() {
           </div>
           <FadeUp delay={0.2}>
             <p className="max-w-[300px] text-small leading-[1.7] text-warm-300/60 md:text-right">
-              Da criação da carteira ao rendimento ativo — sem intermediários em nenhum momento.
+              Da criação da carteira ao rendimento ativo. Sem intermediários em nenhum momento.
             </p>
           </FadeUp>
         </div>

@@ -11,7 +11,7 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const testimonials = [
   {
     quote:
-      "Tem várias soluções boas de privacidade além de BTC na LN. Chainless você paga no Pix e adquire stables que circulam fora do controle — zero de custo na aquisição.",
+      "Tem várias soluções boas de privacidade além de BTC na LN. Chainless você paga no Pix e adquire stables que circulam fora do controle. Zero de custo na aquisição.",
     name: "Renato Amoedo",
     title: "Perito Criminal, Polícia Técnica da Bahia",
     initials: "RA",
@@ -20,7 +20,7 @@ const testimonials = [
   },
   {
     quote:
-      "Privacidade, autocustódia e facilidade de uso — a Chainless entrega os três sem compromisso.",
+      "Privacidade, autocustódia e facilidade de uso. A Chainless entrega os três sem compromisso.",
     name: "Mychel Mendes",
     title: "Contador Especializado em Crypto",
     initials: "MM",

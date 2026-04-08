@@ -115,7 +115,7 @@ const switzer = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Chainless — Patrimonio Digital Soberano",
+  title: "Chainless | Patrimonio Digital Soberano",
   description:
     "Seu patrimonio cresce. Suas chaves continuam suas. Plataforma de patrimonio digital com autocustodia.",
 };

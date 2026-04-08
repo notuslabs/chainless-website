@@ -204,6 +204,18 @@ Reserved  1 --- 2 -[*]- 3 --- 4 --- 5  Enthusiastic
 | Content series | "Torne-se Chainless: [topic]" framework | "Torne-se Chainless: Entenda autocustodia" |
 | Internal categories | Can use "banco onchain" shorthand — NEVER customer-facing | Internal docs only |
 
+### Punctuation: No Em Dashes
+
+Never use em dashes ( — ) in any customer-facing text. Replace with periods, commas, or restructure the sentence. Em dashes feel literary and interrupt the reading flow. Chainless copy should feel direct and clean.
+
+| Instead of | Use |
+|------------|-----|
+| "Seus ativos são seus — na blockchain" | "Seus ativos são seus. Na blockchain, sob sua chave." |
+| "Sem seed phrases — sem custódia" | "Sem seed phrases, sem custódia." |
+| "Privacidade e facilidade — a Chainless entrega" | "Privacidade e facilidade. A Chainless entrega..." |
+
+Page titles use `|` as separator: "Chainless \| Patrimonio Digital Soberano".
+
 ### Words We Never Use (Customer-Facing)
 
 | Forbidden | Why | Alternative |
