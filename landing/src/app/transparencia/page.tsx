@@ -4,9 +4,9 @@ import { Footer } from "@/components/footer";
 import { TransparencyContent } from "@/components/transparency-content";
 
 export const metadata: Metadata = {
-  title: "Chainless — Enquadramento Regulatório",
+  title: "Chainless | Regulamentação",
   description:
-    "Enquadramento regulatório da Notus Labs Ltda. perante a Resolução BCB nº 520/2025. Provedor de tecnologia — art. 9º, §6º.",
+    "Como a Chainless se posiciona perante a Resolução BCB nº 520/2025. Autocustódia integral, sem intermediação nem custódia de ativos virtuais.",
 };
 
 export default function TransparenciaPage() {
