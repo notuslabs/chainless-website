@@ -1,0 +1,20 @@
+{
+  "screen": "01-article-page",
+  "status": "complete",
+  "route": "/[locale]/blog/[slug]",
+  "completedAt": "2026-04-08",
+  "files": {
+    "created": [
+      "landing/src/app/[locale]/blog/[slug]/page.tsx",
+      "landing/src/lib/blog.ts",
+      "landing/content/posts/o-que-e-autocustodia.mdx",
+      "landing/src/components/blog/back-to-top.tsx"
+    ],
+    "modified": [
+      "landing/src/app/globals.css"
+    ]
+  },
+  "dependencies": {
+    "added": ["gray-matter"]
+  }
+}

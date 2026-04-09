@@ -7,7 +7,7 @@ interface DoppelrandCardProps {
   children: ReactNode;
   className?: string;
   innerClassName?: string;
-  variant?: "default" | "light";
+  variant?: "default" | "light" | "article" | "tldr";
   hover?: boolean;
   gradientAngle?: number;
   as?: ElementType;
@@ -46,6 +46,10 @@ function DoppelrandRenderer({
   gradientAngle = 160,
   as: Component = "div",
 }: DoppelrandCardProps) {
+  const isTldr = variant === "tldr";
+  const isArticle = variant === "article";
+  const resolvedHover = isTldr ? false : hover;
+
   const gradientStyle =
     variant === "light"
       ? `linear-gradient(${gradientAngle}deg, rgba(38,37,34,0.75) 0%, rgba(26,25,23,0.92) 100%)`
@@ -54,13 +58,15 @@ function DoppelrandRenderer({
   return (
     <Component
       className={`group flex flex-col rounded-[1.125rem] bg-white/[0.03] p-1.5 ring-1 ring-white/[0.05] ${
-        hover
+        resolvedHover
           ? "transition-all duration-700 ease-premium hover:ring-white/[0.07] hover:-translate-y-px"
           : ""
       } ${className}`}
     >
       <div
-        className={`doppelrand-hallmark inner-highlight-dark relative flex-1 overflow-hidden rounded-[calc(1.125rem-0.375rem)] ${innerClassName}`}
+        className={`doppelrand-hallmark inner-highlight-dark relative flex-1 overflow-hidden rounded-[calc(1.125rem-0.375rem)] ${
+          isTldr ? "border-l-[3px] border-yellow-500 p-4" : ""
+        } ${isArticle ? "p-6" : ""} ${innerClassName}`}
         style={{ background: gradientStyle }}
       >
         {children}

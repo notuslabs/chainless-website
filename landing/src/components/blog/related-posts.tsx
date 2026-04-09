@@ -1,0 +1,56 @@
+import { StaggerContainer, StaggerItem } from "@/components/motion";
+import { ArticleCard } from "@/components/blog/article-card";
+
+interface RelatedPost {
+  title: string;
+  excerpt: string;
+  slug: string;
+  pillar: "sovereignty" | "wealth" | "practical";
+  author: string;
+  date: string;
+  readingTime: number;
+  heroImage?: string;
+  heroImageAlt?: string;
+}
+
+interface RelatedPostsProps {
+  posts: RelatedPost[];
+  locale?: string;
+}
+
+export function RelatedPosts({ posts, locale = "pt" }: RelatedPostsProps) {
+  if (posts.length === 0) return null;
+
+  return (
+    <aside aria-label="Artigos relacionados" className="py-16">
+      <h2
+        className="font-sans font-semibold text-text-primary mb-8"
+        style={{ fontSize: "clamp(1.25rem, 1rem + 1vw, 1.75rem)" }}
+      >
+        Leia também
+      </h2>
+
+      <StaggerContainer
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+        staggerDelay={0.12}
+      >
+        {posts.map((post) => (
+          <StaggerItem key={post.slug}>
+            <ArticleCard
+              title={post.title}
+              excerpt={post.excerpt}
+              slug={post.slug}
+              pillar={post.pillar}
+              author={post.author}
+              date={post.date}
+              readingTime={post.readingTime}
+              heroImage={post.heroImage}
+              heroImageAlt={post.heroImageAlt}
+              locale={locale}
+            />
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </aside>
+  );
+}

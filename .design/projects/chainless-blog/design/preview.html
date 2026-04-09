@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chainless Blog — Design Preview</title>
+<style>
+  :root {
+    --dark-500: #1C1B19;
+    --dark-600: #181716;
+    --dark-700: #141312;
+    --warm-400: #87837C;
+    --warm-500: #6B6862;
+    --warm-700: #3F3D3A;
+    --yellow-500: #FFC73D;
+    --yellow-400: #FFD486;
+    --success: #3DA66A;
+    --info: #4A90DA;
+    --text-primary: #FAFAF8;
+    --text-muted: rgba(250, 250, 248, 0.65);
+    --text-body: rgba(250, 250, 248, 0.85);
+    --ring-subtle: rgba(255, 255, 255, 0.05);
+    --ring-hover: rgba(255, 255, 255, 0.08);
+    --doppelrand-bg: rgba(255, 255, 255, 0.03);
+    --doppelrand-ring: rgba(255, 255, 255, 0.05);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--dark-500);
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+
+  .preview-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background: var(--dark-700);
+    border-right: 1px solid var(--warm-700);
+    padding: 24px 16px;
+    overflow-y: auto;
+    z-index: 100;
+  }
+
+  .preview-nav h2 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--warm-400);
+    margin-bottom: 16px;
+  }
+
+  .preview-nav a {
+    display: block;
+    padding: 8px 12px;
+    color: var(--warm-500);
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 6px;
+    margin-bottom: 2px;
+    transition: all 0.2s;
+  }
+
+  .preview-nav a:hover, .preview-nav a.active {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .preview-nav .nav-section {
+    margin-bottom: 24px;
+  }
+
+  .preview-nav .nav-sub {
+    padding-left: 12px;
+    font-size: 12px;
+  }
+
+  .preview-main {
+    margin-left: 220px;
+    padding: 32px;
+    max-width: 1100px;
+  }
+
+  .screen-section {
+    margin-bottom: 80px;
+    scroll-margin-top: 24px;
+  }
+
+  .screen-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+  }
+
+  .screen-route {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 13px;
+    color: var(--yellow-500);
+    margin-bottom: 32px;
+  }
+
+  .wireframe {
+    border: 1px solid var(--warm-700);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+
+  .wf-section {
+    padding: 24px 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    position: relative;
+  }
+
+  .wf-section:last-child { border-bottom: none; }
+
+  .wf-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--warm-400);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .wf-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 32px;
+    background: var(--dark-600);
+  }
+
+  .wf-navbar .logo {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--yellow-500);
+  }
+
+  .wf-navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: var(--warm-400);
+  }
+
+  .wf-navbar .nav-links span.active { color: var(--text-primary); }
+
+  .wf-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .wf-tag.yellow { background: rgba(255, 199, 61, 0.15); color: var(--yellow-400); }
+  .wf-tag.green { background: rgba(61, 166, 106, 0.15); color: var(--success); }
+  .wf-tag.blue { background: rgba(74, 144, 218, 0.15); color: var(--info); }
+
+  .wf-h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 12px 0;
+    font-family: Georgia, serif;
+    letter-spacing: -0.025em;
+  }
+
+  .wf-h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .wf-h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .wf-meta {
+    font-size: 13px;
+    color: var(--warm-400);
+  }
+
+  .wf-meta .mono {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+
+  .wf-body {
+    font-size: 15px;
+    color: var(--text-body);
+    max-width: 65ch;
+    line-height: 1.6;
+  }
+
+  .wf-body p { margin-bottom: 16px; }
+
+  .wf-doppelrand {
+    border-radius: 18px;
+    background: var(--doppelrand-bg);
+    padding: 6px;
+    border: 1px solid var(--doppelrand-ring);
+  }
+
+  .wf-doppelrand-inner {
+    border-radius: 12px;
+    background: linear-gradient(160deg, rgba(38,37,34,0.85) 0%, rgba(26,25,23,0.95) 100%);
+    padding: 24px;
+  }
+
+  .wf-tldr {
+    border-left: 3px solid var(--yellow-500);
+    padding-left: 20px;
+  }
+
+  .wf-tldr .label {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--yellow-500);
+    margin-bottom: 12px;
+  }
+
+  .wf-content-layout {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 48px;
+  }
+
+  .wf-toc {
+    font-size: 13px;
+    color: var(--warm-500);
+    position: sticky;
+    top: 24px;
+  }
+
+  .wf-toc .toc-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--warm-400);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .wf-toc ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .wf-toc li {
+    padding: 6px 12px;
+    border-left: 2px solid transparent;
+    margin-bottom: 2px;
+  }
+
+  .wf-toc li.active {
+    border-left-color: var(--yellow-500);
+    color: var(--text-primary);
+  }
+
+  .wf-toc li.sub { padding-left: 24px; font-size: 12px; }
+
+  .wf-pullquote {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(250, 250, 248, 0.7);
+    border-left: 3px solid var(--yellow-500);
+    padding-left: 20px;
+    margin: 24px 0;
+    font-style: italic;
+  }
+
+  .wf-code-block {
+    background: var(--dark-600);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 13px;
+    color: var(--text-body);
+    margin: 16px 0;
+    overflow-x: auto;
+  }
+
+  .wf-callout {
+    background: var(--dark-700);
+    border-left: 3px solid var(--info);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+
+  .wf-callout .icon { color: var(--info); font-size: 14px; margin-right: 8px; }
+
+  .wf-faq-item {
+    border-bottom: 1px solid rgba(63, 61, 58, 0.5);
+    padding: 16px 0;
+  }
+
+  .wf-faq-item summary {
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 15px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .wf-faq-item summary::after { content: '▸'; color: var(--warm-400); }
+  .wf-faq-item[open] summary::after { content: '▾'; }
+
+  .wf-faq-item .answer {
+    padding-top: 12px;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .wf-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .wf-card-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+
+  .wf-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .wf-btn.primary {
+    background: var(--yellow-500);
+    color: var(--dark-500);
+  }
+
+  .wf-btn.ghost {
+    border: 1px solid var(--ring-hover);
+    color: var(--warm-400);
+  }
+
+  .wf-filter-bar {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .wf-filter-pill {
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid var(--ring-subtle);
+    color: var(--warm-400);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .wf-filter-pill.active {
+    border-color: rgba(255, 199, 61, 0.2);
+    background: rgba(255, 199, 61, 0.1);
+    color: var(--yellow-400);
+  }
+
+  .wf-featured {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .wf-featured-image {
+    aspect-ratio: 16/9;
+    background: var(--dark-700);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--warm-500);
+    font-size: 13px;
+  }
+
+  .wf-pagination {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wf-page-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--warm-400);
+    cursor: pointer;
+  }
+
+  .wf-page-btn.active {
+    background: var(--yellow-500);
+    color: var(--dark-500);
+    font-weight: 600;
+  }
+
+  .wf-soft-cta {
+    text-align: center;
+    padding: 32px;
+  }
+
+  .wf-footer {
+    padding: 24px 32px;
+    background: var(--dark-700);
+    font-size: 13px;
+    color: var(--warm-500);
+    text-align: center;
+  }
+
+  .wf-progress-bar {
+    height: 2px;
+    background: rgba(255, 199, 61, 0.6);
+    width: 35%;
+  }
+
+  .wf-hero-img {
+    aspect-ratio: 16/9;
+    background: var(--dark-700);
+    border-radius: 16px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--warm-500);
+    font-size: 13px;
+    max-width: 680px;
+  }
+
+  @media (max-width: 900px) {
+    .preview-nav { display: none; }
+    .preview-main { margin-left: 0; }
+    .wf-content-layout { grid-template-columns: 1fr; }
+    .wf-card-grid { grid-template-columns: 1fr; }
+    .wf-featured { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 700px) {
+    .wf-card-grid.two-col { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="preview-nav">
+  <div class="nav-section">
+    <h2>Chainless Blog</h2>
+    <a href="#screen-01" class="active">01 Article Page</a>
+    <a href="#s01-hero" class="nav-sub">Hero</a>
+    <a href="#s01-tldr" class="nav-sub">TL;DR</a>
+    <a href="#s01-body" class="nav-sub">Body + TOC</a>
+    <a href="#s01-cta" class="nav-sub">Soft CTA</a>
+    <a href="#s01-faq" class="nav-sub">FAQ</a>
+    <a href="#s01-related" class="nav-sub">Related</a>
+  </div>
+  <div class="nav-section">
+    <a href="#screen-02">02 Blog Listing</a>
+    <a href="#s02-hero" class="nav-sub">Hero</a>
+    <a href="#s02-filter" class="nav-sub">Filter</a>
+    <a href="#s02-featured" class="nav-sub">Featured</a>
+    <a href="#s02-grid" class="nav-sub">Grid</a>
+    <a href="#s02-pagination" class="nav-sub">Pagination</a>
+  </div>
+</nav>
+
+<main class="preview-main">
+
+  <!-- SCREEN 01: ARTICLE PAGE -->
+  <section class="screen-section" id="screen-01">
+    <h1 class="screen-title">01 Article Page</h1>
+    <p class="screen-route">/blog/[slug]</p>
+
+    <div class="wireframe">
+      <!-- Navbar -->
+      <div class="wf-navbar">
+        <span class="logo">Chainless</span>
+        <div class="nav-links">
+          <span>Home</span>
+          <span class="active">Blog</span>
+          <span>Transparencia</span>
+          <span>Taxas</span>
+        </div>
+      </div>
+
+      <!-- Reading progress -->
+      <div class="wf-progress-bar"></div>
+
+      <!-- Article Hero -->
+      <div class="wf-section" id="s01-hero" style="text-align: center; padding: 64px 32px 32px;">
+        <div class="wf-label">Article Hero</div>
+        <span class="wf-tag yellow">Soberania Digital</span>
+        <h1 class="wf-h1" style="max-width: 680px; margin: 12px auto;">O guia completo de autocustodia cripto em 2026</h1>
+        <p class="wf-meta" style="margin-top: 16px;">
+          Equipe Chainless &middot; 15 Mar 2026 &middot; <span class="mono">8 min de leitura</span>
+        </p>
+        <div class="wf-hero-img" style="margin: 24px auto 0;">16:9 Hero Image (optional)</div>
+      </div>
+
+      <!-- TL;DR -->
+      <div class="wf-section" id="s01-tldr" style="max-width: 680px; margin: 0 auto; padding: 24px 32px;">
+        <div class="wf-label">TL;DR Box</div>
+        <div class="wf-doppelrand">
+          <div class="wf-doppelrand-inner">
+            <div class="wf-tldr">
+              <div class="label">TL;DR</div>
+              <div class="wf-body">
+                <p style="margin-bottom: 8px;">&bull; Autocustodia significa controlar suas proprias chaves privadas</p>
+                <p style="margin-bottom: 8px;">&bull; Exchanges centralizam o risco — voce nao e dono dos seus ativos</p>
+                <p style="margin-bottom: 0;">&bull; A Chainless oferece autocustodia com a praticidade de um banco</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body + TOC -->
+      <div class="wf-section" id="s01-body" style="padding: 32px;">
+        <div class="wf-label">Article Body + TOC Sidebar</div>
+        <div class="wf-content-layout">
+          <div>
+            <h2 class="wf-h2">O que e autocustodia?</h2>
+            <div class="wf-body">
+              <p>Autocustodia cripto e o modelo em que voce mesmo controla as chaves privadas dos seus ativos digitais, sem depender de uma exchange ou custodiante terceirizado. Quando seus ativos estao em uma exchange, a empresa e a real detentora.</p>
+              <p>Esse modelo existe desde a criacao do Bitcoin em 2009, mas so recentemente se tornou acessivel para usuarios que nao sao desenvolvedores.</p>
+            </div>
+
+            <div class="wf-pullquote">
+              "A verdadeira soberania financeira comeca quando voce controla suas proprias chaves."
+            </div>
+
+            <h2 class="wf-h2">Por que a autocustodia importa?</h2>
+            <div class="wf-body">
+              <p>O colapso da FTX em 2022 mostrou que confiar seus ativos a terceiros e um risco real. Milhoes de usuarios perderam acesso aos seus fundos.</p>
+            </div>
+
+            <div class="wf-code-block">
+              <span style="color: var(--warm-400);">// Exemplo de endereco Bitcoin</span><br>
+              const address = "bc1q...xyzw";<br>
+              const balance = await getBalance(address);
+            </div>
+
+            <div class="wf-callout">
+              <span class="icon">i</span>
+              <strong style="font-size: 14px;">Importante:</strong>
+              <span style="font-size: 14px; color: var(--text-muted);"> Nunca compartilhe sua seed phrase com ninguem.</span>
+            </div>
+
+            <h3 class="wf-h3">Comparacao: CDI vs DeFi</h3>
+            <table style="width: 100%; font-size: 13px; border-collapse: collapse; margin: 16px 0;">
+              <thead>
+                <tr style="text-align: left; color: var(--warm-400); text-transform: uppercase; font-size: 11px; letter-spacing: 0.05em;">
+                  <th style="padding: 8px 12px; border-bottom: 1px solid var(--warm-700);">Metrica</th>
+                  <th style="padding: 8px 12px; border-bottom: 1px solid var(--warm-700);">CDI</th>
+                  <th style="padding: 8px 12px; border-bottom: 1px solid var(--warm-700);">DeFi (USDC)</th>
+                </tr>
+              </thead>
+              <tbody style="color: var(--text-body);">
+                <tr><td style="padding: 8px 12px; border-bottom: 1px solid rgba(63,61,58,0.3);">Rendimento anual</td><td style="padding: 8px 12px; border-bottom: 1px solid rgba(63,61,58,0.3);">~12.5%</td><td style="padding: 8px 12px; border-bottom: 1px solid rgba(63,61,58,0.3);">~8-15%</td></tr>
+                <tr><td style="padding: 8px 12px; border-bottom: 1px solid rgba(63,61,58,0.3);">Custodia</td><td style="padding: 8px 12px; border-bottom: 1px solid rgba(63,61,58,0.3);">Banco</td><td style="padding: 8px 12px; border-bottom: 1px solid rgba(63,61,58,0.3);">Voce</td></tr>
+                <tr><td style="padding: 8px 12px;">Risco</td><td style="padding: 8px 12px;">Institucional</td><td style="padding: 8px 12px;">Smart contract</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="wf-toc">
+            <div class="toc-title">Indice</div>
+            <ul>
+              <li class="active">O que e autocustodia?</li>
+              <li class="sub">Definicao tecnica</li>
+              <li class="sub">Historia breve</li>
+              <li>Por que a autocustodia importa?</li>
+              <li class="sub">Comparacao: CDI vs DeFi</li>
+              <li>Como comecar</li>
+              <li>Ferramentas recomendadas</li>
+              <li>Conclusao</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft CTA -->
+      <div class="wf-section" id="s01-cta" style="max-width: 680px; margin: 0 auto; padding: 32px;">
+        <div class="wf-label">Soft CTA</div>
+        <div class="wf-doppelrand">
+          <div class="wf-doppelrand-inner wf-soft-cta">
+            <h3 class="wf-h3">Como a Chainless resolve isso</h3>
+            <p style="color: var(--text-muted); font-size: 15px; margin: 12px 0 20px; max-width: 480px; display: inline-block;">
+              A Chainless oferece autocustodia com a praticidade de um banco digital. Seus ativos, suas chaves, seu controle.
+            </p>
+            <br>
+            <a class="wf-btn primary" href="#">Veja como funciona &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="wf-section" id="s01-faq" style="max-width: 680px; margin: 0 auto; padding: 24px 32px;">
+        <div class="wf-label">FAQ Accordion</div>
+        <h2 class="wf-h2">Perguntas frequentes</h2>
+        <div style="margin-top: 16px;">
+          <details class="wf-faq-item" open>
+            <summary>O que e autocustodia cripto?</summary>
+            <div class="answer">Autocustodia cripto e o modelo em que voce mesmo controla as chaves privadas dos seus ativos digitais, sem depender de uma exchange.</div>
+          </details>
+          <details class="wf-faq-item">
+            <summary>Qual a diferenca entre custodia e autocustodia?</summary>
+            <div class="answer">Na custodia, uma empresa guarda suas criptomoedas. Na autocustodia, voce controla diretamente suas chaves privadas.</div>
+          </details>
+          <details class="wf-faq-item">
+            <summary>A autocustodia e segura?</summary>
+            <div class="answer">Sim, desde que voce proteja sua seed phrase adequadamente. A Chainless usa MPC para dividir as chaves em fragmentos seguros.</div>
+          </details>
+        </div>
+      </div>
+
+      <!-- Related Posts -->
+      <div class="wf-section" id="s01-related" style="padding: 32px;">
+        <div class="wf-label">Related Posts</div>
+        <h2 class="wf-h2">Leia tambem</h2>
+        <div class="wf-card-grid" style="margin-top: 16px;">
+          <div class="wf-doppelrand">
+            <div class="wf-doppelrand-inner" style="padding: 20px;">
+              <span class="wf-tag yellow" style="font-size: 11px;">Soberania</span>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 10px; line-height: 1.3;">Como proteger seus ativos com MPC</h4>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Entenda como a criptografia multipartidaria...</p>
+              <p class="wf-meta" style="margin-top: 12px; font-size: 12px;">15 Mar &middot; <span class="mono">6 min</span></p>
+            </div>
+          </div>
+          <div class="wf-doppelrand">
+            <div class="wf-doppelrand-inner" style="padding: 20px;">
+              <span class="wf-tag yellow" style="font-size: 11px;">Soberania</span>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 10px; line-height: 1.3;">Seed phrase: o que e e como guardar</h4>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Sua seed phrase e a chave mestra para...</p>
+              <p class="wf-meta" style="margin-top: 12px; font-size: 12px;">12 Mar &middot; <span class="mono">5 min</span></p>
+            </div>
+          </div>
+          <div class="wf-doppelrand">
+            <div class="wf-doppelrand-inner" style="padding: 20px;">
+              <span class="wf-tag yellow" style="font-size: 11px;">Soberania</span>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 10px; line-height: 1.3;">Not your keys, not your coins: o que aprender com a FTX</h4>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">O colapso da FTX em 2022 revelou...</p>
+              <p class="wf-meta" style="margin-top: 12px; font-size: 12px;">10 Mar &middot; <span class="mono">7 min</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Global CTA -->
+      <div class="wf-section" style="text-align: center; padding: 64px 32px; background: linear-gradient(180deg, var(--dark-500) 0%, var(--dark-700) 100%);">
+        <div class="wf-label">Global CTA (reused from landing)</div>
+        <h2 style="font-size: 28px; font-weight: 700; font-family: Georgia, serif;">Torne-se Chainless.</h2>
+        <p style="color: var(--text-muted); margin: 12px 0 24px; font-size: 15px;">Controle total dos seus ativos. Sem intermediarios.</p>
+        <a class="wf-btn primary" href="#">Baixe o app &rarr;</a>
+      </div>
+
+      <!-- Footer -->
+      <div class="wf-footer">
+        Chainless &copy; 2026 &middot; Privacidade &middot; Termos &middot; AML
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREEN 02: BLOG LISTING -->
+  <section class="screen-section" id="screen-02">
+    <h1 class="screen-title">02 Blog Listing</h1>
+    <p class="screen-route">/blog</p>
+
+    <div class="wireframe">
+      <!-- Navbar -->
+      <div class="wf-navbar">
+        <span class="logo">Chainless</span>
+        <div class="nav-links">
+          <span>Home</span>
+          <span class="active">Blog</span>
+          <span>Transparencia</span>
+          <span>Taxas</span>
+        </div>
+      </div>
+
+      <!-- Blog Hero -->
+      <div class="wf-section" id="s02-hero" style="text-align: center; padding: 64px 32px 24px;">
+        <div class="wf-label">Blog Hero</div>
+        <h1 class="wf-h1" style="font-size: 42px;">Blog</h1>
+        <p style="color: var(--text-muted); font-size: 17px; margin-top: 12px; max-width: 520px; display: inline-block;">
+          Analises, guias e insights sobre soberania financeira e o futuro do dinheiro.
+        </p>
+        <p class="wf-meta mono" style="margin-top: 12px;">30 artigos</p>
+      </div>
+
+      <!-- Pillar Filter -->
+      <div class="wf-section" id="s02-filter" style="padding: 16px 32px;">
+        <div class="wf-label">Pillar Filter</div>
+        <div class="wf-filter-bar">
+          <span class="wf-filter-pill active">Todos</span>
+          <span class="wf-filter-pill" style="border-color: rgba(255,199,61,0.15);">Soberania</span>
+          <span class="wf-filter-pill" style="border-color: rgba(61,166,106,0.15);">Crescimento</span>
+          <span class="wf-filter-pill" style="border-color: rgba(74,144,218,0.15);">Pratica</span>
+        </div>
+      </div>
+
+      <!-- Featured Article -->
+      <div class="wf-section" id="s02-featured" style="padding: 24px 32px;">
+        <div class="wf-label">Featured Article</div>
+        <div class="wf-doppelrand">
+          <div class="wf-doppelrand-inner" style="padding: 0;">
+            <div class="wf-featured" style="padding: 24px;">
+              <div class="wf-featured-image">16:9 Hero Image</div>
+              <div>
+                <span class="wf-tag yellow" style="font-size: 11px;">Soberania Digital</span>
+                <h3 style="font-size: 22px; font-weight: 600; margin-top: 10px; line-height: 1.25;">O guia completo de autocustodia cripto em 2026</h3>
+                <p style="font-size: 15px; color: var(--text-muted); margin-top: 10px; line-height: 1.5;">Entenda por que manter suas chaves privadas e a decisao mais importante que voce pode tomar para proteger seus ativos digitais.</p>
+                <p class="wf-meta" style="margin-top: 14px;">Equipe Chainless &middot; 15 Mar &middot; <span class="mono">8 min</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article Grid -->
+      <div class="wf-section" id="s02-grid" style="padding: 24px 32px;">
+        <div class="wf-label">Article Grid (9 per page)</div>
+        <div class="wf-card-grid">
+          <div class="wf-doppelrand">
+            <div class="wf-doppelrand-inner" style="padding: 20px;">
+              <span class="wf-tag green" style="font-size: 11px;">Crescimento</span>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 10px; line-height: 1.3;">Rendimento DeFi vs CDI: qual compensa mais em 2026?</h4>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Comparamos os rendimentos reais de...</p>
+              <p class="wf-meta" style="margin-top: 12px; font-size: 12px;">14 Mar &middot; <span class="mono">10 min</span></p>
+            </div>
+          </div>
+          <div class="wf-doppelrand">
+            <div class="wf-doppelrand-inner" style="padding: 20px;">
+              <span class="wf-tag blue" style="font-size: 11px;">Pratica</span>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 10px; line-height: 1.3;">Como usar Pix com cripto: guia passo a passo</h4>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Pague contas e faca transferencias...</p>
+              <p class="wf-meta" style="margin-top: 12px; font-size: 12px;">12 Mar &middot; <span class="mono">5 min</span></p>
+            </div>
+          </div>
+          <div class="wf-doppelrand">
+            <div class="wf-doppelrand-inner" style="padding: 20px;">
+              <span class="wf-tag yellow" style="font-size: 11px;">Soberania</span>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 10px; line-height: 1.3;">Seed phrase: o que e e como guardar com seguranca</h4>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Sua seed phrase e a chave mestra...</p>
+              <p class="wf-meta" style="margin-top: 12px; font-size: 12px;">10 Mar &middot; <span class="mono">6 min</span></p>
+            </div>
+          </div>
+          <div class="wf-doppelrand">
+            <div class="wf-doppelrand-inner" style="padding: 20px;">
+              <span class="wf-tag green" style="font-size: 11px;">Crescimento</span>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 10px; line-height: 1.3;">Staking de ETH: riscos, recompensas e como comecar</h4>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Entenda como funciona o staking...</p>
+              <p class="wf-meta" style="margin-top: 12px; font-size: 12px;">8 Mar &middot; <span class="mono">9 min</span></p>
+            </div>
+          </div>
+          <div class="wf-doppelrand">
+            <div class="wf-doppelrand-inner" style="padding: 20px;">
+              <span class="wf-tag blue" style="font-size: 11px;">Pratica</span>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 10px; line-height: 1.3;">Cartao cripto: como funciona no dia a dia</h4>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Use seus ativos digitais para compras...</p>
+              <p class="wf-meta" style="margin-top: 12px; font-size: 12px;">6 Mar &middot; <span class="mono">4 min</span></p>
+            </div>
+          </div>
+          <div class="wf-doppelrand">
+            <div class="wf-doppelrand-inner" style="padding: 20px;">
+              <span class="wf-tag yellow" style="font-size: 11px;">Soberania</span>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 10px; line-height: 1.3;">MPC vs multisig: qual e mais seguro?</h4>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Comparamos as duas principais...</p>
+              <p class="wf-meta" style="margin-top: 12px; font-size: 12px;">4 Mar &middot; <span class="mono">7 min</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="wf-section" id="s02-pagination" style="padding: 24px 32px;">
+        <div class="wf-label">Pagination</div>
+        <div class="wf-pagination">
+          <span class="wf-page-btn" style="opacity: 0.3;">&lsaquo;</span>
+          <span class="wf-page-btn active">1</span>
+          <span class="wf-page-btn">2</span>
+          <span class="wf-page-btn">3</span>
+          <span class="wf-page-btn" style="color: var(--warm-500);">&hellip;</span>
+          <span class="wf-page-btn">4</span>
+          <span class="wf-page-btn">&rsaquo;</span>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="wf-footer">
+        Chainless &copy; 2026 &middot; Privacidade &middot; Termos &middot; AML
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Simple nav highlight on scroll
+  const sections = document.querySelectorAll('.screen-section');
+  const navLinks = document.querySelectorAll('.preview-nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const id = entry.target.id || entry.target.closest('.screen-section')?.id;
+        const activeLink = document.querySelector(`.preview-nav a[href="#${id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
