@@ -1,0 +1,275 @@
+{
+  "metadata": {
+    "title": "Chainless | Patrimônio Digital Soberano",
+    "description": "Plataforma de patrimônio digital com autocustódia. Rendimento em dólar, cartão global e empréstimo BTC — sem corretora, sem custódia, sem seed phrase."
+  },
+  "navbar": {
+    "rendimentos": "Rendimentos",
+    "cartao": "Cartão",
+    "emprestimo": "Empréstimo BTC",
+    "seguranca": "Segurança",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "appStore": "App Store",
+    "googlePlay": "Google Play"
+  },
+  "hero": {
+    "headline": "Torne-se Chainless",
+    "subheadline": "Cresça seu patrimônio com total controle.",
+    "appStoreLabel": "Baixar na App Store",
+    "googlePlayLabel": "Baixar no Google Play",
+    "availableOn": "Disponível na",
+    "availableAt": "Disponível no",
+    "trustAssets": "150+",
+    "trustAssetsLabel": "ativos digitais",
+    "trustApy": "Até 60%",
+    "trustApyLabel": "APY em DeFi"
+  },
+  "proofBar": {
+    "ariaLabel": "Métricas da plataforma",
+    "wallets": "carteiras soberanas",
+    "volume": "movimentados",
+    "custody": "autocustódia",
+    "volumePrefix": "R$"
+  },
+  "philosophy": {
+    "eyebrow": "Sobre",
+    "heading": "Patrimônio digital soberano.",
+    "subtitle": "Sem a custódia centralizada das corretoras, sem a fricção das carteiras.",
+    "pillars": [
+      {
+        "overline": "Não somos uma corretora",
+        "title": "Nós não temos acesso ao seu patrimônio.",
+        "description": "Corretoras custodiam seus ativos e você depende da solvência delas. A Chainless foi desenhada fora dessa lógica. Seus ativos vivem na blockchain, na sua chave. Não é uma promessa. É a arquitetura.",
+        "imageAlt": "Detalhe arquitetônico de concreto com luz natural quente"
+      },
+      {
+        "overline": "Não somos uma simples carteira",
+        "title": "Uma plataforma financeira completa, sem complexidade.",
+        "description": "Carteiras tradicionais te entregam 12 palavras e uma promessa: não perca. A Chainless te entrega um app completo: Pix, cartão, rendimento, bitcoin, com recuperação de acesso integrada.",
+        "imageAlt": "Interior com luz natural quente entrando por janelas amplas"
+      }
+    ]
+  },
+  "editorial": {
+    "ariaLabel": "Declaração sobre soberania financeira",
+    "couplet1": [
+      {
+        "segments": [{ "text": "O sistema financeiro" }]
+      },
+      {
+        "segments": [
+          { "text": "foi construído para " },
+          { "text": "eles.", "highlight": true, "bold": true }
+        ]
+      }
+    ],
+    "couplet2": [
+      {
+        "segments": [
+          { "text": "A " },
+          { "text": "Chainless", "highlight": true, "bold": true },
+          { "text": " foi construída para " },
+          { "text": "você.", "highlight": true, "bold": true }
+        ]
+      }
+    ]
+  },
+  "yield": {
+    "eyebrow": "Rendimentos",
+    "heading": "Seu patrimônio. Seus rendimentos.",
+    "subtitle": "De stablecoins em dólar a pools de liquidez. Cada rendimento sob sua custódia, cada protocolo auditado.",
+    "protect": {
+      "label": "Proteger",
+      "title": "150+ ativos digitais. Sob seu controle absoluto.",
+      "tokens": "Bitcoin, Ethereum, Solana e tokens globais",
+      "gold": "Ouro tokenizado, metal precioso sem custódia física",
+      "keys": "Chaves geradas no seu dispositivo. Sempre."
+    },
+    "grow": {
+      "label": "Crescer",
+      "title": "Acesse rendimento DeFi.",
+      "description": "Protocolos auditados, retornos transparentes. Em poucos cliques, direto da sua carteira.",
+      "activePools": "Pools ativos",
+      "poolsAriaLabel": "Pools de liquidez com rendimentos ao vivo",
+      "disclaimer": "Valores meramente ilustrativos, baseados em desempenho passado de smart contracts. Não constituem promessa de rendimento. Estimativas atualizadas disponíveis no app."
+    }
+  },
+  "spend": {
+    "eyebrow": "Cartão Chainless",
+    "heading": "Compre dólares sem IOF e gaste globalmente.",
+    "description": "USDC ao câmbio real, sem spread oculto. Após a conversão, os ativos são seus. Na blockchain, sob sua chave.",
+    "iofLabel": "IOF",
+    "viaChainless": "via Chainless",
+    "benefits": [
+      "1 USDC = 1 USD no exterior",
+      "Até 5% cashback em compras",
+      "Pix via BRZ no Brasil"
+    ],
+    "iofComparison": "Comparação de IOF",
+    "caption": "Gaste USDC globalmente"
+  },
+  "borrow": {
+    "comingSoon": "Em breve",
+    "heading": "Receba dólares sem vender seu Bitcoin.",
+    "subtitle": "Deposite BTC como garantia e receba crédito em USDC a 3,5% ao ano, sem prazo fixo.",
+    "steps": [
+      {
+        "label": "Deposite",
+        "tokenTicker": "BTC",
+        "description": "Seus BTC ficam como garantia on-chain, sempre sob sua custódia."
+      },
+      {
+        "label": "Receba",
+        "tokenTicker": "Dólar digital",
+        "description": "Receba crédito em dólar digital, instantaneamente."
+      },
+      {
+        "label": "Mantenha",
+        "tokenTicker": "Sua garantia",
+        "subMetric": "este mês",
+        "description": "Seu Bitcoin continua valorizando. Você não vendeu nada."
+      }
+    ],
+    "disclaimer": "Valores meramente ilustrativos. A taxa de 3,5% a.a. e a valorização de +2,4% são estimativas baseadas em desempenho passado e condições de mercado. Não constituem promessa nem garantia de resultado. Dados atualizados disponíveis no app."
+  },
+  "security": {
+    "eyebrow": "Arquitetura de segurança",
+    "heading": "Segurança incomparável.",
+    "subtitle": "Camadas de proteção que operam em silêncio, para que seu patrimônio nunca dependa de confiança.",
+    "layerLabel": "Camada",
+    "layers": [
+      {
+        "title": "Biometria obrigatória",
+        "description": "Cada transação exige confirmação biométrica no hardware do seu dispositivo. Nenhuma operação acontece sem a sua presença física.",
+        "detail": "Face ID · Touch ID · Biometria Android"
+      },
+      {
+        "title": "Isolamento no hardware",
+        "description": "Sua chave nunca sai do Secure Enclave ou StrongBox. Isolada do sistema operacional, inacessível até para a Chainless.",
+        "detail": "Secure Enclave · StrongBox · TEE"
+      },
+      {
+        "title": "Fragmentação criptográfica",
+        "description": "MPC divide sua chave em fragmentos distribuídos. Ninguém, nem a Chainless, a detém por completo.",
+        "detail": "MPC-TSS · Threshold Signatures"
+      },
+      {
+        "title": "Recuperação integrada",
+        "description": "Recupere acesso via Google ou Apple. Sem seed phrases, sem custódia de terceiros, sem pontos únicos de falha.",
+        "detail": "OAuth Recovery · Zero Seed Phrases"
+      }
+    ]
+  },
+  "socialProof": {
+    "eyebrow": "Depoimentos",
+    "heading": "Quem já é Chainless.",
+    "subtitle": "Pessoas que escolheram controle absoluto sobre seu patrimônio digital.",
+    "testimonials": [
+      {
+        "quote": "Tem várias soluções boas de privacidade além de BTC na LN. Chainless você paga no Pix e adquire stables que circulam fora do controle. Zero de custo na aquisição.",
+        "name": "Renato Amoedo",
+        "title": "Perito Criminal, Polícia Técnica da Bahia"
+      },
+      {
+        "quote": "Privacidade, autocustódia e facilidade de uso. A Chainless entrega os três sem compromisso.",
+        "name": "Mychel Mendes",
+        "title": "Contador Especializado em Crypto"
+      },
+      {
+        "quote": "Pools de liquidez com a facilidade que faltava. Finalmente DeFi acessível sem abrir mão do controle.",
+        "name": "Ramon Cunha",
+        "title": "Investidor Cripto & Educador DeFi"
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Comece agora",
+    "heading": "Seu patrimônio merece ser só seu.",
+    "description": "Toda plataforma de patrimônio pede que você entregue seus ativos a um custodiante. Chainless é a primeira onde isso é",
+    "impossible": "impossível",
+    "button": "Torne-se Chainless",
+    "trustAnchors": ["Sem custódia", "Sem lock-up", "Sem intermediários"]
+  },
+  "footer": {
+    "brandDescription": "Plataforma de patrimônio digital com autocustódia. Seu patrimônio cresce. Suas chaves continuam suas.",
+    "tagline": "Patrimônio digital soberano.",
+    "categories": {
+      "produto": "Produto",
+      "recursos": "Recursos",
+      "legal": "Legal"
+    },
+    "links": {
+      "rendimento": "Rendimento DeFi",
+      "cartao": "Cartão",
+      "emprestimo": "Empréstimo BTC",
+      "seguranca": "Segurança",
+      "ajuda": "Central de ajuda",
+      "taxas": "Taxas",
+      "privacidade": "Privacidade",
+      "termos": "Termos de uso",
+      "aml": "Política AML",
+      "regulamentacao": "Regulamentação"
+    },
+    "copyright": "Chainless. Patrimônio digital soberano.",
+    "disclaimer": "Chainless é um produto da Notus Labs Ltda. (CNPJ 41.212.785/0001-43). Não é instituição autorizada pelo Banco Central do Brasil, não custodia ativos virtuais nem possui acesso a chaves privadas de usuários. Provedor de tecnologia nos termos do art. 9º, §6º da Resolução BCB nº 520/2025."
+  },
+  "influencer": {
+    "subheadline": "Cresça seu patrimônio com total controle.",
+    "invitePrefix": "Pule a fila de espera com o código de",
+    "directAccess": "Acesso direto",
+    "copyCode": "Copiar código",
+    "codeCopied": "Código copiado",
+    "walletsLabel": "carteiras soberanas",
+    "volumeLabel": "movimentados"
+  },
+  "fees": {
+    "eyebrow": "Taxas",
+    "title": "Taxas e custos",
+    "lastUpdated": "Última atualização",
+    "lastUpdatedDate": "7 de abril de 2026",
+    "intro": "Todas as taxas cobradas pela Chainless estão listadas abaixo. Não há taxas ocultas nem custos adicionais.",
+    "tableCaption": "Tabela de taxas da Chainless",
+    "columnOperation": "Operação",
+    "columnFee": "Taxa",
+    "rows": [
+      { "service": "Depósito PIX", "fee": "Sem taxa", "free": true },
+      { "service": "Saque PIX", "fee": "R$ 2,90" },
+      { "service": "Swap", "fee": "0,7%", "detail": "sobre o valor transacionado" },
+      { "service": "Investimento em renda", "fee": "Sem taxa", "free": true },
+      { "service": "Pools de Liquidez", "fee": "0,5%", "detail": "sobre o valor convertido" },
+      { "service": "Transferência de BRZ para wallets externas", "fee": "0,5%", "detail": "sobre o valor movimentado" },
+      { "service": "Transferência de outras criptos para wallets externas", "fee": "Sem taxa", "free": true }
+    ],
+    "gasTitle": "Taxa de Gas",
+    "gasP1": "A taxa de gas é um custo cobrado pelas redes blockchain para processar e confirmar transações. Ela varia conforme a rede e o nível de congestionamento no momento da operação.",
+    "gasP2": "A Chainless, por meio de Abstração de Contas, permite que você pague a taxa de gas com o próprio token transacionado — sem precisar manter tokens nativos como ETH, SOL ou MATIC.",
+    "gasP3": "Na prática, a Chainless adianta a taxa de gas e cobra uma margem no preço efetivo da transação para cobrir custos operacionais. A estimativa é exibida na tela de Detalhes da Transação antes da confirmação."
+  },
+  "pages": {
+    "taxas": {
+      "title": "Chainless | Taxas",
+      "description": "Taxas da Chainless: swap, Pix, pools de liquidez e transferências cripto. Sem taxas ocultas, sem surpresas. Veja os custos de cada operação."
+    },
+    "transparencia": {
+      "title": "Chainless | Regulamentação Cripto Brasil",
+      "description": "Como a Chainless opera sob a Resolução BCB nº 520/2025. Autocustódia integral, sem intermediação nem custódia de ativos virtuais."
+    },
+    "termos": {
+      "title": "Chainless | Termos de Uso",
+      "description": "Termos de Uso da Chainless — plataforma de patrimônio digital com autocustódia, desenvolvida pela Notus Labs Ltda."
+    },
+    "privacidade": {
+      "title": "Chainless | Política de Privacidade",
+      "description": "Política de Privacidade da Chainless. Como coletamos, usamos, compartilhamos e protegemos suas informações pessoais."
+    },
+    "aml": {
+      "title": "Chainless | Política AML",
+      "description": "Política de Prevenção à Lavagem de Dinheiro da Chainless. Conformidade regulatória para uma plataforma de autocustódia no Brasil."
+    },
+    "influencer": {
+      "titlePrefix": "Chainless | Convite de",
+      "description": "Patrimônio digital com autocustódia: rendimento em dólar, cartão global e segurança de nível institucional. Sem corretora, sem seed phrase."
+    }
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "metadata": {
+    "title": "Chainless | Sovereign Digital Wealth",
+    "description": "Self-custody digital wealth platform. Dollar yield, global card, and BTC-backed loans — no exchange, no custody, no seed phrase."
+  },
+  "navbar": {
+    "rendimentos": "Yield",
+    "cartao": "Card",
+    "emprestimo": "BTC Loan",
+    "seguranca": "Security",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "appStore": "App Store",
+    "googlePlay": "Google Play"
+  },
+  "hero": {
+    "headline": "Become Chainless",
+    "subheadline": "Grow your wealth with full control.",
+    "appStoreLabel": "Download on the App Store",
+    "googlePlayLabel": "Get it on Google Play",
+    "availableOn": "Available on",
+    "availableAt": "Available on",
+    "trustAssets": "150+",
+    "trustAssetsLabel": "digital assets",
+    "trustApy": "Up to 60%",
+    "trustApyLabel": "DeFi APY"
+  },
+  "proofBar": {
+    "ariaLabel": "Platform metrics",
+    "wallets": "sovereign wallets",
+    "volume": "transacted",
+    "custody": "self-custody",
+    "volumePrefix": "$"
+  },
+  "philosophy": {
+    "eyebrow": "About",
+    "heading": "Sovereign digital wealth.",
+    "subtitle": "Without the centralized custody of exchanges, without the friction of wallets.",
+    "pillars": [
+      {
+        "overline": "We are not an exchange",
+        "title": "We have no access to your wealth.",
+        "description": "Exchanges custody your assets and you depend on their solvency. Chainless was designed outside that logic. Your assets live on the blockchain, on your key. It's not a promise. It's the architecture.",
+        "imageAlt": "Architectural concrete detail with warm natural light"
+      },
+      {
+        "overline": "We are not just a wallet",
+        "title": "A complete financial platform, without the complexity.",
+        "description": "Traditional wallets hand you 12 words and a promise: don't lose them. Chainless gives you a complete app: instant payments, card, yield, bitcoin, with built-in access recovery.",
+        "imageAlt": "Interior with warm natural light coming through wide windows"
+      }
+    ]
+  },
+  "editorial": {
+    "ariaLabel": "Statement on financial sovereignty",
+    "couplet1": [
+      {
+        "segments": [{ "text": "The financial system" }]
+      },
+      {
+        "segments": [
+          { "text": "was built for " },
+          { "text": "them.", "highlight": true, "bold": true }
+        ]
+      }
+    ],
+    "couplet2": [
+      {
+        "segments": [
+          { "text": "" },
+          { "text": "Chainless", "highlight": true, "bold": true },
+          { "text": " was built for " },
+          { "text": "you.", "highlight": true, "bold": true }
+        ]
+      }
+    ]
+  },
+  "yield": {
+    "eyebrow": "Yield",
+    "heading": "Your wealth. Your yield.",
+    "subtitle": "From dollar stablecoins to liquidity pools. Every yield under your custody, every protocol audited.",
+    "protect": {
+      "label": "Protect",
+      "title": "150+ digital assets. Under your absolute control.",
+      "tokens": "Bitcoin, Ethereum, Solana and global tokens",
+      "gold": "Tokenized gold, precious metal without physical custody",
+      "keys": "Keys generated on your device. Always."
+    },
+    "grow": {
+      "label": "Grow",
+      "title": "Access DeFi yield.",
+      "description": "Audited protocols, transparent returns. In a few clicks, straight from your wallet.",
+      "activePools": "Active pools",
+      "poolsAriaLabel": "Liquidity pools with live yields",
+      "disclaimer": "Values are illustrative only, based on past performance of smart contracts. They do not constitute a promise of yield. Updated estimates available in the app."
+    }
+  },
+  "spend": {
+    "eyebrow": "Chainless Card",
+    "heading": "Buy dollars with zero tax and spend globally.",
+    "description": "USDC at the real exchange rate, no hidden spread. After conversion, the assets are yours. On the blockchain, under your key.",
+    "iofLabel": "FX Tax",
+    "viaChainless": "via Chainless",
+    "benefits": [
+      "1 USDC = 1 USD abroad",
+      "Up to 5% cashback on purchases",
+      "Instant payments via BRZ in Brazil"
+    ],
+    "iofComparison": "FX Tax comparison",
+    "caption": "Spend USDC globally"
+  },
+  "borrow": {
+    "comingSoon": "Coming soon",
+    "heading": "Get dollars without selling your Bitcoin.",
+    "subtitle": "Deposit BTC as collateral and receive credit in USDC at 3.5% per year, no fixed term.",
+    "steps": [
+      {
+        "label": "Deposit",
+        "tokenTicker": "BTC",
+        "description": "Your BTC stays as on-chain collateral, always under your custody."
+      },
+      {
+        "label": "Receive",
+        "tokenTicker": "Digital dollar",
+        "description": "Receive credit in digital dollars, instantly."
+      },
+      {
+        "label": "Keep",
+        "tokenTicker": "Your collateral",
+        "subMetric": "this month",
+        "description": "Your Bitcoin keeps appreciating. You didn't sell a thing."
+      }
+    ],
+    "disclaimer": "Values are illustrative only. The 3.5% p.a. rate and +2.4% appreciation are estimates based on past performance and market conditions. They do not constitute a promise or guarantee of results. Updated data available in the app."
+  },
+  "security": {
+    "eyebrow": "Security architecture",
+    "heading": "Unmatched security.",
+    "subtitle": "Layers of protection that operate silently, so your wealth never depends on trust.",
+    "layerLabel": "Layer",
+    "layers": [
+      {
+        "title": "Mandatory biometrics",
+        "description": "Every transaction requires biometric confirmation on your device hardware. No operation happens without your physical presence.",
+        "detail": "Face ID · Touch ID · Android Biometrics"
+      },
+      {
+        "title": "Hardware isolation",
+        "description": "Your key never leaves the Secure Enclave or StrongBox. Isolated from the operating system, inaccessible even to Chainless.",
+        "detail": "Secure Enclave · StrongBox · TEE"
+      },
+      {
+        "title": "Cryptographic fragmentation",
+        "description": "MPC splits your key into distributed fragments. No one, not even Chainless, holds it in full.",
+        "detail": "MPC-TSS · Threshold Signatures"
+      },
+      {
+        "title": "Built-in recovery",
+        "description": "Recover access via Google or Apple. No seed phrases, no third-party custody, no single points of failure.",
+        "detail": "OAuth Recovery · Zero Seed Phrases"
+      }
+    ]
+  },
+  "socialProof": {
+    "eyebrow": "Testimonials",
+    "heading": "Those who are already Chainless.",
+    "subtitle": "People who chose absolute control over their digital wealth.",
+    "testimonials": [
+      {
+        "quote": "There are several good privacy solutions beyond BTC on LN. With Chainless you pay via Pix and acquire stables that circulate outside of control. Zero cost on acquisition.",
+        "name": "Renato Amoedo",
+        "title": "Forensic Expert, Bahia Technical Police"
+      },
+      {
+        "quote": "Privacy, self-custody, and ease of use. Chainless delivers all three without compromise.",
+        "name": "Mychel Mendes",
+        "title": "Crypto-Specialized Accountant"
+      },
+      {
+        "quote": "Liquidity pools with the ease that was missing. Finally accessible DeFi without giving up control.",
+        "name": "Ramon Cunha",
+        "title": "Crypto Investor & DeFi Educator"
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Get started",
+    "heading": "Your wealth deserves to be only yours.",
+    "description": "Every wealth platform asks you to hand your assets to a custodian. Chainless is the first where that is",
+    "impossible": "impossible",
+    "button": "Become Chainless",
+    "trustAnchors": ["No custody", "No lock-up", "No middlemen"]
+  },
+  "footer": {
+    "brandDescription": "Self-custody digital wealth platform. Your wealth grows. Your keys stay yours.",
+    "tagline": "Sovereign digital wealth.",
+    "categories": {
+      "produto": "Product",
+      "recursos": "Resources",
+      "legal": "Legal"
+    },
+    "links": {
+      "rendimento": "DeFi Yield",
+      "cartao": "Card",
+      "emprestimo": "BTC Loan",
+      "seguranca": "Security",
+      "ajuda": "Help center",
+      "taxas": "Fees",
+      "privacidade": "Privacy",
+      "termos": "Terms of use",
+      "aml": "AML Policy",
+      "regulamentacao": "Regulation"
+    },
+    "copyright": "Chainless. Sovereign digital wealth.",
+    "disclaimer": "Chainless is a product of Notus Labs Ltda. (CNPJ 41.212.785/0001-43). It is not an institution authorized by the Central Bank of Brazil, does not custody virtual assets, and has no access to user private keys. Technology provider under art. 9, §6 of BCB Resolution No. 520/2025."
+  },
+  "influencer": {
+    "subheadline": "Grow your wealth with full control.",
+    "invitePrefix": "Skip the waitlist with the code from",
+    "directAccess": "Direct access",
+    "copyCode": "Copy code",
+    "codeCopied": "Code copied",
+    "walletsLabel": "sovereign wallets",
+    "volumeLabel": "transacted"
+  },
+  "fees": {
+    "eyebrow": "Fees",
+    "title": "Fees and costs",
+    "lastUpdated": "Last updated",
+    "lastUpdatedDate": "April 7, 2026",
+    "intro": "All fees charged by Chainless are listed below. There are no hidden fees or additional costs.",
+    "tableCaption": "Chainless fee schedule",
+    "columnOperation": "Operation",
+    "columnFee": "Fee",
+    "rows": [
+      { "service": "PIX Deposit", "fee": "No fee", "free": true },
+      { "service": "PIX Withdrawal", "fee": "R$ 2.90" },
+      { "service": "Swap", "fee": "0.7%", "detail": "of the transacted amount" },
+      { "service": "Yield investment", "fee": "No fee", "free": true },
+      { "service": "Liquidity Pools", "fee": "0.5%", "detail": "of the converted amount" },
+      { "service": "BRZ transfer to external wallets", "fee": "0.5%", "detail": "of the transferred amount" },
+      { "service": "Other crypto transfers to external wallets", "fee": "No fee", "free": true }
+    ],
+    "gasTitle": "Gas Fee",
+    "gasP1": "The gas fee is a cost charged by blockchain networks to process and confirm transactions. It varies according to the network and the level of congestion at the time of the operation.",
+    "gasP2": "Chainless, through Account Abstraction, allows you to pay the gas fee with the token being transacted — without needing to hold native tokens like ETH, SOL, or MATIC.",
+    "gasP3": "In practice, Chainless advances the gas fee and charges a margin on the effective transaction price to cover operational costs. The estimate is displayed on the Transaction Details screen before confirmation."
+  },
+  "pages": {
+    "taxas": {
+      "title": "Chainless | Fees",
+      "description": "Chainless fees: swaps, payments, liquidity pools, and crypto transfers. No hidden fees, no surprises. See all costs upfront."
+    },
+    "transparencia": {
+      "title": "Chainless | Regulation",
+      "description": "How Chainless positions itself regarding BCB Resolution No. 520/2025. Full self-custody, without intermediation or custody of virtual assets."
+    },
+    "termos": {
+      "title": "Chainless | Terms of Use",
+      "description": "Terms of Use for the Chainless app, a digital asset wallet developed by Notus Labs Ltda."
+    },
+    "privacidade": {
+      "title": "Chainless | Privacy Policy",
+      "description": "Chainless Privacy Policy. How we collect, use, share, and protect your personal information."
+    },
+    "aml": {
+      "title": "Chainless | AML Policy",
+      "description": "Anti-Money Laundering, Counter-Terrorism Financing, and Weapons of Mass Destruction Proliferation Prevention Policy."
+    },
+    "influencer": {
+      "titlePrefix": "Chainless | Invite from",
+      "description": "Self-custody digital wealth: dollar yield, global card, and institutional-grade security. No exchange, no seed phrase."
+    }
+  }
+}
