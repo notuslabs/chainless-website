@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chainless-mobile — Mobile Design Preview</title>
+<style>
+  :root {
+    --dark-500: #1C1B19;
+    --dark-600: #181716;
+    --warm-300: #A4A097;
+    --warm-700: #3F3D3A;
+    --yellow-500: #FFC73D;
+    --surface: #FAFAF8;
+    --text-primary: #FAFAF8;
+    --text-muted: #A4A097;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, system-ui, sans-serif;
+    background: #111;
+    color: var(--text-primary);
+    display: flex;
+    min-height: 100vh;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    overflow-y: auto;
+    background: var(--dark-500);
+    border-right: 1px solid var(--warm-700);
+    padding: 20px 16px;
+    z-index: 10;
+  }
+  nav h2 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--yellow-500);
+    margin-bottom: 16px;
+  }
+  nav a {
+    display: block;
+    padding: 8px 12px;
+    color: var(--warm-300);
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 6px;
+    margin-bottom: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+  nav a:hover { background: rgba(255,255,255,0.05); color: var(--text-primary); }
+  nav a.active { background: rgba(255,199,61,0.1); color: var(--yellow-500); }
+  main {
+    margin-left: 240px;
+    flex: 1;
+    padding: 40px;
+    max-width: 800px;
+  }
+  .screen {
+    margin-bottom: 60px;
+    border: 1px solid var(--warm-700);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .screen-header {
+    padding: 16px 20px;
+    background: rgba(255,199,61,0.06);
+    border-bottom: 1px solid var(--warm-700);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .screen-header h3 {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .screen-header .tag {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(255,199,61,0.15);
+    color: var(--yellow-500);
+  }
+  .phone-frame {
+    background: var(--dark-500);
+    margin: 24px auto;
+    width: 320px;
+    border: 2px solid var(--warm-700);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+  }
+  .phone-notch {
+    width: 120px;
+    height: 28px;
+    background: #111;
+    border-radius: 0 0 14px 14px;
+    margin: 0 auto;
+  }
+  .phone-content {
+    padding: 24px;
+    min-height: 200px;
+  }
+  .box {
+    border: 1px dashed var(--warm-700);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .box.highlight {
+    border-color: var(--yellow-500);
+    background: rgba(255,199,61,0.04);
+    color: var(--yellow-500);
+  }
+  .box-row {
+    display: flex;
+    gap: 8px;
+  }
+  .box-row .box { flex: 1; }
+  .dot-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 0;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--warm-700);
+  }
+  .dot.active {
+    width: 20px;
+    background: var(--yellow-500);
+    opacity: 0.6;
+  }
+  .change-note {
+    padding: 12px 20px;
+    background: rgba(255,199,61,0.03);
+    border-top: 1px solid var(--warm-700);
+    font-size: 12px;
+    color: var(--warm-300);
+    line-height: 1.6;
+  }
+  .change-note strong { color: var(--yellow-500); }
+  @media (max-width: 700px) {
+    nav { display: none; }
+    main { margin-left: 0; padding: 20px; }
+    .phone-frame { width: 100%; max-width: 320px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <h2>Screens</h2>
+  <a href="#s01">01 Navbar</a>
+  <a href="#s02">02 Hero</a>
+  <a href="#s03">03 ProofBar</a>
+  <a href="#s04">04 Philosophy</a>
+  <a href="#s05">05 EditorialBreak</a>
+  <a href="#s06">06 SpendCredit</a>
+  <a href="#s07">07 SocialProof</a>
+  <a href="#s08">08 Footer</a>
+  <a href="#s09">09 YieldSection</a>
+  <a href="#s10">10 BorrowCredit</a>
+  <a href="#s11">11 Security</a>
+  <a href="#s12">12 CTASection</a>
+  <a href="#s13">13 Global Padding</a>
+</nav>
+
+<main>
+  <h1 style="font-size:24px;margin-bottom:8px;">chainless-mobile</h1>
+  <p style="font-size:14px;color:var(--warm-300);margin-bottom:40px;">Mobile responsiveness audit — wireframe preview at 320px</p>
+
+  <!-- 01 Navbar -->
+  <div class="screen" id="s01">
+    <div class="screen-header">
+      <h3>01 Navbar</h3>
+      <span class="tag">Touch Targets</span>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-content" style="padding:12px;">
+        <div class="box highlight" style="display:flex;justify-content:space-between;align-items:center;min-height:44px;">
+          <span style="font-size:10px;">Logo [44px tap]</span>
+          <span style="font-size:10px;">gap-2</span>
+          <span style="font-size:10px;">Hamburger [44x44]</span>
+        </div>
+      </div>
+    </div>
+    <div class="change-note"><strong>Fix:</strong> Logo min-h-44px, hamburger 44x44px explicit, gap-1 to gap-2</div>
+  </div>
+
+  <!-- 02 Hero -->
+  <div class="screen" id="s02">
+    <div class="screen-header">
+      <h3>02 Hero</h3>
+      <span class="tag">Padding Fix</span>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-content">
+        <div class="box" style="text-align:center;padding:40px 0;">
+          <div style="font-size:9px;color:var(--warm-700);">Video BG + Mesh Gradient</div>
+        </div>
+        <div style="font-size:18px;font-weight:700;margin:16px 0 8px;">Headline</div>
+        <div style="font-size:11px;color:var(--warm-300);">Subheadline text</div>
+        <div class="box highlight" style="margin-top:16px;text-align:center;">
+          px-6 (24px) single layer
+        </div>
+      </div>
+    </div>
+    <div class="change-note"><strong>Fix:</strong> Remove section px-4, keep container px-6. Single 24px padding layer. py-20 on mobile.</div>
+  </div>
+
+  <!-- 03 ProofBar -->
+  <div class="screen" id="s03">
+    <div class="screen-header">
+      <h3>03 ProofBar</h3>
+      <span class="tag">Responsive Grid</span>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-content">
+        <div class="box highlight" style="display:flex;justify-content:space-between;">
+          <span>30.000+</span><span style="font-size:10px;">Carteiras ativas</span>
+        </div>
+        <div class="box highlight" style="display:flex;justify-content:space-between;">
+          <span>R$300M+</span><span style="font-size:10px;">Volume transacionado</span>
+        </div>
+        <div class="box highlight" style="display:flex;justify-content:space-between;">
+          <span>100%</span><span style="font-size:10px;">Custodia propria</span>
+        </div>
+      </div>
+    </div>
+    <div class="change-note"><strong>Fix:</strong> grid-cols-1 on mobile (stacked rows), sm:grid-cols-3 for tablet+. No text truncation at 320px.</div>
+  </div>
+
+  <!-- 04 Philosophy -->
+  <div class="screen" id="s04">
+    <div class="screen-header">
+      <h3>04 Philosophy</h3>
+      <span class="tag">Image + Padding</span>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-content" style="padding:24px;">
+        <div class="box" style="height:80px;text-align:center;padding-top:30px;">
+          <span style="font-size:10px;">Image h-[200px]</span>
+        </div>
+        <div class="box highlight" style="padding:16px;">
+          <div style="font-size:10px;margin-bottom:4px;">p-6 (was p-8)</div>
+          <div style="font-size:12px;">Pillar title + description</div>
+        </div>
+      </div>
+    </div>
+    <div class="change-note"><strong>Fix:</strong> Image h-[200px] sm:h-[280px]. Card p-6 sm:p-8. Section py-20.</div>
+  </div>
+
+  <!-- 05 EditorialBreak -->
+  <div class="screen" id="s05">
+    <div class="screen-header">
+      <h3>05 EditorialBreak</h3>
+      <span class="tag">Performance</span>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-content" style="text-align:center;">
+        <div class="box highlight" style="height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div style="font-size:10px;margin-bottom:8px;">Static frame-060.webp</div>
+          <div style="font-size:10px;color:var(--warm-300);">~30KB vs ~3MB (121 frames)</div>
+          <div style="font-size:10px;margin-top:8px;">CSS crossfade couplets</div>
+        </div>
+        <div style="font-size:10px;color:var(--warm-300);margin-top:8px;">h-[200vh] (was h-[320vh])</div>
+      </div>
+    </div>
+    <div class="change-note"><strong>Fix:</strong> Single keyframe image on mobile, skip 121-frame preload. Reduce section height. Add reduced-motion fallback.</div>
+  </div>
+
+  <!-- 06 SpendCredit -->
+  <div class="screen" id="s06">
+    <div class="screen-header">
+      <h3>06 SpendCredit</h3>
+      <span class="tag">Color + Padding</span>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-content">
+        <div class="box highlight">
+          <div style="font-size:10px;">bg-dark-500 (#1C1B19)</div>
+          <div style="font-size:10px;color:var(--warm-300);">was: bg-black (#000000)</div>
+        </div>
+        <div class="box">
+          <div style="font-size:10px;">Edge fades: #1C1B19</div>
+          <div style="font-size:10px;color:var(--warm-300);">was: #000000</div>
+        </div>
+        <div class="box" style="margin-top:8px;">
+          <div style="font-size:10px;">overflow-x-clip added</div>
+        </div>
+      </div>
+    </div>
+    <div class="change-note"><strong>Fix:</strong> Warm palette correction: bg-black to bg-dark-500, gradient #000 to #1C1B19. Add overflow-x-clip.</div>
+  </div>
+
+  <!-- 07 SocialProof -->
+  <div class="screen" id="s07">
+    <div class="screen-header">
+      <h3>07 SocialProof</h3>
+      <span class="tag">Scroll Affordance</span>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-content">
+        <div style="display:flex;gap:8px;overflow:hidden;">
+          <div class="box highlight" style="min-width:200px;">
+            <div style="font-size:10px;">Card 1 — w-[78vw]</div>
+            <div style="font-size:10px;color:var(--warm-300);">was: w-[85vw]</div>
+          </div>
+          <div class="box" style="min-width:50px;opacity:0.5;">
+            <div style="font-size:10px;">Peek</div>
+          </div>
+        </div>
+        <div class="dot-row">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+    <div class="change-note"><strong>Fix:</strong> Card width w-[78vw] for peek effect. Scroll indicator dots below carousel (mobile only).</div>
+  </div>
+
+  <!-- 08 Footer -->
+  <div class="screen" id="s08">
+    <div class="screen-header">
+      <h3>08 Footer</h3>
+      <span class="tag">Link Layout</span>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-content">
+        <div class="box">Logo + brand description</div>
+        <div class="box-row">
+          <div class="box highlight">
+            <div style="font-size:10px;">PRODUTO</div>
+            <div style="font-size:9px;color:var(--warm-300);">4 links</div>
+          </div>
+          <div class="box highlight">
+            <div style="font-size:10px;">RECURSOS</div>
+            <div style="font-size:9px;color:var(--warm-300);">2 links</div>
+          </div>
+        </div>
+        <div class="box">LEGAL — full width</div>
+      </div>
+    </div>
+    <div class="change-note"><strong>Fix:</strong> 2-col grid for Produto + Recursos on mobile. Legal spans full width below. px-6, pt-20.</div>
+  </div>
+
+  <!-- 09 YieldSection -->
+  <div class="screen" id="s09">
+    <div class="screen-header">
+      <h3>09 YieldSection</h3>
+      <span class="tag">Image + Padding</span>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-content">
+        <div class="box highlight">
+          <div style="font-size:10px;">Card p-6 (was p-8)</div>
+        </div>
+        <div class="box">
+          <div style="font-size:10px;">Pool rows: min-h-[44px]</div>
+        </div>
+        <div class="box">
+          <div style="font-size:10px;">Image object-position check</div>
+        </div>
+      </div>
+    </div>
+    <div class="change-note"><strong>Fix:</strong> Card padding p-6 sm:p-8. Pool row touch targets 44px. Object-position for coin image.</div>
+  </div>
+
+  <!-- 10 BorrowCredit -->
+  <div class="screen" id="s10">
+    <div class="screen-header">
+      <h3>10 BorrowCredit</h3>
+      <span class="tag">Card Padding</span>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-content">
+        <div class="box highlight">
+          <div style="font-size:10px;">Card p-5 (was p-8)</div>
+          <div style="font-size:10px;color:var(--warm-300);">Content: ~220px at 320px</div>
+        </div>
+      </div>
+    </div>
+    <div class="change-note"><strong>Fix:</strong> Card padding p-5 sm:p-8. Gives ~220px content width at 320px (6-7 words/line).</div>
+  </div>
+
+  <!-- 11 Security -->
+  <div class="screen" id="s11">
+    <div class="screen-header">
+      <h3>11 Security</h3>
+      <span class="tag">Spacing Rhythm</span>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-content">
+        <div class="box" style="padding:8px 12px;"><span style="font-size:10px;">01 Biometric</span></div>
+        <div class="box" style="padding:8px 12px;"><span style="font-size:10px;">02 MPC Keys</span></div>
+        <div style="border-top:1px dashed var(--yellow-500);margin:12px 0;opacity:0.3;"></div>
+        <div class="box" style="padding:8px 12px;"><span style="font-size:10px;">03 Insurance</span></div>
+        <div class="box" style="padding:8px 12px;"><span style="font-size:10px;">04 Audited</span></div>
+      </div>
+    </div>
+    <div class="change-note"><strong>Fix:</strong> Compact cards p-5 sm:p-8. Visual break between cards 2-3 for rhythm. Icon h-9 on mobile.</div>
+  </div>
+
+  <!-- 12 CTASection -->
+  <div class="screen" id="s12">
+    <div class="screen-header">
+      <h3>12 CTASection</h3>
+      <span class="tag">Spacing</span>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-content" style="text-align:center;">
+        <div class="box" style="height:40px;">
+          <span style="font-size:10px;">Top fade h-[140px] (was 280px)</span>
+        </div>
+        <div style="font-size:14px;font-weight:600;margin:16px 0;">CTA Headline</div>
+        <div class="box highlight" style="text-align:center;">
+          <div style="font-size:10px;">Button — w-full on mobile</div>
+        </div>
+        <div class="box" style="height:40px;margin-top:8px;">
+          <span style="font-size:10px;">Bottom fade h-[160px] (was 320px)</span>
+        </div>
+      </div>
+    </div>
+    <div class="change-note"><strong>Fix:</strong> Reduced fade heights on mobile. Buttons stack vertically. px-6, py-20.</div>
+  </div>
+
+  <!-- 13 Global Padding -->
+  <div class="screen" id="s13">
+    <div class="screen-header">
+      <h3>13 Global Padding</h3>
+      <span class="tag">Cross-cutting</span>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-content">
+        <div class="box highlight" style="display:flex;justify-content:space-between;">
+          <span style="font-size:10px;">px-6 (24px)</span>
+          <span style="font-size:10px;color:var(--warm-300);">was: px-4 (16px)</span>
+        </div>
+        <div class="box highlight" style="display:flex;justify-content:space-between;margin-top:4px;">
+          <span style="font-size:10px;">py-20 (80px)</span>
+          <span style="font-size:10px;color:var(--warm-300);">was: py-32 (128px)</span>
+        </div>
+        <div style="font-size:10px;color:var(--warm-300);margin-top:12px;text-align:center;">
+          Applied to all 12 sections
+        </div>
+      </div>
+    </div>
+    <div class="change-note"><strong>Fix:</strong> All sections: px-4 to px-6, py-32 to py-20 md:py-32 lg:py-44. Brand system alignment.</div>
+  </div>
+
+</main>
+</body>
+</html>

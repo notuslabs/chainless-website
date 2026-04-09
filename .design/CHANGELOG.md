@@ -3,6 +3,15 @@
 
 <!-- newest first -->
 
+## [chainless-mobile] — 2026-04-08
+> Brand: chainless | Scope: Mobile responsiveness audit fixes (320-640px)
+
+**Added:** Skip navigation link (layout.tsx), SocialProof scroll indicator dots
+**Modified:** navbar.tsx, hero.tsx, proof-bar.tsx, philosophy.tsx, editorial-break.tsx, spend-credit.tsx, social-proof.tsx, footer.tsx, yield-section.tsx, borrow-credit.tsx, security.tsx, cta-section.tsx, layout.tsx, page.tsx
+**Patterns:** Responsive padding (px-6), 3-tier vertical rhythm (py-20/md:py-32/lg:py-44), mobile card padding progression, 44px touch targets
+**PR:** --
+**Files:** 14 files touched -> [manifest](./projects/chainless-mobile/codebase/MANIFEST.md)
+
 ## [chainless-system] — 2026-04-07
 > Brand: chainless | Scope: Design system QA review + Security section + Transparency page
 
