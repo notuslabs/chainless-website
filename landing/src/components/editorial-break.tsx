@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { useScroll } from "framer-motion";
+import { useScroll, useReducedMotion } from "framer-motion";
 import { useDictionary } from "./dictionary-provider";
 
 const TOTAL_FRAMES = 121;
@@ -51,6 +51,7 @@ function useFrameSequence(total: number) {
 export function EditorialBreak() {
   const { dict } = useDictionary();
   const t = dict.editorial;
+  const shouldReduceMotion = useReducedMotion();
 
   const couplet1: Line[] = t.couplet1;
   const couplet2: Line[] = t.couplet2;
@@ -61,7 +62,7 @@ export function EditorialBreak() {
   const couplet1Ref = useRef<HTMLDivElement>(null);
   const couplet2Ref = useRef<HTMLDivElement>(null);
   const currentFrameRef = useRef(-1);
-  const frames = useFrameSequence(TOTAL_FRAMES);
+  const frames = useFrameSequence(shouldReduceMotion ? 0 : TOTAL_FRAMES);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -88,8 +89,8 @@ export function EditorialBreak() {
 
     /* Draw a frame centered/cropped like object-fit: cover */
     function drawCover(img: HTMLImageElement) {
-      const cw = canvas.width;
-      const ch = canvas.height;
+      const cw = canvas!.width;
+      const ch = canvas!.height;
       const iw = img.naturalWidth;
       const ih = img.naturalHeight;
       const scale = Math.max(cw / iw, ch / ih);
@@ -97,7 +98,7 @@ export function EditorialBreak() {
       const sh = ih * scale;
       const sx = (cw - sw) / 2;
       const sy = (ch - sh) / 2;
-      ctx.drawImage(img, sx, sy, sw, sh);
+      ctx!.drawImage(img, sx, sy, sw, sh);
     }
 
     if (frames.length > 0) {
@@ -170,53 +171,72 @@ export function EditorialBreak() {
     <section
       ref={sectionRef}
       aria-label={t.ariaLabel}
-      className="relative h-[320vh]"
+      className={shouldReduceMotion ? "relative" : "relative h-[320vh]"}
     >
-      {/* Sticky viewport — pinned for 200vh of scroll travel */}
-      <div className="sticky top-0 h-[100dvh] overflow-hidden">
-        {/* Canvas frame scrubber — zero decode latency */}
-        <canvas
-          ref={canvasRef}
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-          style={{ filter: "saturate(0.8) sepia(0.06)" }}
-        />
+      {shouldReduceMotion ? (
+        /* Reduced motion: static layout, both couplets visible, no scroll hijack */
+        <div className="bg-dark-950 px-6 py-32">
+          <div className="mx-auto max-w-4xl space-y-12 text-center">
+            <div className="mx-auto h-px w-16 bg-yellow-500/40" aria-hidden="true" />
+            <div>
+              {couplet1.map((line: Line, i: number) => (
+                <CoupletLine key={i} line={line} />
+              ))}
+            </div>
+            <div>
+              {couplet2.map((line: Line, i: number) => (
+                <CoupletLine key={i} line={line} />
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : (
+        /* Sticky viewport — pinned for 200vh of scroll travel */
+        <div className="sticky top-0 h-[100dvh] overflow-hidden">
+          {/* Canvas frame scrubber — zero decode latency */}
+          <canvas
+            ref={canvasRef}
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+            style={{ filter: "saturate(0.8) sepia(0.06)" }}
+          />
 
-        {/* Scroll-driven dark overlay — starts near-black, reveals video as you scroll */}
-        <div ref={overlayRef} className="absolute inset-0 bg-dark-950" style={{ opacity: 0.98 }} />
+          {/* Scroll-driven dark overlay — starts near-black, reveals video as you scroll */}
+          <div ref={overlayRef} className="absolute inset-0 bg-dark-950" style={{ opacity: 0.98 }} />
 
-        {/* Edge blending — dissolve hard edges into adjacent sections */}
-        <div
-          className="pointer-events-none absolute inset-x-0 top-0 z-10 h-32"
-          style={{ background: "linear-gradient(to bottom, #1C1B19, transparent)" }}
-        />
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-32"
-          style={{ background: "linear-gradient(to top, #1C1B19, transparent)" }}
-        />
+          {/* Edge blending — dissolve hard edges into adjacent sections */}
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 z-10 h-32"
+            style={{ background: "linear-gradient(to bottom, #1C1B19, transparent)" }}
+          />
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-32"
+            style={{ background: "linear-gradient(to top, #1C1B19, transparent)" }}
+          />
 
-        {/* Crossfading couplets — same position, ref-driven for precise control */}
-        <div className="relative flex h-full items-center justify-center px-6">
-          <div className="relative max-w-4xl text-center">
-            {/* Gold hairline */}
-            <div className="mx-auto mb-10 h-px w-16 bg-yellow-500/40" aria-hidden="true" />
+          {/* Crossfading couplets — same position, ref-driven for precise control */}
+          <div className="relative flex h-full items-center justify-center px-6">
+            <div className="relative max-w-4xl text-center">
+              {/* Gold hairline */}
+              <div className="mx-auto mb-10 h-px w-16 bg-yellow-500/40" aria-hidden="true" />
 
-            {/* Couplet container — both occupy the same space */}
-            <div className="relative">
-              <div ref={couplet1Ref} style={{ opacity: 1 }}>
-                {couplet1.map((line: Line, i: number) => (
-                  <CoupletLine key={i} line={line} />
-                ))}
-              </div>
-              <div ref={couplet2Ref} className="absolute inset-0 flex items-center justify-center" style={{ opacity: 0, visibility: "hidden" }}>
-                {couplet2.map((line: Line, i: number) => (
-                  <CoupletLine key={i} line={line} />
-                ))}
+              {/* Couplet container — both occupy the same space */}
+              <div className="relative">
+                <div ref={couplet1Ref} style={{ opacity: 1 }}>
+                  {couplet1.map((line: Line, i: number) => (
+                    <CoupletLine key={i} line={line} />
+                  ))}
+                </div>
+                <div ref={couplet2Ref} className="absolute inset-0 flex items-center justify-center" style={{ opacity: 0, visibility: "hidden" }}>
+                  {couplet2.map((line: Line, i: number) => (
+                    <CoupletLine key={i} line={line} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }

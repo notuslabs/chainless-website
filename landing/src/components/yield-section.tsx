@@ -11,6 +11,7 @@ import {
 } from "./motion";
 import { DoppelrandCard } from "./doppelrand-card";
 import { Eyebrow } from "./eyebrow";
+import { useDictionary } from "./dictionary-provider";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -99,6 +100,7 @@ const PoolTicker = memo(function PoolTicker({
   pool: Pool;
   index: number;
 }) {
+  const { locale } = useDictionary();
   const shouldReduceMotion = useReducedMotion();
   const [value, setValue] = useState(pool.apy);
 
@@ -173,7 +175,7 @@ const PoolTicker = memo(function PoolTicker({
             isTopPool ? "text-yellow-500" : "text-text-primary/75"
           }`}
           aria-live="off"
-          aria-label={`${value.toFixed(1)} porcento ao ano`}
+          aria-label={`${value.toFixed(1)} ${locale === "pt" ? "porcento ao ano" : "percent per year"}`}
         >
           {value.toFixed(1)}%
         </span>
@@ -190,11 +192,14 @@ const PoolTicker = memo(function PoolTicker({
  * ═════════════════════════════════════════════════════════ */
 
 export function YieldSection() {
+  const { dict } = useDictionary();
+  const t = dict.yield;
+
   return (
     <section
       id="rendimentos"
       aria-labelledby="yield-heading"
-      className="relative bg-dark-500 px-4 py-32 md:py-44"
+      className="relative bg-dark-500 px-6 py-20 md:py-32 lg:py-44"
     >
       {/* Atmospheric glows */}
       <div
@@ -211,28 +216,27 @@ export function YieldSection() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <FadeUp>
-              <Eyebrow className="mb-5">Rendimentos</Eyebrow>
+              <Eyebrow className="mb-5">{t.eyebrow}</Eyebrow>
             </FadeUp>
             <FadeUp delay={0.1}>
               <h2
                 id="yield-heading"
                 className="max-w-[500px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.02em] text-text-primary"
               >
-                Seu patrimônio. Seus rendimentos.
+                {t.heading}
               </h2>
             </FadeUp>
           </div>
           <FadeUp delay={0.2}>
             <p className="max-w-[320px] text-small leading-[1.7] text-warm-300/60 md:text-right">
-              De stablecoins em dólar a pools de liquidez. Cada rendimento sob
-              sua custódia, cada protocolo auditado.
+              {t.subtitle}
             </p>
           </FadeUp>
         </div>
 
-        {/* ── Product cards — PROTEGER + CRESCER ── */}
+        {/* ── Product cards — PROTECT + GROW ── */}
         <StaggerContainer className="mt-20 grid gap-5 md:grid-cols-12 md:gap-6">
-          {/* ▸ PROTEGER — 5 cols, Kling Bitcoin coin background */}
+          {/* ▸ PROTECT — 5 cols, Kling Bitcoin coin background */}
           <StaggerItem className="md:col-span-5">
             <DoppelrandCard
               className="h-full"
@@ -268,16 +272,16 @@ export function YieldSection() {
               />
 
               {/* Content — above image */}
-              <div className="relative z-[1] flex h-full flex-col p-8 md:p-10">
-                <span className="mb-6 text-xs uppercase tracking-[0.2em] text-yellow-500/80">
-                  Proteger
+              <div className="relative z-[1] flex h-full flex-col p-6 sm:p-8 md:p-10">
+                <span className="mb-8 text-xs uppercase tracking-[0.2em] text-yellow-500/80">
+                  {t.protect.label}
                 </span>
 
-                <h3 className="mb-6 font-serif text-xl font-normal leading-[1.15] tracking-[-0.01em] text-text-primary md:text-2xl">
-                  150+ ativos digitais. Sob seu controle absoluto.
+                <h3 className="mb-8 font-serif text-xl font-normal leading-[1.15] tracking-[-0.01em] text-text-primary md:text-2xl">
+                  {t.protect.title}
                 </h3>
 
-                <ul className="space-y-4">
+                <ul className="space-y-5">
                   {/* Token row — with official crypto logos */}
                   <li className="flex items-start gap-3 text-sm leading-relaxed text-warm-300/70">
                     <div className="mt-0.5 flex shrink-0 -space-x-1.5">
@@ -286,7 +290,7 @@ export function YieldSection() {
                       <TokenIcon token="SOL" size={20} />
                     </div>
                     <span>
-                      Bitcoin, Ethereum, Solana e tokens globais
+                      {t.protect.tokens}
                     </span>
                   </li>
                   <li className="flex items-start gap-3 text-sm leading-relaxed text-warm-300/70">
@@ -294,19 +298,19 @@ export function YieldSection() {
                       className="mt-2 h-1 w-1 shrink-0 rounded-full bg-yellow-500/40"
                       aria-hidden="true"
                     />
-                    Ouro tokenizado, metal precioso sem custódia física
+                    {t.protect.gold}
                   </li>
                   <li className="flex items-start gap-3 text-sm leading-relaxed text-warm-300/70">
                     <span
                       className="mt-2 h-1 w-1 shrink-0 rounded-full bg-yellow-500/40"
                       aria-hidden="true"
                     />
-                    Chaves geradas no seu dispositivo. Sempre.
+                    {t.protect.keys}
                   </li>
                 </ul>
 
                 {/* Bottom accent hairline */}
-                <div className="mt-auto pt-8">
+                <div className="mt-auto pt-10">
                   <motion.div
                     className="h-px w-16 bg-gradient-to-r from-yellow-500/25 to-transparent"
                     initial={{ scaleX: 0 }}
@@ -324,25 +328,24 @@ export function YieldSection() {
             </DoppelrandCard>
           </StaggerItem>
 
-          {/* ▸ CRESCER — 7 cols, live pools with official token logos */}
+          {/* ▸ GROW — 7 cols, live pools with official token logos */}
           <StaggerItem className="md:col-span-7">
             <DoppelrandCard
               className="h-full"
-              innerClassName="flex h-full flex-col p-8 md:p-10"
+              innerClassName="flex h-full flex-col p-6 sm:p-8 md:p-10"
               variant="light"
               gradientAngle={155}
             >
               <span className="mb-6 text-xs uppercase tracking-[0.2em] text-yellow-500">
-                Crescer
+                {t.grow.label}
               </span>
 
               <h3 className="mb-3 font-serif text-xl font-normal leading-[1.15] tracking-[-0.01em] text-text-primary md:text-2xl">
-                Acesse rendimento DeFi.
+                {t.grow.title}
               </h3>
 
               <p className="mb-8 max-w-[44ch] text-sm leading-relaxed text-warm-300/60">
-                Protocolos auditados, retornos transparentes. Em poucos
-                cliques, direto da sua carteira.
+                {t.grow.description}
               </p>
 
               {/* ── Live pool list ── */}
@@ -355,11 +358,11 @@ export function YieldSection() {
               >
                 <div className="mb-4">
                   <span className="text-caption uppercase tracking-wider text-warm-400/50">
-                    Pools ativos
+                    {t.grow.activePools}
                   </span>
                 </div>
 
-                <div aria-label="Pools de liquidez com rendimentos ao vivo">
+                <div aria-label={t.grow.poolsAriaLabel}>
                   {pools.map((pool, i) => (
                     <PoolTicker
                       key={pool.pair.join("-")}
@@ -372,9 +375,7 @@ export function YieldSection() {
 
               {/* Disclaimer */}
               <p className="mt-5 text-caption leading-relaxed text-warm-400/40">
-                Valores meramente ilustrativos, baseados em desempenho
-                passado de smart contracts. Não constituem promessa de
-                rendimento. Estimativas atualizadas disponíveis no app.
+                {t.grow.disclaimer}
               </p>
             </DoppelrandCard>
           </StaggerItem>

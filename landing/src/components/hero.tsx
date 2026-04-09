@@ -3,10 +3,14 @@
 import { motion } from "framer-motion";
 import { FadeUp, TextReveal, EASE_PREMIUM } from "./motion";
 import { MeshGradient } from "./mesh-gradient";
+import { useDictionary } from "./dictionary-provider";
 
 export function Hero() {
+  const { dict } = useDictionary();
+  const t = dict.hero;
+
   return (
-    <section className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden bg-dark-500 px-4 py-32 md:px-0">
+    <section className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden bg-dark-500 py-20 md:py-32">
       {/* Animated mesh gradient — sits behind video, ambient accent */}
       <MeshGradient />
 
@@ -46,7 +50,7 @@ export function Hero() {
       />
 
       {/* Content — text floats directly, no container */}
-      <div className="relative z-10 mx-auto w-full max-w-[var(--container-content)] px-4 md:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-[var(--container-content)] px-6 md:px-8">
         <div className="max-w-[600px]">
 
           {/* Headline — Lora, massive, left-aligned */}
@@ -60,7 +64,7 @@ export function Hero() {
               }}
             >
               <TextReveal delay={0.3}>
-                Torne-se Chainless
+                {t.headline}
               </TextReveal>
             </h1>
           </FadeUp>
@@ -74,7 +78,7 @@ export function Hero() {
                   "0 1px 16px rgba(10,9,8,0.9), 0 2px 40px rgba(10,9,8,0.6)",
               }}
             >
-              Cresça seu patrimônio com total controle.
+              {t.subheadline}
             </p>
           </FadeUp>
 
@@ -83,7 +87,7 @@ export function Hero() {
               {/* App Store */}
               <motion.a
                 href="#"
-                aria-label="Baixar na App Store"
+                aria-label={t.appStoreLabel}
                 className="doppelrand-hallmark-narrow group relative inline-flex items-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97]"
                 initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -106,7 +110,7 @@ export function Hero() {
                   <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                 </svg>
                 <div className="relative flex flex-col">
-                  <span className="text-xs font-medium leading-none tracking-wide text-white/70">Disponível na</span>
+                  <span className="text-xs font-medium leading-none tracking-wide text-white/70">{t.availableOn}</span>
                   <span className="text-base font-semibold leading-tight text-text-primary drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">App Store</span>
                 </div>
               </motion.a>
@@ -114,7 +118,7 @@ export function Hero() {
               {/* Google Play */}
               <motion.a
                 href="#"
-                aria-label="Baixar no Google Play"
+                aria-label={t.googlePlayLabel}
                 className="doppelrand-hallmark-narrow group relative inline-flex items-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97]"
                 initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -137,7 +141,7 @@ export function Hero() {
                   <path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm.46-.374L14.5 7.5l-2.5 2.5L4.07 1.44zM14.5 16.5L4.07 22.56 12 14.5l2.5 2zm.5-.5l5.4-3.06c.36-.2.6-.56.6-.94s-.24-.74-.6-.94L15 8l-3 4 3 4z"/>
                 </svg>
                 <div className="relative flex flex-col">
-                  <span className="text-xs font-medium leading-none tracking-wide text-white/70">Disponível no</span>
+                  <span className="text-xs font-medium leading-none tracking-wide text-white/70">{t.availableAt}</span>
                   <span className="text-base font-semibold leading-tight text-text-primary drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">Google Play</span>
                 </div>
               </motion.a>
@@ -152,13 +156,13 @@ export function Hero() {
               }}
             >
               <span className="flex items-center gap-2">
-                <span className="text-lg font-semibold tabular-nums text-yellow-500/90">150+</span>
-                <span className="text-sm font-medium tracking-wide text-white/70">ativos digitais</span>
+                <span className="text-lg font-semibold tabular-nums text-yellow-500/90">{t.trustAssets}</span>
+                <span className="text-sm font-medium tracking-wide text-white/70">{t.trustAssetsLabel}</span>
               </span>
               <span className="h-4 w-px bg-white/20" />
               <span className="flex items-center gap-2">
-                <span className="text-lg font-semibold tabular-nums text-yellow-500/90">Até 60%</span>
-                <span className="text-sm font-medium tracking-wide text-white/70">APY em DeFi</span>
+                <span className="text-lg font-semibold tabular-nums text-yellow-500/90">{t.trustApy}</span>
+                <span className="text-sm font-medium tracking-wide text-white/70">{t.trustApyLabel}</span>
               </span>
             </div>
           </FadeUp>

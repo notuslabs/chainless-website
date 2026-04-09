@@ -5,33 +5,22 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { FadeUp, StaggerContainer, StaggerItem } from "./motion";
 import { Eyebrow } from "./eyebrow";
 import { DoppelrandCard } from "./doppelrand-card";
+import { useDictionary } from "./dictionary-provider";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-const testimonials = [
+const testimonialMeta = [
   {
-    quote:
-      "Tem várias soluções boas de privacidade além de BTC na LN. Chainless você paga no Pix e adquire stables que circulam fora do controle. Zero de custo na aquisição.",
-    name: "Renato Amoedo",
-    title: "Perito Criminal, Polícia Técnica da Bahia",
     initials: "RA",
     photo: `${BASE}/testimonial-renato.jpg`,
     gradient: "from-yellow-600/40 to-amber-900/60",
   },
   {
-    quote:
-      "Privacidade, autocustódia e facilidade de uso. A Chainless entrega os três sem compromisso.",
-    name: "Mychel Mendes",
-    title: "Contador Especializado em Crypto",
     initials: "MM",
     photo: `${BASE}/testimonial-mychel.jpg`,
     gradient: "from-warm-600/40 to-warm-800/60",
   },
   {
-    quote:
-      "Pools de liquidez com a facilidade que faltava. Finalmente DeFi acessível sem abrir mão do controle.",
-    name: "Ramon Cunha",
-    title: "Investidor Cripto & Educador DeFi",
     initials: "RC",
     photo: `${BASE}/testimonial-ramon.jpg`,
     gradient: "from-yellow-700/30 to-warm-700/50",
@@ -99,11 +88,13 @@ function PingPongVideo({ src, className }: { src: string; className?: string }) 
 function Avatar({
   src,
   initials,
+  alt,
   gradient,
   size = 96,
 }: {
   src: string;
   initials: string;
+  alt?: string;
   gradient: string;
   size?: number;
 }) {
@@ -125,7 +116,7 @@ function Avatar({
         {!failed ? (
           <Image
             src={src}
-            alt={`Foto de ${initials}`}
+            alt={alt || `Foto de ${initials}`}
             fill
             className="object-cover object-top"
             sizes={`${size}px`}
@@ -148,8 +139,39 @@ function Avatar({
 }
 
 export function SocialProof() {
+  const { dict } = useDictionary();
+  const s = dict.socialProof;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const testimonials = s.testimonials.map((t: any, i: number) => ({
+    ...t,
+    ...testimonialMeta[i],
+  }));
+
+  /* Scroll indicator dots — IntersectionObserver with threshold 0.6 (critique fix #3) */
+  useEffect(() => {
+    const cards = cardRefs.current.filter(Boolean) as HTMLDivElement[];
+    if (cards.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = cards.indexOf(entry.target as HTMLDivElement);
+            if (index !== -1) setActiveIndex(index);
+          }
+        });
+      },
+      { threshold: 0.6, rootMargin: "0px -10% 0px -10%" }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, [testimonials.length]);
+
   return (
-    <section className="relative overflow-hidden bg-dark-600 px-4 py-32 md:py-44">
+    <section className="relative overflow-hidden bg-dark-600 px-6 py-20 md:py-32 lg:py-44">
       {/* ── Blurred video background — atmospheric depth ── */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <PingPongVideo
@@ -181,32 +203,32 @@ export function SocialProof() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <FadeUp>
-              <Eyebrow className="mb-5">Depoimentos</Eyebrow>
+              <Eyebrow className="mb-5">{s.eyebrow}</Eyebrow>
             </FadeUp>
             <FadeUp delay={0.1}>
               <h2 className="max-w-[450px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.02em] text-text-primary">
-                Quem já é Chainless.
+                {s.heading}
               </h2>
             </FadeUp>
           </div>
           <FadeUp delay={0.2}>
             <p className="max-w-[300px] text-small leading-[1.7] text-warm-300/70 md:text-right">
-              Pessoas que escolheram controle absoluto sobre seu patrimônio
-              digital.
+              {s.subtitle}
             </p>
           </FadeUp>
         </div>
 
         {/* ── Testimonial cards — 3 equal columns desktop, horizontal scroll mobile ── */}
-        <StaggerContainer className="-mx-4 mt-20 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0">
-          {testimonials.map((t, i) => (
+        <StaggerContainer aria-label={s.carouselLabel || "Depoimentos de clientes"} className="-mx-6 mt-16 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden sm:-mx-4 sm:mt-20 sm:px-4 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0">
+          {testimonials.map((t: any, i: number) => (
             <StaggerItem
               key={t.name}
-              className="w-[85vw] shrink-0 snap-start md:w-auto"
+              className="w-[78vw] shrink-0 snap-start self-stretch sm:w-[85vw] md:w-auto"
             >
+              <div ref={(el: HTMLDivElement | null) => { cardRefs.current[i] = el; }} className="h-full" role="group" aria-label={`${t.name}, ${t.title}`}>
               <DoppelrandCard
                 className="h-full backdrop-blur-sm"
-                innerClassName="flex h-full flex-col p-8 md:p-10"
+                innerClassName="flex h-full flex-col p-6 sm:p-8 md:p-10"
                 variant={i === 0 ? "default" : "light"}
                 gradientAngle={i === 0 ? 165 : 155}
               >
@@ -223,16 +245,15 @@ export function SocialProof() {
                   <Avatar
                     src={t.photo}
                     initials={t.initials}
+                    alt={`${t.name}, ${t.title}`}
                     gradient={t.gradient}
-                    size={i === 0 ? 104 : 88}
+                    size={88}
                   />
                 </div>
 
                 {/* ── Quote ── */}
                 <blockquote
-                  className={`pull-quote flex-1 font-normal italic leading-[1.6] text-text-primary/90 ${
-                    i === 0 ? "text-lg md:text-xl" : "text-base md:text-lg"
-                  }`}
+                  className="pull-quote flex-1 text-base font-normal italic leading-[1.6] text-text-primary/90 md:text-lg"
                 >
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
@@ -247,9 +268,24 @@ export function SocialProof() {
                   </p>
                 </div>
               </DoppelrandCard>
+              </div>
             </StaggerItem>
           ))}
         </StaggerContainer>
+
+        {/* ── Scroll indicator dots — mobile only ── */}
+        <div className="mt-6 flex justify-center gap-2 sm:hidden" aria-hidden="true">
+          {testimonials.map((_: any, i: number) => (
+            <div
+              key={i}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === activeIndex
+                  ? "w-6 bg-yellow-500/60"
+                  : "w-1.5 bg-warm-500/30"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

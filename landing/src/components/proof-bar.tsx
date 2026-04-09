@@ -2,42 +2,46 @@
 
 import { FadeUp } from "./motion";
 import { AnimatedCounter } from "./animated-counter";
-
-const proof = [
-  {
-    numericValue: 30000,
-    prefix: "",
-    suffix: "+",
-    displayValue: "30.000+",
-    label: "carteiras soberanas",
-  },
-  {
-    numericValue: 300,
-    prefix: "R$",
-    suffix: "M+",
-    displayValue: "R$300M+",
-    label: "movimentados",
-  },
-  {
-    numericValue: 100,
-    prefix: "",
-    suffix: "%",
-    displayValue: "100%",
-    label: "autocustódia",
-  },
-];
+import { useDictionary } from "./dictionary-provider";
 
 export function ProofBar() {
+  const { dict } = useDictionary();
+  const t = dict.proofBar;
+
+  const proof = [
+    {
+      numericValue: 30000,
+      prefix: "",
+      suffix: "+",
+      displayValue: "30.000+",
+      label: t.wallets,
+    },
+    {
+      numericValue: 300,
+      prefix: t.volumePrefix,
+      suffix: "M+",
+      displayValue: `${t.volumePrefix}300M+`,
+      label: t.volume,
+    },
+    {
+      numericValue: 100,
+      prefix: "",
+      suffix: "%",
+      displayValue: "100%",
+      label: t.custody,
+    },
+  ];
+
   return (
     <section
-      aria-label="Métricas da plataforma"
+      aria-label={t.ariaLabel}
       className="relative bg-dark-500"
     >
       {/* Full-width hairlines */}
       <div className="absolute inset-x-0 top-0 h-px bg-warm-700/15" aria-hidden="true" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-warm-700/15" aria-hidden="true" />
 
-      <div className="mx-auto max-w-[var(--container-content)] px-4 md:px-8">
+      <div className="mx-auto max-w-[var(--container-content)] px-6 md:px-8">
         <FadeUp>
           <dl className="grid grid-cols-3 py-7 md:py-9">
             {proof.map((item, i) => (

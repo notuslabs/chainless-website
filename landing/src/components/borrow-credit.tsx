@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FadeUp, StaggerContainer, StaggerItem, EASE_PREMIUM } from "./motion";
 import { DoppelrandCard } from "./doppelrand-card";
+import { useDictionary } from "./dictionary-provider";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -11,7 +12,7 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
  * StatusBadge — "Em breve" pulse indicator
  * ───────────────────────────────────────────────────────── */
 
-function StatusBadge() {
+function StatusBadge({ label }: { label: string }) {
   return (
     <span
       role="status"
@@ -21,7 +22,7 @@ function StatusBadge() {
         className="h-2 w-2 animate-pulse rounded-full bg-yellow-500"
         aria-hidden="true"
       />
-      Em breve
+      {label}
     </span>
   );
 }
@@ -78,11 +79,14 @@ const STEPS = [
  * ═════════════════════════════════════════════════════════ */
 
 export function BorrowCredit() {
+  const { dict } = useDictionary();
+  const t = dict.borrow;
+
   return (
     <section
       id="credito"
       aria-labelledby="credit-heading"
-      className="relative bg-dark-600 px-4 py-32 md:py-44"
+      className="relative bg-dark-600 px-6 py-20 md:py-32 lg:py-44"
     >
       {/* Atmospheric glows */}
       <div
@@ -99,32 +103,33 @@ export function BorrowCredit() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <FadeUp>
-              <StatusBadge />
+              <StatusBadge label={t.comingSoon} />
             </FadeUp>
             <FadeUp delay={0.1}>
               <h2
                 id="credit-heading"
                 className="mt-8 max-w-[520px] font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.02em] text-text-primary"
               >
-                Receba dólares sem vender seu Bitcoin.
+                {t.heading}
               </h2>
             </FadeUp>
           </div>
           <FadeUp delay={0.2}>
             <p className="max-w-[320px] text-small leading-[1.7] text-warm-300/70 md:text-right">
-              Deposite BTC como garantia e receba crédito em USDC a 3,5% ao
-              ano, sem prazo fixo.
+              {t.subtitle}
             </p>
           </FadeUp>
         </div>
 
         {/* ── Three-step story cards ── */}
         <StaggerContainer className="mt-20 grid gap-5 md:grid-cols-3 md:gap-6">
-          {STEPS.map((step, i) => (
+          {STEPS.map((step, i) => {
+            const stepT = t.steps[i];
+            return (
             <StaggerItem key={step.number}>
               <DoppelrandCard
                 className="h-full"
-                innerClassName="flex h-full flex-col p-8 md:p-10"
+                innerClassName="flex h-full flex-col p-5 sm:p-8 md:p-10"
                 gradientAngle={165}
               >
                 {/* Ghost number watermark */}
@@ -137,7 +142,7 @@ export function BorrowCredit() {
 
                 {/* Step label */}
                 <span className="mb-8 text-caption uppercase tracking-[0.2em] text-yellow-500/70">
-                  {step.label}
+                  {stepT.label}
                 </span>
 
                 {/* Token identity */}
@@ -155,7 +160,7 @@ export function BorrowCredit() {
                       {step.tokenName}
                     </span>
                     <span className="mt-0.5 block text-sm tracking-wider text-warm-300/60">
-                      {step.tokenTicker}
+                      {stepT.tokenTicker}
                     </span>
                   </div>
                 </div>
@@ -171,9 +176,9 @@ export function BorrowCredit() {
                   >
                     {step.metric}
                   </span>
-                  {step.subMetric && (
+                  {stepT.subMetric && (
                     <span className="mt-1 block text-sm text-warm-300/60">
-                      {step.subMetric}
+                      {stepT.subMetric}
                     </span>
                   )}
                   {step.badge && (
@@ -199,20 +204,18 @@ export function BorrowCredit() {
 
                 {/* Description */}
                 <p className="mt-4 text-sm leading-relaxed text-warm-300/70">
-                  {step.description}
+                  {stepT.description}
                 </p>
               </DoppelrandCard>
             </StaggerItem>
-          ))}
+            );
+          })}
         </StaggerContainer>
 
         {/* ── Legal disclaimer ── */}
         <FadeUp delay={0.5}>
           <p className="mt-10 max-w-[680px] text-caption leading-relaxed text-warm-400/40">
-            Valores meramente ilustrativos. A taxa de 3,5% a.a. e a
-            valorização de +2,4% são estimativas baseadas em desempenho
-            passado e condições de mercado. Não constituem promessa nem
-            garantia de resultado. Dados atualizados disponíveis no app.
+            {t.disclaimer}
           </p>
         </FadeUp>
       </div>

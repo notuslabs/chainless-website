@@ -2,19 +2,17 @@
 
 import { FadeUp } from "./motion";
 import { Eyebrow } from "./eyebrow";
-
-const cardBenefits = [
-  "1 USDC = 1 USD no exterior",
-  "Até 5% cashback em compras",
-  "Pix via BRZ no Brasil",
-];
+import { useDictionary } from "./dictionary-provider";
 
 export function SpendCredit() {
+  const { dict } = useDictionary();
+  const t = dict.spend;
+
   return (
     <section
       id="cartao"
       aria-labelledby="spend-heading"
-      className="relative bg-black px-4 py-32 md:py-44"
+      className="relative overflow-x-clip bg-black px-6 py-20 md:py-32 lg:py-44"
     >
       {/* Warm yellow atmospheric glows — left side, away from video */}
       <div
@@ -33,30 +31,29 @@ export function SpendCredit() {
           {/* Left: Copy column */}
           <FadeUp className="lg:col-span-5">
             {/* Eyebrow */}
-            <Eyebrow className="mb-5">Cartão Chainless</Eyebrow>
+            <Eyebrow className="mb-5">{t.eyebrow}</Eyebrow>
 
             <h2
               id="spend-heading"
               className="font-serif text-[length:var(--text-section-heading)] font-normal leading-[1.06] tracking-[-0.02em] text-text-primary"
             >
-              Compre dólares sem IOF e gaste globalmente.
+              {t.heading}
             </h2>
 
             <p className="mt-6 max-w-[48ch] text-small leading-[1.7] text-warm-300/70">
-              USDC ao câmbio real, sem spread oculto. Após a conversão, os
-              ativos são seus. Na blockchain, sob sua chave.
+              {t.description}
             </p>
 
             {/* IOF Comparison — glass card */}
             <div
               className="doppelrand-hallmark-narrow mt-12 inline-block rounded-2xl border border-white/[0.08] px-6 pb-7 pt-6 backdrop-blur-md md:mt-16"
-              aria-label="Comparação de IOF"
+              aria-label={t.iofComparison}
               style={{
                 background: "linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)",
                 boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06), 0 4px 24px -4px rgba(0,0,0,0.3)",
               }}
             >
-              <p className="text-xs uppercase tracking-wider text-warm-300/60">IOF</p>
+              <p className="text-xs uppercase tracking-wider text-warm-300/60">{t.iofLabel}</p>
               <p className="mt-2 flex items-baseline gap-4">
                 <span className="text-2xl tabular-nums tracking-tight text-warm-400/50 line-through decoration-warm-400/30 md:text-3xl">
                   3,5%
@@ -66,14 +63,14 @@ export function SpendCredit() {
                   0%
                 </span>
                 <span className="text-sm font-medium text-yellow-500/70">
-                  via Chainless
+                  {t.viaChainless}
                 </span>
               </p>
             </div>
 
             {/* Card benefits */}
             <ul className="mt-12 space-y-4 md:mt-16">
-              {cardBenefits.map((point) => (
+              {t.benefits.map((point: string) => (
                 <li
                   key={point}
                   className="flex items-start gap-3 text-base leading-relaxed text-warm-300/70"
@@ -129,7 +126,7 @@ export function SpendCredit() {
 
               {/* Caption */}
               <p className="mt-4 text-center text-sm uppercase tracking-[0.15em] text-warm-300/60">
-                Gaste USDC globalmente
+                {t.caption}
               </p>
             </div>
           </FadeUp>

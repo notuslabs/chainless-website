@@ -4,19 +4,22 @@ import { motion } from "framer-motion";
 import { FadeUp, MagneticButton, TextReveal, EASE_PREMIUM } from "./motion";
 import { Eyebrow } from "./eyebrow";
 import { ArrowUpRight } from "@phosphor-icons/react";
+import { useDictionary } from "./dictionary-provider";
 
 export function CTASection() {
+  const { dict } = useDictionary();
+  const t = dict.cta;
+
   return (
     <section
-      className="relative overflow-hidden bg-dark-500 px-4 py-40 md:py-52"
+      className="relative overflow-hidden bg-dark-500 px-6 py-20 md:py-40 lg:py-52"
       id="comecar"
     >
       {/* Top fade — dissolves from plain bg-dark-500 into the atmospheric glows */}
       <div
-        className="pointer-events-none absolute left-0 top-0 z-20 w-full"
+        className="pointer-events-none absolute left-0 top-0 z-20 h-[140px] w-full sm:h-[280px]"
         aria-hidden="true"
         style={{
-          height: "280px",
           background:
             "linear-gradient(to bottom, var(--color-dark-500) 0%, transparent 100%)",
         }}
@@ -81,22 +84,21 @@ export function CTASection() {
         <FadeUp>
           <Eyebrow className="mb-8">
             <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/60" />
-            Comece agora
+            {t.eyebrow}
           </Eyebrow>
         </FadeUp>
 
         <FadeUp delay={0.1}>
           <h2 className="font-serif text-[clamp(2.5rem,1.8rem+2.8vw,4rem)] font-normal leading-[1.04] tracking-[-0.02em] text-text-primary">
             <TextReveal delay={0.15}>
-              Seu patrimônio merece ser só seu.
+              {t.heading}
             </TextReveal>
           </h2>
         </FadeUp>
         <FadeUp delay={0.25}>
           <p className="mt-8 max-w-[460px] text-lg font-light leading-[1.7] text-warm-300/70">
-            Toda plataforma de patrimônio pede que você entregue seus ativos a
-            um custodiante. Chainless é a primeira onde isso é{" "}
-            <span className="font-medium text-yellow-500/90">impossível</span>.
+            {t.description}{" "}
+            <span className="font-medium text-yellow-500/90">{t.impossible}</span>.
           </p>
         </FadeUp>
         <FadeUp delay={0.4}>
@@ -105,7 +107,7 @@ export function CTASection() {
               href="#"
               className="group inline-flex items-center gap-3 rounded-2xl bg-yellow-500 py-4 pl-8 pr-4 text-base font-semibold text-dark-500 shadow-[0_4px_30px_rgba(255,199,61,0.2)] transition-all duration-500 ease-premium hover:bg-yellow-400 hover:shadow-[0_4px_50px_rgba(255,199,61,0.3)] active:scale-[0.97]"
             >
-              Torne-se Chainless
+              {t.button}
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-dark-500/10 transition-transform duration-500 ease-premium group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-110">
                 <ArrowUpRight size={15} weight="bold" />
               </span>
@@ -124,11 +126,12 @@ export function CTASection() {
               transition={{ duration: 1, delay: 0.6, ease: EASE_PREMIUM }}
             />
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium tracking-wide text-warm-300/50">
-              <span>Sem custódia</span>
-              <span className="h-3 w-px bg-warm-700/15" />
-              <span>Sem lock-up</span>
-              <span className="h-3 w-px bg-warm-700/15" />
-              <span>Sem intermediários</span>
+              {t.trustAnchors.map((anchor: string, i: number) => (
+                <span key={anchor}>
+                  {i > 0 && <span className="mr-6 inline-block h-3 w-px bg-warm-700/15" />}
+                  {anchor}
+                </span>
+              ))}
             </div>
           </div>
         </FadeUp>
@@ -136,10 +139,9 @@ export function CTASection() {
 
       {/* Bottom fade — dissolves all atmospheric glows into plain bg-dark-500 for the footer */}
       <div
-        className="pointer-events-none absolute bottom-0 left-0 w-full"
+        className="pointer-events-none absolute bottom-0 left-0 h-[160px] w-full sm:h-[320px]"
         aria-hidden="true"
         style={{
-          height: "320px",
           background:
             "linear-gradient(to bottom, transparent 0%, var(--color-dark-500) 100%)",
         }}

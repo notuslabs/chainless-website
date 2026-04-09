@@ -5,22 +5,25 @@ import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-
 import { List, X } from "@phosphor-icons/react";
 import { ChainlessLogo } from "./chainless-logo";
 import { EASE_PREMIUM } from "./motion";
-
-const navItems = [
-  { label: "Rendimentos", href: "#rendimentos" },
-  { label: "Cartão", href: "#cartao" },
-  { label: "Empréstimo BTC", href: "#credito" },
-  { label: "Segurança", href: "#seguranca" },
-];
+import { useDictionary } from "./dictionary-provider";
+import { LanguageSwitcher } from "./language-switcher";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
+  const { dict } = useDictionary();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 60);
   });
+
+  const navItems = [
+    { label: dict.navbar.rendimentos, href: "#rendimentos" },
+    { label: dict.navbar.cartao, href: "#cartao" },
+    { label: dict.navbar.emprestimo, href: "#credito" },
+    { label: dict.navbar.seguranca, href: "#seguranca" },
+  ];
 
   return (
     <>
@@ -32,7 +35,7 @@ export function Navbar() {
         transition={{ duration: 0.9, delay: 0.3, ease: EASE_PREMIUM }}
       >
         <motion.div
-          className="doppelrand-hallmark-narrow relative flex items-center gap-1 overflow-hidden rounded-2xl px-2 py-2"
+          className="doppelrand-hallmark-narrow relative flex items-center gap-2 overflow-hidden rounded-2xl px-2 py-2"
           animate={{
             background: scrolled
               ? "linear-gradient(135deg, rgba(28,27,25,0.88) 0%, rgba(28,27,25,0.75) 50%, rgba(28,27,25,0.85) 100%)"
@@ -63,7 +66,7 @@ export function Navbar() {
           {/* Logo */}
           <a
             href="#"
-            className="relative flex items-center rounded-xl px-4 py-2"
+            className="relative flex min-h-[44px] items-center justify-center rounded-xl px-4 py-3"
           >
             <ChainlessLogo color="#FAFAF8" size={20} />
           </a>
@@ -81,11 +84,12 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Store icon buttons — liquid glass, matching hero */}
+          {/* Store icon buttons + language switcher */}
           <div className="ml-1.5 hidden items-center gap-1.5 md:flex">
+            <LanguageSwitcher />
             <a
               href="#"
-              aria-label="App Store"
+              aria-label={dict.navbar.appStore}
               className="doppelrand-hallmark-tiny relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl text-yellow-500 transition-all duration-500 ease-premium hover:brightness-125 active:scale-[0.95]"
               style={{
                 background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 50%, rgba(255,255,255,0.08) 100%)",
@@ -99,7 +103,7 @@ export function Navbar() {
             </a>
             <a
               href="#"
-              aria-label="Google Play"
+              aria-label={dict.navbar.googlePlay}
               className="doppelrand-hallmark-tiny relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl text-yellow-500 transition-all duration-500 ease-premium hover:brightness-125 active:scale-[0.95]"
               style={{
                 background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 50%, rgba(255,255,255,0.08) 100%)",
@@ -116,8 +120,8 @@ export function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setOpen(true)}
-            className="flex items-center justify-center rounded-lg p-2.5 text-text-primary transition-colors duration-300 hover:bg-white/[0.08] md:hidden"
-            aria-label="Abrir menu"
+            className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl text-text-primary transition-colors duration-300 hover:bg-white/[0.08] md:hidden"
+            aria-label={dict.navbar.openMenu}
           >
             <List size={20} weight="light" />
           </button>
@@ -138,7 +142,7 @@ export function Navbar() {
             <button
               onClick={() => setOpen(false)}
               className="absolute right-6 top-6 flex h-12 w-12 items-center justify-center rounded-full border border-warm-700/30 text-text-primary transition-colors duration-300 hover:bg-white/[0.06]"
-              aria-label="Fechar menu"
+              aria-label={dict.navbar.closeMenu}
             >
               <X size={22} weight="light" />
             </button>
@@ -162,6 +166,19 @@ export function Navbar() {
                   {item.label}
                 </motion.a>
               ))}
+              {/* Mobile language switcher */}
+              <motion.div
+                initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.4,
+                  ease: EASE_PREMIUM,
+                }}
+              >
+                <LanguageSwitcher />
+              </motion.div>
               {/* Mobile store buttons */}
               <motion.div
                 className="mt-8 flex items-center gap-3"
@@ -177,7 +194,7 @@ export function Navbar() {
                 <a
                   href="#"
                   onClick={() => setOpen(false)}
-                  aria-label="App Store"
+                  aria-label={dict.navbar.appStore}
                   className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.08] text-yellow-500 transition-all duration-500 ease-premium hover:bg-white/[0.14] active:scale-[0.95]"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
@@ -187,7 +204,7 @@ export function Navbar() {
                 <a
                   href="#"
                   onClick={() => setOpen(false)}
-                  aria-label="Google Play"
+                  aria-label={dict.navbar.googlePlay}
                   className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.08] text-yellow-500 transition-all duration-500 ease-premium hover:bg-white/[0.14] active:scale-[0.95]"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
