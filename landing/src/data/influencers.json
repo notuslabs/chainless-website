@@ -1,17 +1,187 @@
 [
   {
-    "name": "Bitnada",
-    "slug": "bitnada",
-    "code": "BITNADA"
-  },
-  {
-    "name": "Renato Amoedo",
-    "slug": "amoedo",
-    "code": "AMOEDO"
+    "name": "Ramon Cunha",
+    "slug": "ramoncunha",
+    "code": "RAMON"
   },
   {
     "name": "Mychel Mendes",
-    "slug": "mychel",
-    "code": "MYCHEL"
+    "slug": "mychelmendes",
+    "code": "MYC12"
+  },
+  {
+    "name": "Bitnada",
+    "slug": "bitnada",
+    "code": "BNADA"
+  },
+  {
+    "name": "Will Grazioli",
+    "slug": "will-grazioli",
+    "code": "WILLG"
+  },
+  {
+    "name": "Victor Marinho",
+    "slug": "victormarinho",
+    "code": "MARIN"
+  },
+  {
+    "name": "Nenesk",
+    "slug": "nenesk",
+    "code": "NSK10"
+  },
+  {
+    "name": "3irmãos",
+    "slug": "3irmaos",
+    "code": "IRMAO"
+  },
+  {
+    "name": "Bitnoob",
+    "slug": "bitnoob",
+    "code": "NOOB1"
+  },
+  {
+    "name": "Prometheus",
+    "slug": "prometheus",
+    "code": "PROME"
+  },
+  {
+    "name": "Rodrigo Moura",
+    "slug": "rodrigomoura",
+    "code": "MOURA"
+  },
+  {
+    "name": "Mister Faria",
+    "slug": "misterfaria",
+    "code": "MRFAR"
+  },
+  {
+    "name": "Deividi Guedes",
+    "slug": "deividiguedes",
+    "code": "OTICA"
+  },
+  {
+    "name": "JP Paraguay",
+    "slug": "jpparaguay",
+    "code": "JPVIP"
+  },
+  {
+    "name": "YouCrypto",
+    "slug": "youcrypto",
+    "code": "YOUCR"
+  },
+  {
+    "name": "Vamos Pra Cripto",
+    "slug": "vamospracripto",
+    "code": "VAMOS"
+  },
+  {
+    "name": "João Hazim",
+    "slug": "joaohazim",
+    "code": "HAZIM"
+  },
+  {
+    "name": "Cripto Com Fé",
+    "slug": "criptocomfe",
+    "code": "COMFE"
+  },
+  {
+    "name": "Sandro",
+    "slug": "sandro",
+    "code": "THOR1"
+  },
+  {
+    "name": "Criptobr",
+    "slug": "criptobr",
+    "code": "CRIBR"
+  },
+  {
+    "name": "Tiago Carvalho",
+    "slug": "tiagocarvalho",
+    "code": "TIAGO"
+  },
+  {
+    "name": "Moreze",
+    "slug": "moreze",
+    "code": "MOREZ"
+  },
+  {
+    "name": "Crypto Agora",
+    "slug": "cryptoagora",
+    "code": "SIDCA"
+  },
+  {
+    "name": "Lks Crypto",
+    "slug": "lks-crypto",
+    "code": "LUK4S"
+  },
+  {
+    "name": "Tubarão da Bolsa",
+    "slug": "tubaraodabolsa",
+    "code": "TUBA1"
+  },
+  {
+    "name": "VoEpa",
+    "slug": "voepa",
+    "code": "VOEPA"
+  },
+  {
+    "name": "Invest Crypto",
+    "slug": "investcrypto",
+    "code": "ICRYP"
+  },
+  {
+    "name": "Rodrigo",
+    "slug": "rodrigo-moura",
+    "code": "RODRI"
+  },
+  {
+    "name": "Lobo Cripto",
+    "slug": "lobocripto",
+    "code": "LOBO1"
+  },
+  {
+    "name": "Savio",
+    "slug": "savio",
+    "code": "SAVIO"
+  },
+  {
+    "name": "Valéria Garcia",
+    "slug": "valeriagarcia",
+    "code": "GCRPT"
+  },
+  {
+    "name": "Lucro na Certa",
+    "slug": "lucronacerta",
+    "code": "LUCRO"
+  },
+  {
+    "name": "Milionário com Cripto",
+    "slug": "milionariocomcripto",
+    "code": "MIL21"
+  },
+  {
+    "name": "Dan Costa",
+    "slug": "dancosta",
+    "code": "AMIGO"
+  },
+  {
+    "name": "Redcast",
+    "slug": "redcast",
+    "code": "RED21"
+  },
+  {
+    "name": "Rafaela Romano",
+    "slug": "rafaelaromano",
+    "code": "DISRU"
+  },
+  {
+    "name": "Vou de Cripto",
+    "slug": "voudecripto",
+    "code": "VOUDE"
+  },
+  {
+    "name": "Crypto Crya",
+    "slug": "crypto-crya",
+    "code": "CCRYA"
   }
 ]
