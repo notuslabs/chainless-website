@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { useScroll } from "framer-motion";
+import { useDictionary } from "./dictionary-provider";
 
 const TOTAL_FRAMES = 121;
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -16,30 +17,6 @@ interface Segment {
 interface Line {
   segments: Segment[];
 }
-
-/* Two couplets that crossfade — same position, one replaces the other */
-const couplet1: Line[] = [
-  { segments: [{ text: "O sistema financeiro" }] },
-  {
-    segments: [
-      { text: "foi construído para " },
-      { text: "eles.", highlight: true, bold: true },
-    ],
-  },
-];
-
-const couplet2: Line[] = [
-  {
-    segments: [
-      { text: "A " },
-      { text: "Chainless", highlight: true, bold: true },
-      { text: " foi construída para " },
-      { text: "você.", highlight: true, bold: true },
-    ],
-  },
-];
-
-/* (couplet transforms driven via refs in scroll listener) */
 
 /* ── Preload image sequence into memory ── */
 function useFrameSequence(total: number) {
@@ -72,6 +49,12 @@ function useFrameSequence(total: number) {
 
 /* ── Main component ── */
 export function EditorialBreak() {
+  const { dict } = useDictionary();
+  const t = dict.editorial;
+
+  const couplet1: Line[] = t.couplet1;
+  const couplet2: Line[] = t.couplet2;
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -95,11 +78,30 @@ export function EditorialBreak() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    canvas.width = 1280;
-    canvas.height = 720;
+    /* Size canvas to match the viewport so we get 1:1 pixel mapping */
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    resize();
+    window.addEventListener("resize", resize);
+
+    /* Draw a frame centered/cropped like object-fit: cover */
+    function drawCover(img: HTMLImageElement) {
+      const cw = canvas.width;
+      const ch = canvas.height;
+      const iw = img.naturalWidth;
+      const ih = img.naturalHeight;
+      const scale = Math.max(cw / iw, ch / ih);
+      const sw = iw * scale;
+      const sh = ih * scale;
+      const sx = (cw - sw) / 2;
+      const sy = (ch - sh) / 2;
+      ctx.drawImage(img, sx, sy, sw, sh);
+    }
 
     if (frames.length > 0) {
-      ctx.drawImage(frames[0], 0, 0);
+      drawCover(frames[0]);
     }
 
     // Initial state
@@ -153,18 +155,21 @@ export function EditorialBreak() {
         );
         if (index !== currentFrameRef.current) {
           currentFrameRef.current = index;
-          ctx.drawImage(frames[index], 0, 0);
+          drawCover(frames[index]);
         }
       }
     });
 
-    return unsubscribe;
+    return () => {
+      unsubscribe();
+      window.removeEventListener("resize", resize);
+    };
   }, [frames, scrollYProgress]);
 
   return (
     <section
       ref={sectionRef}
-      aria-label="Declaração sobre soberania financeira"
+      aria-label={t.ariaLabel}
       className="relative h-[320vh]"
     >
       {/* Sticky viewport — pinned for 200vh of scroll travel */}
@@ -199,12 +204,12 @@ export function EditorialBreak() {
             {/* Couplet container — both occupy the same space */}
             <div className="relative">
               <div ref={couplet1Ref} style={{ opacity: 1 }}>
-                {couplet1.map((line, i) => (
+                {couplet1.map((line: Line, i: number) => (
                   <CoupletLine key={i} line={line} />
                 ))}
               </div>
               <div ref={couplet2Ref} className="absolute inset-0 flex items-center justify-center" style={{ opacity: 0, visibility: "hidden" }}>
-                {couplet2.map((line, i) => (
+                {couplet2.map((line: Line, i: number) => (
                   <CoupletLine key={i} line={line} />
                 ))}
               </div>
@@ -226,7 +231,7 @@ function CoupletLine({ line }: { line: Line }) {
           "0 2px 40px rgba(10,9,8,0.5), 0 4px 80px rgba(10,9,8,0.3)",
       }}
     >
-      {line.segments.map((seg, j) =>
+      {line.segments.map((seg: Segment, j: number) =>
         seg.highlight ? (
           <span
             key={j}
