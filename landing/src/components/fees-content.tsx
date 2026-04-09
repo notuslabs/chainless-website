@@ -1,60 +1,25 @@
 "use client";
 
 import { FadeUp } from "./motion";
-
-const lastUpdated = "7 de abril de 2026";
-
-const fees = [
-  {
-    service: "Depósito PIX",
-    fee: "Sem taxa",
-    free: true,
-  },
-  {
-    service: "Saque PIX",
-    fee: "R$ 2,90",
-  },
-  {
-    service: "Swap",
-    fee: "0,7%",
-    detail: "sobre o valor transacionado",
-  },
-  {
-    service: "Investimento em renda",
-    fee: "Sem taxa",
-    free: true,
-  },
-  {
-    service: "Pools de Liquidez",
-    fee: "0,5%",
-    detail: "sobre o valor convertido",
-  },
-  {
-    service: "Transferência de BRZ para wallets externas",
-    fee: "0,5%",
-    detail: "sobre o valor movimentado",
-  },
-  {
-    service: "Transferência de outras criptos para wallets externas",
-    fee: "Sem taxa",
-    free: true,
-  },
-];
+import { useDictionary } from "./dictionary-provider";
 
 export function FeesContent() {
+  const { dict } = useDictionary();
+  const t = dict.fees;
+
   return (
     <main className="relative bg-dark-500 px-4 pb-32 pt-40">
       <div className="mx-auto max-w-[780px]">
         {/* Header */}
         <FadeUp>
           <p className="text-overline font-semibold uppercase tracking-[0.25em] text-text-secondary">
-            Taxas
+            {t.eyebrow}
           </p>
           <h1 className="mt-4 font-serif text-4xl font-light leading-[1.15] tracking-tight text-text-primary md:text-5xl">
-            Taxas e custos
+            {t.title}
           </h1>
           <p className="mt-3 text-small text-text-secondary">
-            Última atualização: {lastUpdated}
+            {t.lastUpdated}: {t.lastUpdatedDate}
           </p>
           <div className="mt-8 h-px bg-white/[0.06]" />
         </FadeUp>
@@ -64,35 +29,34 @@ export function FeesContent() {
           <div className="mt-12 space-y-10 text-[0.9375rem] leading-[1.85] text-text-secondary">
             {/* Intro */}
             <p className="text-pretty">
-              Todas as taxas cobradas pela Chainless estão listadas abaixo. Não
-              há taxas ocultas nem custos adicionais.
+              {t.intro}
             </p>
 
             {/* Fee table */}
             <table className="w-full border-collapse">
-              <caption className="sr-only">Tabela de taxas da Chainless</caption>
+              <caption className="sr-only">{t.tableCaption}</caption>
               <thead>
                 <tr className="border-b border-warm-700">
                   <th
                     scope="col"
                     className="pb-3 text-left text-xs font-semibold uppercase tracking-[0.1em] text-warm-500"
                   >
-                    Operação
+                    {t.columnOperation}
                   </th>
                   <th
                     scope="col"
                     className="pb-3 text-right text-xs font-semibold uppercase tracking-[0.1em] text-warm-500"
                   >
-                    Taxa
+                    {t.columnFee}
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {fees.map((row, i) => (
+                {t.rows.map((row: any, i: number) => (
                   <tr
                     key={row.service}
                     className={
-                      i < fees.length - 1
+                      i < t.rows.length - 1
                         ? "border-b border-white/[0.04]"
                         : ""
                     }
@@ -118,27 +82,12 @@ export function FeesContent() {
             {/* Gas fee section */}
             <section className="space-y-4">
               <h2 className="text-lg font-semibold tracking-tight text-text-primary">
-                Taxa de Gas
+                {t.gasTitle}
               </h2>
 
-              <p className="text-pretty">
-                A taxa de gas é um custo cobrado pelas redes blockchain para
-                processar e confirmar transações. Ela varia conforme a rede e o
-                nível de congestionamento no momento da operação.
-              </p>
-
-              <p className="text-pretty">
-                A Chainless, por meio de Abstração de Contas, permite que você
-                pague a taxa de gas com o próprio token transacionado — sem
-                precisar manter tokens nativos como ETH, SOL ou MATIC.
-              </p>
-
-              <p className="text-pretty">
-                Na prática, a Chainless adianta a taxa de gas e cobra uma margem
-                no preço efetivo da transação para cobrir custos operacionais. A
-                estimativa é exibida na tela de Detalhes da Transação antes da
-                confirmação.
-              </p>
+              <p className="text-pretty">{t.gasP1}</p>
+              <p className="text-pretty">{t.gasP2}</p>
+              <p className="text-pretty">{t.gasP3}</p>
             </section>
           </div>
         </FadeUp>
