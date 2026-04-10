@@ -1,0 +1,183 @@
+---
+title: "Not your keys, not your coins: the definitive guide"
+excerpt: "Understand the origin of not your keys not your coins, why self-custody matters for your digital wealth, and how MPC wallets make it accessible to everyone."
+pillar: "sovereignty"
+author: "Chainless"
+date: "2026-03-25"
+heroImage: "/blog/images/not-your-keys.jpg"
+heroImageAlt: "Visual representation of cryptographic keys and digital wealth self-custody"
+featured: false
+faq:
+  - question: "What does not your keys, not your coins mean?"
+    answer: "It means that if you do not control the private keys to your cryptocurrency, you are not the true owner. Whoever holds the keys has the power to move the assets. When you leave digital wealth on a centralized exchange, you depend on that company's solvency and honesty."
+  - question: "Is self-custody safe for non-technical users?"
+    answer: "Yes. Modern solutions like MPC (Multi-Party Computation) wallets eliminate the need to write down 12 or 24-word seed phrases. The private key is split into distributed fragments, so you maintain control without managing a complex sequence of words. Chainless uses this technology to make self-custody accessible to anyone."
+  - question: "What is the difference between custody and self-custody of cryptocurrency?"
+    answer: "In traditional custody, a third-party company (like an exchange) holds your private keys and controls your assets on your behalf. In self-custody, you are the sole holder of the keys. This eliminates counterparty risk: no bankruptcy, hack, or third-party freeze can prevent you from accessing your digital wealth."
+softCta:
+  heading: "Self-custody without writing down seed phrases. Digital wealth under your control."
+  description: "Chainless combines an MPC wallet, USDC DeFi yields, and integrated Pix. Your wealth grows. Your keys stay yours."
+---
+
+## The origin of the phrase not your keys not your coins
+
+"Not your keys, not your coins" became one of the most repeated mantras in the world of digital wealth. Its origin traces back to the earliest years of Bitcoin, when the cypherpunk community needed to translate a complex technical concept into a phrase anyone could grasp.
+
+The authorship is frequently attributed to Andreas Antonopoulos, educator and author of "Mastering Bitcoin." In numerous talks between 2014 and 2016, Antonopoulos repeated the phrase to warn about the risks of entrusting digital wealth to third parties. The context was anything but abstract: the collapse of Mt. Gox in 2014 had just evaporated 850,000 bitcoins from users who trusted the largest exchange in the world.
+
+The phrase carries a fundamental cryptographic truth. On blockchain networks, ownership is defined by whoever controls the private key. There is no deed, no contract, no notary. The key is the proof of ownership. If another person or company holds that key, that entity is the true owner of the assets.
+
+## How private and public keys work in cryptocurrency
+
+To understand the weight of this phrase, you need to understand the mechanism that underpins all digital wealth.
+
+Every cryptocurrency wallet consists of a pair of cryptographic keys. The **public key** functions as a visible address, comparable to an account number. Anyone can send assets to it. The **private key** is the mathematical secret that authorizes movements. Without it, no transaction leaves the wallet.
+
+The relationship is asymmetric: from the private key, you can derive the public key, but the reverse path is computationally infeasible. This property ensures that only the holder of the private key can sign transactions.
+
+When you deposit digital wealth on a centralized exchange, your assets are transferred to wallets controlled by the company. You receive a balance on screen, a number in an internal database. The exchange holds the private key. You hold a promise.
+
+> Whoever controls the private key controls the wealth. Everything that exists between you and your assets, without that key, is trust in a third party.
+
+## Why self-custody of cryptocurrency protects your wealth
+
+The traditional financial system operates on layers of trust. You trust that the institution will honor your deposits, that the regulator will oversee operations, that insurance will cover losses. This model works within known limits, but it creates a single point of failure: the solvency and integrity of the custodian institution.
+
+Self-custody eliminates this counterparty risk. When you control your own keys, no bankruptcy, third-party asset freeze, or corporate decision can block access to your digital wealth. Sovereignty over your assets stops depending on permission.
+
+This does not mean self-custody is free of responsibility. On the contrary: it transfers to the individual the duty to protect their keys. The difference is that the risk becomes manageable by you, rather than deposited in hands over which you have no control.
+
+<Callout type="info" title="Self-custody is not anarchy">
+Self-custody means sovereignty over your digital wealth. You continue operating within the laws of your country. The difference is that no intermediary can block, freeze, or lose your assets through their own decisions.
+</Callout>
+
+## Real-world cases: what happens when your keys are not yours
+
+Theory becomes painfully concrete when you examine the largest collapses in cryptocurrency history. Each one validated the phrase "not your keys, not your coins" in ways no white paper could predict.
+
+### Mt. Gox: the first major warning
+
+In February 2014, Mt. Gox, which processed roughly 70% of all Bitcoin transactions on the planet, suspended withdrawals abruptly. The exchange declared bankruptcy after revealing that 850,000 bitcoins had disappeared over years, the result of a combination of hacks and negligent management.
+
+Users who kept their assets on the platform lost everything. The recovery process has dragged on for over a decade. Creditors received minimal fractions of the original value. Those who maintained self-custody were unaffected.
+
+### FTX: the illusion of institutional solidity
+
+In November 2022, FTX collapsed within days. The second-largest cryptocurrency exchange in the world revealed a hole of billions of dollars. Customer funds had been funneled to Alameda Research, the trading arm of the same group. Sam Bankman-Fried, who appeared on magazine covers and in regulatory lobbies, was sentenced to 25 years in prison.
+
+Over one million creditors lost access to their assets. The bankruptcy proceedings continue. The lesson could not be more direct: a company's reputation does not replace control of your keys.
+
+### Celsius: yields that cost users their wealth
+
+Celsius Network attracted millions of users with promises of high yields on cryptocurrency deposits. In June 2022, the platform froze all withdrawals. Months later, it declared bankruptcy, revealing that customer funds had been deployed in high-risk investment strategies that failed.
+
+Users who sought yields lost access to their principal. Once again, third-party custody turned an opportunity into a trap.
+
+> Three exchanges. Three generations of users. The same mistake: trusting digital wealth to whoever holds the keys on your behalf.
+
+### Other episodes that reinforce the pattern
+
+The list extends beyond these three cases. QuadrigaCX, a Canadian exchange, lost access to 190 million dollars in cryptocurrency when its founder died, reportedly taking with him the only keys. Voyager Digital, which marketed itself as a safe alternative, also froze withdrawals and filed for bankruptcy in 2022.
+
+The pattern is consistent. Whenever a centralized intermediary holds the keys, user assets remain vulnerable to mismanagement, fraud, hacks, or insolvency.
+
+## Seed phrases: the solution that created a new problem
+
+After the earliest collapses, self-custody became the obvious answer. Wallets like Ledger, Trezor, and MetaMask placed private keys directly in users' hands. The standard mechanism: a 12 or 24-word seed phrase that encodes the master key.
+
+In theory, the solution is elegant. In practice, it created a barrier to entry that limits adoption.
+
+Write down 24 words on paper. Store that paper in a secure location. Never photograph it. Never save it digitally. Never lose it. Never forget the order. Any failure in any of these steps means the irreversible loss of digital wealth.
+
+<Callout type="warning" title="The seed phrase problem in numbers">
+An estimated 3 to 4 million bitcoins are permanently lost, many due to misplaced seed phrases. This represents roughly 17% of all bitcoins ever mined. Seed-phrase-based self-custody protects against third parties but creates a significant risk of loss through user error.
+</Callout>
+
+The seed phrase transfers 100% of the responsibility to the individual without offering any safety net. For those who work with technology daily, this may be manageable. For the vast majority of people, it is an obstacle that pushes them back toward centralized custody, where the risk cycle begins again.
+
+## MPC wallets: self-custody without relying on seed phrases
+
+Multi-Party Computation, or MPC, represents a fundamental evolution in how private keys are managed. Instead of generating a single key that must be stored in its entirety in one location, MPC splits the key into multiple mathematical fragments distributed among different parties.
+
+### How MPC works in practice
+
+The MPC transaction signing process works like this: each party contributes its fragment to generate a valid signature, without any individual party ever reconstructing the complete key. Think of it as three people needing to turn their respective keys simultaneously to open a vault, but none of them ever sees the others' keys.
+
+This delivers concrete advantages:
+
+- **No single point of failure.** The loss of one fragment does not compromise the wealth. Recovery protocols allow regeneration of lost fragments.
+- **No need to write down seed phrases.** The backup process is distributed and managed by infrastructure, not by a piece of paper.
+- **Resistance to attacks.** An attacker would need to compromise multiple parties simultaneously, which drastically increases the difficulty of an attack.
+- **Accessible experience.** The user interacts with a familiar interface without needing to manage cryptography manually.
+
+### Is MPC truly self-custody?
+
+This is the essential question. The answer depends on the architecture. In well-designed implementations, the user holds sufficient fragments so that no single provider can move the assets alone. Control remains with the individual. The company provides infrastructure, not custody.
+
+The structural difference from a centralized exchange is clear: even if the company disappears, the user retains the ability to access and move their digital wealth. That is the definitive test of self-custody.
+
+## How to choose between custody and self-custody of cryptocurrency
+
+The choice between custody and self-custody is neither binary nor ideological. It is a risk analysis that depends on your context, the value of your holdings, and your willingness to assume responsibility.
+
+### When centralized custody makes sense
+
+For small amounts and short-term operations, such as one-off purchases or active trading, keeping assets on an exchange may be acceptable. The risk exists, but it is proportional to the value exposed. Convenience justifies the limited exposure.
+
+### When self-custody is indispensable
+
+For medium and long-term wealth, self-custody moves from a preference to a necessity. The larger the value, the greater the impact of a collapse like FTX or Celsius. History shows that the question is not "if" an exchange can fail, but "when."
+
+### The practical criterion
+
+Ask yourself: if this company ceased to exist tomorrow, would I lose access to my digital wealth? If the answer is yes, you are not in self-custody. You are trusting a promise.
+
+> Self-custody does not require you to become a cryptography specialist. It requires that you choose tools that place control in your hands without demanding that you carry the entire weight alone.
+
+## Self-custody with DeFi yields in USDC
+
+One of the most common arguments against self-custody is the loss of access to yields. If your assets sit in your own wallet, how do you generate returns?
+
+The answer lies in DeFi (decentralized finance) protocols. Unlike centralized platforms such as Celsius, DeFi protocols operate through auditable, transparent smart contracts. Your assets remain in your wallet while generating yields.
+
+Stablecoins like USDC allow access to yields without exposure to the volatility of traditional cryptocurrencies. Your wealth maintains parity with the dollar while working for you. It is possible to combine self-custody, stability, and growth in a single operation.
+
+Chainless connects these protocols directly to the user's MPC wallet. DeFi yields in USDC, integrated Pix for on and off-ramps, and a crypto card for everyday use. All of this without your keys ever passing through third parties.
+
+<Callout type="info" title="DeFi is different from CeFi">
+DeFi protocols (like Aave) are auditable smart contracts executed on a blockchain. CeFi (like Celsius and BlockFi) are centralized companies that promise yields but control your assets. The difference is structural: in DeFi, the code is the guarantee. In CeFi, the promise is the guarantee.
+</Callout>
+
+## Practical steps to migrate to self-custody
+
+If you hold digital wealth on centralized exchanges and want to take control of your keys, the transition can be gradual and secure.
+
+### 1. Assess your current exposure
+
+List every platform where you hold assets. Identify the value on each. Prioritize migrating the largest amounts.
+
+### 2. Choose your self-custody solution
+
+Evaluate the options available. Hardware wallets like Ledger and Trezor are robust but require you to write down and manage seed phrases. MPC wallets, like the one from Chainless, eliminate this complexity without sacrificing security.
+
+### 3. Perform a test transfer
+
+Before moving significant value, send a small amount to your new wallet. Confirm that the receipt processed correctly. Verify that you can access and view the balance.
+
+### 4. Migrate your primary holdings
+
+After confirming everything works, transfer the rest of your assets. Do it in batches if you prefer. There is no rush, and splitting reduces the risk of error on any individual transaction.
+
+### 5. Set up your yields
+
+With your wealth under self-custody, connect to DeFi protocols to generate returns. If you use Chainless, this process is integrated into the platform, with no need to interact directly with smart contracts.
+
+## The future of self-custody and digital financial sovereignty
+
+The phrase "not your keys, not your coins" was born as a warning. Today, it is a design principle guiding the next generation of financial tools.
+
+The evolution of MPC technology, combined with accessible interfaces and integration with local financial systems (such as Pix in Brazil), is removing the barriers that historically separated self-custody from usability. It is no longer necessary to choose between security and convenience.
+
+Digital wealth grows in importance every year. Regulations advance. Institutions enter the market. But the fundamental premise remains unchanged: in a cryptographic system, whoever controls the keys controls the assets. No regulation, no corporate reputation, and no promise substitutes this mathematical reality.
+
+Your wealth grows. Your keys stay yours.

@@ -1,0 +1,186 @@
+---
+title: "Compound Finance: What It Is and How to Earn Yield"
+excerpt: "Compound Finance is a DeFi protocol for lending and borrowing digital assets with algorithmic rates. Learn how it works and how to generate yield."
+pillar: "wealth"
+author: "Chainless Team"
+date: "2026-05-25"
+featured: false
+heroImage: "/blog/images/compound-finance.jpg"
+heroImageAlt: "Visual representation of the Compound Finance protocol with decentralized finance yield flows"
+softCta:
+  heading: "DeFi yield with real self-custody"
+  description: "Chainless offers dollar-denominated yield strategies via the Aave protocol, with an MPC wallet and true self-custody. Your assets generate yield without leaving your control, without needing to write down seed phrases, and without intermediaries. Even if Chainless ceases to exist, your assets remain yours."
+faq:
+  - question: "Is Compound Finance safe for earning yield on crypto?"
+    answer: "Compound has operated since 2018 without a loss of user funds in its core contracts. The protocol is audited by multiple security firms and holds over $3 billion in total value locked. This does not eliminate the inherent risk of smart contracts, but the track record is one of the most solid in the DeFi ecosystem."
+  - question: "What is the difference between Compound Finance and a traditional fixed-income product?"
+    answer: "In Compound, interest rates are determined algorithmically by supply and demand for each asset, without intermediaries. You maintain self-custody of your cTokens (deposit receipts) and can redeem at any time with no lockup period. In traditional fixed income, a centralized institution sets the rates and controls your funds."
+  - question: "Do I need a large amount of capital to start using Compound?"
+    answer: "There is no minimum deposit to supply liquidity on Compound. However, transaction fees on the Ethereum network can make very small deposits inefficient. Self-custody platforms like Chainless simplify access to DeFi strategies by covering gas costs for users and offering yield via the Aave protocol in an intuitive way."
+---
+
+There is a world where your digital wealth earns yield 24 hours a day, 7 days a week, without any intermediary touching your assets. No relationship manager. No forms. No business hours. This world is not a futuristic projection. It is what Compound Finance has been doing since 2018.
+
+Compound is one of the protocols that defined the concept of DeFi (decentralized finance). It allows anyone to supply liquidity and earn interest, or borrow digital assets by providing collateral. All of this happens through smart contracts on the Ethereum blockchain, with no centralized entity setting rates or approving operations.
+
+This article explains how Compound works in practice, from the cToken mechanism to the algorithmic interest rate model. We will examine its governance, its security track record, and how it compares to Aave. If you want to understand how to earn yield with DeFi while maintaining sovereignty over your wealth, this is the starting point.
+
+## What is Compound Finance and how does the protocol work
+
+Compound Finance is a decentralized lending and borrowing protocol built on the Ethereum blockchain. Launched in September 2018 by Robert Leshner and Geoffrey Hayes, it allows users to deposit digital assets into liquidity pools and earn interest in real time.
+
+The logic is direct. When you deposit USDC, ETH, or another supported asset into Compound, that asset enters a shared pool. Borrowers access this pool by providing collateral worth more than the amount borrowed. Interest paid by borrowers is distributed proportionally to liquidity suppliers.
+
+There is no committee setting rates. There is no operations desk approving loans. The logic is entirely executed by audited, immutable smart contracts.
+
+The protocol evolved from Compound V2 to Compound V3 (also called Comet), which introduced a leaner architecture. In V3, each market operates as an isolated instance, with a base asset (such as USDC) that can be borrowed, and multiple assets that serve exclusively as collateral.
+
+> Compound is not a company that offers yield. It is a set of autonomous rules that connect those with idle capital to those who need liquidity.
+
+## How cTokens work and why they are central to Compound
+
+When you deposit assets into Compound V2, you receive cTokens in return. These tokens are deposit receipts that represent your balance in the protocol, including accrued interest.
+
+If you deposit 1,000 USDC, you receive cUSDC in return. The amount of cTokens you receive is determined by the exchange rate at the time of deposit. This exchange rate increases continuously as interest accrues in the pool.
+
+Here is how it works in practice:
+
+**1. Deposit and cToken issuance.** You send USDC to the Compound smart contract. The protocol calculates the current exchange rate and mints the corresponding amount of cUSDC to your wallet.
+
+**2. Interest accrual.** With every Ethereum block (approximately 12 seconds), the exchange rate between cUSDC and USDC increases slightly. This means your cUSDC becomes worth more USDC over time.
+
+**3. Redemption.** When you decide to withdraw, you send your cUSDC back to the smart contract. The protocol calculates the updated value and returns your original USDC plus accrued interest.
+
+The ingenuity of this model lies in composability. Because cTokens are standard ERC-20 tokens, they can be used in other DeFi protocols. You can use cUSDC as collateral on another platform, or provide it as liquidity in a trading pool. Your capital works across multiple layers simultaneously.
+
+In Compound V3, the model changed. Suppliers of the base asset no longer receive transferable cTokens. The balance is tracked internally by the contract. This simplified the architecture but reduced some of the composability that made V2 iconic.
+
+<Callout type="info" title="cTokens: more than deposit receipts">
+Compound V2 cTokens are ERC-20 tokens that accrue interest automatically via an increasing exchange rate. Unlike receiving periodic interest payments, the value of the cToken relative to the underlying asset grows with every block. This makes the yield continuous, transparent, and verifiable on the blockchain.
+</Callout>
+
+## How the Compound algorithmic interest rate model works
+
+Interest rates on Compound are not set by people. They are calculated by mathematical formulas programmed into the smart contracts. This algorithmic model responds automatically to the supply and demand of each asset in the protocol.
+
+The core concept is the **utilization rate**. It represents the percentage of the pool that is being borrowed relative to the total deposited. If a pool has 100 million USDC deposited and 70 million borrowed, the utilization rate is 70%.
+
+The general rule is intuitive:
+
+**When utilization is low**, interest rates are low. There is abundant liquidity and little demand for loans. The protocol lowers rates to incentivize borrowers.
+
+**When utilization is high**, rates climb. Capital is scarce. Higher rates incentivize new deposits and discourage excessive borrowing.
+
+Compound V3 introduced a mechanism called the "kink" (inflection point). Below a certain utilization level (typically 80-85%), rates grow gradually. Above that point, rates spike sharply. This creates a powerful incentive for utilization to stay within a healthy range.
+
+This model has an important practical consequence: yield rates on Compound fluctuate constantly. Liquidity suppliers may see annualized yields (APY) ranging from 2% to 15% or more on stablecoins, depending on market conditions. It is not fixed income. It is market-driven yield, transparent and algorithmic.
+
+## Compound decentralized governance: the role of the COMP token
+
+Compound is governed by its users through the COMP token. Those who hold COMP can propose changes to the protocol and vote on proposals from other participants. This model is called on-chain governance.
+
+The COMP token launched in June 2020 and was initially distributed to users who interacted with the protocol. This distribution became known as "liquidity mining" and triggered what many call "DeFi Summer," the summer of 2020 that catapulted decentralized finance into the mainstream.
+
+In practice, governance works like this:
+
+**Proposals.** Any address with at least 25,000 delegated COMP can create a governance proposal. Proposals include changes to protocol parameters (such as collateral factors or rates), addition of new markets, or contract upgrades.
+
+**Voting.** COMP holders vote on proposals. To pass, a proposal needs to reach a minimum quorum and receive more votes in favor than against. The voting period typically lasts 2 to 3 days.
+
+**Execution.** Approved proposals go through a timelock (waiting period) before execution. This gives the community time to react if a malicious proposal is approved.
+
+This model has strengths and limitations. The strength is that no central entity can alter the protocol unilaterally. The limitation is that concentration of COMP tokens in a few wallets can give disproportionate influence to institutional investors. It is a capital-based democracy, not an identity-based one.
+
+> Decentralized governance does not mean perfect governance. It means the rules are transparent, decisions are auditable, and no one can change your yield without notice.
+
+## Compound Finance security track record and how the protocol protects funds
+
+Security in DeFi is not a label you stick on a box. It is a track record built with time, audits, and, most importantly, the absence of severe incidents. On this criterion, Compound holds one of the most solid records in the ecosystem.
+
+Since its launch in 2018, Compound's core contracts have never suffered an exploit that resulted in loss of user funds. This is remarkable in an ecosystem where hacks and vulnerabilities are frequent. The protocol has been audited by firms including Trail of Bits, OpenZeppelin, and Gauntlet.
+
+This does not mean there have never been problems.
+
+In September 2021, a governance upgrade incorrectly distributed approximately $80 million in COMP tokens to users. The error was in the reward distribution mechanism, not in the lending contracts. User deposits remained intact. The community corrected the issue through a subsequent governance proposal.
+
+In 2023, a vulnerability was identified in Compound V2 related to price oracles. Governance responded swiftly, freezing affected markets before any exploit could occur.
+
+These episodes illustrate two points. First, DeFi is not free of risk. Second, a protocol with active governance and audited code can respond to problems transparently, without anyone needing to call a helpline or wait for a CEO's decision.
+
+<Callout type="warning" title="Smart contract risk: present in any DeFi protocol">
+Even protocols with a solid track record like Compound carry inherent smart contract risk. An undiscovered vulnerability can exist in any code. Diversifying across protocols, monitoring governance proposals, and using platforms that integrate continuous audits are ways to mitigate, not eliminate, this risk.
+</Callout>
+
+## Compound Finance vs Aave: which protocol yields more in 2026
+
+The comparison between Compound and Aave is inevitable. They are the two most established decentralized lending protocols on the market. Both allow supplying liquidity and borrowing, but their architectures and philosophies differ in relevant ways.
+
+**Market approach.** Compound V3 adopted an isolated market architecture, with one base asset per instance. Aave V3 maintains a unified pool approach, where multiple assets coexist in the same market. Compound's approach is more conservative and reduces contagion risk between assets. Aave's offers more flexibility.
+
+**Supported assets.** Aave supports significantly more assets than Compound. If you want to supply liquidity in niche tokens, Aave tends to offer more options. Compound focuses on high-capitalization assets and stablecoins, prioritizing security over variety.
+
+**Yield rates.** APYs fluctuate constantly on both protocols, depending on utilization. For stablecoins like USDC, rates tend to be competitive between the two. Historically, Compound offers slightly higher rates on USDC, while Aave tends to be more attractive for ETH and other volatile assets. But this dynamic shifts weekly.
+
+**Features.** Aave offers flash loans (instant uncollateralized loans), rate switching (toggling between fixed and variable rates), and credit delegation. Compound is intentionally leaner, focusing on reliability over feature breadth.
+
+**Security.** Both have solid track records. Aave experienced a minor incident with the CRV token in 2022, but without significant loss of user funds. Compound's philosophy of limiting assets and features reduces the attack surface.
+
+In practice, the choice between Compound and Aave does not need to be exclusive. Many investors diversify across both, allocating capital based on rates and conditions at any given moment. Self-custody platforms like Chainless use the Aave protocol to offer dollar-denominated yield in an accessible way, without requiring users to interact directly with the protocol interface.
+
+## How to supply liquidity on Compound and start earning yield
+
+If you want to earn yield on Compound, the technical process is direct. But it involves decisions that deserve attention.
+
+**Step 1: Hold assets on Ethereum or a supported network.** Compound V3 operates on Ethereum, Polygon, Arbitrum, and Base. You need compatible assets (such as USDC or ETH) and some ETH to pay transaction fees (gas).
+
+**Step 2: Connect your wallet to the protocol.** Access the Compound interface (app.compound.finance) and connect a self-custody compatible wallet. Compound does not require registration, passwords, or documents. Your wallet is your identity.
+
+**Step 3: Choose the market and asset.** In Compound V3, the USDC market on Ethereum is the most liquid. Check the current APY (annualized yield rate), the utilization rate, and the total available liquidity.
+
+**Step 4: Approve and supply liquidity.** Authorize the Compound contract to interact with your tokens (approval transaction), then execute the deposit (supply transaction). Two separate transactions, each with a gas cost.
+
+**Step 5: Monitor your yield.** Interest begins accruing immediately, block by block. You can track your balance on the Compound interface or directly on the blockchain.
+
+**Step 6: Redeem whenever you want.** There is no lockup period, vesting schedule, or minimum holding time. You can withdraw your assets at any time, as long as there is available liquidity in the pool.
+
+The process is transparent. Every transaction is recorded on the blockchain. Every interest calculation is verifiable. No intermediary can change the rules after you deposit.
+
+## Compound Finance and self-custody: yield without giving up sovereignty
+
+Here is the point that fundamentally differentiates Compound (and DeFi in general) from any yield product offered by centralized intermediaries.
+
+When you supply liquidity on Compound, your assets interact with audited smart contracts. They are not transferred to a company's account. They do not fall under the control of a CFO. They do not enter a corporate balance sheet. They sit in the contract, governed by code.
+
+If Compound Labs (the company that developed the protocol) shut down tomorrow, the smart contracts would continue operating. Governance would continue functioning. Your deposits would continue earning yield. Because the protocol exists on the blockchain, not on a corporate server.
+
+This is the structural difference that makes DeFi a category of its own. It is not just "crypto investing." It is financial infrastructure where the rules are public, verifiable, and resilient to the failure of any individual participant.
+
+For Brazilian investors, the combination is powerful. Yield in USDC (dollar-denominated) via an audited, decentralized protocol, accessible from a self-custody wallet. Protection against the volatility of the Brazilian real, against the arbitrariness of intermediaries, and against counterparty risk. All at the same time.
+
+## Real risks of using Compound Finance to earn yield
+
+Transparency demands talking about risks. DeFi is not a savings account with government deposit insurance. It is programmable financial infrastructure with specific risks you need to understand.
+
+**Smart contract risk.** Despite the solid track record, an undiscovered vulnerability may exist. A poorly executed governance upgrade can introduce flaws. Audits reduce the probability but do not zero out the risk.
+
+**Liquidity risk.** If a pool's utilization rate approaches 100%, there may not be sufficient liquidity for immediate redemptions. The algorithmic interest rate model mitigates this (rates spike to incentivize deposits), but in extreme scenarios, withdrawals can be temporarily limited.
+
+**Governance risk.** A malicious or poorly designed proposal can affect the protocol. The timelock mechanism offers a reaction window, but it is not infallible.
+
+**Oracle risk.** Compound relies on price oracles (such as Chainlink) to determine collateral values. If an oracle provides incorrect data, improper liquidations can occur.
+
+**Regulatory risk.** DeFi regulation is evolving globally. Legislative changes can affect access to protocols like Compound in certain jurisdictions.
+
+Understanding these risks is not a reason to avoid DeFi. It is the foundation for using DeFi responsibly. Compound does not promise guaranteed returns. It offers a transparent mechanism where risk and yield are both verifiable.
+
+> DeFi does not eliminate risk. DeFi makes risk visible. And visibility is the first step toward responsible wealth management.
+
+## Conclusion: Compound Finance as a foundation for decentralized yield
+
+Compound Finance is not a passing trend. It is financial infrastructure that has operated continuously since 2018, enduring bear markets, crashes, and regulatory shifts. Its algorithmic lending model, on-chain governance, and security track record position it as one of the pillars of the DeFi ecosystem.
+
+For those seeking to earn yield on digital assets with transparency and without giving up self-custody, Compound is a concrete starting point. Not because it is free of risk, but because its risks are identifiable, auditable, and manageable.
+
+The central question remains the same as always: do you prefer to entrust your wealth to intermediaries who operate behind closed doors, or use protocols where every rule is public and every transaction is verifiable?
+
+Compound does not answer that question for you. It just makes the second option possible.

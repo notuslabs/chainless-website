@@ -1,0 +1,190 @@
+---
+title: "How Chainless Eliminates Custody Risk"
+excerpt: "MPC cryptography splits your keys into distributed fragments. No need to manage seed phrases, no single point of failure. Your assets stay accessible and sovereign, always."
+pillar: "sovereignty"
+author: "Equipe Chainless"
+date: "2026-04-20"
+heroImage: "/blog/images/chainless-seguranca.jpg"
+heroImageAlt: "Cryptographic fragments representing Chainless MPC security architecture"
+featured: false
+softCta:
+  heading: "Security without complexity"
+  description: "Chainless protects your digital wealth with institutional-grade cryptography, without requiring you to memorize 24 words or trust your assets to a third party. Download the app and see how it works."
+faq:
+  - question: "Can Chainless access my crypto assets?"
+    answer: "No. Chainless never holds your complete key. MPC technology splits the key into fragments distributed between your device and independent servers. No single fragment can move funds. Only you, with your authenticated device, can authorize transactions."
+  - question: "What happens to my assets if Chainless shuts down?"
+    answer: "Your assets remain accessible. You can recover access through social login (Google or Apple via Web3Auth), which reconstructs the authentication bridge to your MPC fragments. Additionally, your seed phrase exists and can be exported at any time from the app settings, ensuring your wealth is sovereign regardless of any Chainless server."
+  - question: "Is the Chainless MPC wallet more secure than a hardware wallet?"
+    answer: "They are distinct security models. A hardware wallet concentrates the key on a single physical device, creating a single point of failure. The Chainless MPC wallet distributes cryptographic fragments, eliminating that risk. Additionally, recovery happens via social login, without depending on seed phrases written on paper."
+---
+
+The traditional financial system works like this: you hand over your money, receive a promise, and hope nothing goes wrong. Cryptocurrency exchanges, in practice, replicated that model. They changed the technology but kept the dependency.
+
+Chainless was built to break that pattern. Not as a marketing narrative, but as an architectural decision.
+
+## What is custody risk and why it matters for crypto investors
+
+Custody risk is the risk of losing access to your assets because someone between you and your money failed. It could be an exchange that froze withdrawals. A custodian that suffered a breach. A company that simply ceased to exist.
+
+When you deposit cryptocurrency on a centralized exchange, your coins do not sit in a wallet you control. They sit in the exchange's wallet, commingled with other clients' assets. The exchange holds the keys. You hold a contractual promise.
+
+That promise has proven fragile time and again. FTX, Celsius, Mt. Gox. Different names, identical pattern: custodians who controlled clients' private keys and, when they failed, took millions of people's wealth down with them.
+
+The problem is not technological. It is structural. When another entity controls your keys, you are exposed to that entity's operational, legal, and financial risk. Full stop.
+
+## How traditional self-custody works and where it falls short
+
+The classic answer to custody risk is self-custody. You generate your own private key, write down 12 or 24 words (the seed phrase), store that paper somewhere secure, and accept total responsibility.
+
+It works. But it introduces real problems.
+
+A seed phrase is a single point of failure. If someone photographs your paper, your funds can be drained in minutes. If the paper burns, you have lost access permanently. If you mistype one word during restoration, the wallet simply does not open.
+
+Research from Chainalysis estimates that between 17% and 23% of all bitcoin in circulation is held in wallets whose keys have been lost. Not stolen. Lost. That represents hundreds of billions of dollars in inaccessible wealth, locked forever in addresses that no one can move.
+
+Hardware wallets add a layer of physical protection but do not eliminate the fundamental problem. The key still exists as a single entity. The device can be damaged, lost, or seized. And the seed phrase backup? Still that vulnerable piece of paper.
+
+> Traditional self-custody transfers risk from the custodian to the individual. It solves the trust problem but creates a fragility problem.
+
+## What is MPC and how this cryptography protects digital wealth
+
+MPC stands for Multi-Party Computation. It is a branch of cryptography that allows multiple parties to jointly compute a result without any of them revealing their individual inputs.
+
+In the context of crypto wallets, MPC solves a specific problem: how to sign a transaction using a private key without that key existing in its entirety anywhere.
+
+The key is generated in a distributed manner. It never exists as a complete object. Instead, multiple cryptographic fragments are created on separate devices. Each fragment is mathematically useless on its own. When a transaction needs to be signed, the devices collaborate through a cryptographic protocol that produces the valid signature without reconstructing the key.
+
+This eliminates the concept of a single point of failure.
+
+You do not need to write down 24 words on a piece of paper that can be stolen. There is no device that, if compromised, gives full access. There is no server that, if hacked, allows funds to be drained.
+
+<Callout type="info" title="MPC vs. Multisig">
+Multisig (multiple signatures) also distributes control, but works differently. Multisig requires multiple complete keys and multiple on-chain signatures, which increases transaction costs and publicly exposes the security structure. MPC operates off-chain: the blockchain sees only one standard signature, indistinguishable from any other. No additional cost, no architecture exposure.
+</Callout>
+
+## How Chainless implements MPC to eliminate single points of failure
+
+Chainless uses MPC with a three-fragment architecture. No single fragment is sufficient to move funds. The distribution works as follows:
+
+**Fragment 1: your device.** Stored securely in your smartphone's hardware enclave (Secure Enclave on iOS, StrongBox on Android). Protected by device biometrics. This fragment never leaves your phone.
+
+**Fragment 2: Chainless servers.** Stored in SOC 2-certified infrastructure with dedicated Hardware Security Modules (HSMs). This fragment, on its own, cannot sign any transaction.
+
+**Fragment 3: encrypted backup.** Stored in independent recovery infrastructure, isolated from operational servers. It exists solely for recovery scenarios.
+
+When you authorize a transaction, your device and the Chainless server execute the MPC protocol together. The two fragments collaborate to produce the cryptographic signature without the complete key ever existing on either side.
+
+This means that:
+
+- If someone hacks Chainless servers, they cannot move your funds (the device fragment is missing).
+- If someone steals your phone and bypasses biometrics, they cannot move your funds (the server fragment is missing).
+- If both are compromised simultaneously, the backup fragment still enables secure recovery.
+
+> Chainless architecture does not rely on promises or terms of service. It relies on mathematics. And mathematics does not fail due to board decisions or liquidity crises.
+
+## What happens to your crypto assets if Chainless ceases operations
+
+This is the question that separates real self-custody from self-custody marketing.
+
+Many platforms use "your keys, your crypto" as a slogan but build systems where the company shutting down would mean loss of access. Chainless designed its architecture for the opposite scenario.
+
+Recovery on Chainless works via social login (Google or Apple, through Web3Auth), which acts as an authentication bridge to the MPC fragments. Even if Chainless operational servers go offline, social login reconstructs access. Additionally, your seed phrase exists and can be exported at any time from the app settings, giving you full manual control if desired.
+
+This is not a secondary feature. It is the single most important design criterion of the platform.
+
+In practice, this means Chainless is not the custodian of your assets. You are the cryptographic owner. The company provides infrastructure, interface, and financial services, but sovereignty over your wealth is yours.
+
+<Callout type="warning" title="Self-custody requires responsibility">
+The MPC architecture protects against external failures. But the biometric authentication on your device is your first line of defense. Keep your operating system updated, use strong biometrics, and activate every verification layer available in the Chainless app.
+</Callout>
+
+## Chainless vs. exchanges: a security model comparison
+
+To understand the difference, the architectures need to be compared directly.
+
+### Key control
+
+On a centralized exchange, the company holds 100% of the private keys. You depend on internal processes, corporate governance, and the exchange's financial solvency to access your own assets.
+
+On Chainless, no entity possesses the complete key. The key is distributed via MPC and signing transactions requires active participation from your device.
+
+### Attack surface exposure
+
+Exchanges are high-value targets. A single successful attack can compromise billions in client assets because keys are concentrated. The largest hacks in crypto history follow this pattern: Ronin Bridge ($625M), Coincheck ($530M), Mt. Gox ($470M).
+
+The Chainless MPC architecture fragments the target. There is no central point to attack. An adversary would need to simultaneously compromise your personal device, Chainless servers, and the backup infrastructure. Each of these systems has independent protection layers.
+
+### Regulatory and operational risk
+
+Exchanges can freeze funds due to regulatory decisions, court orders, or internal policies. When the exchange controls the keys, that capability is technical, not merely legal.
+
+On Chainless, unilateral freezing of funds is architecturally impossible. The server fragment is insufficient to move assets. Authorization requires your device.
+
+### Operational transparency
+
+Exchanges operate as black boxes. You do not know how your funds are custodied internally, whether sufficient reserves exist, or whether your assets are being lent to third parties.
+
+Chainless operates on transparent DeFi protocols. USDC yields come from auditable protocols. Your assets remain in verifiable blockchain addresses.
+
+## Why MPC security without relying on seed phrases represents the future of crypto wallets
+
+The seed phrase was an important innovation in cryptocurrency history. Standardized by BIP-39, it democratized self-custody. Anyone could generate and control their own keys.
+
+But democratization does not mean practicality. A technology that requires the average user to protect 24 random words with perfect security, forever, is a technology with a design problem.
+
+MPC solves this by maintaining the cryptographic properties of self-custody without requiring the user to interact directly with sensitive cryptographic material. Social login (Google or Apple via Web3Auth) acts as the recovery layer, eliminating the need to store words on paper.
+
+On Chainless, you do not need to write down words. You do not manage keys day to day. You do not purchase dedicated devices. The seed phrase exists and can be exported if you want full manual control, but social login handles recovery securely and intuitively. Security is infrastructure, not the end user's burden.
+
+This is not simplification through sacrifice of security. It is simplification through architectural improvement. The experience becomes accessible because the cryptography became more sophisticated, not less robust.
+
+> The security you do not notice is the security that works. MPC transforms wealth protection into something invisible, constant, and independent of human action.
+
+## How Chainless secures Pix transactions and everyday crypto operations
+
+Security does not end at storage. Every operation you perform on Chainless passes through multiple verification layers.
+
+### Pix transactions
+
+Deposits and withdrawals via Pix are processed in partnership with institutions regulated by the Brazilian Central Bank. Conversion between reais and stablecoins happens in a secure environment with automatic reconciliation and continuous auditing.
+
+### USDC yields
+
+USDC yields are generated through the Aave protocol, one of the most audited DeFi protocols in the market. Unlike centralized platforms that promised unsustainable yields (and collapsed when they could not deliver), Chainless connects you directly to protocols whose rates reflect real market conditions.
+
+### Crypto card
+
+Transactions with the Gnosis Pay card, integrated into the Chainless app, do not incur IOF (foreign exchange tax) because they do not constitute a traditional currency exchange operation. Settlement happens directly from your stablecoin balance, without unnecessary intermediaries.
+
+### Crypto-backed loans (coming soon)
+
+Soon, Chainless will allow you to use BTC as collateral to borrow USDC via Aave, at competitive interest rates. BTC is received as wBTC on EVM networks and used as collateral in audited smart contracts. You maintain exposure to your wealth while accessing liquidity, with no credit analysis and no bureaucracy.
+
+## Audit standards and security certifications of the Chainless platform
+
+Trust in security is built with evidence, not with claims.
+
+Chainless infrastructure follows industry-recognized standards:
+
+- **SOC 2 Type II certification:** independent audit of security, availability, and confidentiality controls.
+- **Hardware Security Modules (HSMs):** key fragments stored on servers reside in dedicated hardware modules, resistant to physical and logical tampering.
+- **Audited MPC protocol:** the cryptographic implementation undergoes security audits conducted by specialized firms.
+- **Device enclave:** the local fragment uses your smartphone's secure execution environment, isolated from the main operating system.
+- **Continuous monitoring:** anomaly detection systems operate 24/7, identifying suspicious patterns before they become incidents.
+
+Each layer functions independently. The failure of one does not compromise the others. This is the difference between defense-in-depth security and perimeter security.
+
+## Financial sovereignty as an architecture principle, not a promise
+
+Most financial platforms treat security as a feature. Something added to the product, like another item on the marketing checklist.
+
+At Chainless, security is the architecture. The decision to use MPC was not made to differentiate the product. It was made because it is the correct way to protect the digital wealth of people who deserve sovereignty over their own money.
+
+Your wealth grows. Your keys remain yours.
+
+Not because Chainless promises. Because cryptography guarantees it.
+
+## Frequently asked questions about Chainless security
+
+The answers to the most common questions are organized below for direct reference.

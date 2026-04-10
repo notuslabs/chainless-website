@@ -1,0 +1,203 @@
+---
+title: "What is Aave and how decentralized lending works"
+excerpt: "Aave is the DeFi protocol that lets you lend and borrow crypto without intermediaries. Understand how it works, the risks, and self-custody."
+pillar: "wealth"
+author: "Chainless Team"
+date: "2026-04-12"
+heroImage: "/blog/images/aave-como-funciona.jpg"
+heroImageAlt: "Illustration of the Aave protocol showing decentralized lending flows and blockchain liquidity pools"
+featured: false
+faq:
+  - question: "Is Aave safe for lending crypto?"
+    answer: "Aave is one of the most audited DeFi protocols, with reviews from Trail of Bits, OpenZeppelin, and Certora. Its code is open-source and operates with mandatory over-collateralization. However, like all DeFi protocols, smart contract risks and volatility exist. Evaluate your risk profile before allocating capital."
+  - question: "What is the difference between Aave and a traditional financial institution loan?"
+    answer: "In Aave, there is no credit analysis, paperwork, or human approval. The protocol operates 24/7 through smart contracts. You deposit crypto collateral and borrow automatically. The tradeoff is that over-collateralization requires more collateral than the borrowed amount."
+  - question: "Can I use Aave without giving up self-custody?"
+    answer: "Yes. Aave is a non-custodial protocol. Your assets remain under your wallet's control throughout the entire interaction. No centralized entity holds your private keys. Platforms like Chainless integrate Aave while keeping your self-custody intact."
+softCta:
+  heading: "Yield strategies with Aave, without giving up self-custody"
+  description: "Chainless integrates the Aave protocol so you can access decentralized lending and yield directly from your MPC wallet. No intermediaries, no delegated custody. Your digital wealth stays under your control while it works for you."
+---
+
+## What is Aave and why it matters in the DeFi ecosystem
+
+{/* INTERNAL LINK: consider linking to DeFi explainer article (e.g., "defi-yield-dolar") at "decentralized finance (DeFi)" */}
+Aave is a decentralized finance (DeFi) protocol that allows anyone to lend and borrow crypto assets without relying on intermediaries. Founded in 2017 by Stani Kulechov as ETHLend, the project evolved into one of the pillars of global DeFi infrastructure.
+
+The name comes from Finnish and means "ghost." The reference is intentional. Aave operates transparently and non-custodially, like an invisible layer connecting those with idle capital to those who need liquidity. No forms, no credit approval, no business hours.
+
+As of April 2026, the protocol holds over $25 billion in total value locked (TVL) across multiple blockchains. This is not an experimental project. It is consolidated financial infrastructure.
+
+> Aave is not a fintech disguised as a protocol. It is a set of immutable smart contracts operating on the blockchain, accessible to anyone with a crypto wallet.
+
+## How decentralized lending works in the Aave protocol
+
+The core mechanism of Aave is straightforward. There are two sides: those who deposit assets (liquidity providers) and those who borrow (borrowers). No intermediary decides who lends to whom. Everything is managed by smart contracts.
+
+**Liquidity providers** deposit crypto assets into protocol pools. In return, they receive aTokens, tokens that represent their deposit and accumulate yield automatically. If you deposit 1,000 USDC, you receive 1,000 aUSDC. Over time, that balance grows as interest is paid by borrowers.
+
+**Borrowers** deposit collateral and, based on it, can borrow other assets. The process is instant. No credit check exists. The smart contract verifies whether the collateral is sufficient and releases the loan automatically.
+
+Interest rates are dynamic. They fluctuate based on supply and demand for each asset in the pool. When many people borrow USDC and few deposit, the rate rises. When liquidity is abundant, the rate drops. This balance is algorithmic.
+
+<Callout type="info" title="Variable and stable rates: two interest models">
+Aave offers two rate types for borrowers. The variable rate fluctuates in real time based on market conditions. The stable rate locks a value for a period, offering predictability. The stable rate tends to be higher but protects against demand spikes. You can switch between them at any time.
+</Callout>
+
+## Over-collateralization: why you deposit more than you borrow
+
+If you are used to traditional credit, Aave's model may seem counterintuitive. To borrow $700, you need to deposit, for example, $1,000 in collateral. This is over-collateralization.
+
+Why would anyone deposit more than they receive? Three primary reasons.
+
+**Maintained exposure.** Imagine you hold ETH and believe in its appreciation. Instead of selling, you deposit it as collateral and borrow USDC. You access dollar liquidity without giving up your ETH position. If ETH appreciates, your digital wealth grows while you use the loan.
+
+{/* INTERNAL LINK: consider linking to crypto tax article (e.g., "imposto-renda-cripto") */}
+**Tax efficiency.** In many jurisdictions, borrowing is not a taxable event. Selling an asset is. Collateralized borrowing can be a more efficient wealth management strategy than direct liquidation.
+
+**Calculated leverage.** Sophisticated borrowers use loans to amplify exposure to specific assets. Deposit ETH, borrow USDC, buy more ETH, deposit again. This is a high-risk strategy that demands knowledge, but the protocol enables it natively.
+
+The collateralization ratio varies by asset. Stablecoins like USDC and DAI have more favorable ratios (you can borrow a larger proportion of your deposit). Volatile assets like ETH or WBTC require wider margins.
+
+## What is liquidation in Aave and how the protocol protects its pools
+
+Here is the part every Aave user needs to understand before borrowing. If the value of your collateral drops below the liquidation threshold, anyone can partially liquidate your position.
+
+It works like this. Say you deposited $1,000 in ETH and borrowed $700 in USDC. The liquidation threshold for ETH is 82.5%. As long as your collateral is worth at least $848 (700 / 0.825), your position is safe.
+
+If the price of ETH falls and your collateral drops below that threshold, liquidators (automated bots or users) can repay part of your debt in exchange for a portion of your collateral, with a liquidation bonus of 5% to 10%. This ensures the liquidity pools remain solvent.
+
+**What does this mean in practice?** You lose a portion of your collateral. Not all of it, but a significant fraction. Liquidation is partial: the protocol liquidates only what is necessary to bring your position back to the safe zone.
+
+> Liquidation in Aave is not punishment. It is the mechanism that keeps the protocol solvent. Understanding it is a requirement for anyone who borrows.
+
+To avoid liquidations, monitor your position's Health Factor. A Health Factor above 1 means you are safe. The closer to 1, the closer to liquidation. Many experienced users maintain a Health Factor above 1.5 to buffer against volatility.
+
+## Flash loans: uncollateralized loans that last a single block
+
+Flash loans are arguably Aave's most singular innovation. They are uncollateralized loans that must be taken and repaid within a single blockchain transaction. If the loan is not repaid in the same block, the entire transaction reverts as if it never happened.
+
+Sounds impossible? That is the power of smart contracts. An Ethereum transaction can contain multiple operations. A flash loan allows you to borrow millions of dollars, execute a sequence of operations (arbitrage, refinancing, liquidation), and return the amount with a 0.05% fee.
+
+**Real use cases:**
+
+**Arbitrage.** An asset is priced differently on two decentralized exchanges. You take a flash loan, buy at the lower price, sell at the higher price, and repay the loan. The profit stays with you. If the operation is not profitable, the transaction simply does not happen.
+
+**Position refinancing.** You have a loan position in a protocol with a high rate. You take a flash loan, repay the old debt, migrate the collateral, and open a new position with a lower rate. All in one transaction.
+
+**Self-liquidation.** If your position is near liquidation, you can take a flash loan to repay part of the debt, withdraw excess collateral, and close the position in a controlled manner, avoiding the third-party liquidation penalty.
+
+Flash loans are technically advanced tools. Most users will not interact with them directly. But they contribute to market efficiency and benefit the entire ecosystem.
+
+<Callout type="info" title="Flash loans and security: calculated risk">
+Flash loans have been used in attacks against poorly designed DeFi protocols. However, the problem in those cases was not the flash loan itself but vulnerabilities in the target protocol. Aave mitigates risks with robust price oracles (Chainlink) and governance parameters continuously reviewed by the community.
+</Callout>
+
+## Aave governance: how decisions are made in the protocol
+
+Aave is governed by its AAVE token holders. Any change to the protocol, from risk parameters for new assets to code upgrades, goes through an on-chain governance process.
+
+The flow is structured. Someone proposes a change in the Aave governance forum. The community discusses it. If preliminary consensus exists, an Aave Improvement Proposal (AIP) is submitted on-chain. AAVE holders vote. If approved with sufficient quorum, the change is implemented.
+
+This model has practical security implications. No central entity can alter the protocol's parameters unilaterally. If Aave decides to add a new collateral asset, that decision goes through community risk analysis, evaluation by security providers like Gauntlet and Chaos Labs, and formal voting.
+
+The AAVE token also functions as a safety module. Holders can stake AAVE in the Safety Module, earning yield in exchange for accepting the risk that, in the event of a protocol deficit, up to 30% of staked value may be used to cover losses. This "skin in the game" mechanism aligns incentives.
+
+## Aave audit history and protocol security track record
+
+Security in DeFi is not a permanent state. It is a continuous process. And in this regard, Aave has one of the most solid track records in the sector.
+
+The protocol has been audited by multiple top-tier security firms:
+
+**Trail of Bits**, specializing in critical software security, reviewed Aave V2 and V3 code. **OpenZeppelin**, a reference in smart contract auditing, conducted extensive protocol reviews. **Certora** applied formal verification, a technique that mathematically proves certain code properties hold under all possible conditions. **SigmaPrime** and **PeckShield** also contributed independent audits.
+
+Beyond formal audits, Aave maintains a bug bounty program with rewards up to $250,000 for critical vulnerabilities. This economic incentive puts thousands of independent security researchers continuously working to find flaws.
+
+The result? Since the launch of Aave V2 in December 2020, the protocol has not suffered any exploit resulting in user fund losses from a smart contract failure. This does not mean zero risk. It means the layers of protection have worked so far.
+
+> No DeFi protocol is immune to risk. But Aave has established the security standard that other protocols try to replicate: open-source code, multiple audits, formal verification, and robust bug bounties.
+
+## Aave across multiple blockchains: Ethereum, Polygon, Arbitrum, and beyond
+
+Aave does not operate solely on Ethereum. The protocol has expanded to multiple networks, each with distinct characteristics.
+
+**Ethereum** remains the primary network, with the largest concentration of liquidity and the longest track record. Transaction fees (gas) are higher, but network security is unmatched.
+
+**Polygon** offers significantly lower fees, making Aave accessible for smaller operations. It serves as a solid entry point for those beginning to explore decentralized lending.
+
+**Arbitrum and Optimism** are Ethereum Layer 2 networks. They inherit Ethereum's security but with reduced transaction costs. The experience is virtually identical, with the advantage of much lower gas fees.
+
+**Avalanche, Base, and other networks** expand the protocol's reach. Each deployment is independent, with its own liquidity pools and risk parameters, but operates with the same audited code.
+
+For users, this means flexibility. You can choose the network that fits your operation volume and transaction cost tolerance.
+
+## Which assets can be lent and borrowed on Aave
+
+Aave supports dozens of crypto assets, but not all under the same conditions.
+
+**Stablecoins** like USDC, USDT, and DAI are the most deposited and borrowed assets. Demand is consistent because many borrowers want dollar liquidity without selling their volatile crypto assets.
+
+**ETH and WBTC** are widely used as collateral. Their high market capitalization and deep liquidity result in more favorable risk parameters.
+
+**Governance tokens and lower-cap assets** may be available but generally with more restrictive borrowing limits and more conservative collateralization rates. Not every listed asset can be used as collateral. Some operate in "isolation mode" with specific debt ceilings.
+
+Aave's governance continuously reviews which assets are listed and which parameters apply. Assets that lose liquidity or exhibit anomalous behavior can have their parameters adjusted or be removed.
+
+## Real risks of using Aave: what to evaluate before depositing
+
+Transparency about risks is more useful than unfounded optimism. Aave is a robust protocol, but it is not risk-free.
+
+**Smart contract risk.** Despite audits, the possibility of an undiscovered vulnerability always exists. This risk is inherent to any software but is amplified in DeFi by the irreversibility of blockchain transactions.
+
+**Liquidation risk.** Already discussed. If your collateral value drops below the threshold, you lose a portion of it. This risk is manageable (keep Health Factor high) but not eliminable.
+
+**Governance risk.** Community decisions can alter parameters that affect your position. A change in the liquidation threshold of an asset, for example, can push existing positions closer to the danger zone.
+
+**Oracle risk.** Aave depends on oracles (primarily Chainlink) to obtain market prices. If an oracle reports an incorrect price, unwarranted liquidations can occur. This risk is mitigated by multiple data sources and circuit breakers, but it is not zero.
+
+**Regulatory risk.** DeFi regulation evolves globally. Regulatory changes can affect access to protocols or how yields are taxed.
+
+Understanding these risks is not a reason to avoid the protocol. It is a condition for using it consciously.
+
+## How to access yield strategies on Aave with self-custody
+
+This is where the pieces connect. Aave is a non-custodial protocol. Your assets interact with smart contracts but never leave your wallet's control. No centralized company holds your private keys during the process.
+
+This means you can access yield strategies, provide liquidity, and take loans while maintaining full self-custody of your digital wealth.
+
+{/* INTERNAL LINK: consider linking to self-custody article (e.g., "o-que-e-autocustodia" or "custodia-vs-autocustodia") */}
+For those who already understand the importance of not delegating custody to third parties, Aave represents a natural evolution. You do not have to choose between yield and sovereignty over your assets.
+
+**In practice, the flow works like this:**
+
+1. Connect your self-custody wallet to the protocol.
+2. Deposit the asset you want to provide as liquidity or collateral.
+3. Receive aTokens that accumulate yield automatically.
+4. If desired, borrow against your collateral.
+5. Monitor your Health Factor and adjust positions as needed.
+
+{/* INTERNAL LINK: consider linking to MPC wallet article (e.g., "mpc-wallet") */}
+Chainless integrates Aave directly into your self-custody experience with an MPC wallet. You access the protocol's yield strategies without navigating complex interfaces or managing multiple wallets. Your digital wealth remains under your control throughout the entire process.
+
+## Aave V3 and V4: protocol evolution and new features
+
+The protocol is not static. Each version brought significant advances.
+
+**Aave V3**, launched in 2023, introduced features that changed the protocol's dynamics. E-Mode (Efficiency Mode) allows more favorable collateralization rates when collateral and borrowed asset are correlated. Example: using stETH as collateral to borrow ETH operates with minimal margin because both track the same asset.
+
+Portal enables liquidity transfer between networks. Isolation Mode limits the protocol's exposure to higher-risk assets. Supply and Borrow Caps define maximum ceilings per asset.
+
+**Aave V4**, in development during 2026, promises a unified liquidity layer across networks, even more granular risk management, and native integration with real-world assets (RWAs). The protocol's governance continues publishing roadmaps and open discussions on each proposed change.
+
+Each evolution reinforces the same principle: open, audited, and accessible financial infrastructure for anyone with a wallet.
+
+> Aave does not exist to replace the traditional financial system. It exists to offer an alternative where code replaces trust and smart contracts replace intermediaries.
+
+## Conclusion: Aave as infrastructure for your digital wealth
+
+Aave works. That statement is not hype. It is the result of six years of continuous operation, billions of dollars processed, and zero smart contract exploits on the main version.
+
+Understanding how the protocol works, from liquidity pools to liquidation mechanics, is the first step to using it consciously. The second step is recognizing that decentralized lending does not require you to give up self-custody.
+
+{/* INTERNAL LINK: consider linking to USD yield article (e.g., "usdc-rendimento" or "defi-yield-dolar") */}
+Your digital wealth can work for you while it remains under your control. Not because a company promises that, but because the code guarantees it.

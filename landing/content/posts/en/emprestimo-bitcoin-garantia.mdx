@@ -1,0 +1,222 @@
+---
+title: "Bitcoin as Collateral: How to Borrow Without Selling BTC"
+excerpt: "Bitcoin-backed loans let you access liquidity without selling your crypto. Understand LTV ratios, liquidation mechanics, tax advantages, and self-custody lending."
+pillar: "practical"
+author: "Equipe Chainless"
+date: "2026-05-12"
+heroImage: "/blog/images/emprestimo-bitcoin.jpg"
+heroImageAlt: "Illustration of Bitcoin being used as collateral to obtain a loan without selling the asset"
+featured: false
+faq:
+  - question: "What is a Bitcoin-backed loan?"
+    answer: "A Bitcoin-backed loan is a credit facility where you deposit BTC as collateral and receive funds in stablecoins or fiat currency. You maintain your Bitcoin exposure while accessing immediate liquidity. When you repay the loan, you receive your BTC back in full."
+  - question: "What happens if the price of Bitcoin drops during my loan?"
+    answer: "If the price drops and your LTV (Loan-to-Value) ratio exceeds the established threshold, the protocol may execute a partial or full liquidation of your collateral to cover the debt. Maintaining a conservative LTV with a safety buffer is essential."
+  - question: "Do I owe taxes on the value received from a crypto-backed loan?"
+    answer: "In most jurisdictions, loan proceeds are not considered taxable income. The value you receive when borrowing against BTC does not trigger a taxable event, unlike selling, which may generate capital gains tax. Consult a tax professional for your specific situation."
+softCta:
+  heading: "Liquidity without giving up your Bitcoin"
+  description: "Coming soon, Chainless will offer BTC-collateralized loans with true self-custody via MPC wallet, without needing to manage seed phrases and without intermediaries controlling your assets. Access credit in stablecoins while keeping your position intact and your keys under your control."
+---
+
+You need liquidity. Maybe for an investment opportunity, an unexpected expense, or simply to cover cash flow. Your Bitcoin is sitting there, appreciating. Selling feels like the obvious solution.
+
+But selling BTC triggers capital gains tax. It undoes a position that took months or years to build. And it permanently eliminates your exposure to an asset that has historically rewarded those who held.
+
+There is another path: use your Bitcoin as collateral to take a loan. You access the funds you need. Your BTC stays yours. And when you repay the debt, you get it all back.
+
+## What is a Bitcoin-backed loan and how does it work
+
+A Bitcoin-backed loan, also known as crypto-collateralized lending, is a credit facility where you deposit BTC as collateral and receive borrowed funds in stablecoins (like USDC or USDT) or in fiat currency.
+
+The mechanism is conceptually similar to a pawn arrangement. You hand over an asset of value as guarantee, receive proportional credit, and when you return the credit plus interest, your asset comes back in full.
+
+The fundamental difference is that in the DeFi ecosystem, this process can happen without centralized intermediaries. Audited smart contracts on public blockchains execute the logic transparently and verifiably. There is no credit committee analyzing your financial history. No approval queue. The collateral itself determines access.
+
+> Collateralized lending inverts the logic of traditional credit. Your credit score does not matter. What matters is the value you are willing to commit as guarantee.
+
+In practice, the flow works like this:
+
+1. You deposit BTC into a smart contract or lending platform.
+2. The protocol calculates the value of your collateral and releases a percentage as a loan.
+3. You receive stablecoins or fiat currency in your wallet.
+4. While the loan is active, your BTC remains locked as collateral.
+5. When you repay the loan (principal + interest), your BTC is unlocked and returned to you.
+
+## How LTV ratios work in Bitcoin-collateralized lending
+
+LTV stands for Loan-to-Value, the ratio between the borrowed amount and the collateral value. It is the single most important number in any crypto-collateralized lending operation.
+
+If you deposit $100,000 in BTC and borrow $50,000, your LTV is 50%. This means the borrowed amount represents half of the collateral value.
+
+Why does this matter? Because the price of Bitcoin fluctuates. If BTC drops 30%, your $100,000 in collateral becomes $70,000. The $50,000 loan now represents an LTV of approximately 71%. The higher the LTV, the greater the risk for the protocol and for you.
+
+Most DeFi protocols and lending platforms define three tiers:
+
+**Initial LTV**: the maximum percentage you can borrow at the time of deposit. Common values fall between 50% and 65%. A conservative initial LTV of 50% means that for every $100,000 deposited, you can borrow up to $50,000.
+
+**Margin call LTV**: when the LTV reaches this level (typically between 70% and 75%), you receive an alert to add more collateral or reduce the loan balance.
+
+**Liquidation LTV**: if the LTV surpasses this threshold (generally between 80% and 85%), the protocol begins automatically liquidating your collateral to cover the debt.
+
+<Callout type="info" title="Conservative LTV protects against volatility">
+The practical rule for Bitcoin-backed loans: the lower the initial LTV, the more room you have to absorb price drops without liquidation risk. A 50% LTV allows BTC to fall nearly 40% before reaching the liquidation zone. A 65% LTV tolerates only a 20% decline. The difference between those numbers can be the difference between keeping and losing your position.
+</Callout>
+
+## What is liquidation and how to protect your Bitcoin in DeFi loans
+
+Liquidation is the event every collateralized borrower wants to avoid. It occurs when the value of your collateral falls to the point where it no longer covers the debt with the safety margin required by the protocol.
+
+When the LTV hits the liquidation threshold, the smart contract automatically sells part or all of your BTC to repay the loan. This happens without human intervention, without negotiation, without notice beyond the earlier alerts. It is the mechanic that keeps the system solvent.
+
+Unlike the traditional financial system, where a relationship manager might call and offer restructuring, DeFi protocols operate by code. Liquidation is deterministic: if the price reaches the threshold, execution happens.
+
+There are ways to protect yourself:
+
+**Maintain a conservative LTV.** Borrowing 50% of your collateral value when the maximum allowed is 65% creates a significant buffer zone.
+
+**Monitor the asset price.** Set price alerts to know when your LTV is approaching risk zones.
+
+**Keep additional collateral ready.** If the market drops, being able to add more BTC to your collateral quickly can prevent liquidation.
+
+**Consider partial repayment.** Reducing the outstanding balance when the market is under pressure lowers the LTV and pushes back the risk.
+
+> The protocol does not negotiate. Does not grant extensions. Makes no exceptions. Your protection lies in the margin you chose to maintain from the start.
+
+## Tax advantages of borrowing against Bitcoin versus selling
+
+This is possibly the most compelling reason to consider a collateralized loan instead of a sale. In most jurisdictions, selling cryptocurrency at a profit triggers capital gains tax obligations.
+
+Consider a concrete scenario. You purchased 1 BTC at $20,000 and it is now worth $100,000. Selling generates a capital gain of $80,000. Depending on your jurisdiction and tax bracket, the tax bill could range from $12,000 to $24,000 or more.
+
+Now consider the alternative. You use that same BTC as collateral for a $50,000 loan. You pay interest on the loan (say 8% annually, or $4,000). When you repay the debt, you receive your BTC back.
+
+The result: you accessed $50,000 in liquidity, paid $4,000 in interest instead of $12,000 to $24,000 in taxes, and kept your Bitcoin position intact. If BTC continues to appreciate, the difference becomes even more significant.
+
+<Callout type="warning" title="A loan is not a sale for tax purposes">
+Consult your tax advisor. In most jurisdictions, receiving value through a loan is not considered a taxable event. But crypto tax regulation is evolving constantly. The operation should be properly documented to withstand scrutiny from tax authorities.
+</Callout>
+
+The calculation is direct. In many scenarios, loan interest is significantly lower than the tax that would be paid on a sale. And you preserve the position in the asset.
+
+## Self-custody Bitcoin lending: how DeFi lending works without giving up your keys
+
+This is where things get interesting for anyone who values sovereignty over their assets.
+
+In the traditional crypto lending model, centralized platforms like Celsius, BlockFi, and Voyager offered collateralized loans. The problem? You deposited your BTC into the company's wallet. The company controlled the keys. And when those companies collapsed, client assets entered bankruptcy proceedings.
+
+DeFi lending operates with different logic. Your assets interact with audited smart contracts on public blockchains. Collateral is deposited directly into the protocol, not into a company's wallet. Rules are executed by code, not by corporate decisions.
+
+Platforms that combine DeFi with self-custody via MPC wallets allow you to access collateralized loans without giving up control over your private keys. Chainless, for example, already offers self-custody with an MPC wallet, without needing to manage seed phrases, and is preparing the launch of BTC-collateralized loans as its next feature.
+
+This means three concrete things:
+
+**Total transparency.** You can verify on the blockchain where your collateral sits, what the smart contract rules are, and how interest is calculated. There is no black box.
+
+**No corporate counterparty risk.** If the platform that facilitates access to the DeFi protocol ceases to exist, your assets remain under your control on the blockchain. This is the opposite of what happened with Celsius and BlockFi.
+
+**Programmatic execution.** Loan rules are executed by immutable smart contracts. There are no arbitrary decisions, unilateral freezes, or retroactive changes to terms.
+
+## When it makes sense to use Bitcoin as collateral for a loan
+
+Not every situation justifies a collateralized loan. Understanding when this tool creates value and when it can be unnecessarily risky is important.
+
+**Scenarios where it makes sense:**
+
+You hold a significant BTC position, believe in long-term appreciation, and need temporary liquidity. Selling would mean realizing taxable capital gains and unwinding a strategic position.
+
+You want to diversify investments without reducing Bitcoin exposure. Using BTC as collateral lets you access stablecoins to invest in other asset classes while maintaining the original position.
+
+You need to cover business operating expenses or seize an investment opportunity with a defined timeframe. Collateralized lending offers rapid liquidity without the bureaucratic process of traditional credit.
+
+**Scenarios where caution is warranted:**
+
+You are using all or nearly all of your crypto holdings as collateral. A sharp price decline could result in liquidation without room for recovery.
+
+You cannot add additional collateral if the market drops. Entering a loan without reserves is amplifying risk unnecessarily.
+
+You plan to use the borrowed funds to take leveraged positions in other volatile assets. Leverage on top of leverage amplifies risk exponentially.
+
+## Interest rates on Bitcoin-collateralized loans: what to expect
+
+Interest rates in DeFi lending protocols work differently from traditional credit.
+
+In the traditional financial system, rates are set by a credit committee based on your risk profile, credit score, declared income, and a series of subjective factors. In DeFi, rates are determined algorithmically, based on supply and demand for capital within the protocol.
+
+When many people want to borrow and little capital is available, rates rise. When capital is abundant and borrowing demand is low, rates fall. It is pure market pricing, without intermediaries adding spreads.
+
+In 2026, annual rates for BTC-collateralized loans typically range between 5% and 12%, depending on the protocol, chosen LTV, and market conditions. Compare this with personal credit rates in many countries, which frequently exceed 15% to 25% annually, or credit card rates that surpass 20%.
+
+The difference is not incremental. It is structural. DeFi eliminates layers of intermediation that make traditional credit expensive.
+
+## Step by step: how to take a loan using Bitcoin as collateral
+
+If you are considering this option, here is a practical path.
+
+**1. Define how much you need.** Start with the amount you need to access, not the maximum you can borrow. Taking more than necessary increases interest cost and liquidation risk without creating proportional benefit.
+
+**2. Calculate the required collateral.** If you want to borrow $100,000 with a 50% LTV, you need to deposit $200,000 in BTC. If you want a more conservative 40% LTV, you need $250,000 in collateral.
+
+**3. Choose your platform or protocol.** Evaluate interest rates, liquidation mechanics, security audit history, and fundamentally, the custody model. Platforms offering self-custody via MPC eliminate corporate counterparty risk.
+
+**4. Deposit collateral and take the loan.** The process in DeFi protocols is direct. Connect your wallet, deposit BTC, select the loan amount, and confirm the transaction.
+
+**5. Set up monitoring alerts.** Define alerts for when your LTV reaches attention thresholds (60%, 65%, 70%). Knowing in advance that risk is increasing allows you to act before the situation becomes critical.
+
+**6. Plan repayment.** Collateralized lending is not free money. Interest accumulates. Have clarity on when and how you will repay the debt to recover your collateral in full.
+
+## How BTC-collateralized lending works via Aave
+
+One of the most robust implementations of BTC-collateralized lending operates via the Aave protocol, one of the most audited and established DeFi protocols in the market.
+
+The technical flow works like this: native BTC is sent to the platform, where it is automatically converted (bridged) to wBTC (Wrapped Bitcoin), a tokenized version of Bitcoin compatible with EVM blockchains. This wBTC is then deposited as collateral on Aave, which releases the loan in USDC at market-determined rates. When the loan is repaid, the wBTC can be converted back to native BTC and sent to any Bitcoin wallet.
+
+This architecture preserves Bitcoin price exposure while unlocking stablecoin liquidity. The bridging and collateralization process happens through audited smart contracts, with no centralized custody of the asset at any point.
+
+Chainless is building exactly this flow as its next release: send native BTC in, automatically convert to wBTC, use it as collateral on Aave to borrow USDC at competitive rates, and convert back to native BTC on the way out. All with self-custody via MPC wallet and without needing to manage seed phrases.
+
+## Bitcoin as collateral versus sell and rebuy: the math that matters
+
+Many people consider selling BTC, using the cash, and then buying back. It seems equivalent, but the math tells a different story.
+
+**Scenario 1: Sell and rebuy.**
+You sell 1 BTC at $100,000 (cost basis: $20,000). You pay approximately $16,000 in capital gains tax. You are left with $84,000. You use what you need. Later, you rebuy BTC at the market price, which may be higher.
+
+**Scenario 2: Collateralized loan.**
+You deposit 1 BTC as collateral. You borrow $50,000 at 8% annually. After 12 months, you repay $54,000. You receive your BTC back. Total cost: $4,000.
+
+In scenario 1, you spent $16,000 in taxes alone, lost BTC exposure during the period, and face the risk of rebuying at a higher price. In scenario 2, you accessed liquidity for $4,000 and kept the position intact.
+
+If BTC appreciated 20% during the period, the gap becomes even more pronounced. The seller needs to pay more to rebuy. The borrower receives back an asset that has grown in value.
+
+> The decision between selling and borrowing is not philosophical. It is mathematical. In most medium-term scenarios, collateralized borrowing costs less than selling and preserves your position.
+
+## Real risks of Bitcoin-backed loans you need to understand
+
+Collateralized lending is not risk-free. Being direct about these risks is essential.
+
+**Liquidation risk.** If the BTC price drops below the threshold, your collateral will be liquidated. This can mean partial or total loss of the position. Protection lies in conservative LTV and the ability to add collateral.
+
+**Smart contract risk.** DeFi protocols depend on code. Vulnerabilities can be exploited. Mitigation comes from using protocols with multiple audits, proven track records, and active bug bounty programs.
+
+**Variable rate risk.** In many protocols, interest rates fluctuate with supply and demand. A loan that starts at 6% annually could rise to 15% during periods of high demand. Understand the pricing mechanics before committing.
+
+**Regulatory risk.** DeFi and crypto lending regulation is evolving globally. Regulatory changes could alter the tax treatment or operational conditions of these instruments.
+
+None of these risks are reasons to avoid the tool. They are reasons to use it with knowledge.
+
+## The future of collateralized credit in digital assets
+
+Collateralized crypto credit is still in its early stages. What exists today is functional, but the potential for evolution is substantial.
+
+Three trends to watch:
+
+**Fixed-rate collateralized credit.** Most current protocols operate with variable rates. New protocols are developing fixed-rate mechanisms that give borrowers predictability and eliminate the risk of cost fluctuation.
+
+**Integration with fiat income.** Combining crypto collateral with fiat income verification could enable more aggressive LTVs with lower liquidation risk. This convergence between DeFi and traditional finance is under active development.
+
+**Multi-asset collateral.** Depositing a diversified basket of assets as collateral (BTC + stablecoins) reduces liquidation risk because the decline of one asset can be offset by the stability of others. Protocols that enable this are gaining traction.
+
+Collateralized crypto credit does not replace traditional credit for every scenario. But for anyone holding digital assets who wants to preserve positions while accessing liquidity, it is a tool the traditional financial system does not offer with the same efficiency.
+
+Your Bitcoin works for you. Your keys remain yours.

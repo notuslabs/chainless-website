@@ -1,0 +1,191 @@
+---
+title: "MPC wallet: the technology behind secure self-custody"
+excerpt: "Learn how MPC wallets split your private key into distributed fragments, removing the need to manage seed phrases and eliminating single points of failure for your digital assets."
+pillar: "sovereignty"
+author: "Chainless Team"
+date: "2026-04-01"
+heroImage: "/blog/images/mpc-wallet.jpg"
+heroImageAlt: "Abstract illustration of distributed cryptographic fragments representing MPC wallet technology"
+featured: false
+faq:
+  - question: "Is an MPC wallet safe for storing large amounts of crypto?"
+    answer: "Yes. MPC technology is the same standard used by institutional custodians protecting billions of dollars in digital assets. Private key fragmentation eliminates single points of failure, making an attack computationally infeasible without simultaneous access to multiple independent devices."
+  - question: "Do I need to write down a seed phrase when using an MPC wallet?"
+    answer: "An MPC wallet like Chainless does generate a seed phrase, and you can export it if you want full manual control. However, recovery happens through social login (Google or Apple), so you never need to manage that piece of paper in a drawer. The seed phrase exists, but you do not need to rely on it day to day."
+  - question: "What is the difference between an MPC wallet and multisig?"
+    answer: "Multisig requires multiple complete private keys and generates larger transactions with higher gas costs. MPC fragments a single private key and reconstructs the signature without ever reuniting the fragments, resulting in standard transactions with normal costs and native compatibility with any blockchain."
+softCta:
+  heading: "Self-custody without relying on seed phrases"
+  description: "Chainless uses institutional-grade MPC with social login recovery, directly on your phone. Your fragments, your devices, your digital assets. No paper to store, no words to memorize, no single points of failure."
+---
+
+Think about how absurd it is to protect digital wealth with 12 words written on a piece of paper. For years, that was the only option. Today, there is an alternative that financial institutions already trust, and it has finally arrived in your pocket.
+
+An MPC wallet is the answer for anyone who wants real self-custody without accepting the primitive risks of managing seed phrases manually. In this article, you will understand exactly how this technology works, why it outperforms traditional alternatives, and what changes in practice for anyone serious about protecting crypto.
+
+## What is an MPC wallet and how does it work
+
+MPC stands for Multi-Party Computation. It is a branch of cryptography that allows multiple parties to jointly compute a result without any of them revealing their individual information.
+
+Applied to cryptocurrency wallets, MPC solves a fundamental problem: how to sign transactions without the complete private key ever existing, at any moment, in any place.
+
+The process works like this:
+
+1. **Distributed Key Generation (DKG):** When the wallet is created, a cryptographic protocol generates fragments of the private key. Each fragment goes to a different device or server. The complete key is never assembled.
+
+2. **Threshold Signature Scheme (TSS):** When you authorize a transaction, the fragments collaborate through a cryptographic protocol to produce a valid signature. No fragment needs to leave your device. No server sees the entire key.
+
+3. **On-chain result:** The blockchain receives a transaction with a standard signature. There is no visible difference between a transaction signed by MPC and one signed by a conventional private key.
+
+The result is a wallet where signing happens, but the private key is never reconstructed. This eliminates the most exploited attack vector in crypto: the single point of failure.
+
+<Callout type="info" title="MPC is not a new concept">
+Multi-Party Computation was first proposed by Andrew Yao in 1982. What changed over the following decades was the efficiency of the protocols, making it possible to execute MPC in real time, on a mobile phone, to sign cryptocurrency transactions.
+</Callout>
+
+## Why relying on seed phrases is a security liability
+
+Before diving deeper into MPC advantages, it is worth understanding why the traditional model of seed phrase management is fragile.
+
+Traditional wallets generate a private key and represent it as a sequence of 12 or 24 words: the seed phrase. Whoever has this sequence controls the funds. No intermediaries, no recourse.
+
+This creates three structural vulnerabilities:
+
+**Single point of failure.** If someone photographs, copies, or finds your seed phrase, your funds vanish. The phone password, biometrics, and PIN become irrelevant. The seed phrase is the master key.
+
+**Amplified human error.** Write down 24 words in the correct order, store them in a secure location, never lose them, never damage them. Roughly 20% of all existing bitcoins are estimated to be permanently lost, a significant portion due to misplaced seed phrases.
+
+**Incompatibility with real life.** Fireproof safes, engraved metal plates, multiple copies in separate locations. Seed phrase security demands an operational apparatus that does not scale for everyday use.
+
+> True self-custody should not require you to become your own vault. It should require cryptography that works on your behalf.
+
+## How MPC eliminates the single point of failure
+
+MPC architecture inverts the security logic. Instead of concentrating all power in a single secret, it distributes it.
+
+Consider this scenario: your MPC wallet has three fragments. One on your phone, one on the application server, one in an encrypted backup. To sign a transaction, two of three fragments must collaborate.
+
+Here is what happens in each attack scenario:
+
+**Phone stolen.** The attacker has one fragment. Without the second, they cannot sign anything. Meanwhile, you recover access using the backup fragment and the server fragment.
+
+**Server compromised.** The attacker has the server fragment. Without the fragment on your device, signing is impossible. The server alone never controlled your funds.
+
+**Backup accessed improperly.** Same scenario. An isolated fragment is cryptographically useless.
+
+This property is called **threshold security**. The system defines a minimum number of fragments required to operate, and any quantity below that threshold yields zero useful information about the key.
+
+<Callout type="warning" title="Fragments are not password pieces">
+Do not confuse MPC fragmentation with simply splitting a password into parts. In MPC, each fragment is generated through specific cryptographic protocols. Even if an attacker obtains one fragment, they cannot deduce anything about the others or about the original key. This is mathematically guaranteed.
+</Callout>
+
+## MPC wallet versus hardware wallet: which protects more
+
+Hardware wallets like Ledger and Trezor were for years the gold standard of self-custody security. They store the private key on an isolated chip, disconnected from the internet. It is a solid approach, but with real limitations.
+
+### The hardware wallet security model
+
+A hardware wallet concentrates the private key on a single physical device. Security depends on three factors: chip integrity, physical possession of the device, and once again, the seed phrase as backup.
+
+Here is the problem: the hardware wallet protects against remote attacks, but it does not eliminate the single point of failure. The seed phrase remains the weakest link. If it is compromised, the physical device becomes irrelevant.
+
+### Where MPC outperforms
+
+| Criterion | Hardware Wallet | MPC Wallet |
+|---|---|---|
+| Seed phrase | Required as backup | Generated, but not required for recovery |
+| Single point of failure | Yes (seed phrase) | No (distributed fragments) |
+| Dedicated device | Required | Standard phone |
+| Recovery | Seed phrase only | Social login (Google/Apple) + fragments |
+| Usability | Connect, confirm, disconnect | Sign directly in the app |
+| Security updates | Manufacturer firmware | Fragment rotation |
+
+MPC offers a capability that hardware wallets lack: **fragment rotation**. Periodically, fragments can be recalculated without changing the private key or wallet address. This means that even if an old fragment is compromised, it becomes invalid after rotation.
+
+## Difference between MPC wallet and multisig
+
+Multisig (multi-signature) is another approach to eliminating single points of failure. It requires multiple independent private keys to sign a transaction. It sounds similar to MPC, but the architecture is fundamentally different.
+
+### How multisig works
+
+A 2-of-3 multisig wallet, for example, generates three complete private keys. To authorize a transaction, two of them must sign. Each key exists in its entirety on its respective device.
+
+### Multisig limitations
+
+**Higher gas costs.** Multisig transactions carry multiple signatures on-chain, increasing size and cost. On networks like Ethereum, this can mean significantly higher fees.
+
+**Limited compatibility.** Not all blockchains support multisig natively. Where support exists, it frequently depends on specific smart contracts, adding complexity and attack surface.
+
+**Multiple key management.** Each private key in the multisig setup needs its own seed phrase. In a 2-of-3 scheme, that means three seed phrases to manage, tripling the original problem.
+
+**Operational rigidity.** Changing the signature scheme (for example, from 2-of-3 to 3-of-5) requires migrating all funds to a new address, with new transaction costs.
+
+### MPC structural advantage
+
+MPC produces a single standard signature, indistinguishable from any other on the blockchain. This means native compatibility with all networks, normal transaction costs, and zero exposure of the security scheme on-chain.
+
+Fragment rotation also allows changing the security threshold without moving funds. You can go from a 2-of-3 scheme to 3-of-5 without generating a single on-chain transaction.
+
+> Multisig solves the problem with brute force: more keys, more signatures, more cost. MPC solves it with cryptographic elegance: one signature, zero exposure.
+
+## How to evaluate a trustworthy MPC wallet
+
+Not every wallet that labels itself "MPC" implements the technology with the same rigor. There are objective criteria to assess.
+
+### Real distributed generation (DKG)
+
+The complete private key should never exist, not even during creation. Be skeptical of solutions that generate the key first and then fragment it. Generation must be distributed from the start.
+
+### Audited signature protocol
+
+The TSS (Threshold Signature Scheme) protocols used should be based on peer-reviewed academic research. Look for implementations of GG18, GG20, CGGMP21, or equivalent protocols that have undergone independent security audits.
+
+### Transparent fragment model
+
+You should know exactly how many fragments exist, where each one is stored, and what threshold is required for signing. Opacity on this point is a red flag.
+
+### Recovery via social login
+
+A well-implemented MPC wallet offers recovery through social authentication (such as Google or Apple) combined with distributed fragments. The seed phrase may exist and be exportable for users who want full manual control, but the primary recovery flow should not depend on it. This is what separates a modern implementation from a solution that merely added MPC on top of the old model.
+
+### Fragment rotation
+
+The ability to periodically recalculate fragments without changing addresses is one of MPC's competitive advantages. Wallets that do not offer rotation are delivering only part of the technology's benefit.
+
+## The role of MPC in institutional crypto security
+
+MPC did not originate in retail. It was adopted first by institutional custodians who needed to protect billions of dollars in digital assets without depending on a single control point.
+
+Companies like Fireblocks, Copper, and Qredo built entire infrastructures based on MPC to serve investment funds, exchanges, and corporate treasuries. The reason is direct: at institutional scale, seed phrases and individual hardware wallets are not operationally viable.
+
+What Chainless does is bring that same technology, with the same cryptographic rigor, to anyone's phone. Authentication happens via social login (Google or Apple, through Web3Auth), and recovery follows the same path. Without requiring you to understand the protocols. Without asking you to manage fragments manually. The complexity stays in the engineering. The experience stays straightforward.
+
+### MPC and regulatory compliance
+
+A less discussed benefit of MPC is its compatibility with regulatory frameworks. Fragment distribution enables granular access controls, audit logs, and approval policies without compromising user self-custody.
+
+This positions MPC wallets as the bridge between the individual sovereignty that crypto promises and the compliance requirements that the regulated market demands.
+
+## The future of MPC wallets and accessible self-custody
+
+MPC protocol evolution is moving in concrete directions:
+
+**Performance.** Newer protocols like CGGMP21 drastically reduced the number of communication rounds required between fragments, making signing practically instantaneous.
+
+**Cross-chain compatibility.** MPC operates at the signature layer, below any specific blockchain protocol. This means the same infrastructure protects Bitcoin, Ethereum, Solana, and any future network.
+
+**Social recovery.** Emerging models allow designating recovery fragments to trusted contacts, without those contacts being able to operate the wallet alone. It is an evolution of digital inheritance.
+
+**DeFi integration.** MPC wallets are being designed to interact natively with DeFi protocols, eliminating the need to sign complex transactions with seed phrases exposed in browser extensions.
+
+The direction is clear. The self-custody of the future will not ask you to memorize words or purchase dedicated devices. It will ask you to choose the right cryptography.
+
+> Self-custody is not about controlling a key. It is about having certainty that no one besides you can use it. MPC transforms that certainty into mathematics.
+
+## Conclusion: MPC wallet is the new standard of self-custody
+
+The MPC wallet is not a trend or an experimental concept. It is mature cryptographic infrastructure, tested in institutional environments, and now available to anyone who takes the protection of their digital assets seriously.
+
+It eliminates the need to rely on seed phrases for recovery, distributes trust across multiple points, and maintains full compatibility with any blockchain. It requires no extra devices, imposes no analog security rituals, and does not transfer risk to a piece of paper in a drawer.
+
+If you want self-custody that works the way cryptography promised from the beginning, MPC is the path. And the technology is already in your pocket.
