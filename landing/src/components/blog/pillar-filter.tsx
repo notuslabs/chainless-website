@@ -25,12 +25,12 @@ const PILLAR_OPTIONS: PillarOption[] = [
   {
     labelKey: "wealth",
     value: "crescimento",
-    activeClass: "bg-[#3DA66A]/12 text-[#3DA66A] ring-[#3DA66A]/20",
+    activeClass: "bg-success/12 text-success ring-success/20",
   },
   {
     labelKey: "practical",
     value: "pratica",
-    activeClass: "bg-[#4A90DA]/12 text-[#4A90DA] ring-[#4A90DA]/20",
+    activeClass: "bg-info/12 text-info ring-info/20",
   },
 ];
 
@@ -90,7 +90,7 @@ export function PillarFilter({ currentPillar }: PillarFilterProps) {
               aria-selected={isActive}
               onClick={() => handleSelect(option.value)}
               className={[
-                "snap-start shrink-0 rounded-full px-5 py-2 text-[13px] font-medium ring-1 transition-all duration-500",
+                "snap-start shrink-0 rounded-xl px-5 py-2 text-xs font-medium ring-1 transition-all duration-500",
                 "ease-[var(--ease-premium)] cursor-pointer whitespace-nowrap",
                 isActive
                   ? option.activeClass

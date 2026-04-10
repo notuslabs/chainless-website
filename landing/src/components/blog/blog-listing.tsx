@@ -113,7 +113,7 @@ export function BlogListing({ posts }: BlogListingProps) {
             </p>
             <Link
               href="/blog"
-              className="mt-8 inline-flex items-center rounded-full px-6 py-3 text-[15px] font-medium ring-1 ring-white/[0.10] text-warm-300 transition-all duration-500 ease-[var(--ease-premium)] hover:ring-yellow-500/20 hover:text-yellow-400"
+              className="mt-8 inline-flex items-center rounded-xl px-6 py-3 text-[15px] font-medium ring-1 ring-white/[0.10] text-warm-300 transition-all duration-500 ease-[var(--ease-premium)] hover:ring-yellow-500/20 hover:text-yellow-400"
             >
               {t("viewAll")}
             </Link>
@@ -135,7 +135,6 @@ export function BlogListing({ posts }: BlogListingProps) {
                   slug={post.slug}
                   pillar={post.frontmatter.pillar}
                   author={post.frontmatter.author}
-                  date={post.frontmatter.date}
                   readingTime={post.readingTime}
                   heroImage={post.frontmatter.heroImage}
                   heroImageAlt={post.frontmatter.heroImageAlt}

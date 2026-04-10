@@ -112,7 +112,7 @@
   "borrow": {
     "comingSoon": "Em breve",
     "heading": "Receba dólares sem vender seu Bitcoin.",
-    "subtitle": "Deposite BTC como garantia e receba crédito em USDC a 3,5% ao ano, sem prazo fixo.",
+    "subtitle": "Deposite BTC como garantia e receba crédito em USDC a 5% ao ano, sem prazo fixo.",
     "steps": [
       {
         "label": "Deposite",
@@ -131,7 +131,7 @@
         "description": "Seu Bitcoin continua valorizando. Você não vendeu nada."
       }
     ],
-    "disclaimer": "Valores meramente ilustrativos. A taxa de 3,5% a.a. e a valorização de +2,4% são estimativas baseadas em desempenho passado e condições de mercado. Não constituem promessa nem garantia de resultado. Dados atualizados disponíveis no app."
+    "disclaimer": "Valores meramente ilustrativos. A taxa de 5% a.a. e a valorização de +2,4% são estimativas baseadas em desempenho passado e condições de mercado. Não constituem promessa nem garantia de resultado. Dados atualizados disponíveis no app."
   },
   "security": {
     "eyebrow": "Arquitetura de segurança",

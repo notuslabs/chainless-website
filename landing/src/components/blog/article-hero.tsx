@@ -7,7 +7,6 @@ interface ArticleHeroProps {
   title: string;
   pillar: "sovereignty" | "wealth" | "practical";
   author: string;
-  date: string;
   readingTime: number;
   heroImage?: string;
   heroImageAlt?: string;
@@ -17,7 +16,6 @@ export function ArticleHero({
   title,
   pillar,
   author,
-  date,
   readingTime,
   heroImage,
   heroImageAlt,
@@ -25,28 +23,18 @@ export function ArticleHero({
   return (
     <section className="bg-dark-500 pt-32 pb-16">
       <div className="max-w-5xl mx-auto px-6">
-        {/* Pillar tag */}
         <PillarTag pillar={pillar} />
 
-        {/* H1 title */}
-        <h1
-          className="font-serif font-normal text-text-primary tracking-[-0.025em] mt-6"
-          style={{
-            fontSize: "clamp(2.25rem, 1.7rem + 2.2vw, 3.5rem)",
-            lineHeight: 1.1,
-          }}
-        >
+        <h1 className="font-serif font-normal text-text-primary tracking-[-0.025em] mt-6 text-[clamp(2.25rem,1.7rem+2.2vw,3.5rem)] leading-[1.1]">
           {title}
         </h1>
 
-        {/* Article meta */}
         <div className="mt-8">
-          <ArticleMeta author={author} date={date} readingTime={readingTime} />
+          <ArticleMeta author={author} readingTime={readingTime} />
         </div>
 
-        {/* Optional hero image */}
         {heroImage && (
-          <div className="mt-10 rounded-2xl overflow-hidden aspect-video relative">
+          <div className="mt-10 rounded-[var(--doppelrand-radius-outer)] overflow-hidden aspect-video relative">
             <img
               src={`${BASE}${heroImage}`}
               alt={heroImageAlt ?? title}

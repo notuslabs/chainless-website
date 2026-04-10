@@ -52,7 +52,7 @@ const STEPS = [
     tokenTicker: "Dólar digital",
     metric: "$3.000",
     metricAccent: false,
-    badge: "3,5% a.a.",
+    badge: "5% a.a.",
     subMetric: null,
     description: "Receba crédito em dólar digital, instantaneamente.",
   },

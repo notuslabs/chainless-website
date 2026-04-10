@@ -18,7 +18,7 @@ interface FeaturedArticleProps {
 export function FeaturedArticle({ post }: FeaturedArticleProps) {
   const t = useTranslations("blog.listing");
   const { slug, frontmatter, readingTime } = post;
-  const { title, excerpt, pillar, author, date, heroImage, heroImageAlt } =
+  const { title, excerpt, pillar, author, heroImage, heroImageAlt } =
     frontmatter;
 
   return (
@@ -102,7 +102,6 @@ export function FeaturedArticle({ post }: FeaturedArticleProps) {
 
                 <ArticleMeta
                   author={author}
-                  date={date}
                   readingTime={readingTime}
                   className="mt-6"
                 />

@@ -45,7 +45,7 @@ export function Pagination({
       {/* Prev arrow */}
       {prevDisabled ? (
         <span
-          className="flex h-10 w-10 items-center justify-center rounded-lg opacity-30 text-warm-400 cursor-not-allowed"
+          className="flex h-10 w-10 items-center justify-center rounded-xl opacity-30 text-warm-400 cursor-not-allowed"
           aria-disabled="true"
           aria-label={t("previous")}
         >
@@ -54,7 +54,7 @@ export function Pagination({
       ) : (
         <Link
           href={buildPageUrl(basePath, currentPage - 1, pillar)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-warm-400 transition-colors duration-200 hover:bg-white/[0.04] hover:text-[#FAFAF8]"
+          className="flex h-10 w-10 items-center justify-center rounded-xl text-warm-400 transition-colors duration-200 hover:bg-white/[0.04] hover:text-text-primary"
           aria-label={t("previous")}
         >
           <CaretLeft weight="bold" size={18} />
@@ -69,7 +69,7 @@ export function Pagination({
           return (
             <span
               key={page}
-              className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-500 text-[15px] font-semibold text-dark-500"
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-500 text-[15px] font-semibold text-dark-500"
               aria-current="page"
               aria-label={t("currentPage", { page })}
             >
@@ -82,7 +82,7 @@ export function Pagination({
           <Link
             key={page}
             href={buildPageUrl(basePath, page, pillar)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-[15px] text-warm-400 transition-colors duration-200 hover:bg-white/[0.04] hover:text-[#FAFAF8]"
+            className="flex h-10 w-10 items-center justify-center rounded-xl text-[15px] text-warm-400 transition-colors duration-200 hover:bg-white/[0.04] hover:text-text-primary"
             aria-label={t("goToPage", { page })}
           >
             {page}
@@ -93,7 +93,7 @@ export function Pagination({
       {/* Next arrow */}
       {nextDisabled ? (
         <span
-          className="flex h-10 w-10 items-center justify-center rounded-lg opacity-30 text-warm-400 cursor-not-allowed"
+          className="flex h-10 w-10 items-center justify-center rounded-xl opacity-30 text-warm-400 cursor-not-allowed"
           aria-disabled="true"
           aria-label={t("next")}
         >
@@ -102,7 +102,7 @@ export function Pagination({
       ) : (
         <Link
           href={buildPageUrl(basePath, currentPage + 1, pillar)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-warm-400 transition-colors duration-200 hover:bg-white/[0.04] hover:text-[#FAFAF8]"
+          className="flex h-10 w-10 items-center justify-center rounded-xl text-warm-400 transition-colors duration-200 hover:bg-white/[0.04] hover:text-text-primary"
           aria-label={t("next")}
         >
           <CaretRight weight="bold" size={18} />

@@ -112,7 +112,7 @@
   "borrow": {
     "comingSoon": "Coming soon",
     "heading": "Get dollars without selling your Bitcoin.",
-    "subtitle": "Deposit BTC as collateral and receive credit in USDC at 3.5% per year, no fixed term.",
+    "subtitle": "Deposit BTC as collateral and receive credit in USDC at 5% per year, no fixed term.",
     "steps": [
       {
         "label": "Deposit",
@@ -131,7 +131,7 @@
         "description": "Your Bitcoin keeps appreciating. You didn't sell a thing."
       }
     ],
-    "disclaimer": "Values are illustrative only. The 3.5% p.a. rate and +2.4% appreciation are estimates based on past performance and market conditions. They do not constitute a promise or guarantee of results. Updated data available in the app."
+    "disclaimer": "Values are illustrative only. The 5% p.a. rate and +2.4% appreciation are estimates based on past performance and market conditions. They do not constitute a promise or guarantee of results. Updated data available in the app."
   },
   "security": {
     "eyebrow": "Security architecture",

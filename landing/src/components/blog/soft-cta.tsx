@@ -38,24 +38,17 @@ export function SoftCta({
       <DoppelrandCard hover={false}>
         <div className="flex flex-col items-center text-center px-8 py-10 gap-6">
           {/* Heading */}
-          <h4
-            className="font-sans font-semibold text-text-primary"
-            style={{ fontSize: "1.75rem", lineHeight: 1.2 }}
-          >
+          <h4 className="font-sans font-semibold text-text-primary text-[1.75rem] leading-[1.2]">
             {resolvedHeading}
           </h4>
 
-          {/* Description */}
-          <p
-            className="font-sans text-text-primary/75 max-w-lg"
-            style={{ fontSize: "18px", lineHeight: 1.6 }}
-          >
+          <p className="font-sans text-text-primary/75 max-w-lg text-[18px] leading-[1.6]">
             {description}
           </p>
 
           {/* CTA Button */}
           <MagneticButton href={ctaHref}>
-            <span className="inline-flex items-center gap-2 bg-yellow-500 text-dark-500 rounded-full px-6 py-3 font-semibold text-[15px] transition-opacity hover:opacity-90">
+            <span className="inline-flex items-center gap-2 bg-yellow-500 text-dark-500 rounded-2xl px-6 py-3 font-semibold text-[15px] transition-opacity hover:opacity-90">
               {resolvedCtaText}
               <ArrowRight size={15} weight="bold" aria-hidden="true" />
             </span>

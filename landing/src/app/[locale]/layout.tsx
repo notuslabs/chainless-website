@@ -3,9 +3,12 @@ import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale, getMessages, getTranslations } from "next-intl/server";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { routing } from "@/i18n/routing";
 import { SITE_URL, localeUrl, localeAlternates } from "@/lib/urls";
 import "../globals.css";
+
+const GA_ID = "G-Q9W0X8EHCH";
 
 const zodiak = localFont({
   variable: "--font-zodiak",
@@ -134,6 +137,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <GoogleAnalytics gaId={GA_ID} />
       </body>
     </html>
   );

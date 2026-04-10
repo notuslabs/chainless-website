@@ -4,11 +4,11 @@ const PILLAR_CONFIG = {
     label: "Soberania Digital",
   },
   wealth: {
-    classes: "bg-[#3DA66A]/15 text-[#3DA66A]",
+    classes: "bg-success/15 text-success",
     label: "Crescimento Patrimonial",
   },
   practical: {
-    classes: "bg-[#4A90DA]/15 text-[#4A90DA]",
+    classes: "bg-info/15 text-info",
     label: "Vida Financeira Pratica",
   },
 } as const;
@@ -25,7 +25,7 @@ export function PillarTag({ pillar, className = "" }: PillarTagProps) {
 
   return (
     <span
-      className={`inline-block rounded-full px-3 py-1 text-[13px] font-medium ${classes} ${className}`}
+      className={`inline-block rounded-lg px-3 py-1 text-[13px] font-medium ${classes} ${className}`}
       aria-label={`Categoria: ${label}`}
     >
       {label}

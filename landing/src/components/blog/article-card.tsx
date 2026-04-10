@@ -11,7 +11,6 @@ interface ArticleCardProps {
   slug: string;
   pillar: Pillar;
   author: string;
-  date: string;
   readingTime: number;
   heroImage?: string;
   heroImageAlt?: string;
@@ -23,7 +22,6 @@ export function ArticleCard({
   slug,
   pillar,
   author,
-  date,
   readingTime,
   heroImage,
   heroImageAlt,
@@ -34,7 +32,7 @@ export function ArticleCard({
         <div className="flex h-full flex-col">
           {/* Card image — atmospheric treatment */}
           {heroImage ? (
-            <div className="relative -mx-6 -mt-6 mb-5 aspect-[16/10] overflow-hidden rounded-t-[calc(1.125rem-0.375rem)]">
+            <div className="relative -mx-6 -mt-6 mb-5 aspect-[16/10] overflow-hidden rounded-t-[var(--doppelrand-radius-inner)]">
               <img
                 src={`${BASE}${heroImage}`}
                 alt={heroImageAlt ?? title}
@@ -61,7 +59,7 @@ export function ArticleCard({
             </div>
           ) : (
             /* No image — atmospheric gradient fill with pillar tag */
-            <div className="relative -mx-6 -mt-6 mb-5 flex h-32 items-end overflow-hidden rounded-t-[calc(1.125rem-0.375rem)] px-4 pb-3">
+            <div className="relative -mx-6 -mt-6 mb-5 flex h-32 items-end overflow-hidden rounded-t-[var(--doppelrand-radius-inner)] px-4 pb-3">
               <div
                 className="absolute inset-0"
                 style={{
@@ -85,11 +83,7 @@ export function ArticleCard({
           {/* Push meta to bottom */}
           <div className="mt-auto pt-5">
             <div className="mb-4 h-px w-8 bg-gradient-to-r from-yellow-500/20 to-transparent" />
-            <ArticleMeta
-              author={author}
-              date={date}
-              readingTime={readingTime}
-            />
+            <ArticleMeta author={author} readingTime={readingTime} />
           </div>
         </div>
       </DoppelrandCard>

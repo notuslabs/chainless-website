@@ -2,14 +2,12 @@ import { useTranslations } from "next-intl";
 
 interface ArticleMetaProps {
   author: string;
-  date: string;
   readingTime: number;
   className?: string;
 }
 
 export function ArticleMeta({
   author,
-  date,
   readingTime,
   className = "",
 }: ArticleMetaProps) {
@@ -21,8 +19,6 @@ export function ArticleMeta({
       aria-label={t("groupLabel")}
     >
       <span className="font-normal text-warm-300">{author}</span>
-      <span className="text-warm-500" aria-hidden="true">&middot;</span>
-      <span className="font-normal text-warm-400">{date}</span>
       <span className="text-warm-500" aria-hidden="true">&middot;</span>
       <span
         className="font-mono font-normal text-warm-400"

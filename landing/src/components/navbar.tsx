@@ -7,22 +7,25 @@ import { ChainlessLogo } from "./chainless-logo";
 import { EASE_PREMIUM } from "./motion";
 import { useMessages } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
+import { Link, usePathname } from "@/i18n/navigation";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
   const dict = useMessages() as any;
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 60);
   });
 
-  const navItems = [
-    { label: dict.navbar.rendimentos, href: "#rendimentos" },
-    { label: dict.navbar.cartao, href: "#cartao" },
-    { label: dict.navbar.emprestimo, href: "#credito" },
-    { label: dict.navbar.seguranca, href: "#seguranca" },
+  const navItems: { label: string; hash: string }[] = [
+    { label: dict.navbar.rendimentos, hash: "rendimentos" },
+    { label: dict.navbar.cartao, hash: "cartao" },
+    { label: dict.navbar.emprestimo, hash: "credito" },
+    { label: dict.navbar.seguranca, hash: "seguranca" },
   ];
 
   return (
@@ -64,24 +67,35 @@ export function Navbar() {
             style={{ background: "radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%)" }}
           />
           {/* Logo */}
-          <a
-            href="#"
+          <Link
+            href="/"
             className="relative flex min-h-[44px] items-center justify-center rounded-xl px-4 py-3"
+            aria-label="Chainless"
           >
             <ChainlessLogo color="#FAFAF8" size={20} />
-          </a>
+          </Link>
 
           {/* Desktop links */}
           <div className="hidden items-center gap-0.5 md:flex">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="rounded-lg px-4 py-2 text-caption font-medium text-warm-300/80 transition-all duration-500 ease-premium hover:bg-white/[0.08] hover:text-text-primary active:scale-[0.98]"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) =>
+              isHome ? (
+                <a
+                  key={item.label}
+                  href={`#${item.hash}`}
+                  className="rounded-lg px-4 py-2 text-caption font-medium text-warm-300/80 transition-all duration-500 ease-premium hover:bg-white/[0.08] hover:text-text-primary active:scale-[0.98]"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.label}
+                  href={{ pathname: "/", hash: item.hash }}
+                  className="rounded-lg px-4 py-2 text-caption font-medium text-warm-300/80 transition-all duration-500 ease-premium hover:bg-white/[0.08] hover:text-text-primary active:scale-[0.98]"
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Store icon buttons + language switcher */}
@@ -148,24 +162,35 @@ export function Navbar() {
             </button>
 
             <nav className="flex flex-col items-center gap-8">
-              {navItems.map((item, i) => (
-                <motion.a
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="text-3xl font-light tracking-tight text-text-primary/80 transition-colors duration-300 hover:text-text-primary"
-                  initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  exit={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-                  transition={{
+              {navItems.map((item, i) => {
+                const motionProps = {
+                  className:
+                    "text-3xl font-light tracking-tight text-text-primary/80 transition-colors duration-300 hover:text-text-primary",
+                  initial: { opacity: 0, y: 40, filter: "blur(8px)" },
+                  animate: { opacity: 1, y: 0, filter: "blur(0px)" },
+                  exit: { opacity: 0, y: 20, filter: "blur(4px)" },
+                  transition: {
                     duration: 0.6,
                     delay: 0.08 + i * 0.07,
                     ease: EASE_PREMIUM,
-                  }}
-                >
-                  {item.label}
-                </motion.a>
-              ))}
+                  },
+                  onClick: () => setOpen(false),
+                };
+                const MotionLink = motion(Link);
+                return isHome ? (
+                  <motion.a key={item.label} href={`#${item.hash}`} {...motionProps}>
+                    {item.label}
+                  </motion.a>
+                ) : (
+                  <MotionLink
+                    key={item.label}
+                    href={{ pathname: "/", hash: item.hash }}
+                    {...motionProps}
+                  >
+                    {item.label}
+                  </MotionLink>
+                );
+              })}
               {/* Mobile language switcher */}
               <motion.div
                 initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}

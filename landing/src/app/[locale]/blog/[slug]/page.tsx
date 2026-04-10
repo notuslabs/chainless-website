@@ -132,12 +132,6 @@ export default async function BlogPostPage({
     3
   );
 
-  /* ── Format date for display ── */
-  const displayDate = new Date(frontmatter.date).toLocaleDateString(
-    locale === "pt" ? "pt-BR" : "en-US",
-    { year: "numeric", month: "long", day: "numeric" }
-  );
-
   /* ── JSON-LD: BlogPosting ── */
   const blogPostingSchema = {
     "@context": "https://schema.org",
@@ -209,7 +203,6 @@ export default async function BlogPostPage({
           title={frontmatter.title}
           pillar={frontmatter.pillar}
           author={frontmatter.author}
-          date={displayDate}
           readingTime={readingTime}
           heroImage={frontmatter.heroImage}
           heroImageAlt={frontmatter.heroImageAlt}
@@ -279,7 +272,6 @@ export default async function BlogPostPage({
                 slug: p.slug,
                 pillar: p.frontmatter.pillar,
                 author: p.frontmatter.author,
-                date: p.frontmatter.date,
                 readingTime: p.readingTime,
                 heroImage: p.frontmatter.heroImage,
                 heroImageAlt: p.frontmatter.heroImageAlt,

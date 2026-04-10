@@ -23,10 +23,7 @@ function FaqItem({ question, answer }: FaqItem) {
       <summary
         className="flex items-center justify-between py-5 px-0 cursor-pointer list-none [&::-webkit-details-marker]:hidden"
       >
-        <span
-          className="font-sans font-medium text-text-primary pr-4"
-          style={{ fontSize: "18px" }}
-        >
+        <span className="font-sans font-medium text-text-primary pr-4 text-[18px]">
           {question}
         </span>
         <CaretDown
@@ -38,10 +35,7 @@ function FaqItem({ question, answer }: FaqItem) {
       </summary>
 
       <div className="pb-5 pt-2">
-        <p
-          className="font-sans text-text-primary/75"
-          style={{ fontSize: "16px", lineHeight: 1.65 }}
-        >
+        <p className="font-sans text-text-primary/75 text-[16px] leading-[1.65]">
           {answer}
         </p>
       </div>
@@ -52,10 +46,7 @@ function FaqItem({ question, answer }: FaqItem) {
 export function FaqAccordion({ items }: FaqAccordionProps) {
   return (
     <section>
-      <h2
-        className="font-sans font-semibold text-text-primary mb-8"
-        style={{ fontSize: "clamp(1.25rem, 1rem + 1vw, 1.75rem)" }}
-      >
+      <h2 className="font-sans font-semibold text-text-primary mb-8 text-[clamp(1.25rem,1rem+1vw,1.75rem)]">
         Perguntas frequentes
       </h2>
 

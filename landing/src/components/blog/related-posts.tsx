@@ -8,7 +8,6 @@ interface RelatedPost {
   slug: string;
   pillar: "sovereignty" | "wealth" | "practical";
   author: string;
-  date: string;
   readingTime: number;
   heroImage?: string;
   heroImageAlt?: string;
@@ -24,10 +23,7 @@ export function RelatedPosts({ posts }: RelatedPostsProps) {
 
   return (
     <aside aria-label={t("ariaLabel")} className="py-16">
-      <h2
-        className="font-sans font-semibold text-text-primary mb-8"
-        style={{ fontSize: "clamp(1.25rem, 1rem + 1vw, 1.75rem)" }}
-      >
+      <h2 className="font-sans font-semibold text-text-primary mb-8 text-[clamp(1.25rem,1rem+1vw,1.75rem)]">
         {t("heading")}
       </h2>
 
@@ -43,7 +39,6 @@ export function RelatedPosts({ posts }: RelatedPostsProps) {
               slug={post.slug}
               pillar={post.pillar}
               author={post.author}
-              date={post.date}
               readingTime={post.readingTime}
               heroImage={post.heroImage}
               heroImageAlt={post.heroImageAlt}
