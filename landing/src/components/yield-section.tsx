@@ -11,7 +11,7 @@ import {
 } from "./motion";
 import { DoppelrandCard } from "./doppelrand-card";
 import { Eyebrow } from "./eyebrow";
-import { useDictionary } from "./dictionary-provider";
+import { useMessages, useLocale } from "next-intl";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -100,7 +100,7 @@ const PoolTicker = memo(function PoolTicker({
   pool: Pool;
   index: number;
 }) {
-  const { locale } = useDictionary();
+  const locale = useLocale();
   const shouldReduceMotion = useReducedMotion();
   const [value, setValue] = useState(pool.apy);
 
@@ -192,7 +192,7 @@ const PoolTicker = memo(function PoolTicker({
  * ═════════════════════════════════════════════════════════ */
 
 export function YieldSection() {
-  const { dict } = useDictionary();
+  const dict = useMessages() as any;
   const t = dict.yield;
 
   return (

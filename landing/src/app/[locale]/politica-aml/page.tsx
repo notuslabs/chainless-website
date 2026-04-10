@@ -1,7 +1,9 @@
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { AmlContent } from "@/components/aml-content";
-import { getDictionary, hasLocale } from "@/lib/dictionaries";
+import { hasLocale } from "next-intl";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -13,15 +15,15 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  if (!hasLocale(locale)) return {};
-  const dict = await getDictionary(locale);
+  if (!hasLocale(routing.locales, locale)) return {};
+  const t = await getTranslations({ locale, namespace: "pages.aml" });
   return {
-    title: dict.pages.aml.title,
-    description: dict.pages.aml.description,
+    title: t("title"),
+    description: t("description"),
     alternates: { canonical: `${SITE_URL}/${locale}/politica-aml` },
     openGraph: {
-      title: dict.pages.aml.title,
-      description: dict.pages.aml.description,
+      title: t("title"),
+      description: t("description"),
       url: `${SITE_URL}/${locale}/politica-aml`,
     },
   };
@@ -33,7 +35,8 @@ export default async function PoliticaAmlPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  if (!hasLocale(locale)) notFound();
+  if (!hasLocale(routing.locales, locale)) notFound();
+  setRequestLocale(locale);
 
   return (
     <>

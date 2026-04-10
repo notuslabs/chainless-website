@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 import { FadeUp, TextReveal, EASE_PREMIUM } from "./motion";
 import { MeshGradient } from "./mesh-gradient";
-import { useDictionary } from "./dictionary-provider";
+import { useMessages } from "next-intl";
 
 export function Hero() {
-  const { dict } = useDictionary();
+  const dict = useMessages() as any;
   const t = dict.hero;
 
   return (

@@ -5,14 +5,14 @@ import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-
 import { List, X } from "@phosphor-icons/react";
 import { ChainlessLogo } from "./chainless-logo";
 import { EASE_PREMIUM } from "./motion";
-import { useDictionary } from "./dictionary-provider";
+import { useMessages } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
-  const { dict } = useDictionary();
+  const dict = useMessages() as any;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 60);

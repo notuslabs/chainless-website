@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { EASE_PREMIUM, FadeUp, StaggerContainer, StaggerItem } from "./motion";
 import { Eyebrow } from "./eyebrow";
 import { DoppelrandCard } from "./doppelrand-card";
-import { useDictionary } from "./dictionary-provider";
+import { useMessages } from "next-intl";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -15,7 +15,7 @@ const pillarImages = [
 ];
 
 export function Philosophy() {
-  const { dict } = useDictionary();
+  const dict = useMessages() as any;
   const t = dict.philosophy;
 
   return (

@@ -2,10 +2,10 @@
 
 import { FadeUp } from "./motion";
 import { AnimatedCounter } from "./animated-counter";
-import { useDictionary } from "./dictionary-provider";
+import { useMessages } from "next-intl";
 
 export function ProofBar() {
-  const { dict } = useDictionary();
+  const dict = useMessages() as any;
   const t = dict.proofBar;
 
   const proof = [

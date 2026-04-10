@@ -11,10 +11,9 @@ import {
 } from "next/font/google";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
-import { getDictionary, hasLocale } from "@/lib/dictionaries";
-import { DictionaryProvider } from "@/components/dictionary-provider";
-import { locales } from "@/lib/i18n";
-import type { Locale } from "@/lib/i18n";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { setRequestLocale, getMessages, getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 import "../globals.css";
 
 const geist = Geist({
@@ -119,10 +118,10 @@ const switzer = localFont({
   ],
 });
 
-const langMap: Record<Locale, string> = { pt: "pt-BR", en: "en" };
+const langMap: Record<string, string> = { pt: "pt-BR", en: "en" };
 
 export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 const SITE_URL = "https://chainless.app";
@@ -133,15 +132,15 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  if (!hasLocale(locale)) return {};
-  const dict = await getDictionary(locale);
+  if (!hasLocale(routing.locales, locale)) return {};
+  const t = await getTranslations({ locale, namespace: "metadata" });
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const pageUrl = `${SITE_URL}/${locale}`;
   const ogImage = `${SITE_URL}${basePath}/chainless-og.png`;
 
   return {
-    title: dict.metadata.title,
-    description: dict.metadata.description,
+    title: t("title"),
+    description: t("description"),
     metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: pageUrl,
@@ -152,8 +151,8 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: dict.metadata.title,
-      description: dict.metadata.description,
+      title: t("title"),
+      description: t("description"),
       url: pageUrl,
       siteName: "Chainless",
       locale: locale === "pt" ? "pt_BR" : "en_US",
@@ -163,14 +162,14 @@ export async function generateMetadata({
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: dict.metadata.title,
+          alt: t("title"),
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: dict.metadata.title,
-      description: dict.metadata.description,
+      title: t("title"),
+      description: t("description"),
       images: [ogImage],
     },
   };
@@ -184,9 +183,10 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  if (!hasLocale(locale)) notFound();
+  if (!hasLocale(routing.locales, locale)) notFound();
+  setRequestLocale(locale);
 
-  const dict = await getDictionary(locale);
+  const messages = await getMessages();
 
   return (
     <html
@@ -225,9 +225,9 @@ export default async function LocaleLayout({
         >
           {locale === "pt" ? "Pular para o conteúdo" : "Skip to content"}
         </a>
-        <DictionaryProvider dict={dict} locale={locale}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
-        </DictionaryProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

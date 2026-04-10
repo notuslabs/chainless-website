@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { useScroll, useReducedMotion } from "framer-motion";
-import { useDictionary } from "./dictionary-provider";
+import { useMessages } from "next-intl";
 
 const TOTAL_FRAMES = 121;
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -49,7 +49,7 @@ function useFrameSequence(total: number) {
 
 /* ── Main component ── */
 export function EditorialBreak() {
-  const { dict } = useDictionary();
+  const dict = useMessages() as any;
   const t = dict.editorial;
   const shouldReduceMotion = useReducedMotion();
 

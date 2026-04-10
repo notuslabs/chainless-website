@@ -1,16 +1,16 @@
 "use client";
 
-import { useDictionary } from "./dictionary-provider";
+import { useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/navigation";
 
 export function LanguageSwitcher() {
-  const { locale } = useDictionary();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
   const otherLocale = locale === "pt" ? "en" : "pt";
 
   const handleSwitch = () => {
-    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-    const path = window.location.pathname.replace(basePath, "");
-    const newPath = path.replace(`/${locale}`, `/${otherLocale}`);
-    window.location.href = `${basePath}${newPath}`;
+    router.replace(pathname, { locale: otherLocale });
   };
 
   return (

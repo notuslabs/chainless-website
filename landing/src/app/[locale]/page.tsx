@@ -1,4 +1,5 @@
-import { locales } from "@/lib/i18n";
+import { setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 import { FontSelector } from "@/components/font-selector";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
@@ -49,10 +50,16 @@ function SectionRule() {
 }
 
 export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <ScrollProgress />

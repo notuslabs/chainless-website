@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { FadeUp, StaggerContainer, StaggerItem } from "./motion";
 import { Eyebrow } from "./eyebrow";
 import { DoppelrandCard } from "./doppelrand-card";
-import { useDictionary } from "./dictionary-provider";
+import { useMessages } from "next-intl";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -139,7 +139,7 @@ function Avatar({
 }
 
 export function SocialProof() {
-  const { dict } = useDictionary();
+  const dict = useMessages() as any;
   const s = dict.socialProof;
   const [activeIndex, setActiveIndex] = useState(0);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);

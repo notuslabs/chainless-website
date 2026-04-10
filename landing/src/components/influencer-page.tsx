@@ -5,7 +5,7 @@ import { FadeUp, TextReveal } from "./motion";
 import { MeshGradient } from "./mesh-gradient";
 import { Navbar } from "./navbar";
 import { Footer } from "./footer";
-import { useDictionary } from "./dictionary-provider";
+import { useMessages } from "next-intl";
 
 interface InfluencerPageProps {
   name: string;
@@ -34,7 +34,7 @@ function CopyButton({ code, labels }: { code: string; labels: { copy: string; co
 }
 
 export function InfluencerPage({ name, code }: InfluencerPageProps) {
-  const { dict } = useDictionary();
+  const dict = useMessages() as any;
   const t = dict.influencer;
   const h = dict.hero;
 

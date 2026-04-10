@@ -1,10 +1,10 @@
 "use client";
 
 import { FadeUp } from "./motion";
-import { useDictionary } from "./dictionary-provider";
+import { useMessages } from "next-intl";
 
 export function FeesContent() {
-  const { dict } = useDictionary();
+  const dict = useMessages() as any;
   const t = dict.fees;
 
   return (

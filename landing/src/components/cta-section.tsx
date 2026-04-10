@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { FadeUp, MagneticButton, TextReveal, EASE_PREMIUM } from "./motion";
 import { Eyebrow } from "./eyebrow";
 import { ArrowUpRight } from "@phosphor-icons/react";
-import { useDictionary } from "./dictionary-provider";
+import { useMessages } from "next-intl";
 
 export function CTASection() {
-  const { dict } = useDictionary();
+  const dict = useMessages() as any;
   const t = dict.cta;
 
   return (

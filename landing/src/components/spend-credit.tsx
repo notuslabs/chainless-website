@@ -2,10 +2,10 @@
 
 import { FadeUp } from "./motion";
 import { Eyebrow } from "./eyebrow";
-import { useDictionary } from "./dictionary-provider";
+import { useMessages } from "next-intl";
 
 export function SpendCredit() {
-  const { dict } = useDictionary();
+  const dict = useMessages() as any;
   const t = dict.spend;
 
   return (

@@ -1,31 +1,32 @@
 "use client";
 
-import Link from "next/link";
+import { useMessages } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { EASE_PREMIUM, FadeUp } from "./motion";
 import { ChainlessLogo } from "./chainless-logo";
-import { useDictionary } from "./dictionary-provider";
 
 export function Footer() {
-  const { dict, locale } = useDictionary();
+  const dict = useMessages() as any;
   const t = dict.footer;
 
   const footerLinks = {
     [t.categories.produto]: [
-      { label: t.links.rendimento, href: `/${locale}/#rendimentos` },
-      { label: t.links.cartao, href: `/${locale}/#cartao` },
-      { label: t.links.emprestimo, href: `/${locale}/#credito` },
-      { label: t.links.seguranca, href: `/${locale}/#seguranca` },
+      { label: t.links.rendimento, href: "/#rendimentos" },
+      { label: t.links.cartao, href: "/#cartao" },
+      { label: t.links.emprestimo, href: "/#credito" },
+      { label: t.links.seguranca, href: "/#seguranca" },
     ],
     [t.categories.recursos]: [
+      { label: "Blog", href: "/blog" },
       { label: t.links.ajuda, href: "https://support.devrev.ai/pt-BR/chainless" },
-      { label: t.links.taxas, href: `/${locale}/taxas` },
+      { label: t.links.taxas, href: "/taxas" },
     ],
     [t.categories.legal]: [
-      { label: t.links.privacidade, href: "/pt/politica-de-privacidade" },
-      { label: t.links.termos, href: "/pt/termos-de-uso" },
-      { label: t.links.aml, href: "/pt/politica-aml" },
-      { label: t.links.regulamentacao, href: "/pt/transparencia" },
+      { label: t.links.privacidade, href: "/politica-de-privacidade" },
+      { label: t.links.termos, href: "/termos-de-uso" },
+      { label: t.links.aml, href: "/politica-aml" },
+      { label: t.links.regulamentacao, href: "/transparencia" },
     ],
   };
 

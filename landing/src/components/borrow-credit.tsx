@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FadeUp, StaggerContainer, StaggerItem, EASE_PREMIUM } from "./motion";
 import { DoppelrandCard } from "./doppelrand-card";
-import { useDictionary } from "./dictionary-provider";
+import { useMessages } from "next-intl";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -79,7 +79,7 @@ const STEPS = [
  * ═════════════════════════════════════════════════════════ */
 
 export function BorrowCredit() {
-  const { dict } = useDictionary();
+  const dict = useMessages() as any;
   const t = dict.borrow;
 
   return (

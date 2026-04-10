@@ -11,7 +11,7 @@ import { type ElementType } from "react";
 import { FadeUp, StaggerContainer, StaggerItem, EASE_PREMIUM } from "./motion";
 import { Eyebrow } from "./eyebrow";
 import { DoppelrandCard } from "./doppelrand-card";
-import { useDictionary } from "./dictionary-provider";
+import { useMessages } from "next-intl";
 
 const layerIcons = [Fingerprint, ShieldCheck, GitFork, ArrowsClockwise];
 const layerNumbers = ["01", "02", "03", "04"];
@@ -39,7 +39,7 @@ function LayerIcon({ icon: Icon, index }: { icon: ElementType; index: number }) 
 /* ── Security Section ── */
 
 export function Security() {
-  const { dict } = useDictionary();
+  const dict = useMessages() as any;
   const t = dict.security;
 
   return (
