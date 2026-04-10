@@ -2,7 +2,7 @@
 
 import { FadeUp } from "./motion";
 
-const lastUpdated = "2 de junho de 2025";
+const lastUpdated = "10 de abril de 2026";
 
 export function TermsContent() {
   return (
@@ -43,7 +43,8 @@ export function TermsContent() {
               <ul>
                 <li>Nossa Política de Privacidade;</li>
                 <li>Política de Prevenção e Combate à Lavagem de Dinheiro, ao Financiamento do Terrorismo e da Proliferação de Armas de Destruição em Massa;</li>
-                <li>Política de Know Your Customer (Conheça o seu cliente).</li>
+                <li>Política de Know Your Customer (Conheça o seu cliente);</li>
+                <li>Termos e políticas próprios dos Provedores de on-ramp e off-ramp (tais como Transfero, 4P Finance ou outros), exibidos ao usuário na interface do aplicativo no momento da contratação de cada operação.</li>
               </ul>
             </section>
 
@@ -166,7 +167,7 @@ export function TermsContent() {
 
               <h3>3.2 Processamento de Transações e Interação com Serviços de Terceiros</h3>
               <p>
-                A Chainless é uma carteira de ativos digitais baseada em blockchain que permite aos usuários realizar transações seguras e rápidas. Além disso, a Chainless pode interagir com serviços de terceiros, como DEXs (Exchange Descentralizadas), para facilitar a negociação de ativos digitais. Durante o uso desses serviços, os usuários concordam em cumprir os termos e condições estabelecidos pelos provedores de serviços externos.
+                A Chainless é uma carteira de ativos digitais baseada em blockchain cujas transações são executadas em infraestrutura blockchain pública e/ou por meio de provedores terceirizados integrados, estando sujeitas aos tempos de confirmação da rede, às janelas operacionais dos provedores e a eventuais retenções para análise de conformidade. Além disso, a Chainless pode interagir com serviços de terceiros, como DEXs (Exchange Descentralizadas), para facilitar a negociação de ativos digitais. Durante o uso desses serviços, os usuários concordam em cumprir os termos e condições estabelecidos pelos provedores de serviços externos.
               </p>
 
               <h3>3.3 Taxas e Custos Associados</h3>
@@ -205,10 +206,56 @@ export function TermsContent() {
 
             {/* 4 — PIX */}
             <section>
-              <h2>4. Serviços de Depósito e Saque por PIX</h2>
+              <h2>4. Serviços de Depósito e Saque por PIX (On-Ramp e Off-Ramp)</h2>
+
+              <h3>4.1 Natureza do serviço e papel da Chainless</h3>
               <p>
-                Nossos serviços de depósito e saque por PIX são fornecidos em colaboração com um parceiro terceirizado (&ldquo;Parceiro de On-ramp e Off-ramp&rdquo;), que facilita as transações entre sua conta bancária e sua carteira digital na Chainless. Os limites para transações PIX são definidos de acordo com as políticas de Anti Lavagem de Dinheiro (AML) e Conheça Seu Cliente (KYC), estabelecidas em conformidade com as diretrizes requeridas pelo nosso parceiro terceirizado.
+                A Chainless <strong>não é instituição financeira, instituição de pagamento, corretora de câmbio nem operadora do arranjo PIX</strong>. Os depósitos e saques em Reais por PIX disponibilizados no aplicativo são operados integralmente por <strong>parceiros terceirizados de on-ramp e off-ramp</strong> (&ldquo;Provedores&rdquo;), devidamente identificados na interface do aplicativo no momento de cada transação. A Chainless atua exclusivamente como <strong>interface tecnológica</strong> que conecta o usuário ao Provedor selecionado, não figurando como parte da operação de pagamento, da conversão cambial ou da custódia dos recursos durante o trânsito.
               </p>
+
+              <h3>4.2 Ciência e aceitação do Provedor</h3>
+              <p>
+                Ao iniciar uma operação de depósito ou saque via PIX, o usuário declara ter ciência da identidade do Provedor responsável, conforme exibido na tela de confirmação da transação, e concorda com os termos e políticas próprios daquele Provedor, os quais regem a relação jurídica da operação de pagamento.
+              </p>
+
+              <h3>4.3 Tempestividade &mdash; ausência de garantia de instantaneidade</h3>
+              <p>
+                O usuário <strong>reconhece e concorda expressamente</strong> que, embora o arranjo PIX seja nominalmente instantâneo quando ocorre entre contas bancárias, as operações de on-ramp e off-ramp realizadas através do aplicativo envolvem <strong>etapas adicionais</strong>, incluindo, sem limitação:
+              </p>
+              <ol>
+                <li>análise de conformidade (KYC/AML) pelo Provedor;</li>
+                <li>liquidação on-chain em blockchain pública, sujeita a tempos de confirmação variáveis;</li>
+                <li>roteamento entre contas bancárias, contas de pagamento e carteiras digitais; e</li>
+                <li>controles internos de prevenção à fraude do Provedor.</li>
+              </ol>
+              <p>
+                Em razão desses fatores, <strong>as operações de depósito e saque por PIX não são instantâneas</strong> e estão sujeitas a <strong>atrasos que podem variar de algumas horas a mais de uma semana</strong>, sem que tal atraso configure descumprimento contratual pela Chainless. A Chainless envidará seus melhores esforços para que as operações sejam processadas no menor tempo possível, mas <strong>não oferece garantia de prazo</strong> de conclusão.
+              </p>
+
+              <h3>4.4 Retenção por compliance e limites ao dever de informar</h3>
+              <p>
+                O usuário reconhece que o Provedor, no cumprimento de obrigações legais e regulatórias &mdash; notadamente a Lei nº 9.613/1998 (Lavagem de Dinheiro), a Lei nº 13.260/2016 (Financiamento ao Terrorismo), as normas do Banco Central do Brasil, do COAF e demais órgãos reguladores aplicáveis &mdash; pode <strong>reter, suspender, analisar, reverter ou cancelar</strong> qualquer operação de PIX a qualquer momento, por prazo determinado ou indeterminado, com base em critérios internos de análise de risco ou em obrigação legal.
+              </p>
+              <p>
+                <strong>Em determinadas hipóteses previstas em lei, nem a Chainless nem o Provedor poderão informar ao usuário o motivo, o andamento ou a existência de análise em curso</strong>, notadamente em razão da vedação legal ao <em>tipping-off</em> (art. 11, §2º, da Lei 9.613/1998). A Chainless não responderá por prejuízos, lucros cessantes, perdas de oportunidade, variação cambial ou volatilidade de ativos digitais decorrentes de retenções, análises de compliance ou atrasos imputáveis a Provedores ou a autoridades competentes.
+              </p>
+
+              <h3>4.5 Falhas e indisponibilidade de Provedores</h3>
+              <p>
+                A Chainless não se responsabiliza por atrasos, falhas, erros operacionais, indisponibilidade temporária ou permanente, suspensão ou descontinuação dos serviços prestados pelos Provedores. Na ocorrência de tais eventos, a Chainless atuará como canal razoável de comunicação entre usuário e Provedor, <strong>sem assumir, em nenhuma hipótese, obrigação solidária ou subsidiária pelos atos ou omissões do Provedor</strong>.
+              </p>
+
+              <h3>4.6 Variação cambial e de preço durante o processamento</h3>
+              <p>
+                O usuário reconhece que, em razão dos prazos descritos na cláusula 4.3, o valor em criptoativos recebido (no caso de depósito) ou o valor em Reais creditado (no caso de saque) pode diferir do valor estimado no momento da solicitação, em razão da volatilidade de mercado dos ativos digitais e das taxas de câmbio aplicadas pelo Provedor na hora da liquidação efetiva. A Chainless <strong>não garante preço, cotação ou taxa de conversão</strong> até a confirmação final da operação pelo Provedor.
+              </p>
+
+              <h3>4.7 Reclamações e suporte</h3>
+              <p>
+                Reclamações relativas a operações PIX podem ser direcionadas ao suporte da Chainless através do e-mail <a href="mailto:support@chainless.finance">support@chainless.finance</a>, que fará a intermediação razoável com o Provedor correspondente. O usuário reconhece que, respeitada a boa-fé objetiva, a capacidade da Chainless de resolver disputas operacionais está limitada pela cooperação e pelos prazos do Provedor e das autoridades competentes.
+              </p>
+
+              <h3>4.8 Boas práticas do usuário</h3>
               <ol>
                 <li><strong>Verificação de Identidade:</strong> Antes de realizar qualquer transação PIX, verifique cuidadosamente os detalhes do destinatário, incluindo o nome completo e o CPF/CNPJ, e certifique-se de estar lidando com uma fonte confiável.</li>
                 <li><strong>Limite de Transações:</strong> Estabeleça limites de transação adequados para proteger seus ativos digitais contra transações não autorizadas. Não realize transações que estejam fora de seu padrão usual de atividade financeira sem uma verificação cuidadosa.</li>
@@ -313,7 +360,7 @@ export function TermsContent() {
 
               <h3>8.2 Limitação de Danos</h3>
               <p>
-                Em hipótese alguma, a Chainless, suas subsidiárias ou afiliadas, assim como seus respectivos diretores, acionistas, funcionários, agentes ou representantes serão responsáveis por quaisquer danos diretos, indiretos, incidentais, especiais, punitivos ou consequentes decorrentes do serviço. A responsabilidade total da Chainless não excederá o montante total real recebido pela Chainless do usuário para acessar o serviço.
+                Em hipótese alguma, a Chainless, suas subsidiárias ou afiliadas, assim como seus respectivos diretores, acionistas, funcionários, agentes ou representantes serão responsáveis por quaisquer danos diretos, indiretos, incidentais, especiais, punitivos ou consequentes decorrentes do serviço, incluindo, sem limitação, danos decorrentes de atrasos, retenções, suspensões ou recusas de operações PIX imputáveis a Provedores terceirizados ou a exigências regulatórias, bem como perdas decorrentes da variação de preço de ativos digitais durante o período de processamento de tais operações. A responsabilidade total da Chainless não excederá o montante total real recebido pela Chainless do usuário para acessar o serviço.
               </p>
 
               <h3>8.3 Custódia de Ativos Digitais</h3>
