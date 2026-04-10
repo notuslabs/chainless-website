@@ -5,6 +5,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import influencers from "@/data/influencers.json";
 import { InfluencerPage } from "@/components/influencer-page";
 import { routing } from "@/i18n/routing";
+import { localeUrl, localeAlternates } from "@/lib/urls";
 
 export const dynamicParams = false;
 
@@ -13,8 +14,6 @@ export async function generateStaticParams() {
     influencers.map((i) => ({ locale, slug: i.slug }))
   );
 }
-
-const SITE_URL = "https://chainless.app";
 
 export async function generateMetadata({
   params,
@@ -28,11 +27,14 @@ export async function generateMetadata({
 
   const t = await getTranslations({ locale, namespace: "pages.influencer" });
   const title = `${t("titlePrefix")} ${influencer.name}`;
-  const pageUrl = `${SITE_URL}/${locale}/${slug}`;
+  const pageUrl = localeUrl(locale, `/${slug}`);
   return {
     title,
     description: t("description"),
-    alternates: { canonical: pageUrl },
+    alternates: {
+      canonical: pageUrl,
+      languages: localeAlternates({ pt: `/${slug}`, en: `/${slug}` }),
+    },
     openGraph: {
       title,
       description: t("description"),

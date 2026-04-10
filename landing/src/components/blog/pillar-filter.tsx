@@ -3,31 +3,32 @@
 import { useSearchParams } from "next/navigation";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { useCallback } from "react";
+import { useTranslations } from "next-intl";
 
 type PillarOption = {
-  label: string;
+  labelKey: "all" | "sovereignty" | "wealth" | "practical";
   value: string | null;
   activeClass: string;
 };
 
 const PILLAR_OPTIONS: PillarOption[] = [
   {
-    label: "Todos",
+    labelKey: "all",
     value: null,
     activeClass: "bg-white/[0.06] text-text-primary ring-white/[0.10]",
   },
   {
-    label: "Soberania",
+    labelKey: "sovereignty",
     value: "soberania",
     activeClass: "bg-yellow-500/12 text-yellow-400 ring-yellow-500/20",
   },
   {
-    label: "Crescimento",
+    labelKey: "wealth",
     value: "crescimento",
     activeClass: "bg-[#3DA66A]/12 text-[#3DA66A] ring-[#3DA66A]/20",
   },
   {
-    label: "Prática",
+    labelKey: "practical",
     value: "pratica",
     activeClass: "bg-[#4A90DA]/12 text-[#4A90DA] ring-[#4A90DA]/20",
   },
@@ -41,6 +42,7 @@ export function PillarFilter({ currentPillar }: PillarFilterProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const t = useTranslations("blog.filter");
 
   const handleSelect = useCallback(
     (value: string | null) => {
@@ -66,12 +68,12 @@ export function PillarFilter({ currentPillar }: PillarFilterProps) {
       <div
         className="flex items-center gap-3 overflow-x-auto scroll-smooth pb-1 snap-x"
         role="tablist"
-        aria-label="Categorias do blog"
+        aria-label={t("ariaLabel")}
         style={{ scrollbarWidth: "none" }}
       >
         {/* Label */}
         <span className="hidden shrink-0 text-xs uppercase tracking-[0.15em] text-warm-500 md:block">
-          Filtrar
+          {t("labelFilter")}
         </span>
         <span className="hidden h-4 w-px bg-warm-700/50 md:block" aria-hidden="true" />
 
@@ -83,7 +85,7 @@ export function PillarFilter({ currentPillar }: PillarFilterProps) {
 
           return (
             <button
-              key={option.label}
+              key={option.labelKey}
               role="tab"
               aria-selected={isActive}
               onClick={() => handleSelect(option.value)}
@@ -95,7 +97,7 @@ export function PillarFilter({ currentPillar }: PillarFilterProps) {
                   : "ring-white/[0.06] text-warm-500 hover:ring-white/[0.10] hover:text-warm-300",
               ].join(" ")}
             >
-              {option.label}
+              {t(option.labelKey)}
             </button>
           );
         })}

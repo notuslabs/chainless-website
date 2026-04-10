@@ -3,6 +3,7 @@
 import { ArrowRight } from "@phosphor-icons/react";
 import { DoppelrandCard } from "@/components/doppelrand-card";
 import { MagneticButton } from "@/components/motion";
+import { useTranslations } from "next-intl";
 
 const DEFAULT_APP_STORE_HREF = "https://apps.apple.com/app/chainless";
 
@@ -14,11 +15,14 @@ interface SoftCtaProps {
 }
 
 export function SoftCta({
-  heading = "Como a Chainless resolve isso",
+  heading,
   description,
-  ctaText = "Veja como funciona",
+  ctaText,
   ctaHref = DEFAULT_APP_STORE_HREF,
 }: SoftCtaProps) {
+  const t = useTranslations("blog.softCta");
+  const resolvedHeading = heading ?? t("defaultHeading");
+  const resolvedCtaText = ctaText ?? t("defaultCta");
   return (
     <div className="mt-16 mb-12 relative">
       {/* Atmospheric glow orb — top-right */}
@@ -38,7 +42,7 @@ export function SoftCta({
             className="font-sans font-semibold text-text-primary"
             style={{ fontSize: "1.75rem", lineHeight: 1.2 }}
           >
-            {heading}
+            {resolvedHeading}
           </h4>
 
           {/* Description */}
@@ -52,7 +56,7 @@ export function SoftCta({
           {/* CTA Button */}
           <MagneticButton href={ctaHref}>
             <span className="inline-flex items-center gap-2 bg-yellow-500 text-dark-500 rounded-full px-6 py-3 font-semibold text-[15px] transition-opacity hover:opacity-90">
-              {ctaText}
+              {resolvedCtaText}
               <ArrowRight size={15} weight="bold" aria-hidden="true" />
             </span>
           </MagneticButton>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { CaretDown } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 
 interface Heading {
   level: 2 | 3;
@@ -14,6 +15,7 @@ interface TableOfContentsProps {
 }
 
 export function TableOfContents({ headings }: TableOfContentsProps) {
+  const t = useTranslations("blog.toc");
   const [activeId, setActiveId] = useState<string>("");
   const [isOpen, setIsOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -98,21 +100,21 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
     <>
       {/* Desktop: sticky sidebar */}
       <nav
-        aria-label="Índice do artigo"
+        aria-label={t("ariaLabel")}
         className="hidden lg:block w-60 sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto"
       >
         <p
           className="font-sans font-medium uppercase text-warm-400 mb-4"
           style={{ fontSize: "13px", letterSpacing: "0.1em" }}
         >
-          Índice
+          {t("title")}
         </p>
         <NavLinks />
       </nav>
 
       {/* Mobile: collapsible drawer */}
       <div className="lg:hidden mb-8">
-        <nav aria-label="Índice do artigo">
+        <nav aria-label={t("ariaLabel")}>
           <button
             ref={triggerRef}
             onClick={() => setIsOpen((prev) => !prev)}
@@ -124,7 +126,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
               className="font-sans font-medium uppercase text-warm-400"
               style={{ fontSize: "13px", letterSpacing: "0.1em" }}
             >
-              Índice
+              {t("title")}
             </span>
             <CaretDown
               size={14}
@@ -138,7 +140,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
           <div
             id="toc-drawer"
             role="region"
-            aria-label="Índice do artigo"
+            aria-label={t("ariaLabel")}
             hidden={!isOpen}
             className={`overflow-hidden transition-all duration-300 ${
               isOpen ? "mt-4 opacity-100" : "opacity-0"

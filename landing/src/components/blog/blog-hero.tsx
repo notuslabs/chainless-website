@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { FadeUp, TextReveal, EASE_PREMIUM } from "@/components/motion";
 import { Eyebrow } from "@/components/eyebrow";
 
@@ -10,6 +11,7 @@ interface BlogHeroProps {
 }
 
 export function BlogHero({ articleCount, pillarCounts }: BlogHeroProps) {
+  const t = useTranslations("blog.hero");
   return (
     <section className="relative overflow-hidden bg-dark-500 pt-32 pb-0">
       {/* Atmospheric warm wash — left side */}
@@ -28,7 +30,7 @@ export function BlogHero({ articleCount, pillarCounts }: BlogHeroProps) {
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <div className="max-w-[640px]">
             <FadeUp>
-              <Eyebrow className="mb-6">Blog</Eyebrow>
+              <Eyebrow className="mb-6">{t("eyebrow")}</Eyebrow>
             </FadeUp>
 
             <FadeUp delay={0.1}>
@@ -38,16 +40,13 @@ export function BlogHero({ articleCount, pillarCounts }: BlogHeroProps) {
                   fontSize: "clamp(2.5rem, 2rem + 2.5vw, 4rem)",
                 }}
               >
-                <TextReveal delay={0.15}>
-                  Soberania financeira começa com conhecimento.
-                </TextReveal>
+                <TextReveal delay={0.15}>{t("headline")}</TextReveal>
               </h1>
             </FadeUp>
 
             <FadeUp delay={0.3}>
               <p className="mt-6 max-w-[460px] text-[clamp(0.9375rem,0.9rem+0.2vw,1.0625rem)] font-normal leading-[1.7] text-warm-300/70">
-                Análises, guias e insights sobre autocustódia, rendimentos DeFi
-                e o futuro do dinheiro.
+                {t("subtitle")}
               </p>
             </FadeUp>
           </div>
@@ -57,23 +56,27 @@ export function BlogHero({ articleCount, pillarCounts }: BlogHeroProps) {
             <div className="flex items-center gap-6 md:gap-8">
               <StatBlock
                 value={String(articleCount).padStart(2, "0")}
-                label={articleCount === 1 ? "artigo" : "artigos"}
+                label={
+                  articleCount === 1
+                    ? t("articleSingular")
+                    : t("articlePlural")
+                }
                 accent
               />
               <div className="h-8 w-px bg-warm-700/20" aria-hidden="true" />
               <StatBlock
                 value={String(pillarCounts.sovereignty).padStart(2, "0")}
-                label="soberania"
+                label={t("pillarSovereignty")}
               />
               <div className="h-8 w-px bg-warm-700/20" aria-hidden="true" />
               <StatBlock
                 value={String(pillarCounts.wealth).padStart(2, "0")}
-                label="crescimento"
+                label={t("pillarWealth")}
               />
               <div className="hidden h-8 w-px bg-warm-700/20 sm:block" aria-hidden="true" />
               <StatBlock
                 value={String(pillarCounts.practical).padStart(2, "0")}
-                label="prática"
+                label={t("pillarPractical")}
                 className="hidden sm:flex"
               />
             </div>

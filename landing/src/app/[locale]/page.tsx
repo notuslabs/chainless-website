@@ -1,6 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { FontSelector } from "@/components/font-selector";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { ProofBar } from "@/components/proof-bar";
@@ -85,7 +84,6 @@ export default async function Home({
         <CTASection />
       </main>
       <Footer />
-      <FontSelector />
     </>
   );
 }

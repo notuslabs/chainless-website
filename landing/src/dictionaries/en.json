@@ -246,6 +246,64 @@
     "gasP2": "Chainless, through Account Abstraction, allows you to pay the gas fee with the token being transacted — without needing to hold native tokens like ETH, SOL, or MATIC.",
     "gasP3": "In practice, Chainless advances the gas fee and charges a margin on the effective transaction price to cover operational costs. The estimate is displayed on the Transaction Details screen before confirmation."
   },
+  "blog": {
+    "hero": {
+      "eyebrow": "Blog",
+      "headline": "Financial sovereignty starts with knowledge.",
+      "subtitle": "Analysis, guides and insights on self-custody, DeFi yield and the future of money.",
+      "articleSingular": "article",
+      "articlePlural": "articles",
+      "pillarSovereignty": "sovereignty",
+      "pillarWealth": "wealth",
+      "pillarPractical": "practical"
+    },
+    "listing": {
+      "headingAll": "All articles",
+      "headingCategory": "Articles in this category",
+      "labelLatest": "Latest articles",
+      "labelResults": "Results",
+      "emptyState": "No articles found in this category yet.",
+      "viewAll": "View all articles",
+      "featured": "Featured"
+    },
+    "filter": {
+      "ariaLabel": "Blog categories",
+      "labelFilter": "Filter",
+      "all": "All",
+      "sovereignty": "Sovereignty",
+      "wealth": "Wealth",
+      "practical": "Practical"
+    },
+    "pagination": {
+      "ariaLabel": "Pagination",
+      "previous": "Previous page",
+      "next": "Next page",
+      "goToPage": "Go to page {page}",
+      "currentPage": "Page {page}, current"
+    },
+    "toc": {
+      "title": "Contents",
+      "ariaLabel": "Table of contents"
+    },
+    "backToTop": "Back to top",
+    "softCta": {
+      "defaultHeading": "How Chainless solves this",
+      "defaultCta": "See how it works"
+    },
+    "meta": {
+      "groupLabel": "Article metadata",
+      "readingTime": "{minutes} min read",
+      "readingTimeAria": "{minutes} minute read"
+    },
+    "related": {
+      "ariaLabel": "Related articles",
+      "heading": "Read next"
+    },
+    "page": {
+      "title": "Blog | Chainless",
+      "description": "Analysis, guides and insights on financial sovereignty and the future of money."
+    }
+  },
   "pages": {
     "taxas": {
       "title": "Chainless | Fees",

@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { ArrowUp } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 
 export function BackToTop() {
+  const t = useTranslations("blog");
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -22,7 +24,7 @@ export function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      aria-label="Voltar ao topo"
+      aria-label={t("backToTop")}
       className={`fixed bottom-6 right-6 z-40 flex h-10 w-10 items-center justify-center rounded-full bg-dark-700 ring-1 ring-white/[0.08] text-warm-400 transition-all duration-300 hover:ring-white/[0.15] hover:text-text-primary ${
         visible
           ? "opacity-100 translate-y-0"

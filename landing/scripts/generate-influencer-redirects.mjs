@@ -16,8 +16,6 @@ const influencers = JSON.parse(
   readFileSync(join(root, "src/data/influencers.json"), "utf-8")
 );
 
-const basePath = "/chainless-website";
-
 for (const { slug } of influencers) {
   const dir = join(root, "public", slug);
   mkdirSync(dir, { recursive: true });
@@ -26,10 +24,10 @@ for (const { slug } of influencers) {
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8"/>
-  <meta http-equiv="refresh" content="0;url=${basePath}/pt/${slug}"/>
+  <meta http-equiv="refresh" content="0;url=/pt/${slug}"/>
   <script>
     var l = (navigator.language || "").startsWith("pt") ? "pt" : "en";
-    window.location.replace("${basePath}/" + l + "/${slug}");
+    window.location.replace("/" + l + "/${slug}");
   </script>
 </head>
 <body></body>

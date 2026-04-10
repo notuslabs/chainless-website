@@ -27,6 +27,7 @@ import { CTASection } from "@/components/cta-section";
 import { BackToTop } from "@/components/blog/back-to-top";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { SITE_URL, localeUrl, localeAlternates } from "@/lib/urls";
 
 /* ── Static generation ── */
 
@@ -38,8 +39,6 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 /* ── SEO metadata ── */
-
-const SITE_URL = "https://chainless.app";
 
 export async function generateMetadata({
   params,
@@ -57,7 +56,7 @@ export async function generateMetadata({
 
   const { frontmatter } = post;
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const pageUrl = `${SITE_URL}/${locale}/blog/${slug}`;
+  const pageUrl = localeUrl(locale, `/blog/${slug}`);
   const ogImage = frontmatter.heroImage
     ? `${SITE_URL}${basePath}${frontmatter.heroImage}`
     : `${SITE_URL}${basePath}/chainless-og.png`;
@@ -68,11 +67,7 @@ export async function generateMetadata({
     metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: pageUrl,
-      languages: {
-        "pt-BR": `${SITE_URL}/pt/blog/${slug}`,
-        en: `${SITE_URL}/en/blog/${slug}`,
-        "x-default": `${SITE_URL}/pt/blog/${slug}`,
-      },
+      languages: localeAlternates({ pt: `/blog/${slug}`, en: `/blog/${slug}` }),
     },
     openGraph: {
       title: frontmatter.title,

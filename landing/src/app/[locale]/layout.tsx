@@ -1,75 +1,11 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Lora,
-  Playfair_Display,
-  Cormorant_Garamond,
-  Source_Serif_4,
-  Barlow,
-  Oswald,
-  Fraunces,
-} from "next/font/google";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale, getMessages, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { SITE_URL, localeUrl, localeAlternates } from "@/lib/urls";
 import "../globals.css";
-
-const geist = Geist({
-  variable: "--font-geist",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const lora = Lora({
-  variable: "--font-lora",
-  subsets: ["latin"],
-  display: "swap",
-  style: ["normal", "italic"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  display: "swap",
-  style: ["normal", "italic"],
-});
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
-
-const sourceSerif = Source_Serif_4({
-  variable: "--font-source-serif",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const barlow = Barlow({
-  variable: "--font-barlow",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
-
-const oswald = Oswald({
-  variable: "--font-oswald",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  display: "swap",
-  style: ["normal", "italic"],
-});
 
 const zodiak = localFont({
   variable: "--font-zodiak",
@@ -79,30 +15,6 @@ const zodiak = localFont({
     { path: "../../fonts/Zodiak-Regular.woff2", weight: "400", style: "normal" },
     { path: "../../fonts/Zodiak-Bold.woff2", weight: "700", style: "normal" },
     { path: "../../fonts/Zodiak-ExtraBold.woff2", weight: "800", style: "normal" },
-  ],
-});
-
-const satoshi = localFont({
-  variable: "--font-satoshi",
-  display: "swap",
-  src: [
-    { path: "../../fonts/Satoshi-Light.woff2", weight: "300", style: "normal" },
-    { path: "../../fonts/Satoshi-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../../fonts/Satoshi-Medium.woff2", weight: "500", style: "normal" },
-    { path: "../../fonts/Satoshi-Bold.woff2", weight: "700", style: "normal" },
-    { path: "../../fonts/Satoshi-Black.woff2", weight: "900", style: "normal" },
-  ],
-});
-
-const generalSans = localFont({
-  variable: "--font-general-sans",
-  display: "swap",
-  src: [
-    { path: "../../fonts/GeneralSans-Light.woff2", weight: "300", style: "normal" },
-    { path: "../../fonts/GeneralSans-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../../fonts/GeneralSans-Medium.woff2", weight: "500", style: "normal" },
-    { path: "../../fonts/GeneralSans-SemiBold.woff2", weight: "600", style: "normal" },
-    { path: "../../fonts/GeneralSans-Bold.woff2", weight: "700", style: "normal" },
   ],
 });
 
@@ -124,8 +36,6 @@ export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-const SITE_URL = "https://chainless.app";
-
 export async function generateMetadata({
   params,
 }: {
@@ -135,7 +45,7 @@ export async function generateMetadata({
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "metadata" });
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const pageUrl = `${SITE_URL}/${locale}`;
+  const pageUrl = localeUrl(locale);
   const ogImage = `${SITE_URL}${basePath}/chainless-og.png`;
 
   return {
@@ -144,11 +54,7 @@ export async function generateMetadata({
     metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: pageUrl,
-      languages: {
-        "pt-BR": `${SITE_URL}/pt`,
-        en: `${SITE_URL}/en`,
-        "x-default": `${SITE_URL}/pt`,
-      },
+      languages: localeAlternates({ pt: "", en: "" }),
     },
     openGraph: {
       title: t("title"),
@@ -191,7 +97,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={langMap[locale]}
-      className={`${geist.variable} ${zodiak.variable} ${satoshi.variable} ${generalSans.variable} ${switzer.variable} ${lora.variable} ${playfair.variable} ${cormorant.variable} ${sourceSerif.variable} ${barlow.variable} ${oswald.variable} ${fraunces.variable} antialiased`}
+      className={`${zodiak.variable} ${switzer.variable} antialiased`}
     >
       <body className="noise-overlay">
         <script

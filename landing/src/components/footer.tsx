@@ -1,6 +1,6 @@
 "use client";
 
-import { useMessages } from "next-intl";
+import { useMessages, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { EASE_PREMIUM, FadeUp } from "./motion";
@@ -9,8 +9,15 @@ import { ChainlessLogo } from "./chainless-logo";
 export function Footer() {
   const dict = useMessages() as any;
   const t = dict.footer;
+  const locale = useLocale();
+  const feesHref = locale === "en" ? "/fees" : "/taxas";
 
-  const footerLinks = {
+  type FooterLink = {
+    label: string;
+    href: string;
+    forceLocale?: "pt" | "en";
+  };
+  const footerLinks: Record<string, FooterLink[]> = {
     [t.categories.produto]: [
       { label: t.links.rendimento, href: "/#rendimentos" },
       { label: t.links.cartao, href: "/#cartao" },
@@ -20,13 +27,13 @@ export function Footer() {
     [t.categories.recursos]: [
       { label: "Blog", href: "/blog" },
       { label: t.links.ajuda, href: "https://support.devrev.ai/pt-BR/chainless" },
-      { label: t.links.taxas, href: "/taxas" },
+      { label: t.links.taxas, href: feesHref },
     ],
     [t.categories.legal]: [
-      { label: t.links.privacidade, href: "/politica-de-privacidade" },
-      { label: t.links.termos, href: "/termos-de-uso" },
-      { label: t.links.aml, href: "/politica-aml" },
-      { label: t.links.regulamentacao, href: "/transparencia" },
+      { label: t.links.privacidade, href: "/politica-de-privacidade", forceLocale: "pt" },
+      { label: t.links.termos, href: "/termos-de-uso", forceLocale: "pt" },
+      { label: t.links.aml, href: "/politica-aml", forceLocale: "pt" },
+      { label: t.links.regulamentacao, href: "/transparencia", forceLocale: "pt" },
     ],
   };
 
@@ -78,7 +85,11 @@ export function Footer() {
                             {link.label}
                           </a>
                         ) : (
-                          <Link href={link.href} className={className}>
+                          <Link
+                            href={link.href}
+                            locale={link.forceLocale}
+                            className={className}
+                          >
                             {link.label}
                           </Link>
                         )}

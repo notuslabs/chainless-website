@@ -246,6 +246,64 @@
     "gasP2": "A Chainless, por meio de Abstração de Contas, permite que você pague a taxa de gas com o próprio token transacionado — sem precisar manter tokens nativos como ETH, SOL ou MATIC.",
     "gasP3": "Na prática, a Chainless adianta a taxa de gas e cobra uma margem no preço efetivo da transação para cobrir custos operacionais. A estimativa é exibida na tela de Detalhes da Transação antes da confirmação."
   },
+  "blog": {
+    "hero": {
+      "eyebrow": "Blog",
+      "headline": "Soberania financeira começa com conhecimento.",
+      "subtitle": "Análises, guias e insights sobre autocustódia, rendimentos DeFi e o futuro do dinheiro.",
+      "articleSingular": "artigo",
+      "articlePlural": "artigos",
+      "pillarSovereignty": "soberania",
+      "pillarWealth": "crescimento",
+      "pillarPractical": "prática"
+    },
+    "listing": {
+      "headingAll": "Todos os artigos",
+      "headingCategory": "Artigos desta categoria",
+      "labelLatest": "Últimos artigos",
+      "labelResults": "Resultados",
+      "emptyState": "Nenhum artigo encontrado nesta categoria ainda.",
+      "viewAll": "Ver todos os artigos",
+      "featured": "Em destaque"
+    },
+    "filter": {
+      "ariaLabel": "Categorias do blog",
+      "labelFilter": "Filtrar",
+      "all": "Todos",
+      "sovereignty": "Soberania",
+      "wealth": "Crescimento",
+      "practical": "Prática"
+    },
+    "pagination": {
+      "ariaLabel": "Paginação",
+      "previous": "Página anterior",
+      "next": "Próxima página",
+      "goToPage": "Ir para página {page}",
+      "currentPage": "Página {page}, atual"
+    },
+    "toc": {
+      "title": "Índice",
+      "ariaLabel": "Índice do artigo"
+    },
+    "backToTop": "Voltar ao topo",
+    "softCta": {
+      "defaultHeading": "Como a Chainless resolve isso",
+      "defaultCta": "Veja como funciona"
+    },
+    "meta": {
+      "groupLabel": "Metadados do artigo",
+      "readingTime": "{minutes} min de leitura",
+      "readingTimeAria": "{minutes} minutos de leitura"
+    },
+    "related": {
+      "ariaLabel": "Artigos relacionados",
+      "heading": "Leia também"
+    },
+    "page": {
+      "title": "Blog | Chainless",
+      "description": "Análises, guias e insights sobre soberania financeira e o futuro do dinheiro."
+    }
+  },
   "pages": {
     "taxas": {
       "title": "Chainless | Taxas",

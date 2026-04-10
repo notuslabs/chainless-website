@@ -1,5 +1,8 @@
+"use client";
+
 import { Link } from "@/i18n/navigation";
 import { CaretLeft, CaretRight } from "@phosphor-icons/react/dist/ssr";
+import { useTranslations } from "next-intl";
 
 interface PaginationProps {
   currentPage: number;
@@ -26,6 +29,7 @@ export function Pagination({
   basePath,
   pillar,
 }: PaginationProps) {
+  const t = useTranslations("blog.pagination");
   if (totalPages <= 1) return null;
 
   const prevDisabled = currentPage <= 1;
@@ -36,14 +40,14 @@ export function Pagination({
   return (
     <nav
       className="flex items-center justify-center gap-1 py-12"
-      aria-label="Paginação"
+      aria-label={t("ariaLabel")}
     >
       {/* Prev arrow */}
       {prevDisabled ? (
         <span
           className="flex h-10 w-10 items-center justify-center rounded-lg opacity-30 text-warm-400 cursor-not-allowed"
           aria-disabled="true"
-          aria-label="Página anterior"
+          aria-label={t("previous")}
         >
           <CaretLeft weight="bold" size={18} />
         </span>
@@ -51,7 +55,7 @@ export function Pagination({
         <Link
           href={buildPageUrl(basePath, currentPage - 1, pillar)}
           className="flex h-10 w-10 items-center justify-center rounded-lg text-warm-400 transition-colors duration-200 hover:bg-white/[0.04] hover:text-[#FAFAF8]"
-          aria-label="Página anterior"
+          aria-label={t("previous")}
         >
           <CaretLeft weight="bold" size={18} />
         </Link>
@@ -67,7 +71,7 @@ export function Pagination({
               key={page}
               className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-500 text-[15px] font-semibold text-dark-500"
               aria-current="page"
-              aria-label={`Página ${page}, atual`}
+              aria-label={t("currentPage", { page })}
             >
               {page}
             </span>
@@ -79,7 +83,7 @@ export function Pagination({
             key={page}
             href={buildPageUrl(basePath, page, pillar)}
             className="flex h-10 w-10 items-center justify-center rounded-lg text-[15px] text-warm-400 transition-colors duration-200 hover:bg-white/[0.04] hover:text-[#FAFAF8]"
-            aria-label={`Ir para página ${page}`}
+            aria-label={t("goToPage", { page })}
           >
             {page}
           </Link>
@@ -91,7 +95,7 @@ export function Pagination({
         <span
           className="flex h-10 w-10 items-center justify-center rounded-lg opacity-30 text-warm-400 cursor-not-allowed"
           aria-disabled="true"
-          aria-label="Próxima página"
+          aria-label={t("next")}
         >
           <CaretRight weight="bold" size={18} />
         </span>
@@ -99,7 +103,7 @@ export function Pagination({
         <Link
           href={buildPageUrl(basePath, currentPage + 1, pillar)}
           className="flex h-10 w-10 items-center justify-center rounded-lg text-warm-400 transition-colors duration-200 hover:bg-white/[0.04] hover:text-[#FAFAF8]"
-          aria-label="Próxima página"
+          aria-label={t("next")}
         >
           <CaretRight weight="bold" size={18} />
         </Link>

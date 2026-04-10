@@ -2,6 +2,7 @@
 
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 import { DoppelrandCard } from "@/components/doppelrand-card";
@@ -15,6 +16,7 @@ interface FeaturedArticleProps {
 }
 
 export function FeaturedArticle({ post }: FeaturedArticleProps) {
+  const t = useTranslations("blog.listing");
   const { slug, frontmatter, readingTime } = post;
   const { title, excerpt, pillar, author, date, heroImage, heroImageAlt } =
     frontmatter;
@@ -85,7 +87,7 @@ export function FeaturedArticle({ post }: FeaturedArticleProps) {
               <div className="relative flex flex-col justify-center p-6 sm:p-8 md:col-span-7 md:p-12 lg:p-16">
                 {/* Overline */}
                 <span className="mb-4 block text-xs uppercase tracking-[0.2em] text-yellow-500/80">
-                  Em destaque
+                  {t("featured")}
                 </span>
 
                 <PillarTag pillar={pillar} className="mb-5" />

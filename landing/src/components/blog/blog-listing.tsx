@@ -1,6 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { StaggerContainer, StaggerItem, FadeUp } from "@/components/motion";
 import { PillarFilter } from "./pillar-filter";
@@ -22,6 +23,7 @@ interface BlogListingProps {
 }
 
 export function BlogListing({ posts }: BlogListingProps) {
+  const t = useTranslations("blog.listing");
   const searchParams = useSearchParams();
   const pillarSlug = searchParams.get("pillar");
   const pageStr = searchParams.get("page");
@@ -82,7 +84,7 @@ export function BlogListing({ posts }: BlogListingProps) {
         />
 
         <h2 id="articles-heading" className="sr-only">
-          {activePillar ? "Artigos desta categoria" : "Todos os artigos"}
+          {activePillar ? t("headingCategory") : t("headingAll")}
         </h2>
 
         {/* Section label — editorial overline before the grid */}
@@ -90,7 +92,7 @@ export function BlogListing({ posts }: BlogListingProps) {
           <FadeUp>
             <div className="mb-8 flex items-center gap-4">
               <span className="text-xs uppercase tracking-[0.2em] text-warm-400">
-                {activePillar ? "Resultados" : "Últimos artigos"}
+                {activePillar ? t("labelResults") : t("labelLatest")}
               </span>
               <div className="h-px flex-1 bg-gradient-to-r from-warm-700/50 to-transparent" />
             </div>
@@ -107,13 +109,13 @@ export function BlogListing({ posts }: BlogListingProps) {
               ∅
             </span>
             <p className="text-[18px] font-normal text-warm-300/70">
-              Nenhum artigo encontrado nesta categoria ainda.
+              {t("emptyState")}
             </p>
             <Link
               href="/blog"
               className="mt-8 inline-flex items-center rounded-full px-6 py-3 text-[15px] font-medium ring-1 ring-white/[0.10] text-warm-300 transition-all duration-500 ease-[var(--ease-premium)] hover:ring-yellow-500/20 hover:text-yellow-400"
             >
-              Ver todos os artigos
+              {t("viewAll")}
             </Link>
           </div>
         )}

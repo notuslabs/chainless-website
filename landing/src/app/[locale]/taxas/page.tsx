@@ -6,8 +6,13 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { localeUrl, localeAlternates } from "@/lib/urls";
 
-const SITE_URL = "https://chainless.app";
+export function generateStaticParams() {
+  return [{ locale: "pt" }];
+}
+
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params,
@@ -20,11 +25,14 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    alternates: { canonical: `${SITE_URL}/${locale}/taxas` },
+    alternates: {
+      canonical: localeUrl("pt", "/taxas"),
+      languages: localeAlternates({ pt: "/taxas", en: "/fees" }),
+    },
     openGraph: {
       title: t("title"),
       description: t("description"),
-      url: `${SITE_URL}/${locale}/taxas`,
+      url: localeUrl("pt", "/taxas"),
     },
   };
 }

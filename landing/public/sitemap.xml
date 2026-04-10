@@ -2,605 +2,999 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://chainless.app/pt</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt" />
+    <loc>https://chainless.finance</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/taxas</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/taxas" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/taxas" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/taxas" />
+    <loc>https://chainless.finance/blog</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/transparencia</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/transparencia" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/transparencia" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/transparencia" />
+    <loc>https://chainless.finance/taxas</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/taxas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/fees" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/taxas" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/termos-de-uso</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/termos-de-uso" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/termos-de-uso" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/termos-de-uso" />
+    <loc>https://chainless.finance/transparencia</loc>
+    <lastmod>2026-04-10</lastmod>
   </url>
   <url>
-    <loc>https://chainless.app/pt/politica-de-privacidade</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/politica-de-privacidade" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/politica-de-privacidade" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/politica-de-privacidade" />
+    <loc>https://chainless.finance/termos-de-uso</loc>
+    <lastmod>2026-04-10</lastmod>
   </url>
   <url>
-    <loc>https://chainless.app/pt/politica-aml</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/politica-aml" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/politica-aml" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/politica-aml" />
+    <loc>https://chainless.finance/politica-de-privacidade</loc>
+    <lastmod>2026-04-10</lastmod>
   </url>
   <url>
-    <loc>https://chainless.app/pt/ramoncunha</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/ramoncunha" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/ramoncunha" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/ramoncunha" />
+    <loc>https://chainless.finance/politica-aml</loc>
+    <lastmod>2026-04-10</lastmod>
   </url>
   <url>
-    <loc>https://chainless.app/pt/mychelmendes</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/mychelmendes" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/mychelmendes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/mychelmendes" />
+    <loc>https://chainless.finance/en</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/bitnada</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/bitnada" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/bitnada" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/bitnada" />
+    <loc>https://chainless.finance/en/blog</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/will-grazioli</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/will-grazioli" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/will-grazioli" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/will-grazioli" />
+    <loc>https://chainless.finance/en/fees</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/taxas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/fees" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/taxas" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/victormarinho</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/victormarinho" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/victormarinho" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/victormarinho" />
+    <loc>https://chainless.finance/blog/aave-como-funciona</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/aave-como-funciona" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/aave-como-funciona" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/aave-como-funciona" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/nenesk</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/nenesk" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/nenesk" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/nenesk" />
+    <loc>https://chainless.finance/blog/cambio-cripto-vs-banco</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/cambio-cripto-vs-banco" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/cambio-cripto-vs-banco" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/cambio-cripto-vs-banco" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/3irmaos</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/3irmaos" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/3irmaos" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/3irmaos" />
+    <loc>https://chainless.finance/blog/cartao-cripto-sem-iof</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/cartao-cripto-sem-iof" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/cartao-cripto-sem-iof" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/cartao-cripto-sem-iof" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/bitnoob</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/bitnoob" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/bitnoob" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/bitnoob" />
+    <loc>https://chainless.finance/blog/carteira-custodial-vs-nao-custodial</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/carteira-custodial-vs-nao-custodial" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/carteira-custodial-vs-nao-custodial" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/carteira-custodial-vs-nao-custodial" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/prometheus</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/prometheus" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/prometheus" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/prometheus" />
+    <loc>https://chainless.finance/blog/cdi-vs-defi</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/cdi-vs-defi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/cdi-vs-defi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/cdi-vs-defi" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/rodrigomoura</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/rodrigomoura" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/rodrigomoura" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/rodrigomoura" />
+    <loc>https://chainless.finance/blog/chainless-rendimentos</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/chainless-rendimentos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/chainless-rendimentos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/chainless-rendimentos" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/misterfaria</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/misterfaria" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/misterfaria" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/misterfaria" />
+    <loc>https://chainless.finance/blog/chainless-seguranca</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/chainless-seguranca" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/chainless-seguranca" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/chainless-seguranca" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/deividiguedes</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/deividiguedes" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/deividiguedes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/deividiguedes" />
+    <loc>https://chainless.finance/blog/compound-finance</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/compound-finance" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/compound-finance" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/compound-finance" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/jpparaguay</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/jpparaguay" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/jpparaguay" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/jpparaguay" />
+    <loc>https://chainless.finance/blog/comprar-cripto-pix</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/comprar-cripto-pix" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/comprar-cripto-pix" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/comprar-cripto-pix" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/youcrypto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/youcrypto" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/youcrypto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/youcrypto" />
+    <loc>https://chainless.finance/blog/criptomoedas-para-iniciantes</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/criptomoedas-para-iniciantes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/criptomoedas-para-iniciantes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/criptomoedas-para-iniciantes" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/vamospracripto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/vamospracripto" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/vamospracripto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/vamospracripto" />
+    <loc>https://chainless.finance/blog/custodia-vs-autocustodia</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/custodia-vs-autocustodia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/custodia-vs-autocustodia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/custodia-vs-autocustodia" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/joaohazim</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/joaohazim" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/joaohazim" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/joaohazim" />
+    <loc>https://chainless.finance/blog/defi-yield-dolar</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/defi-yield-dolar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/defi-yield-dolar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/defi-yield-dolar" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/criptocomfe</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/criptocomfe" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/criptocomfe" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/criptocomfe" />
+    <loc>https://chainless.finance/blog/dolar-digital</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/dolar-digital" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/dolar-digital" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/dolar-digital" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/sandro</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/sandro" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/sandro" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/sandro" />
+    <loc>https://chainless.finance/blog/emprestimo-bitcoin-garantia</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/emprestimo-bitcoin-garantia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/emprestimo-bitcoin-garantia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/emprestimo-bitcoin-garantia" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/criptobr</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/criptobr" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/criptobr" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/criptobr" />
+    <loc>https://chainless.finance/blog/erros-investir-criptomoedas</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/erros-investir-criptomoedas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/erros-investir-criptomoedas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/erros-investir-criptomoedas" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/tiagocarvalho</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/tiagocarvalho" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/tiagocarvalho" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/tiagocarvalho" />
+    <loc>https://chainless.finance/blog/exchange-quebrar</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/exchange-quebrar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/exchange-quebrar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/exchange-quebrar" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/moreze</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/moreze" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/moreze" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/moreze" />
+    <loc>https://chainless.finance/blog/imposto-renda-criptomoedas</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/imposto-renda-criptomoedas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/imposto-renda-criptomoedas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/imposto-renda-criptomoedas" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/cryptoagora</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/cryptoagora" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/cryptoagora" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/cryptoagora" />
+    <loc>https://chainless.finance/blog/mpc-wallet</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/mpc-wallet" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/mpc-wallet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/mpc-wallet" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/lks-crypto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/lks-crypto" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/lks-crypto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/lks-crypto" />
+    <loc>https://chainless.finance/blog/not-your-keys-not-your-coins</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/not-your-keys-not-your-coins" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/not-your-keys-not-your-coins" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/not-your-keys-not-your-coins" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/tubaraodabolsa</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/tubaraodabolsa" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/tubaraodabolsa" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/tubaraodabolsa" />
+    <loc>https://chainless.finance/blog/o-que-e-autocustodia</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/o-que-e-autocustodia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/o-que-e-autocustodia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/o-que-e-autocustodia" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/voepa</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/voepa" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/voepa" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/voepa" />
+    <loc>https://chainless.finance/blog/ouro-tokenizado</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/ouro-tokenizado" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/ouro-tokenizado" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/ouro-tokenizado" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/investcrypto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/investcrypto" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/investcrypto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/investcrypto" />
+    <loc>https://chainless.finance/blog/poupanca-vs-defi</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/poupanca-vs-defi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/poupanca-vs-defi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/poupanca-vs-defi" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/rodrigo-moura</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/rodrigo-moura" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/rodrigo-moura" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/rodrigo-moura" />
+    <loc>https://chainless.finance/blog/proteger-patrimonio-inflacao-cripto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/proteger-patrimonio-inflacao-cripto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/proteger-patrimonio-inflacao-cripto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/proteger-patrimonio-inflacao-cripto" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/lobocripto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/lobocripto" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/lobocripto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/lobocripto" />
+    <loc>https://chainless.finance/blog/recuperacao-sem-seed-phrase</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/recuperacao-sem-seed-phrase" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/recuperacao-sem-seed-phrase" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/recuperacao-sem-seed-phrase" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/savio</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/savio" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/savio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/savio" />
+    <loc>https://chainless.finance/blog/regulacao-cripto-brasil</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/regulacao-cripto-brasil" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/regulacao-cripto-brasil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/regulacao-cripto-brasil" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/valeriagarcia</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/valeriagarcia" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/valeriagarcia" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/valeriagarcia" />
+    <loc>https://chainless.finance/blog/seed-phrase</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/seed-phrase" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/seed-phrase" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/seed-phrase" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/lucronacerta</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/lucronacerta" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/lucronacerta" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/lucronacerta" />
+    <loc>https://chainless.finance/blog/staking-ethereum-brasil</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/staking-ethereum-brasil" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/staking-ethereum-brasil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/staking-ethereum-brasil" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/milionariocomcripto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/milionariocomcripto" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/milionariocomcripto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/milionariocomcripto" />
+    <loc>https://chainless.finance/blog/usdc-rendimento</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/usdc-rendimento" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/usdc-rendimento" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/usdc-rendimento" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/dancosta</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/dancosta" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/dancosta" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/dancosta" />
+    <loc>https://chainless.finance/blog/usdc-vs-usdt</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/usdc-vs-usdt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/usdc-vs-usdt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/usdc-vs-usdt" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/redcast</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/redcast" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/redcast" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/redcast" />
+    <loc>https://chainless.finance/blog/yield-farming</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/yield-farming" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/yield-farming" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/yield-farming" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/rafaelaromano</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/rafaelaromano" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/rafaelaromano" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/rafaelaromano" />
+    <loc>https://chainless.finance/en/blog/aave-como-funciona</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/aave-como-funciona" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/aave-como-funciona" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/aave-como-funciona" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/voudecripto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/voudecripto" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/voudecripto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/voudecripto" />
+    <loc>https://chainless.finance/en/blog/cambio-cripto-vs-banco</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/cambio-cripto-vs-banco" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/cambio-cripto-vs-banco" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/cambio-cripto-vs-banco" />
   </url>
   <url>
-    <loc>https://chainless.app/pt/crypto-crya</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/crypto-crya" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/crypto-crya" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/crypto-crya" />
+    <loc>https://chainless.finance/en/blog/cartao-cripto-sem-iof</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/cartao-cripto-sem-iof" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/cartao-cripto-sem-iof" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/cartao-cripto-sem-iof" />
   </url>
   <url>
-    <loc>https://chainless.app/en</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt" />
+    <loc>https://chainless.finance/en/blog/carteira-custodial-vs-nao-custodial</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/carteira-custodial-vs-nao-custodial" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/carteira-custodial-vs-nao-custodial" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/carteira-custodial-vs-nao-custodial" />
   </url>
   <url>
-    <loc>https://chainless.app/en/taxas</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/taxas" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/taxas" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/taxas" />
+    <loc>https://chainless.finance/en/blog/cdi-vs-defi</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/cdi-vs-defi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/cdi-vs-defi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/cdi-vs-defi" />
   </url>
   <url>
-    <loc>https://chainless.app/en/transparencia</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/transparencia" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/transparencia" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/transparencia" />
+    <loc>https://chainless.finance/en/blog/chainless-rendimentos</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/chainless-rendimentos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/chainless-rendimentos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/chainless-rendimentos" />
   </url>
   <url>
-    <loc>https://chainless.app/en/termos-de-uso</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/termos-de-uso" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/termos-de-uso" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/termos-de-uso" />
+    <loc>https://chainless.finance/en/blog/chainless-seguranca</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/chainless-seguranca" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/chainless-seguranca" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/chainless-seguranca" />
   </url>
   <url>
-    <loc>https://chainless.app/en/politica-de-privacidade</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/politica-de-privacidade" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/politica-de-privacidade" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/politica-de-privacidade" />
+    <loc>https://chainless.finance/en/blog/compound-finance</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/compound-finance" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/compound-finance" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/compound-finance" />
   </url>
   <url>
-    <loc>https://chainless.app/en/politica-aml</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/politica-aml" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/politica-aml" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/politica-aml" />
+    <loc>https://chainless.finance/en/blog/comprar-cripto-pix</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/comprar-cripto-pix" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/comprar-cripto-pix" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/comprar-cripto-pix" />
   </url>
   <url>
-    <loc>https://chainless.app/en/ramoncunha</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/ramoncunha" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/ramoncunha" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/ramoncunha" />
+    <loc>https://chainless.finance/en/blog/criptomoedas-para-iniciantes</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/criptomoedas-para-iniciantes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/criptomoedas-para-iniciantes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/criptomoedas-para-iniciantes" />
   </url>
   <url>
-    <loc>https://chainless.app/en/mychelmendes</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/mychelmendes" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/mychelmendes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/mychelmendes" />
+    <loc>https://chainless.finance/en/blog/custodia-vs-autocustodia</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/custodia-vs-autocustodia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/custodia-vs-autocustodia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/custodia-vs-autocustodia" />
   </url>
   <url>
-    <loc>https://chainless.app/en/bitnada</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/bitnada" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/bitnada" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/bitnada" />
+    <loc>https://chainless.finance/en/blog/defi-yield-dolar</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/defi-yield-dolar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/defi-yield-dolar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/defi-yield-dolar" />
   </url>
   <url>
-    <loc>https://chainless.app/en/will-grazioli</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/will-grazioli" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/will-grazioli" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/will-grazioli" />
+    <loc>https://chainless.finance/en/blog/dolar-digital</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/dolar-digital" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/dolar-digital" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/dolar-digital" />
   </url>
   <url>
-    <loc>https://chainless.app/en/victormarinho</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/victormarinho" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/victormarinho" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/victormarinho" />
+    <loc>https://chainless.finance/en/blog/emprestimo-bitcoin-garantia</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/emprestimo-bitcoin-garantia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/emprestimo-bitcoin-garantia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/emprestimo-bitcoin-garantia" />
   </url>
   <url>
-    <loc>https://chainless.app/en/nenesk</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/nenesk" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/nenesk" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/nenesk" />
+    <loc>https://chainless.finance/en/blog/erros-investir-criptomoedas</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/erros-investir-criptomoedas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/erros-investir-criptomoedas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/erros-investir-criptomoedas" />
   </url>
   <url>
-    <loc>https://chainless.app/en/3irmaos</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/3irmaos" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/3irmaos" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/3irmaos" />
+    <loc>https://chainless.finance/en/blog/exchange-quebrar</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/exchange-quebrar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/exchange-quebrar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/exchange-quebrar" />
   </url>
   <url>
-    <loc>https://chainless.app/en/bitnoob</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/bitnoob" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/bitnoob" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/bitnoob" />
+    <loc>https://chainless.finance/en/blog/imposto-renda-criptomoedas</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/imposto-renda-criptomoedas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/imposto-renda-criptomoedas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/imposto-renda-criptomoedas" />
   </url>
   <url>
-    <loc>https://chainless.app/en/prometheus</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/prometheus" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/prometheus" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/prometheus" />
+    <loc>https://chainless.finance/en/blog/mpc-wallet</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/mpc-wallet" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/mpc-wallet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/mpc-wallet" />
   </url>
   <url>
-    <loc>https://chainless.app/en/rodrigomoura</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/rodrigomoura" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/rodrigomoura" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/rodrigomoura" />
+    <loc>https://chainless.finance/en/blog/not-your-keys-not-your-coins</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/not-your-keys-not-your-coins" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/not-your-keys-not-your-coins" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/not-your-keys-not-your-coins" />
   </url>
   <url>
-    <loc>https://chainless.app/en/misterfaria</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/misterfaria" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/misterfaria" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/misterfaria" />
+    <loc>https://chainless.finance/en/blog/o-que-e-autocustodia</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/o-que-e-autocustodia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/o-que-e-autocustodia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/o-que-e-autocustodia" />
   </url>
   <url>
-    <loc>https://chainless.app/en/deividiguedes</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/deividiguedes" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/deividiguedes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/deividiguedes" />
+    <loc>https://chainless.finance/en/blog/ouro-tokenizado</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/ouro-tokenizado" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/ouro-tokenizado" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/ouro-tokenizado" />
   </url>
   <url>
-    <loc>https://chainless.app/en/jpparaguay</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/jpparaguay" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/jpparaguay" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/jpparaguay" />
+    <loc>https://chainless.finance/en/blog/poupanca-vs-defi</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/poupanca-vs-defi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/poupanca-vs-defi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/poupanca-vs-defi" />
   </url>
   <url>
-    <loc>https://chainless.app/en/youcrypto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/youcrypto" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/youcrypto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/youcrypto" />
+    <loc>https://chainless.finance/en/blog/proteger-patrimonio-inflacao-cripto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/proteger-patrimonio-inflacao-cripto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/proteger-patrimonio-inflacao-cripto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/proteger-patrimonio-inflacao-cripto" />
   </url>
   <url>
-    <loc>https://chainless.app/en/vamospracripto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/vamospracripto" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/vamospracripto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/vamospracripto" />
+    <loc>https://chainless.finance/en/blog/recuperacao-sem-seed-phrase</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/recuperacao-sem-seed-phrase" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/recuperacao-sem-seed-phrase" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/recuperacao-sem-seed-phrase" />
   </url>
   <url>
-    <loc>https://chainless.app/en/joaohazim</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/joaohazim" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/joaohazim" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/joaohazim" />
+    <loc>https://chainless.finance/en/blog/regulacao-cripto-brasil</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/regulacao-cripto-brasil" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/regulacao-cripto-brasil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/regulacao-cripto-brasil" />
   </url>
   <url>
-    <loc>https://chainless.app/en/criptocomfe</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/criptocomfe" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/criptocomfe" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/criptocomfe" />
+    <loc>https://chainless.finance/en/blog/seed-phrase</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/seed-phrase" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/seed-phrase" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/seed-phrase" />
   </url>
   <url>
-    <loc>https://chainless.app/en/sandro</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/sandro" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/sandro" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/sandro" />
+    <loc>https://chainless.finance/en/blog/staking-ethereum-brasil</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/staking-ethereum-brasil" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/staking-ethereum-brasil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/staking-ethereum-brasil" />
   </url>
   <url>
-    <loc>https://chainless.app/en/criptobr</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/criptobr" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/criptobr" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/criptobr" />
+    <loc>https://chainless.finance/en/blog/usdc-rendimento</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/usdc-rendimento" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/usdc-rendimento" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/usdc-rendimento" />
   </url>
   <url>
-    <loc>https://chainless.app/en/tiagocarvalho</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/tiagocarvalho" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/tiagocarvalho" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/tiagocarvalho" />
+    <loc>https://chainless.finance/en/blog/usdc-vs-usdt</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/usdc-vs-usdt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/usdc-vs-usdt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/usdc-vs-usdt" />
   </url>
   <url>
-    <loc>https://chainless.app/en/moreze</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/moreze" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/moreze" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/moreze" />
+    <loc>https://chainless.finance/en/blog/yield-farming</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/blog/yield-farming" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/blog/yield-farming" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/blog/yield-farming" />
   </url>
   <url>
-    <loc>https://chainless.app/en/cryptoagora</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/cryptoagora" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/cryptoagora" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/cryptoagora" />
+    <loc>https://chainless.finance/ramoncunha</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/ramoncunha" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/ramoncunha" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/ramoncunha" />
   </url>
   <url>
-    <loc>https://chainless.app/en/lks-crypto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/lks-crypto" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/lks-crypto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/lks-crypto" />
+    <loc>https://chainless.finance/mychelmendes</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/mychelmendes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/mychelmendes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/mychelmendes" />
   </url>
   <url>
-    <loc>https://chainless.app/en/tubaraodabolsa</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/tubaraodabolsa" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/tubaraodabolsa" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/tubaraodabolsa" />
+    <loc>https://chainless.finance/bitnada</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/bitnada" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/bitnada" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/bitnada" />
   </url>
   <url>
-    <loc>https://chainless.app/en/voepa</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/voepa" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/voepa" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/voepa" />
+    <loc>https://chainless.finance/will-grazioli</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/will-grazioli" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/will-grazioli" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/will-grazioli" />
   </url>
   <url>
-    <loc>https://chainless.app/en/investcrypto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/investcrypto" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/investcrypto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/investcrypto" />
+    <loc>https://chainless.finance/victormarinho</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/victormarinho" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/victormarinho" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/victormarinho" />
   </url>
   <url>
-    <loc>https://chainless.app/en/rodrigo-moura</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/rodrigo-moura" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/rodrigo-moura" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/rodrigo-moura" />
+    <loc>https://chainless.finance/nenesk</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/nenesk" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/nenesk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/nenesk" />
   </url>
   <url>
-    <loc>https://chainless.app/en/lobocripto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/lobocripto" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/lobocripto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/lobocripto" />
+    <loc>https://chainless.finance/3irmaos</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/3irmaos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/3irmaos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/3irmaos" />
   </url>
   <url>
-    <loc>https://chainless.app/en/savio</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/savio" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/savio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/savio" />
+    <loc>https://chainless.finance/bitnoob</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/bitnoob" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/bitnoob" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/bitnoob" />
   </url>
   <url>
-    <loc>https://chainless.app/en/valeriagarcia</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/valeriagarcia" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/valeriagarcia" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/valeriagarcia" />
+    <loc>https://chainless.finance/prometheus</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/prometheus" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/prometheus" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/prometheus" />
   </url>
   <url>
-    <loc>https://chainless.app/en/lucronacerta</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/lucronacerta" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/lucronacerta" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/lucronacerta" />
+    <loc>https://chainless.finance/rodrigomoura</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/rodrigomoura" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/rodrigomoura" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/rodrigomoura" />
   </url>
   <url>
-    <loc>https://chainless.app/en/milionariocomcripto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/milionariocomcripto" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/milionariocomcripto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/milionariocomcripto" />
+    <loc>https://chainless.finance/misterfaria</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/misterfaria" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/misterfaria" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/misterfaria" />
   </url>
   <url>
-    <loc>https://chainless.app/en/dancosta</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/dancosta" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/dancosta" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/dancosta" />
+    <loc>https://chainless.finance/deividiguedes</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/deividiguedes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/deividiguedes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/deividiguedes" />
   </url>
   <url>
-    <loc>https://chainless.app/en/redcast</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/redcast" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/redcast" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/redcast" />
+    <loc>https://chainless.finance/jpparaguay</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/jpparaguay" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/jpparaguay" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/jpparaguay" />
   </url>
   <url>
-    <loc>https://chainless.app/en/rafaelaromano</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/rafaelaromano" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/rafaelaromano" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/rafaelaromano" />
+    <loc>https://chainless.finance/youcrypto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/youcrypto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/youcrypto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/youcrypto" />
   </url>
   <url>
-    <loc>https://chainless.app/en/voudecripto</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/voudecripto" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/voudecripto" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/voudecripto" />
+    <loc>https://chainless.finance/vamospracripto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/vamospracripto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/vamospracripto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/vamospracripto" />
   </url>
   <url>
-    <loc>https://chainless.app/en/crypto-crya</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.app/en/crypto-crya" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.app/pt/crypto-crya" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.app/pt/crypto-crya" />
+    <loc>https://chainless.finance/joaohazim</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/joaohazim" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/joaohazim" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/joaohazim" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/criptocomfe</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/criptocomfe" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/criptocomfe" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/criptocomfe" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/sandro</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/sandro" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/sandro" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/sandro" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/criptobr</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/criptobr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/criptobr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/criptobr" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/tiagocarvalho</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/tiagocarvalho" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/tiagocarvalho" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/tiagocarvalho" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/moreze</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/moreze" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/moreze" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/moreze" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/cryptoagora</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/cryptoagora" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/cryptoagora" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/cryptoagora" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/lks-crypto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/lks-crypto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/lks-crypto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/lks-crypto" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/tubaraodabolsa</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/tubaraodabolsa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/tubaraodabolsa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/tubaraodabolsa" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/voepa</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/voepa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/voepa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/voepa" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/investcrypto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/investcrypto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/investcrypto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/investcrypto" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/rodrigo-moura</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/rodrigo-moura" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/rodrigo-moura" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/rodrigo-moura" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/lobocripto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/lobocripto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/lobocripto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/lobocripto" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/savio</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/savio" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/savio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/savio" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/valeriagarcia</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/valeriagarcia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/valeriagarcia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/valeriagarcia" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/lucronacerta</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/lucronacerta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/lucronacerta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/lucronacerta" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/milionariocomcripto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/milionariocomcripto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/milionariocomcripto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/milionariocomcripto" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/dancosta</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/dancosta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/dancosta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/dancosta" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/redcast</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/redcast" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/redcast" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/redcast" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/rafaelaromano</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/rafaelaromano" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/rafaelaromano" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/rafaelaromano" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/voudecripto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/voudecripto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/voudecripto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/voudecripto" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/crypto-crya</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/crypto-crya" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/crypto-crya" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/crypto-crya" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/ramoncunha</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/ramoncunha" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/ramoncunha" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/ramoncunha" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/mychelmendes</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/mychelmendes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/mychelmendes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/mychelmendes" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/bitnada</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/bitnada" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/bitnada" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/bitnada" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/will-grazioli</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/will-grazioli" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/will-grazioli" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/will-grazioli" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/victormarinho</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/victormarinho" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/victormarinho" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/victormarinho" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/nenesk</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/nenesk" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/nenesk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/nenesk" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/3irmaos</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/3irmaos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/3irmaos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/3irmaos" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/bitnoob</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/bitnoob" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/bitnoob" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/bitnoob" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/prometheus</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/prometheus" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/prometheus" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/prometheus" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/rodrigomoura</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/rodrigomoura" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/rodrigomoura" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/rodrigomoura" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/misterfaria</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/misterfaria" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/misterfaria" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/misterfaria" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/deividiguedes</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/deividiguedes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/deividiguedes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/deividiguedes" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/jpparaguay</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/jpparaguay" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/jpparaguay" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/jpparaguay" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/youcrypto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/youcrypto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/youcrypto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/youcrypto" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/vamospracripto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/vamospracripto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/vamospracripto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/vamospracripto" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/joaohazim</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/joaohazim" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/joaohazim" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/joaohazim" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/criptocomfe</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/criptocomfe" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/criptocomfe" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/criptocomfe" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/sandro</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/sandro" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/sandro" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/sandro" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/criptobr</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/criptobr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/criptobr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/criptobr" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/tiagocarvalho</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/tiagocarvalho" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/tiagocarvalho" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/tiagocarvalho" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/moreze</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/moreze" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/moreze" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/moreze" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/cryptoagora</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/cryptoagora" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/cryptoagora" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/cryptoagora" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/lks-crypto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/lks-crypto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/lks-crypto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/lks-crypto" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/tubaraodabolsa</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/tubaraodabolsa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/tubaraodabolsa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/tubaraodabolsa" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/voepa</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/voepa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/voepa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/voepa" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/investcrypto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/investcrypto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/investcrypto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/investcrypto" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/rodrigo-moura</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/rodrigo-moura" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/rodrigo-moura" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/rodrigo-moura" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/lobocripto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/lobocripto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/lobocripto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/lobocripto" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/savio</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/savio" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/savio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/savio" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/valeriagarcia</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/valeriagarcia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/valeriagarcia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/valeriagarcia" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/lucronacerta</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/lucronacerta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/lucronacerta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/lucronacerta" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/milionariocomcripto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/milionariocomcripto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/milionariocomcripto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/milionariocomcripto" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/dancosta</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/dancosta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/dancosta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/dancosta" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/redcast</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/redcast" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/redcast" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/redcast" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/rafaelaromano</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/rafaelaromano" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/rafaelaromano" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/rafaelaromano" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/voudecripto</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/voudecripto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/voudecripto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/voudecripto" />
+  </url>
+  <url>
+    <loc>https://chainless.finance/en/crypto-crya</loc>
+    <lastmod>2026-04-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://chainless.finance/crypto-crya" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chainless.finance/en/crypto-crya" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chainless.finance/crypto-crya" />
   </url>
 </urlset>

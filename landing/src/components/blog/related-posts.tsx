@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { StaggerContainer, StaggerItem } from "@/components/motion";
 import { ArticleCard } from "@/components/blog/article-card";
 
@@ -18,15 +19,16 @@ interface RelatedPostsProps {
 }
 
 export function RelatedPosts({ posts }: RelatedPostsProps) {
+  const t = useTranslations("blog.related");
   if (posts.length === 0) return null;
 
   return (
-    <aside aria-label="Artigos relacionados" className="py-16">
+    <aside aria-label={t("ariaLabel")} className="py-16">
       <h2
         className="font-sans font-semibold text-text-primary mb-8"
         style={{ fontSize: "clamp(1.25rem, 1rem + 1vw, 1.75rem)" }}
       >
-        Leia também
+        {t("heading")}
       </h2>
 
       <StaggerContainer

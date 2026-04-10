@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -7,8 +7,7 @@ import { ScrollProgress } from "@/components/motion";
 import { BlogHero } from "@/components/blog/blog-hero";
 import { BlogListing } from "@/components/blog/blog-listing";
 import { getAllPosts } from "@/lib/blog";
-
-const SITE_URL = "https://chainless.app";
+import { SITE_URL, localeUrl, localeAlternates } from "@/lib/urls";
 
 export async function generateMetadata({
   params,
@@ -16,29 +15,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const pageUrl = `${SITE_URL}/${locale}/blog`;
-
-  const isEn = locale === "en";
+  const t = await getTranslations({ locale, namespace: "blog.page" });
+  const pageUrl = localeUrl(locale, "/blog");
 
   return {
-    title: isEn ? "Blog | Chainless" : "Blog | Chainless",
-    description: isEn
-      ? "Analysis, guides and insights on financial sovereignty and the future of money."
-      : "Análises, guias e insights sobre soberania financeira e o futuro do dinheiro.",
+    title: t("title"),
+    description: t("description"),
     metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: pageUrl,
-      languages: {
-        "pt-BR": `${SITE_URL}/pt/blog`,
-        en: `${SITE_URL}/en/blog`,
-        "x-default": `${SITE_URL}/pt/blog`,
-      },
+      languages: localeAlternates({ pt: "/blog", en: "/blog" }),
     },
     openGraph: {
-      title: "Blog | Chainless",
-      description: isEn
-        ? "Analysis, guides and insights on financial sovereignty and the future of money."
-        : "Análises, guias e insights sobre soberania financeira e o futuro do dinheiro.",
+      title: t("title"),
+      description: t("description"),
       url: pageUrl,
       siteName: "Chainless",
       locale: locale === "pt" ? "pt_BR" : "en_US",
@@ -46,10 +36,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "Blog | Chainless",
-      description: isEn
-        ? "Analysis, guides and insights on financial sovereignty and the future of money."
-        : "Análises, guias e insights sobre soberania financeira e o futuro do dinheiro.",
+      title: t("title"),
+      description: t("description"),
     },
   };
 }
