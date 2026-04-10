@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { DoppelrandCard } from "@/components/doppelrand-card";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -15,7 +15,6 @@ interface ArticleCardProps {
   readingTime: number;
   heroImage?: string;
   heroImageAlt?: string;
-  locale?: string;
 }
 
 export function ArticleCard({
@@ -28,10 +27,9 @@ export function ArticleCard({
   readingTime,
   heroImage,
   heroImageAlt,
-  locale = "pt",
 }: ArticleCardProps) {
   return (
-    <Link href={`/${locale}/blog/${slug}`} className="group block h-full">
+    <Link href={`/blog/${slug}`} className="group block h-full">
       <DoppelrandCard variant="article" hover className="h-full">
         <div className="flex h-full flex-col">
           {/* Card image — atmospheric treatment */}

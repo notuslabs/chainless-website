@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { CaretLeft, CaretRight } from "@phosphor-icons/react/dist/ssr";
 
 interface PaginationProps {

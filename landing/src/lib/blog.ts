@@ -2,7 +2,11 @@ import fs from "fs/promises";
 import path from "path";
 import matter from "gray-matter";
 
-const POSTS_DIR = path.join(process.cwd(), "content", "posts");
+const CONTENT_DIR = path.join(process.cwd(), "content", "posts");
+
+function postsDir(locale: string): string {
+  return path.join(CONTENT_DIR, locale);
+}
 
 export interface FaqItem {
   question: string;
@@ -74,10 +78,10 @@ export function extractHeadings(content: string): PostHeading[] {
 }
 
 /**
- * Read a single MDX post by slug.
+ * Read a single MDX post by slug for a given locale.
  */
-export async function getPost(slug: string): Promise<Post> {
-  const filePath = path.join(POSTS_DIR, `${slug}.mdx`);
+export async function getPost(slug: string, locale = "pt"): Promise<Post> {
+  const filePath = path.join(postsDir(locale), `${slug}.mdx`);
   const raw = await fs.readFile(filePath, "utf-8");
   const { data, content } = matter(raw);
   const frontmatter = data as PostFrontmatter;
@@ -91,12 +95,12 @@ export async function getPost(slug: string): Promise<Post> {
 }
 
 /**
- * Read all MDX posts, sorted by date descending.
+ * Read all MDX posts for a given locale, sorted by date descending.
  */
-export async function getAllPosts(): Promise<Post[]> {
+export async function getAllPosts(locale = "pt"): Promise<Post[]> {
   let files: string[];
   try {
-    files = await fs.readdir(POSTS_DIR);
+    files = await fs.readdir(postsDir(locale));
   } catch {
     return [];
   }
@@ -106,7 +110,7 @@ export async function getAllPosts(): Promise<Post[]> {
   const posts = await Promise.all(
     mdxFiles.map(async (filename) => {
       const slug = filename.replace(/\.mdx$/, "");
-      return getPost(slug);
+      return getPost(slug, locale);
     })
   );
 
@@ -118,14 +122,39 @@ export async function getAllPosts(): Promise<Post[]> {
 }
 
 /**
+ * Get all slugs across all locales (for generateStaticParams).
+ */
+export async function getAllSlugs(): Promise<{ locale: string; slug: string }[]> {
+  const locales = ["pt", "en"];
+  const results: { locale: string; slug: string }[] = [];
+
+  for (const locale of locales) {
+    let files: string[];
+    try {
+      files = await fs.readdir(postsDir(locale));
+    } catch {
+      continue;
+    }
+    for (const f of files) {
+      if (f.endsWith(".mdx")) {
+        results.push({ locale, slug: f.replace(/\.mdx$/, "") });
+      }
+    }
+  }
+
+  return results;
+}
+
+/**
  * Get related posts from the same pillar, excluding the current post.
  */
 export async function getRelatedPosts(
   pillar: string,
   currentSlug: string,
+  locale = "pt",
   limit = 3
 ): Promise<Post[]> {
-  const all = await getAllPosts();
+  const all = await getAllPosts(locale);
   return all
     .filter((p) => p.frontmatter.pillar === pillar && p.slug !== currentSlug)
     .slice(0, limit);

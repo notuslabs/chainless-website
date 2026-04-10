@@ -1,7 +1,7 @@
 "use client";
 
-import { useSearchParams, useParams } from "next/navigation";
-import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { Link } from "@/i18n/navigation";
 import { StaggerContainer, StaggerItem, FadeUp } from "@/components/motion";
 import { PillarFilter } from "./pillar-filter";
 import { FeaturedArticle } from "./featured-article";
@@ -23,9 +23,6 @@ interface BlogListingProps {
 
 export function BlogListing({ posts }: BlogListingProps) {
   const searchParams = useSearchParams();
-  const params = useParams();
-  const locale = typeof params.locale === "string" ? params.locale : "pt";
-
   const pillarSlug = searchParams.get("pillar");
   const pageStr = searchParams.get("page");
   const currentPage = Math.max(1, parseInt(pageStr ?? "1", 10) || 1);
@@ -57,7 +54,9 @@ export function BlogListing({ posts }: BlogListingProps) {
     startIndex + POSTS_PER_PAGE
   );
 
-  const basePath = `/${locale}/blog`;
+  const basePath = "/blog";
+
+  const filterKey = pillarSlug ?? "all";
 
   return (
     <>
@@ -66,8 +65,8 @@ export function BlogListing({ posts }: BlogListingProps) {
 
       {/* Featured article — cinematic, full-width Doppelrand */}
       {featuredPost && (
-        <div className="pt-12 pb-6">
-          <FeaturedArticle post={featuredPost} locale={locale} />
+        <div key={`featured-${filterKey}`} className="pt-12 pb-6">
+          <FeaturedArticle post={featuredPost} />
         </div>
       )}
 
@@ -111,7 +110,7 @@ export function BlogListing({ posts }: BlogListingProps) {
               Nenhum artigo encontrado nesta categoria ainda.
             </p>
             <Link
-              href={`/${locale}/blog`}
+              href="/blog"
               className="mt-8 inline-flex items-center rounded-full px-6 py-3 text-[15px] font-medium ring-1 ring-white/[0.10] text-warm-300 transition-all duration-500 ease-[var(--ease-premium)] hover:ring-yellow-500/20 hover:text-yellow-400"
             >
               Ver todos os artigos
@@ -122,6 +121,7 @@ export function BlogListing({ posts }: BlogListingProps) {
         {/* Grid */}
         {paginatedPosts.length > 0 && (
           <StaggerContainer
+            key={`grid-${filterKey}-${currentPage}`}
             className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8"
             staggerDelay={0.12}
           >
@@ -137,7 +137,6 @@ export function BlogListing({ posts }: BlogListingProps) {
                   readingTime={post.readingTime}
                   heroImage={post.frontmatter.heroImage}
                   heroImageAlt={post.frontmatter.heroImageAlt}
-                  locale={locale}
                 />
               </StaggerItem>
             ))}

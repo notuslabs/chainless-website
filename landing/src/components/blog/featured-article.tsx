@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -12,10 +12,9 @@ import type { Post } from "@/lib/blog";
 
 interface FeaturedArticleProps {
   post: Post;
-  locale?: string;
 }
 
-export function FeaturedArticle({ post, locale = "pt" }: FeaturedArticleProps) {
+export function FeaturedArticle({ post }: FeaturedArticleProps) {
   const { slug, frontmatter, readingTime } = post;
   const { title, excerpt, pillar, author, date, heroImage, heroImageAlt } =
     frontmatter;
@@ -29,7 +28,7 @@ export function FeaturedArticle({ post, locale = "pt" }: FeaturedArticleProps) {
       />
 
       <FadeUp>
-        <Link href={`/${locale}/blog/${slug}`} className="group block">
+        <Link href={`/blog/${slug}`} className="group block">
           <DoppelrandCard variant="default" hover>
             <div className="grid grid-cols-1 md:grid-cols-12">
               {/* Image area — cinematic treatment like Philosophy cards */}

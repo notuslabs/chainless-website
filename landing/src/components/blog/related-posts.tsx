@@ -15,10 +15,9 @@ interface RelatedPost {
 
 interface RelatedPostsProps {
   posts: RelatedPost[];
-  locale?: string;
 }
 
-export function RelatedPosts({ posts, locale = "pt" }: RelatedPostsProps) {
+export function RelatedPosts({ posts }: RelatedPostsProps) {
   if (posts.length === 0) return null;
 
   return (
@@ -46,7 +45,6 @@ export function RelatedPosts({ posts, locale = "pt" }: RelatedPostsProps) {
               readingTime={post.readingTime}
               heroImage={post.heroImage}
               heroImageAlt={post.heroImageAlt}
-              locale={locale}
             />
           </StaggerItem>
         ))}

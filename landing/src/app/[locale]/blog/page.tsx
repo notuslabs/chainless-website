@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -17,10 +18,13 @@ export async function generateMetadata({
   const { locale } = await params;
   const pageUrl = `${SITE_URL}/${locale}/blog`;
 
+  const isEn = locale === "en";
+
   return {
-    title: "Blog | Chainless",
-    description:
-      "Análises, guias e insights sobre soberania financeira e o futuro do dinheiro.",
+    title: isEn ? "Blog | Chainless" : "Blog | Chainless",
+    description: isEn
+      ? "Analysis, guides and insights on financial sovereignty and the future of money."
+      : "Análises, guias e insights sobre soberania financeira e o futuro do dinheiro.",
     metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: pageUrl,
@@ -32,8 +36,9 @@ export async function generateMetadata({
     },
     openGraph: {
       title: "Blog | Chainless",
-      description:
-        "Análises, guias e insights sobre soberania financeira e o futuro do dinheiro.",
+      description: isEn
+        ? "Analysis, guides and insights on financial sovereignty and the future of money."
+        : "Análises, guias e insights sobre soberania financeira e o futuro do dinheiro.",
       url: pageUrl,
       siteName: "Chainless",
       locale: locale === "pt" ? "pt_BR" : "en_US",
@@ -42,8 +47,9 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: "Blog | Chainless",
-      description:
-        "Análises, guias e insights sobre soberania financeira e o futuro do dinheiro.",
+      description: isEn
+        ? "Analysis, guides and insights on financial sovereignty and the future of money."
+        : "Análises, guias e insights sobre soberania financeira e o futuro do dinheiro.",
     },
   };
 }
@@ -53,9 +59,10 @@ export default async function BlogPage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  await params;
+  const { locale } = await params;
+  setRequestLocale(locale);
 
-  const allPosts = await getAllPosts();
+  const allPosts = await getAllPosts(locale);
 
   const pillarCounts = {
     sovereignty: allPosts.filter((p) => p.frontmatter.pillar === "sovereignty").length,

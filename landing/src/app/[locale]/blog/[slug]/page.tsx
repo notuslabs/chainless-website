@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { setRequestLocale } from "next-intl/server";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 
 import {
   getAllPosts,
+  getAllSlugs,
   getPost,
   getRelatedPosts,
   extractHeadings,
@@ -29,8 +31,8 @@ import { Footer } from "@/components/footer";
 /* ── Static generation ── */
 
 export async function generateStaticParams() {
-  const posts = await getAllPosts();
-  return posts.map((post) => ({ slug: post.slug }));
+  const slugs = await getAllSlugs();
+  return slugs.map(({ locale, slug }) => ({ locale, slug }));
 }
 
 export const dynamicParams = false;
@@ -48,7 +50,7 @@ export async function generateMetadata({
   let post: Post;
 
   try {
-    post = await getPost(slug);
+    post = await getPost(slug, locale);
   } catch {
     return {};
   }
@@ -116,10 +118,11 @@ export default async function BlogPostPage({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
+  setRequestLocale(locale);
   let post: Post;
 
   try {
-    post = await getPost(slug);
+    post = await getPost(slug, locale);
   } catch {
     notFound();
   }
@@ -130,6 +133,7 @@ export default async function BlogPostPage({
   const relatedPosts = await getRelatedPosts(
     frontmatter.pillar,
     slug,
+    locale,
     3
   );
 
