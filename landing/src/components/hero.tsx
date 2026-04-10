@@ -88,7 +88,7 @@ export function Hero() {
               <motion.a
                 href="#"
                 aria-label={t.appStoreLabel}
-                className="doppelrand-hallmark-narrow group relative inline-flex items-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97]"
+                className="doppelrand-hallmark-narrow group relative inline-flex items-center justify-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97] sm:justify-start"
                 initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true }}
@@ -119,7 +119,7 @@ export function Hero() {
               <motion.a
                 href="#"
                 aria-label={t.googlePlayLabel}
-                className="doppelrand-hallmark-narrow group relative inline-flex items-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97]"
+                className="doppelrand-hallmark-narrow group relative inline-flex items-center justify-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97] sm:justify-start"
                 initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true }}
