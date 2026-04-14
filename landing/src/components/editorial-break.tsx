@@ -4,9 +4,22 @@ import { useRef, useEffect, useState } from "react";
 import { useScroll, useReducedMotion } from "framer-motion";
 import { useMessages } from "next-intl";
 
-const TOTAL_FRAMES = 121;
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const FRAME_PATH = `${BASE}/editorial-frames/frame-`;
+
+/* Subsample the 121-frame source sequence to 61 frames (every 2nd).
+   At scroll-scrub speed the eye can't distinguish 61 from 121, and
+   network + decode work drops ~50%. */
+const FRAME_NUMBERS: number[] = (() => {
+  const out: number[] = [];
+  for (let n = 1; n <= 121; n += 2) out.push(n);
+  return out;
+})();
+const TOTAL_FRAMES = FRAME_NUMBERS.length;
+
+/* How many frames to fetch in parallel. Low enough that the network/decode
+   queue never stalls the main thread, high enough to make progress quickly. */
+const LOAD_CONCURRENCY = 3;
 
 interface Segment {
   text: string;
@@ -20,13 +33,29 @@ interface Line {
 
 type Frame = ImageBitmap | HTMLImageElement;
 
-/* ── Preload + decode image sequence to GPU-resident ImageBitmaps ── */
-function useFrameSequence(total: number, triggerRef: React.RefObject<HTMLElement | null>) {
-  const [frames, setFrames] = useState<Frame[]>([]);
+interface FrameSource {
+  get(index: number): Frame | null;
+  /** Returns the closest loaded frame index to `target`, or -1 if nothing loaded. */
+  nearestLoaded(target: number): number;
+  subscribe(fn: () => void): () => void;
+}
+
+/* ── Lazy, sequential frame loader ── */
+function useFrameSequence(
+  triggerRef: React.RefObject<HTMLElement | null>,
+  enabled: boolean
+): { source: FrameSource; hasFirstFrame: boolean } {
+  const framesRef = useRef<(Frame | null)[]>(
+    Array.from({ length: TOTAL_FRAMES }, () => null)
+  );
+  const loadedMaskRef = useRef<Uint8Array>(new Uint8Array(TOTAL_FRAMES));
+  const subscribersRef = useRef<Set<() => void>>(new Set());
+  const [hasFirstFrame, setHasFirstFrame] = useState(false);
   const [shouldLoad, setShouldLoad] = useState(false);
 
+  /* Intersection trigger — start loading when the section approaches viewport */
   useEffect(() => {
-    if (total === 0) return;
+    if (!enabled) return;
     const el = triggerRef.current;
     if (!el) return;
     const io = new IntersectionObserver(
@@ -40,15 +69,18 @@ function useFrameSequence(total: number, triggerRef: React.RefObject<HTMLElement
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [total, triggerRef]);
+  }, [enabled, triggerRef]);
 
+  /* Sequential loader with limited concurrency */
   useEffect(() => {
-    if (!shouldLoad || total === 0) return;
+    if (!shouldLoad || !enabled) return;
     let cancelled = false;
     const supportsBitmap = typeof createImageBitmap === "function";
+    let nextIndex = 0;
 
-    async function loadOne(i: number): Promise<Frame> {
-      const url = `${FRAME_PATH}${String(i + 1).padStart(3, "0")}.webp`;
+    async function loadOne(slot: number): Promise<Frame> {
+      const n = FRAME_NUMBERS[slot];
+      const url = `${FRAME_PATH}${String(n).padStart(3, "0")}.webp`;
       if (supportsBitmap) {
         const res = await fetch(url);
         const blob = await res.blob();
@@ -62,36 +94,71 @@ function useFrameSequence(total: number, triggerRef: React.RefObject<HTMLElement
       });
     }
 
-    (async () => {
-      const out: Frame[] = new Array(total);
-      // Load in small parallel batches so network doesn't stall the main thread
-      const BATCH = 8;
-      let publishedFirst = false;
-      for (let start = 0; start < total; start += BATCH) {
-        if (cancelled) return;
-        const end = Math.min(start + BATCH, total);
-        await Promise.all(
-          Array.from({ length: end - start }, (_, k) =>
-            loadOne(start + k).then((f) => {
-              out[start + k] = f;
-            }).catch(() => {})
-          )
-        );
-        // Publish the first batch so the user sees something early,
-        // then mutate the same array in place (avoids re-running the effect).
-        if (!publishedFirst && !cancelled) {
-          publishedFirst = true;
-          setFrames(out);
+    async function worker() {
+      while (!cancelled) {
+        const slot = nextIndex++;
+        if (slot >= TOTAL_FRAMES) return;
+        try {
+          const frame = await loadOne(slot);
+          if (cancelled) {
+            if (frame instanceof (globalThis.ImageBitmap || class {})) {
+              (frame as ImageBitmap).close?.();
+            }
+            return;
+          }
+          framesRef.current[slot] = frame;
+          loadedMaskRef.current[slot] = 1;
+          subscribersRef.current.forEach((fn) => fn());
+          setHasFirstFrame((prev) => prev || true);
+        } catch {
+          // Drop this frame; continue to next
         }
       }
-    })();
+    }
+
+    const workers: Promise<void>[] = [];
+    for (let i = 0; i < LOAD_CONCURRENCY; i++) workers.push(worker());
 
     return () => {
       cancelled = true;
+      // Close any ImageBitmaps to free GPU memory
+      for (const f of framesRef.current) {
+        if (f && typeof (f as ImageBitmap).close === "function") {
+          (f as ImageBitmap).close();
+        }
+      }
+      framesRef.current = Array.from({ length: TOTAL_FRAMES }, () => null);
+      loadedMaskRef.current = new Uint8Array(TOTAL_FRAMES);
+      setHasFirstFrame(false);
     };
-  }, [shouldLoad, total]);
+  }, [shouldLoad, enabled]);
 
-  return frames;
+  const source: FrameSource = {
+    get(index: number) {
+      return framesRef.current[index] ?? null;
+    },
+    nearestLoaded(target: number): number {
+      const mask = loadedMaskRef.current;
+      if (target >= 0 && target < TOTAL_FRAMES && mask[target]) return target;
+      // Fan out from target
+      const maxR = Math.max(target, TOTAL_FRAMES - 1 - target);
+      for (let r = 1; r <= maxR; r++) {
+        const lo = target - r;
+        if (lo >= 0 && mask[lo]) return lo;
+        const hi = target + r;
+        if (hi < TOTAL_FRAMES && mask[hi]) return hi;
+      }
+      return -1;
+    },
+    subscribe(fn) {
+      subscribersRef.current.add(fn);
+      return () => {
+        subscribersRef.current.delete(fn);
+      };
+    },
+  };
+
+  return { source, hasFirstFrame };
 }
 
 /* ── Main component ── */
@@ -109,7 +176,8 @@ export function EditorialBreak() {
   const couplet1Ref = useRef<HTMLDivElement>(null);
   const couplet2Ref = useRef<HTMLDivElement>(null);
   const currentFrameRef = useRef(-1);
-  const frames = useFrameSequence(shouldReduceMotion ? 0 : TOTAL_FRAMES, sectionRef);
+
+  const { source, hasFirstFrame } = useFrameSequence(sectionRef, !shouldReduceMotion);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -128,16 +196,6 @@ export function EditorialBreak() {
     if (!ctx) return;
 
     const dpr = Math.min(2, window.devicePixelRatio || 1);
-
-    const resize = () => {
-      canvas.width = Math.round(window.innerWidth * dpr);
-      canvas.height = Math.round(window.innerHeight * dpr);
-      canvas.style.width = `${window.innerWidth}px`;
-      canvas.style.height = `${window.innerHeight}px`;
-      // Redraw current frame after resize
-      const idx = currentFrameRef.current;
-      if (idx >= 0 && frames[idx]) drawCover(frames[idx]);
-    };
 
     function frameDims(img: Frame): [number, number] {
       if (typeof ImageBitmap !== "undefined" && img instanceof ImageBitmap) {
@@ -159,15 +217,20 @@ export function EditorialBreak() {
       ctx!.drawImage(img as CanvasImageSource, sx, sy, sw, sh);
     }
 
+    const resize = () => {
+      canvas.width = Math.round(window.innerWidth * dpr);
+      canvas.height = Math.round(window.innerHeight * dpr);
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      const idx = currentFrameRef.current;
+      if (idx >= 0) {
+        const f = source.get(idx);
+        if (f) drawCover(f);
+      }
+    };
     resize();
     window.addEventListener("resize", resize);
 
-    if (frames.length > 0) {
-      drawCover(frames[0]);
-      currentFrameRef.current = 0;
-    }
-
-    // Initial style state
     overlay.style.opacity = "0.98";
     c1.style.opacity = "1";
     c1.style.transform = "translateY(0px)";
@@ -212,34 +275,48 @@ export function EditorialBreak() {
       c2!.style.transform = `translateY(${c2Y}px)`;
       c2!.style.visibility = c2Opacity <= 0.01 ? "hidden" : "visible";
 
-      if (frames.length > 0) {
-        const videoProgress = Math.max(0, (progress - 0.15) / 0.85);
-        const index = Math.min(
-          frames.length - 1,
-          Math.max(0, Math.round(videoProgress * (frames.length - 1)))
-        );
-        if (index !== currentFrameRef.current && frames[index]) {
-          currentFrameRef.current = index;
-          drawCover(frames[index]);
+      // Map scroll progress to frame slot (video delays start by 15%)
+      const videoProgress = Math.max(0, (progress - 0.15) / 0.85);
+      const targetSlot = Math.min(
+        TOTAL_FRAMES - 1,
+        Math.max(0, Math.round(videoProgress * (TOTAL_FRAMES - 1)))
+      );
+      const drawSlot = source.nearestLoaded(targetSlot);
+      if (drawSlot >= 0 && drawSlot !== currentFrameRef.current) {
+        const f = source.get(drawSlot);
+        if (f) {
+          currentFrameRef.current = drawSlot;
+          drawCover(f);
         }
       }
     }
 
-    const unsubscribe = scrollYProgress.on("change", (p) => {
-      latestProgress = p;
+    function schedule() {
       if (pendingRaf) return;
       pendingRaf = requestAnimationFrame(apply);
+    }
+
+    const unsubscribeScroll = scrollYProgress.on("change", (p) => {
+      latestProgress = p;
+      schedule();
     });
 
-    // Apply once on mount so initial visible frame matches current scroll
-    pendingRaf = requestAnimationFrame(apply);
+    // Redraw when new frames arrive (covers the "user stops mid-section" case
+    // where no scroll event would otherwise fire)
+    const unsubscribeFrames = source.subscribe(schedule);
+
+    // Initial paint
+    schedule();
 
     return () => {
-      unsubscribe();
+      unsubscribeScroll();
+      unsubscribeFrames();
       if (pendingRaf) cancelAnimationFrame(pendingRaf);
       window.removeEventListener("resize", resize);
     };
-  }, [frames, scrollYProgress, shouldReduceMotion]);
+    // hasFirstFrame re-runs the effect once the first frame is available so
+    // the initial draw call actually has something to render.
+  }, [hasFirstFrame, scrollYProgress, shouldReduceMotion, source]);
 
   return (
     <section
