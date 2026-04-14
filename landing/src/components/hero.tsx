@@ -66,7 +66,7 @@ export function Hero() {
   const motionReady = useMotionReady(100);
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-dark-500 py-20 md:py-32 [@media(max-height:820px)]:!justify-start [@media(max-height:820px)]:pt-40 [@media(max-height:820px)]:pb-12 [@media(max-height:700px)]:pt-32 [@media(max-height:700px)]:pb-8">
+    <section className="relative flex min-h-screen min-h-[100dvh] flex-col justify-center overflow-hidden bg-dark-500 py-20 md:py-32 [@media(max-height:820px)]:!justify-start [@media(max-height:820px)]:pt-40 [@media(max-height:820px)]:pb-12 [@media(max-height:700px)]:pt-32 [@media(max-height:700px)]:pb-8">
       {/* Animated mesh gradient — desktop only; the animated huge blurs
           are punishing on mobile GPUs. */}
       {!isMobile && <MeshGradient />}
