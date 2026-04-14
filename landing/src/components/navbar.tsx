@@ -49,16 +49,12 @@ export function Navbar() {
             boxShadow: scrolled
               ? "inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.2), 0 8px 32px -4px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.2)"
               : "inset 0 1px 0 rgba(255,255,255,0.05), 0 4px 16px -4px rgba(0,0,0,0.15)",
-            backdropFilter: scrolled
-              ? "blur(24px) saturate(1.6)"
-              : "blur(16px) saturate(1.3)",
           }}
           transition={{ duration: 0.6, ease: EASE_PREMIUM }}
           style={{
             border: "1px solid",
-            WebkitBackdropFilter: scrolled
-              ? "blur(24px) saturate(1.6)"
-              : "blur(16px) saturate(1.3)",
+            backdropFilter: "blur(20px) saturate(1.45)",
+            WebkitBackdropFilter: "blur(20px) saturate(1.45)",
           }}
         >
           {/* Specular highlight — subtle top-left refraction */}

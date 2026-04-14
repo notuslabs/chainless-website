@@ -63,10 +63,35 @@ function PingPongVideo({ src, className }: { src: string; className?: string }) 
     };
 
     video.addEventListener("ended", handleEnded);
-    video.play().catch(() => {});
-    rafRef.current = requestAnimationFrame(tick);
+
+    // Only run playback + rAF loop while visible — saves battery/GPU off-screen
+    let playing = false;
+    const start = () => {
+      if (playing) return;
+      playing = true;
+      video.play().catch(() => {});
+      rafRef.current = requestAnimationFrame(tick);
+    };
+    const stop = () => {
+      if (!playing) return;
+      playing = false;
+      video.pause();
+      cancelAnimationFrame(rafRef.current);
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) start();
+          else stop();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    io.observe(video);
 
     return () => {
+      io.disconnect();
       video.removeEventListener("ended", handleEnded);
       cancelAnimationFrame(rafRef.current);
     };
@@ -78,7 +103,7 @@ function PingPongVideo({ src, className }: { src: string; className?: string }) 
       src={src}
       muted
       playsInline
-      preload="auto"
+      preload="metadata"
       className={className}
     />
   );

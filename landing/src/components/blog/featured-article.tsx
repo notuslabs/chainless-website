@@ -39,6 +39,10 @@ export function FeaturedArticle({ post }: FeaturedArticleProps) {
                   <img
                     src={`${BASE}${heroImage}`}
                     alt={heroImageAlt ?? title}
+                    width={1200}
+                    height={750}
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                   {/* Dark warm tint */}

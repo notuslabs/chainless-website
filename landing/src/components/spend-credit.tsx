@@ -97,7 +97,7 @@ export function SpendCredit() {
                   loop
                   muted
                   playsInline
-                  preload="auto"
+                  preload="metadata"
                   className="h-auto w-full"
                 />
 

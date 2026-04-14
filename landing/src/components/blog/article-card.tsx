@@ -36,8 +36,11 @@ export function ArticleCard({
               <img
                 src={`${BASE}${heroImage}`}
                 alt={heroImageAlt ?? title}
+                width={800}
+                height={500}
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-premium)] group-hover:scale-[1.03]"
                 loading="lazy"
+                decoding="async"
               />
               {/* Warm tint */}
               <div className="absolute inset-0 bg-dark-500/20 mix-blend-multiply" />

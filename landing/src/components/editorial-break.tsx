@@ -18,11 +18,31 @@ interface Line {
   segments: Segment[];
 }
 
-/* ── Preload image sequence into memory ── */
-function useFrameSequence(total: number) {
+/* ── Preload image sequence into memory, but only when section is near viewport ── */
+function useFrameSequence(total: number, triggerRef: React.RefObject<HTMLElement | null>) {
   const [frames, setFrames] = useState<HTMLImageElement[]>([]);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  // Defer the actual network load until the section is within ~2 viewports of view
+  useEffect(() => {
+    if (total === 0) return;
+    const el = triggerRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setShouldLoad(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200% 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [total, triggerRef]);
 
   useEffect(() => {
+    if (!shouldLoad || total === 0) return;
     let cancelled = false;
     const images: HTMLImageElement[] = new Array(total);
     let loaded = 0;
@@ -42,7 +62,7 @@ function useFrameSequence(total: number) {
     return () => {
       cancelled = true;
     };
-  }, [total]);
+  }, [shouldLoad, total]);
 
   return frames;
 }
@@ -62,7 +82,7 @@ export function EditorialBreak() {
   const couplet1Ref = useRef<HTMLDivElement>(null);
   const couplet2Ref = useRef<HTMLDivElement>(null);
   const currentFrameRef = useRef(-1);
-  const frames = useFrameSequence(shouldReduceMotion ? 0 : TOTAL_FRAMES);
+  const frames = useFrameSequence(shouldReduceMotion ? 0 : TOTAL_FRAMES, sectionRef);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,

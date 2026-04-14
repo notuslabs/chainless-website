@@ -52,7 +52,7 @@ export function InfluencerPage({ name, code }: InfluencerPageProps) {
           {/* Cinematic video background */}
           <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden="true">
             <video
-              autoPlay muted loop playsInline
+              autoPlay muted loop playsInline preload="metadata"
               className="h-full w-full object-cover"
               style={{ opacity: 0.85, filter: "saturate(0.75) sepia(0.08)", transform: "scaleX(-1)" }}
             >
