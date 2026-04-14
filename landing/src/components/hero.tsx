@@ -1,37 +1,104 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FadeUp, TextReveal, EASE_PREMIUM } from "./motion";
 import { MeshGradient } from "./mesh-gradient";
 import { useMessages } from "next-intl";
 
+/* Defer hero video load until after first paint so the poster image
+   + text render instantly. When the video has its first frame ready
+   we cross-fade from poster → video. */
+function useDeferredHeroVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoReady, setVideoReady] = useState(false);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+
+    const onCanPlay = () => {
+      setVideoReady(true);
+      v.play().catch(() => {});
+    };
+    v.addEventListener("canplay", onCanPlay, { once: true });
+
+    const start = () => {
+      v.preload = "auto";
+      // Force the browser to re-evaluate <source> children with the new preload
+      v.load();
+    };
+
+    let idleId: number | undefined;
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    const ric: typeof window.requestIdleCallback | undefined =
+      typeof window !== "undefined" ? (window as any).requestIdleCallback : undefined;
+    if (ric) {
+      idleId = ric(start, { timeout: 1500 });
+    } else {
+      timeoutId = setTimeout(start, 300);
+    }
+
+    return () => {
+      v.removeEventListener("canplay", onCanPlay);
+      const cic: typeof window.cancelIdleCallback | undefined =
+        typeof window !== "undefined" ? (window as any).cancelIdleCallback : undefined;
+      if (idleId !== undefined && cic) cic(idleId);
+      if (timeoutId !== undefined) clearTimeout(timeoutId);
+    };
+  }, []);
+
+  return { videoRef, videoReady };
+}
+
 export function Hero() {
   const dict = useMessages() as any;
   const t = dict.hero;
+  const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const { videoRef, videoReady } = useDeferredHeroVideo();
 
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-dark-500 py-20 md:py-32 [@media(max-height:820px)]:!justify-start [@media(max-height:820px)]:pt-40 [@media(max-height:820px)]:pb-12 [@media(max-height:700px)]:pt-32 [@media(max-height:700px)]:pb-8">
       {/* Animated mesh gradient — sits behind video, ambient accent */}
       <MeshGradient />
 
-      {/* Cinematic video background — full-bleed, high opacity */}
+      {/* Cinematic video background — poster-first, video fades in once loaded */}
       <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden="true">
+        {/* Poster — first frame of hero-bg.mp4, paints with SSR */}
+        <picture>
+          <source srcSet={`${base}/hero-bg-poster.avif`} type="image/avif" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${base}/hero-bg-poster.webp`}
+            alt=""
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{
+              opacity: videoReady ? 0 : 0.85,
+              filter: "saturate(0.75) sepia(0.08)",
+              transform: "scaleX(-1)",
+              transition: "opacity 500ms ease-out",
+            }}
+          />
+        </picture>
         <video
-          autoPlay
+          ref={videoRef}
           muted
           loop
           playsInline
-          preload="metadata"
-          className="h-full w-full object-cover"
+          preload="none"
+          className="absolute inset-0 h-full w-full object-cover"
           style={{
-            opacity: 0.85,
+            opacity: videoReady ? 0.85 : 0,
             filter: "saturate(0.75) sepia(0.08)",
             transform: "scaleX(-1)",
+            transition: "opacity 500ms ease-out",
           }}
         >
-          <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-bg.av1.mp4`} type='video/mp4; codecs="av01.0.05M.08"' />
-          <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-bg.webm`} type="video/webm" />
-          <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-bg.mp4`} type="video/mp4" />
+          <source src={`${base}/hero-bg.av1.mp4`} type='video/mp4; codecs="av01.0.05M.08"' />
+          <source src={`${base}/hero-bg.webm`} type="video/webm" />
+          <source src={`${base}/hero-bg.mp4`} type="video/mp4" />
         </video>
         {/* Bottom fade — dissolves video into dark surface below */}
         <div
