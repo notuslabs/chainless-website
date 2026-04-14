@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Chainless | Patrimônio Digital Soberano",
-    "description": "Plataforma de patrimônio digital com autocustódia. Rendimento em dólar, cartão global e empréstimo BTC — sem corretora, sem custódia, sem seed phrase."
+    "description": "Plataforma de patrimônio digital com autocustódia. Rendimento em dólar, cartão global e empréstimo BTC."
   },
   "navbar": {
     "rendimentos": "Rendimentos",
@@ -326,7 +326,7 @@
     },
     "influencer": {
       "titlePrefix": "Chainless | Convite de",
-      "description": "Patrimônio digital com autocustódia: rendimento em dólar, cartão global e segurança de nível institucional. Sem corretora, sem seed phrase."
+      "description": "Patrimônio digital com autocustódia: rendimento em dólar, cartão global e segurança de nível institucional."
     }
   }
 }
