@@ -56,7 +56,8 @@ export function InfluencerPage({ name, code }: InfluencerPageProps) {
               className="h-full w-full object-cover"
               style={{ opacity: 0.85, filter: "saturate(0.75) sepia(0.08)", transform: "scaleX(-1)" }}
             >
-              <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-bg.mp4`} type="video/mp4" />
+              <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-bg.vp9.webm`} type="video/webm" />
+              <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-bg.av1.mp4`} type='video/mp4; codecs="av01.0.05M.08"' />
             </video>
             {/* Bottom fade */}
             <div

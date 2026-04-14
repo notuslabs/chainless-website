@@ -28,7 +28,13 @@ const testimonialMeta = [
 ];
 
 /* ── Ping-pong video: plays forward 0→end then reverse end→0, loops ── */
-function PingPongVideo({ src, className }: { src: string; className?: string }) {
+function PingPongVideo({
+  sources,
+  className,
+}: {
+  sources: { src: string; type: string }[];
+  className?: string;
+}) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const directionRef = useRef<"forward" | "reverse">("forward");
   const rafRef = useRef<number>(0);
@@ -100,12 +106,15 @@ function PingPongVideo({ src, className }: { src: string; className?: string }) 
   return (
     <video
       ref={videoRef}
-      src={src}
       muted
       playsInline
       preload="metadata"
       className={className}
-    />
+    >
+      {sources.map((s) => (
+        <source key={s.src} src={s.src} type={s.type} />
+      ))}
+    </video>
   );
 }
 
@@ -200,7 +209,10 @@ export function SocialProof() {
       {/* ── Blurred video background — atmospheric depth ── */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <PingPongVideo
-          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/social-proof-bg.mp4`}
+          sources={[
+            { src: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/social-proof-bg.vp9.webm`, type: "video/webm" },
+            { src: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/social-proof-bg.av1.mp4`, type: 'video/mp4; codecs="av01.0.05M.08"' },
+          ]}
           className="absolute left-1/2 top-1/2 h-full min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 object-cover opacity-[0.12] blur-[60px] saturate-[0.6]"
         />
         {/* Dark vignette overlay to keep text readable */}
