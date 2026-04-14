@@ -45,7 +45,7 @@ export function InfluencerPage({ name, code }: InfluencerPageProps) {
 
       <main className="overflow-x-clip">
         {/* ═══ HERO — same structure as main hero.tsx ═══ */}
-        <section className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden bg-dark-500 px-4 py-24 md:py-32 md:px-0">
+        <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-dark-500 px-4 py-24 md:py-32 md:px-0">
           {/* Animated mesh gradient */}
           <MeshGradient />
 

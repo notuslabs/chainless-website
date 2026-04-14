@@ -10,7 +10,7 @@ export function Hero() {
   const t = dict.hero;
 
   return (
-    <section className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden bg-dark-500 py-20 md:py-32 [@media(max-height:820px)]:!justify-start [@media(max-height:820px)]:pt-28 [@media(max-height:820px)]:pb-12 [@media(max-height:700px)]:pt-24 [@media(max-height:700px)]:pb-8">
+    <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-dark-500 py-20 md:py-32 [@media(max-height:820px)]:!justify-start [@media(max-height:820px)]:pt-40 [@media(max-height:820px)]:pb-12 [@media(max-height:700px)]:pt-32 [@media(max-height:700px)]:pb-8">
       {/* Animated mesh gradient — sits behind video, ambient accent */}
       <MeshGradient />
 
