@@ -87,16 +87,14 @@ export function SpendCredit() {
               {/* Video + soft edge fades */}
               <div className="relative">
                 <video
+                  src={`${process.env.__NEXT_ROUTER_BASEPATH || ""}/card-hero-loop.mp4`}
                   autoPlay
                   loop
                   muted
                   playsInline
                   preload="metadata"
                   className="h-auto w-full"
-                >
-                  <source src={`${process.env.__NEXT_ROUTER_BASEPATH || ""}/card-hero-loop.vp9.webm`} type="video/webm" />
-                  <source src={`${process.env.__NEXT_ROUTER_BASEPATH || ""}/card-hero-loop.av1.mp4`} type='video/mp4; codecs="av01.0.05M.08"' />
-                </video>
+                />
 
                 {/* Soft edge fades to warm dark — all 4 sides */}
                 <div

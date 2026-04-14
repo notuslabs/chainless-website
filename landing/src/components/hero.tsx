@@ -29,8 +29,7 @@ export function Hero() {
             transform: "scaleX(-1)",
           }}
         >
-          <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-bg.vp9.webm`} type="video/webm" />
-          <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-bg.av1.mp4`} type='video/mp4; codecs="av01.0.05M.08"' />
+          <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-bg.mp4`} type="video/mp4" />
         </video>
         {/* Bottom fade — dissolves video into dark surface below */}
         <div
