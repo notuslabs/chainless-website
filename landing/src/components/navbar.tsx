@@ -69,6 +69,12 @@ export function Navbar() {
           {/* Logo */}
           <Link
             href="/"
+            onClick={(e) => {
+              if (isHome) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
             className="relative flex min-h-[44px] items-center justify-center rounded-xl px-4 py-3"
             aria-label="Chainless"
           >
