@@ -5,7 +5,7 @@ import { DoppelrandCard } from "@/components/doppelrand-card";
 import { MagneticButton } from "@/components/motion";
 import { useTranslations } from "next-intl";
 
-const DEFAULT_APP_STORE_HREF = "https://apps.apple.com/app/chainless";
+const DEFAULT_APP_STORE_HREF = "https://apps.apple.com/br/app/chainless-cripto-com-pix/id6476666418";
 
 interface SoftCtaProps {
   heading?: string;

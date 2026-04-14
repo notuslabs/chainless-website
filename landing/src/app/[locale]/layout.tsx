@@ -122,8 +122,8 @@ export default async function LocaleLayout({
                 address: { "@type": "PostalAddress", addressCountry: "BR" },
               },
               sameAs: [
-                "https://apps.apple.com/app/chainless",
-                "https://play.google.com/store/apps/details?id=app.chainless",
+                "https://apps.apple.com/br/app/chainless-cripto-com-pix/id6476666418",
+                "https://play.google.com/store/apps/details?id=team.notus.chainless&hl",
               ],
             }),
           }}

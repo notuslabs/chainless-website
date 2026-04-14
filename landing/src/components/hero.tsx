@@ -86,7 +86,9 @@ export function Hero() {
           <div className="mt-14 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
               {/* App Store */}
               <motion.a
-                href="#"
+                href="https://apps.apple.com/br/app/chainless-cripto-com-pix/id6476666418"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={t.appStoreLabel}
                 className="doppelrand-hallmark-narrow group relative inline-flex items-center justify-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97] sm:justify-start"
                 initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
@@ -117,7 +119,9 @@ export function Hero() {
 
               {/* Google Play */}
               <motion.a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=team.notus.chainless&hl"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={t.googlePlayLabel}
                 className="doppelrand-hallmark-narrow group relative inline-flex items-center justify-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97] sm:justify-start"
                 initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}

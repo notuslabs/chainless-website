@@ -102,7 +102,9 @@ export function Navbar() {
           <div className="ml-1.5 hidden items-center gap-1.5 md:flex">
             <LanguageSwitcher />
             <a
-              href="#"
+              href="https://apps.apple.com/br/app/chainless-cripto-com-pix/id6476666418"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={dict.navbar.appStore}
               className="doppelrand-hallmark-tiny relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl text-yellow-500 transition-all duration-500 ease-premium hover:brightness-125 active:scale-[0.95]"
               style={{
@@ -116,7 +118,9 @@ export function Navbar() {
               </svg>
             </a>
             <a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=team.notus.chainless&hl"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={dict.navbar.googlePlay}
               className="doppelrand-hallmark-tiny relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl text-yellow-500 transition-all duration-500 ease-premium hover:brightness-125 active:scale-[0.95]"
               style={{
@@ -217,7 +221,9 @@ export function Navbar() {
                 }}
               >
                 <a
-                  href="#"
+                  href="https://apps.apple.com/br/app/chainless-cripto-com-pix/id6476666418"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
                   aria-label={dict.navbar.appStore}
                   className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.08] text-yellow-500 transition-all duration-500 ease-premium hover:bg-white/[0.14] active:scale-[0.95]"
@@ -227,7 +233,9 @@ export function Navbar() {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://play.google.com/store/apps/details?id=team.notus.chainless&hl"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
                   aria-label={dict.navbar.googlePlay}
                   className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.08] text-yellow-500 transition-all duration-500 ease-premium hover:bg-white/[0.14] active:scale-[0.95]"
