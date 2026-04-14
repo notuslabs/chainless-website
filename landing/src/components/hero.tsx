@@ -2,18 +2,20 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { FadeUp, TextReveal, EASE_PREMIUM, useMotionReady } from "./motion";
+import { FadeUp, TextReveal, EASE_PREMIUM, useMotionReady, useIsMobile } from "./motion";
 import { MeshGradient } from "./mesh-gradient";
 import { useMessages } from "next-intl";
 
 /* Defer hero video load until after first paint so the poster image
    + text render instantly. When the video has its first frame ready
-   we cross-fade from poster → video. */
-function useDeferredHeroVideo() {
+   we cross-fade from poster → video. `skip` disables the whole thing
+   (used on mobile to avoid software AV1 decode + compositor cost). */
+function useDeferredHeroVideo(skip: boolean) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
+    if (skip) return;
     const v = videoRef.current;
     if (!v) return;
 
@@ -46,7 +48,7 @@ function useDeferredHeroVideo() {
       if (idleId !== undefined && cic) cic(idleId);
       if (timeoutId !== undefined) clearTimeout(timeoutId);
     };
-  }, []);
+  }, [skip]);
 
   return { videoRef, videoReady };
 }
@@ -55,15 +57,20 @@ export function Hero() {
   const dict = useMessages() as any;
   const t = dict.hero;
   const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const { videoRef, videoReady } = useDeferredHeroVideo();
+  /* On mobile: skip the MeshGradient's huge animated blurs and skip the
+     hero video entirely — both are heavy on mobile GPUs / CPUs and the
+     poster image alone looks nearly identical. */
+  const isMobile = useIsMobile();
+  const { videoRef, videoReady } = useDeferredHeroVideo(isMobile);
   /* Hold hero animations at initial state until fonts load + small buffer
      — avoids the text-animating-while-browser-is-hydrating jitter. */
   const motionReady = useMotionReady(100);
 
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-dark-500 py-20 md:py-32 [@media(max-height:820px)]:!justify-start [@media(max-height:820px)]:pt-40 [@media(max-height:820px)]:pb-12 [@media(max-height:700px)]:pt-32 [@media(max-height:700px)]:pb-8">
-      {/* Animated mesh gradient — sits behind video, ambient accent */}
-      <MeshGradient />
+      {/* Animated mesh gradient — desktop only; the animated huge blurs
+          are punishing on mobile GPUs. */}
+      {!isMobile && <MeshGradient />}
 
       {/* Cinematic video background — poster-first, video fades in once loaded */}
       <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden="true">
@@ -85,24 +92,26 @@ export function Hero() {
             }}
           />
         </picture>
-        <video
-          ref={videoRef}
-          muted
-          loop
-          playsInline
-          preload="none"
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{
-            opacity: videoReady ? 0.85 : 0,
-            filter: "saturate(0.75) sepia(0.08)",
-            transform: "scaleX(-1)",
-            transition: "opacity 500ms ease-out",
-          }}
-        >
-          <source src={`${base}/hero-bg.av1.mp4`} type='video/mp4; codecs="av01.0.05M.08"' />
-          <source src={`${base}/hero-bg.webm`} type="video/webm" />
-          <source src={`${base}/hero-bg.mp4`} type="video/mp4" />
-        </video>
+        {!isMobile && (
+          <video
+            ref={videoRef}
+            muted
+            loop
+            playsInline
+            preload="none"
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{
+              opacity: videoReady ? 0.85 : 0,
+              filter: "saturate(0.75) sepia(0.08)",
+              transform: "scaleX(-1)",
+              transition: "opacity 500ms ease-out",
+            }}
+          >
+            <source src={`${base}/hero-bg.av1.mp4`} type='video/mp4; codecs="av01.0.05M.08"' />
+            <source src={`${base}/hero-bg.webm`} type="video/webm" />
+            <source src={`${base}/hero-bg.mp4`} type="video/mp4" />
+          </video>
+        )}
         {/* Bottom fade — dissolves video into dark surface below */}
         <div
           className="absolute bottom-0 left-0 right-0 h-[45%]"

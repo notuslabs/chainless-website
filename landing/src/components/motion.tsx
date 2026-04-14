@@ -3,6 +3,21 @@
 import { motion, useMotionValue, useTransform, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
+/* ── useIsMobile — true when viewport is under `maxWidth` (default 768px).
+   Runs after hydration; returns false on first render to match SSR. ── */
+export function useIsMobile(maxWidth: number = 768) {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    const mq = window.matchMedia(`(max-width: ${maxWidth}px)`);
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, [maxWidth]);
+  return isMobile;
+}
+
 /* ── useMotionReady — gate animations until fonts are loaded + a small
    buffer has passed. Use with FadeUp/TextReveal's `enabled` prop to
    hold animations at their initial state through hydration jitter. ── */
