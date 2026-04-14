@@ -2,7 +2,7 @@
 
 import { FadeUp } from "./motion";
 
-const lastUpdated = "10 de abril de 2026";
+const lastUpdated = "2 de junho de 2025";
 
 export function TermsContent() {
   return (
@@ -26,10 +26,7 @@ export function TermsContent() {
         <FadeUp>
           <div className="legal-prose mt-12 space-y-10 text-[0.9375rem] leading-[1.85] text-text-secondary">
 
-            {/* ================================================
-                PREÂMBULO
-                ================================================ */}
-
+            {/* Introdução */}
             <section>
               <h2>Introdução</h2>
               <p>
@@ -37,6 +34,7 @@ export function TermsContent() {
               </p>
             </section>
 
+            {/* Outros Termos */}
             <section>
               <h2>Outros Termos</h2>
               <p>
@@ -45,32 +43,32 @@ export function TermsContent() {
               <ul>
                 <li>Nossa Política de Privacidade;</li>
                 <li>Política de Prevenção e Combate à Lavagem de Dinheiro, ao Financiamento do Terrorismo e da Proliferação de Armas de Destruição em Massa;</li>
-                <li>Política de Know Your Customer (Conheça o seu cliente);</li>
-                <li>Termos e políticas próprios dos Provedores de on-ramp e off-ramp (tais como Transfero, 4P Finance ou outros), exibidos ao usuário na interface do aplicativo no momento da contratação de cada operação.</li>
+                <li>Política de Know Your Customer (Conheça o seu cliente).</li>
               </ul>
             </section>
 
-            {/* ================================================
-                2 — CONTA E USUÁRIO
-                ================================================ */}
-
+            {/* 2.1 — Elegibilidade */}
             <section>
-              <h2>2. Conta e Usuário</h2>
-
-              <h3>2.1 Elegibilidade</h3>
+              <h2>2.1 Elegibilidade</h2>
               <p>
                 Você deve ter pelo menos 18 anos para usar o Chainless. Ao utilizar o aplicativo, você declara e garante que tem a capacidade legal para celebrar este acordo.
               </p>
               <p>
                 Nem você nem qualquer pessoa que o possua ou controle está sujeita a sanções ou de outra forma designada em qualquer lista de partes proibidas ou restritas, incluindo, entre outras, as listas mantidas pelo Conselho de Segurança das Nações Unidas, pelo governo das Ilhas Virgens Britânicas, pelo governo do Reino Unido, pelo governo dos Estados Unidos (por exemplo, a Lista de Nacionais Especialmente Designados e a Lista de Evasores de Sanções Estrangeiras do Departamento do Tesouro dos Estados Unidos e a Lista de Entidades do Departamento de Comércio dos Estados Unidos), pela União Europeia ou por seus Estados-Membros ou por outra autoridade governamental aplicável e não está localizado nos Estados Unidos.
               </p>
+            </section>
 
-              <h3>2.2 Segurança da Conta</h3>
+            {/* 2.2 — Segurança da Conta */}
+            <section>
+              <h2>2.2 Segurança da Conta</h2>
               <p>
                 Você concorda em nos notificar imediatamente sobre qualquer uso não autorizado de sua conta ou qualquer outra violação de segurança, entrando em contato com nossa equipe de suporte através do e-mail <a href="mailto:support@chainless.finance">support@chainless.finance</a>. Não nos responsabilizamos por qualquer perda ou dano decorrente de sua falha em proteger suas informações de login.
               </p>
+            </section>
 
-              <h3>2.3 Carteira de Ativos Digitais e Contrato de Smart Wallet</h3>
+            {/* 2.3 — Carteira */}
+            <section>
+              <h2>2.3 Carteira de Ativos Digitais e Contrato de Smart Wallet</h2>
               <p>
                 A Chainless oferece uma tecnologia avançada de carteira de ativos digitais que consiste em duas partes principais: uma carteira de propriedade exclusiva do usuário (EOA &mdash; Externally Owned Account) e um contrato de Smart Wallet implementado de acordo com os padrões da tecnologia Account Abstraction (ERC-4337).
               </p>
@@ -85,21 +83,47 @@ export function TermsContent() {
                   <strong>Responsabilidade do Usuário:</strong> É responsabilidade do usuário manter suas credenciais de acesso seguras e proteger sua carteira de ativos digitais contra acesso não autorizado. A Chainless não tem acesso direto aos fundos dos usuários e não se responsabiliza por perdas decorrentes de acesso não autorizado à carteira de ativos digitais.
                 </li>
               </ol>
+            </section>
 
-              <h3>2.4 Custódia de Ativos Digitais</h3>
+            {/* 2.4 — Custódia */}
+            <section>
+              <h2>2.4 Custódia de Ativos Digitais</h2>
               <p>
                 A Chainless atua como uma carteira digital e não exerce custódia sobre os ativos digitais dos usuários. Os usuários são os únicos responsáveis pela guarda e segurança de seus ativos digitais armazenados na Carteira Digital Chainless. A Chainless não possui acesso direto aos ativos digitais dos usuários e não se responsabiliza por perdas decorrentes de acesso não autorizado ou má gestão por parte dos usuários. Os usuários devem adotar medidas de segurança adequadas, como proteger suas credenciais de acesso e utilizar as funcionalidades de segurança oferecidas pela carteira digital.
               </p>
+            </section>
 
-              <h3>2.5 Segurança Cibernética</h3>
+            {/* 2.5 — Segurança Cibernética */}
+            <section>
+              <h2>2.5 Segurança Cibernética</h2>
               <p>
                 Enquanto desenvolvemos o Chainless com foco na segurança e privacidade dos nossos usuários, não garantimos que nosso site seja seguro ou livre de bugs ou vírus. Embora os aplicativos móveis sejam geralmente seguros, é fundamental garantir que seu dispositivo esteja protegido contra ameaças online. Você é responsável pela configuração de sua tecnologia da informação, programas de computador e plataforma para acessar nosso site. Você deve usar seu próprio software de proteção contra vírus.
               </p>
               <p>
                 Você não deve fazer uso indevido de nosso app introduzindo conscientemente vírus, cavalos de tróia, worms, bombas lógicas ou outros materiais maliciosos ou tecnologicamente prejudiciais. Você não deve tentar obter acesso não autorizado ao nosso site, ao servidor no qual o nosso site está armazenado ou a qualquer servidor, computador ou banco de dados conectado ao nosso site. Você não deve atacar nosso site por meio de um ataque de negação de serviço ou de um ataque distribuído de negação de serviço. Denunciaremos qualquer violação desse tipo às autoridades competentes para aplicação da lei e cooperaremos com essas autoridades divulgando sua identidade a elas. No caso de tal violação, seu direito de usar nosso app será interrompido imediatamente.
               </p>
+            </section>
 
-              <h3>2.6 Conduta do Usuário</h3>
+            {/* 2.6 — Custos e Taxas */}
+            <section>
+              <h2>2.6 Custos e Taxas</h2>
+              <p>
+                Poderão ser cobradas taxas pelo acesso a parte ou à parte do Serviço que você usa, inclusive taxas cobradas sobre swaps de tokens que você executa em bolsas de terceiros acessando essas bolsas por meio do Serviço. Essas taxas podem ser alteradas a qualquer momento sem aviso prévio. O valor das taxas aplicáveis ao Serviço ficará visível para você no momento em que você acessar o Serviço. As tarifas que aparecem no aplicativo Chainless são calculadas com as taxas aplicadas.
+              </p>
+              <p>
+                Você poderá incorrer em cobranças de terceiros pelo uso da funcionalidade de terceiros. Por exemplo, podem ser cobradas taxas através dos Dapps (incluindo, sem limitação, trocas descentralizadas) que você pode acessar através do Aplicativo. Em nenhuma circunstância o Chainless incorrerá em qualquer responsabilidade, de qualquer tipo, perante você, decorrente ou relacionada a taxas cobradas de você por tais Terceiros ou pela Funcionalidade de Terceiros vinculada ou acessada através do App.
+              </p>
+              <p>
+                Embora o App se esforce para fornecer uma estimativa precisa das taxas aplicáveis, qualquer informação desse tipo é uma estimativa antecipada das taxas, que podem variar em relação às taxas efetivamente pagas para usar a Funcionalidade e interagir com o blockchain da Polygon ou qualquer outra rede com a qual o Serviço seja compatível.
+              </p>
+              <p>
+                Você entende e concorda que as taxas e preços de conversão são apenas estimativas e que podem mudar a qualquer momento. Dessa forma, os preços ou taxas de conversão fornecidos por meio do App são apenas estimativas e podem ser imprecisos. O Chainless não pode ser responsabilizado por, e você, por meio deste, libera para sempre o Chainless de quaisquer perdas ou outras responsabilidades decorrentes de uma estimativa imprecisa de taxas fornecidas em conexão com qualquer uso de qualquer um dos Serviços.
+              </p>
+            </section>
+
+            {/* 2.7 — Conduta do Usuário */}
+            <section>
+              <h2>2.7 Conduta do Usuário</h2>
               <p>
                 Ao usar o Chainless, você concorda em não:
               </p>
@@ -131,229 +155,82 @@ export function TermsContent() {
               </p>
             </section>
 
-            {/* ================================================
-                3 — TRANSAÇÕES, TAXAS E PAGAMENTOS
-                ================================================ */}
-
+            {/* 3 — Transações e Pagamentos */}
             <section>
-              <h2>3. Transações, Taxas e Pagamentos</h2>
+              <h2>3. Transações e Pagamentos</h2>
 
-              <h3>3.1 Processamento de Transações e Serviços de Terceiros</h3>
-              <p>
-                A Chainless é uma carteira de ativos digitais baseada em blockchain cujas transações são executadas em infraestrutura blockchain pública e/ou por meio de provedores terceirizados integrados, estando sujeitas aos tempos de confirmação da rede, às janelas operacionais dos provedores e a eventuais retenções para análise de conformidade. Além disso, a Chainless pode interagir com serviços de terceiros, como DEXs (Exchange Descentralizadas), para facilitar a negociação de ativos digitais. Durante o uso desses serviços, os usuários concordam em cumprir os termos e condições estabelecidos pelos provedores de serviços externos.
-              </p>
-
-              <h3>3.2 Taxas e Custos</h3>
-              <p>
-                Poderão ser cobradas taxas pelo acesso a parte ou à parte do Serviço que você usa, inclusive taxas cobradas sobre swaps de tokens que você executa em bolsas de terceiros acessando essas bolsas por meio do Serviço. Essas taxas podem ser alteradas a qualquer momento sem aviso prévio. O valor das taxas aplicáveis ao Serviço ficará visível para você no momento em que você acessar o Serviço. As tarifas que aparecem no aplicativo Chainless são calculadas com as taxas aplicadas.
-              </p>
-              <p>
-                Você poderá incorrer em cobranças de terceiros pelo uso da funcionalidade de terceiros. Por exemplo, podem ser cobradas taxas através dos Dapps (incluindo, sem limitação, trocas descentralizadas) que você pode acessar através do Aplicativo. Em nenhuma circunstância o Chainless incorrerá em qualquer responsabilidade, de qualquer tipo, perante você, decorrente ou relacionada a taxas cobradas de você por tais Terceiros ou pela Funcionalidade de Terceiros vinculada ou acessada através do App.
-              </p>
-              <p>
-                Embora o App se esforce para fornecer uma estimativa precisa das taxas aplicáveis, qualquer informação desse tipo é uma estimativa antecipada das taxas, que podem variar em relação às taxas efetivamente pagas para usar a Funcionalidade e interagir com o blockchain da Polygon ou qualquer outra rede com a qual o Serviço seja compatível.
-              </p>
-              <p>
-                Você entende e concorda que as taxas e preços de conversão são apenas estimativas e que podem mudar a qualquer momento. Dessa forma, os preços ou taxas de conversão fornecidos por meio do App são apenas estimativas e podem ser imprecisos. O Chainless não pode ser responsabilizado por, e você, por meio deste, libera para sempre o Chainless de quaisquer perdas ou outras responsabilidades decorrentes de uma estimativa imprecisa de taxas fornecidas em conexão com qualquer uso de qualquer um dos Serviços.
-              </p>
-              <p>
-                A Chainless se compromete a fornecer uma plataforma acessível e transparente para seus usuários. Não cobramos nenhuma taxa de assinatura pelo uso dos nossos serviços. Ao utilizar a Chainless e seus serviços integrados, os usuários concordam em pagar todas as taxas associadas às transações e interações com serviços de terceiros, conforme descrito nos termos e condições específicos de cada serviço.
-              </p>
-
-              <h3>3.3 Transações Automatizadas</h3>
+              <h3>3.1 Transações Automatizadas</h3>
               <p>
                 Utilizando o contrato de Smart Wallet integrado, os usuários podem programar transações automatizadas, como pagamentos recorrentes ou execução de contratos inteligentes. Os usuários devem estar cientes de que as transações automatizadas serão realizadas de acordo com as configurações definidas por eles mesmos, e a Chainless não se responsabiliza por eventuais perdas ou danos decorrentes dessas transações.
               </p>
 
-              <h3>3.4 Reembolso e Disputas</h3>
+              <h3>3.2 Processamento de Transações e Interação com Serviços de Terceiros</h3>
+              <p>
+                A Chainless é uma carteira de ativos digitais baseada em blockchain que permite aos usuários realizar transações seguras e rápidas. Além disso, a Chainless pode interagir com serviços de terceiros, como DEXs (Exchange Descentralizadas), para facilitar a negociação de ativos digitais. Durante o uso desses serviços, os usuários concordam em cumprir os termos e condições estabelecidos pelos provedores de serviços externos.
+              </p>
+
+              <h3>3.3 Taxas e Custos Associados</h3>
+              <p>
+                A Chainless se compromete a fornecer uma plataforma acessível e transparente para seus usuários. Como parte desse compromisso, gostaríamos de esclarecer que não cobramos nenhuma taxa de assinatura pelo uso dos nossos serviços. Entendemos a importância de manter nossos serviços acessíveis a todos os usuários, e não aplicamos taxas recorrentes para o uso da Chainless.
+              </p>
+              <p>
+                Ao utilizar a Chainless e seus serviços integrados, os usuários concordam em pagar todas as taxas associadas às transações e interações com serviços de terceiros, conforme descrito nos termos e condições específicos de cada serviço. Essas taxas podem variar dependendo da natureza da transação e das políticas dos provedores de serviços.
+              </p>
+
+              <h3>3.4 Política de Reembolso</h3>
               <p>
                 Os reembolsos serão considerados caso a caso e estarão sujeitos às políticas estabelecidas pelos provedores de serviços de terceiros, quando aplicável. Os usuários que desejarem solicitar um reembolso devem entrar em contato com o suporte ao cliente da Chainless ou do serviço de terceiros relevante, seguindo os procedimentos específicos fornecidos.
               </p>
-              <p>
-                Em caso de disputas ou problemas relacionados a transações, os usuários podem entrar em contato com nossa equipe de suporte para assistência. Faremos o possível para mediar e resolver quaisquer problemas, embora não possamos garantir reembolsos diretos. Em circunstâncias excepcionais, como falhas técnicas graves ou atividades fraudulentas, reservamo-nos o direito de considerar reembolsos caso a caso.
-              </p>
 
-              <h3>3.5 Segurança e Irreversibilidade</h3>
+              <h3>3.5 Segurança Financeira</h3>
               <p>
                 A Chainless implementa medidas de segurança rigorosas para proteger as informações financeiras dos usuários durante as transações e interações com serviços de terceiros. No entanto, os usuários reconhecem que, devido à natureza da tecnologia blockchain e da Internet, a segurança absoluta não pode ser garantida. É responsabilidade dos usuários adotar medidas adicionais de segurança, como o uso de autenticação de dois fatores e a proteção de suas credenciais de acesso.
               </p>
               <p>
-                Os usuários são responsáveis por todas as transações realizadas através de suas contas na Carteira Digital Chainless. As transações realizadas na blockchain são geralmente irreversíveis. Uma vez que uma transação é confirmada na blockchain, não é possível reverter ou cancelar essa transação. Portanto, os usuários devem revisar cuidadosamente todos os detalhes da transação antes de confirmá-la.
+                <strong>Responsabilidade do Usuário:</strong> Os usuários são responsáveis por todas as transações realizadas através de suas contas na Carteira Digital Chainless. Isso inclui, mas não se limita a, transações de depósito, saque, trocas e transferências de ativos digitais.
+              </p>
+              <p>
+                <strong>Transações Irreversíveis:</strong> As transações realizadas na blockchain são geralmente irreversíveis. Uma vez que uma transação é confirmada na blockchain, não é possível reverter ou cancelar essa transação. Portanto, os usuários devem revisar cuidadosamente todos os detalhes da transação antes de confirmá-la.
+              </p>
+              <p>
+                <strong>Suporte Técnico:</strong> Embora não possamos reverter transações ou oferecer reembolsos diretos devido à natureza imutável da blockchain, nossa equipe de suporte técnico está disponível para ajudar os usuários em caso de erros técnicos, problemas de conectividade ou outras questões relacionadas à plataforma.
+              </p>
+              <p>
+                <strong>Disputas e Resolução de Problemas:</strong> Em caso de disputas ou problemas relacionados a transações, os usuários podem entrar em contato com nossa equipe de suporte para assistência. Faremos o possível para mediar e resolver quaisquer problemas, embora não possamos garantir reembolsos diretos.
+              </p>
+              <p>
+                <strong>Exceções:</strong> Em circunstâncias excepcionais, como falhas técnicas graves ou atividades fraudulentas, reservamo-nos o direito de considerar reembolsos caso a caso. Tais situações serão avaliadas pela nossa equipe de suporte com base nas circunstâncias específicas envolvidas.
               </p>
             </section>
 
-            {/* ================================================
-                4 — PIX
-                ================================================ */}
-
+            {/* 4 — PIX */}
             <section>
-              <h2>4. Serviços de Depósito e Saque por PIX (On-Ramp e Off-Ramp)</h2>
-
-              <h3>4.1 Natureza do serviço e papel da Chainless</h3>
+              <h2>4. Serviços de Depósito e Saque por PIX</h2>
               <p>
-                A Chainless não é instituição de pagamento, corretora de câmbio nem operadora do arranjo PIX. Os depósitos e saques em Reais por PIX disponibilizados no aplicativo são operados integralmente por parceiros terceirizados de on-ramp e off-ramp (&ldquo;Provedores&rdquo;), devidamente identificados na interface do aplicativo no momento de cada transação. A Chainless atua exclusivamente como interface tecnológica que conecta o usuário ao Provedor selecionado, não figurando como parte da operação de pagamento, da conversão cambial ou da custódia dos recursos durante o trânsito.
-              </p>
-
-              <h3>4.2 Ciência e aceitação do Provedor</h3>
-              <p>
-                Ao iniciar uma operação de depósito ou saque via PIX, o usuário declara ter ciência da identidade do Provedor responsável, conforme exibido na tela de confirmação da transação, e concorda com os termos e políticas próprios daquele Provedor, os quais regem a relação jurídica da operação de pagamento.
-              </p>
-
-              <h3>4.3 Tempestividade</h3>
-              <p>
-                O usuário reconhece e concorda expressamente que, embora o arranjo PIX seja nominalmente instantâneo quando ocorre entre contas bancárias, as operações de on-ramp e off-ramp realizadas através do aplicativo envolvem etapas adicionais, incluindo, sem limitação:
+                Nossos serviços de depósito e saque por PIX são fornecidos em colaboração com um parceiro terceirizado (&ldquo;Parceiro de On-ramp e Off-ramp&rdquo;), que facilita as transações entre sua conta bancária e sua carteira digital na Chainless. Os limites para transações PIX são definidos de acordo com as políticas de Anti Lavagem de Dinheiro (AML) e Conheça Seu Cliente (KYC), estabelecidas em conformidade com as diretrizes requeridas pelo nosso parceiro terceirizado.
               </p>
               <ol>
-                <li>análise de conformidade (KYC/AML) pelo Provedor;</li>
-                <li>liquidação on-chain em blockchain pública, sujeita a tempos de confirmação variáveis;</li>
-                <li>roteamento entre contas bancárias, contas de pagamento e carteiras digitais; e</li>
-                <li>controles internos de prevenção à fraude do Provedor.</li>
-              </ol>
-              <p>
-                Em razão desses fatores, as operações de depósito e saque por PIX não são instantâneas e estão sujeitas a atrasos que podem variar de algumas horas a mais de uma semana, sem que tal atraso configure descumprimento contratual pela Chainless. A Chainless envidará seus melhores esforços para que as operações sejam processadas no menor tempo possível, mas não oferece garantia de prazo de conclusão.
-              </p>
-
-              <h3>4.4 Retenção por compliance e limites ao dever de informar</h3>
-              <p>
-                O usuário reconhece que o Provedor, no cumprimento de obrigações legais e regulatórias, notadamente a Lei nº 9.613/1998 (Lavagem de Dinheiro), a Lei nº 13.260/2016 (Financiamento ao Terrorismo), as normas do Banco Central do Brasil, do COAF e demais órgãos reguladores aplicáveis, pode reter, suspender, analisar, reverter ou cancelar qualquer operação de PIX a qualquer momento, por prazo determinado ou indeterminado, com base em critérios internos de análise de risco ou em obrigação legal.
-              </p>
-              <p>
-                Em determinadas hipóteses previstas em lei, nem a Chainless nem o Provedor poderão informar ao usuário o motivo, o andamento ou a existência de análise em curso, notadamente em razão da vedação legal ao <em>tipping-off</em> (art. 11, §2º, da Lei 9.613/1998). A Chainless não responderá por prejuízos, lucros cessantes, perdas de oportunidade, variação cambial ou volatilidade de ativos digitais decorrentes de retenções, análises de compliance ou atrasos imputáveis a Provedores ou a autoridades competentes.
-              </p>
-
-              <h3>4.5 Falhas e indisponibilidade de Provedores</h3>
-              <p>
-                A Chainless não se responsabiliza por atrasos, falhas, erros operacionais, indisponibilidade temporária ou permanente, suspensão ou descontinuação dos serviços prestados pelos Provedores. Na ocorrência de tais eventos, a Chainless atuará como canal razoável de comunicação entre usuário e Provedor, sem assumir, em nenhuma hipótese, obrigação solidária ou subsidiária pelos atos ou omissões do Provedor.
-              </p>
-
-              <h3>4.6 Variação cambial e de preço durante o processamento</h3>
-              <p>
-                O usuário reconhece que, em razão dos prazos descritos na cláusula 4.3, o valor em criptoativos recebido (no caso de depósito) ou o valor em Reais creditado (no caso de saque) pode diferir do valor estimado no momento da solicitação, em razão da volatilidade de mercado dos ativos digitais e das taxas de câmbio aplicadas pelo Provedor na hora da liquidação efetiva. A Chainless não garante preço, cotação ou taxa de conversão até a confirmação final da operação pelo Provedor.
-              </p>
-
-            </section>
-
-            {/* ================================================
-                5 — PROTOCOLOS DeFi
-                ================================================ */}
-
-            <section>
-              <h2>5. Interação com Protocolos de Finanças Descentralizadas (DeFi)</h2>
-
-              <h3>5.1 Natureza do serviço e qualificação jurídica</h3>
-              <p>
-                A Chainless pode disponibilizar, por meio de sua interface, o acesso a protocolos de finanças descentralizadas de terceiros (&ldquo;Protocolos DeFi&rdquo;), incluindo, sem limitação, protocolos de empréstimo e rendimento (<em>lending</em>), provisão de liquidez (<em>liquidity pools</em>), troca descentralizada (<em>DEXs</em>), <em>staking</em> e outros que venham a ser integrados. A título exemplificativo, os Protocolos DeFi acessíveis podem incluir Aave, Uniswap, Compound, Lido, Morpho, Curve e Yearn, sem que esta lista seja taxativa ou implique compromisso de disponibilidade contínua de qualquer deles.
-              </p>
-              <p>
-                A Chainless não é instituição financeira, sociedade de crédito, gestora de recursos, consultora de investimentos nem distribuidora de valores mobiliários. A Chainless atua exclusivamente como interface tecnológica não custodial que permite ao usuário interagir diretamente com os <em>smart contracts</em> dos Protocolos DeFi. Todas as decisões de alocação, permanência, resgate, seleção de protocolo e configuração de parâmetros são exclusivamente do usuário. A inclusão de um Protocolo DeFi na interface não constitui endosso, recomendação nem certificação de sua segurança ou rentabilidade. A Chainless pode, a seu exclusivo critério, adicionar ou remover o acesso a qualquer Protocolo DeFi sem aviso prévio.
-              </p>
-
-              <h3>5.2 Protocolos DeFi e execução por <em>smart contract</em></h3>
-              <p>
-                As operações realizadas por meio de Protocolos DeFi são executadas integralmente por contratos inteligentes (<em>smart contracts</em>) de terceiros, implantados em blockchains públicas. A Chainless não controla, opera, administra, audita nem garante o funcionamento desses contratos inteligentes. O usuário reconhece que:
-              </p>
-              <ol>
-                <li>as regras de cada operação, incluindo taxas, juros, limiares de liquidação e penalidades, são definidas e executadas exclusivamente pelo Protocolo DeFi, sem intervenção da Chainless;</li>
-                <li>a Chainless não possui capacidade técnica para alterar, reverter, pausar ou cancelar operações executadas pelos Protocolos DeFi;</li>
-                <li>bugs, exploits, ataques, falhas de governança ou indisponibilidade dos Protocolos DeFi podem resultar em perda parcial ou total dos ativos alocados, sem que a Chainless tenha qualquer responsabilidade;</li>
-                <li>alterações nos parâmetros dos Protocolos DeFi (taxas, tokens aceitos, mecanismos de distribuição, limiares de liquidação) podem ser efetuadas por governança descentralizada sem necessidade de consentimento da Chainless ou do usuário.</li>
-              </ol>
-
-              <h3>5.3 Rendimentos</h3>
-              <p>
-                O usuário reconhece que todo rendimento exibido no aplicativo, incluindo taxas de APY, APR ou equivalentes, é uma estimativa baseada em dados on-chain no momento da consulta ou em médias históricas. Rendimentos passados não constituem garantia, promessa ou indicativo de rendimentos futuros. Os rendimentos são determinados algoritmicamente pelos Protocolos DeFi e podem variar significativamente, inclusive para zero ou valores negativos, a qualquer momento. A Chainless não garante, promete nem projeta qualquer taxa de rendimento ou resultado financeiro. A exibição de dados de rendimento tem caráter exclusivamente informativo e não constitui recomendação de investimento.
-              </p>
-
-              <h3>5.4 Empréstimo colateralizado</h3>
-              <p>
-                Nas operações de empréstimo colateralizado, o usuário deposita ativos digitais como garantia (&ldquo;Colateral&rdquo;) em um Protocolo DeFi para tomar emprestado outros ativos digitais. O usuário reconhece que:
-              </p>
-              <ol>
-                <li>o Protocolo DeFi define limiares de Loan-to-Value (LTV) para chamada de margem e liquidação, que podem ser alterados pela governança do protocolo sem aviso prévio;</li>
-                <li>se o LTV ultrapassar o limiar de liquidação, o Protocolo DeFi liquidará automaticamente parte ou a totalidade do Colateral, sem intervenção humana, sem negociação, sem prazo de carência e sem possibilidade de reversão;</li>
-                <li>a liquidação pode implicar perda parcial ou total do Colateral e taxas adicionais (<em>liquidation penalty</em>);</li>
-                <li>as taxas de juros são determinadas algoritmicamente e podem variar a qualquer momento, para cima ou para baixo, sem aviso prévio;</li>
-                <li>a Chainless poderá enviar alertas de LTV por cortesia, mas não garante a entrega, a tempestividade ou a precisão desses alertas. A decisão de adicionar Colateral, reduzir a dívida ou aceitar a liquidação é exclusivamente do usuário.</li>
-              </ol>
-              <p>
-                Para operações envolvendo Bitcoin (BTC), o ativo nativo pode ser convertido para uma versão tokenizada compatível com blockchains EVM, como Wrapped Bitcoin (wBTC), por meio de protocolos de bridge de terceiros. O valor de wBTC pode divergir do valor de BTC nativo (<em>depeg</em>), impactando o índice LTV e podendo provocar liquidação. Falhas ou exploits no protocolo de bridge podem resultar em perda parcial ou total dos ativos convertidos.
-              </p>
-
-              <h3>5.5 Pools de liquidez</h3>
-              <p>
-                Ao fornecer liquidez a pools de troca em Protocolos DeFi, o usuário reconhece os seguintes riscos adicionais:
-              </p>
-              <ul>
-                <li>Perda impermanente (<em>impermanent loss</em>): se os preços dos ativos depositados divergirem, o valor total resgatável pode ser inferior ao que o usuário teria mantendo os ativos fora do pool. Se o resgate ocorre durante a divergência, a perda se torna permanente;</li>
-                <li>Concentração de faixa: em protocolos de liquidez concentrada, se o preço sair da faixa definida pelo usuário, a posição deixa de gerar taxas e fica exposta ao ativo desvalorizado;</li>
-                <li>Liquidez insuficiente: o volume de transações no pool pode ser insuficiente para gerar taxas relevantes;</li>
-                <li>Inadimplência sistêmica: em cenários extremos, o mecanismo de liquidação do protocolo pode não cobrir todas as posições, resultando em perdas para depositantes.</li>
-              </ul>
-
-              <h3>5.6 Infraestrutura de rede</h3>
-              <p>
-                As operações em Protocolos DeFi dependem do funcionamento adequado de blockchains públicas (incluindo a rede Polygon e demais redes suportadas), de provedores de acesso e conexão com a blockchain (<em>RPC providers</em>, nós validadores, indexadores) e de serviços de infraestrutura de terceiros. O usuário reconhece que:
-              </p>
-              <ol>
-                <li>as redes blockchain podem sofrer congestionamento, indisponibilidade temporária, reorganizações de blocos (<em>reorgs</em>), atrasos de confirmação ou interrupções por falhas técnicas, atualizações de protocolo ou ataques à rede;</li>
-                <li>provedores de conexão podem apresentar falhas, latência elevada, dados desatualizados ou indisponibilidade, impedindo temporariamente a execução de transações pelo aplicativo;</li>
-                <li>tais eventos podem impedir o usuário de executar operações em tempo hábil para evitar liquidação ou outras perdas;</li>
-                <li>a Chainless não garante a disponibilidade, a latência ou o funcionamento contínuo de nenhuma rede blockchain nem de provedores de infraestrutura de terceiros.</li>
-              </ol>
-
-              <h3>5.7 Autonomia do usuário e acesso independente aos ativos</h3>
-              <p>
-                O usuário reconhece e declara expressamente que:
-              </p>
-              <ol>
-                <li>possui acesso à sua chave privada, podendo exportá-la a qualquer momento por meio das configurações do aplicativo;</li>
-                <li>seus ativos digitais, incluindo posições em Protocolos DeFi, existem na blockchain pública e não dependem do aplicativo Chainless para serem acessados, geridos ou movimentados;</li>
-                <li>pode, a qualquer momento, utilizar interfaces alternativas para gerenciar suas posições, adicionar ou retirar ativos e executar quaisquer operações;</li>
-                <li>a indisponibilidade do aplicativo Chainless não acarreta inacessibilidade dos fundos nem das posições do usuário, uma vez que estes residem em blockchains públicas acessíveis por múltiplas interfaces;</li>
-                <li>consequentemente, eventuais indisponibilidades do aplicativo não eximem o usuário da responsabilidade por monitorar e gerenciar suas próprias posições.</li>
-              </ol>
-
-              <h3>5.8 Taxas operacionais sobre interações DeFi</h3>
-              <p>
-                A Chainless pode cobrar taxas sobre depósitos, resgates ou outras interações com Protocolos DeFi, conforme exibido no momento da operação. Essas taxas remuneram o serviço de interface e infraestrutura e não constituem taxa de gestão, taxa de performance nem remuneração por resultado de investimento.
-              </p>
-
-              <h3>5.9 Valores mobiliários</h3>
-              <p>
-                Tokens derivados de posições em Protocolos DeFi, como tokens de rendimento, tokens de posição de liquidez (<em>LP tokens</em>) e equivalentes, não são emitidos, ofertados nem administrados pela Chainless. A Chainless não realiza oferta pública de valores mobiliários nem distribui contratos de investimento coletivo nos termos da Lei 6.385/76 e do Parecer de Orientação CVM nº 40/2022. A interação do usuário com Protocolos DeFi por meio da interface é autônoma, direta e por sua conta e risco exclusivos.
-              </p>
-
-              <h3>5.10 Informações tributárias</h3>
-              <p>
-                Eventuais informações sobre tratamento tributário de operações em Protocolos DeFi apresentadas no aplicativo, no blog ou em materiais educativos da Chainless são meramente informativas e não constituem aconselhamento tributário, jurídico ou financeiro. O usuário deve consultar profissional habilitado para avaliar as consequências fiscais de suas operações.
-              </p>
-
-              <h3>5.11 Aceite informado</h3>
-              <p>
-                A utilização de qualquer funcionalidade envolvendo Protocolos DeFi está condicionada à leitura e aceite expresso do disclosure de riscos apresentado na interface do aplicativo previamente à confirmação da operação. O aceite constitui declaração do usuário de que:
-              </p>
-              <ol>
-                <li>leu, compreendeu e aceitou os riscos descritos nesta Seção 5 e no disclosure apresentado no aplicativo;</li>
-                <li>possui conhecimento suficiente sobre ativos digitais e protocolos DeFi para tomar uma decisão informada;</li>
-                <li>não está utilizando recursos essenciais à sua subsistência ou de sua família;</li>
-                <li>tomou decisão autônoma, sem recomendação, aconselhamento ou gestão por parte da Chainless;</li>
-                <li>reconhece que possui acesso à sua chave privada e pode gerenciar suas posições por interfaces alternativas.</li>
+                <li><strong>Verificação de Identidade:</strong> Antes de realizar qualquer transação PIX, verifique cuidadosamente os detalhes do destinatário, incluindo o nome completo e o CPF/CNPJ, e certifique-se de estar lidando com uma fonte confiável.</li>
+                <li><strong>Limite de Transações:</strong> Estabeleça limites de transação adequados para proteger seus ativos digitais contra transações não autorizadas. Não realize transações que estejam fora de seu padrão usual de atividade financeira sem uma verificação cuidadosa.</li>
+                <li><strong>Confirmação de Transações:</strong> Sempre confirme as transações PIX antes de finalizá-las e verifique os detalhes da transação com atenção para evitar erros ou fraudes.</li>
+                <li><strong>Comunicação Segura:</strong> Evite compartilhar informações confidenciais ou detalhes de transações em canais de comunicação não seguros.</li>
+                <li><strong>Verificação de Autenticidade:</strong> Utilize as ferramentas de verificação de autenticidade oferecidas pelo seu banco ou provedor de serviços financeiros para validar as informações de transações PIX e evitar fraudes.</li>
               </ol>
             </section>
 
-            {/* ================================================
-                6 — RISCOS E RESPONSABILIDADES
-                ================================================ */}
-
+            {/* 5 — Riscos */}
             <section>
-              <h2>6. Riscos e Responsabilidades</h2>
+              <h2>5. Riscos e responsabilidades</h2>
 
-              <h3>6.1 Ativos Digitais</h3>
+              <h3>5.1 Ativos Digitais</h3>
               <p>
-                Os ativos digitais, incluindo tokens e criptomoedas, são conhecidos por sua volatilidade de preços, podendo sofrer variações significativas em curtos períodos de tempo. A negociação de ativos digitais também envolve riscos adicionais, como falta de regulamentação, liquidez limitada e potencial exposição a fraudes e ataques cibernéticos. Os usuários devem realizar sua própria pesquisa e análise antes de realizar transações com ativos digitais e devem estar preparados para assumir os riscos associados a essas atividades.
+                Os usuários devem estar cientes dos riscos associados ao uso da Carteira Digital Chainless e à negociação de ativos digitais, incluindo tokens. Os ativos digitais, incluindo tokens e criptomoedas, são conhecidos por sua volatilidade de preços, podendo sofrer variações significativas em curtos períodos de tempo.
+              </p>
+              <p>
+                A negociação de ativos digitais também envolve riscos adicionais, como falta de regulamentação, liquidez limitada e potencial exposição a fraudes e ataques cibernéticos. Os usuários devem realizar sua própria pesquisa e análise antes de realizar transações com ativos digitais e devem estar preparados para assumir os riscos associados a essas atividades.
               </p>
 
-              <h3>6.2 Stablecoins</h3>
+              <h3>5.2 Stablecoins</h3>
               <p>
                 Os usuários devem estar cientes de que, embora as stablecoins busquem manter um valor estável, ainda podem estar sujeitas a riscos significativos. Mesmo aquelas pareadas com moedas fiduciárias, como o dólar americano, podem perder sua paridade devido a uma variedade de fatores, incluindo:
               </p>
@@ -366,7 +243,15 @@ export function TermsContent() {
                 A Chainless não pode garantir a paridade da stablecoin com seu colateral e não se responsabiliza por perdas decorrentes de qualquer alteração no valor da stablecoin.
               </p>
 
-              <h3>6.3 Liquidez e Disponibilidade de Ativos</h3>
+              <h3>5.3 Perdas e Danos</h3>
+              <p>
+                A Chainless não fornece aconselhamento de investimento e não se responsabiliza por quaisquer perdas ou danos decorrentes da negociação de ativos digitais. Os usuários devem exercer cautela e responsabilidade ao lidar com ativos digitais e devem buscar orientação profissional, se necessário, antes de tomar quaisquer decisões de investimento.
+              </p>
+
+              <h3>5.4 Liquidez e Disponibilidade de Ativos</h3>
+              <p>
+                A Chainless atua exclusivamente como uma carteira de criptoativos autônoma e não se caracteriza como corretora, distribuidora de valores mobiliários ou intermediadora de ativos digitais. O serviço prestado se limita à conexão do usuário com protocolos de finanças descentralizadas (DeFi), permitindo a interação com liquidez e mercados disponíveis diretamente nas blockchains suportadas pela plataforma.
+              </p>
               <p>
                 Os usuários reconhecem que a liquidez dos ativos digitais listados na Chainless pode variar e que, em determinados momentos, poderá haver indisponibilidade temporária ou permanente para realizar trocas dentro da plataforma. A Chainless não garante a liquidez presente ou futura de nenhum ativo digital, nem assegura que os ativos adquiridos possam ser novamente negociados ou convertidos dentro do aplicativo.
               </p>
@@ -374,39 +259,28 @@ export function TermsContent() {
                 A listagem de um ativo no aplicativo não implica qualquer garantia de disponibilidade contínua para negociação. O usuário compreende que os mercados acessados por meio da Chainless são voláteis, descentralizados e independentes, podendo ser descontinuados a qualquer momento por fatores externos à Chainless.
               </p>
               <p>
-                Em qualquer hipótese, os ativos digitais armazenados pelo usuário na carteira Chainless permanecem sob sua custódia exclusiva e poderão ser transferidos a qualquer momento para outras carteiras ou plataformas compatíveis, a critério do próprio usuário.
-              </p>
-
-              <h3>6.4 Perdas e Danos</h3>
-              <p>
-                A Chainless não fornece aconselhamento de investimento e não se responsabiliza por quaisquer perdas ou danos decorrentes do uso do aplicativo, da negociação de ativos digitais ou da interação com Protocolos DeFi. Os usuários devem exercer cautela e responsabilidade ao lidar com ativos digitais e devem buscar orientação profissional, se necessário, antes de tomar quaisquer decisões de investimento.
+                Em qualquer hipótese, os ativos digitais armazenados pelo usuário na carteira Chainless permanecem sob sua custódia exclusiva e poderão ser transferidos a qualquer momento para outras carteiras ou plataformas compatíveis, a critério do próprio usuário. Quando necessário, o usuário poderá ser orientado a realizar a transferência de seus ativos para fora da Chainless.
               </p>
             </section>
 
-            {/* ================================================
-                7 — LICENÇA E PI
-                ================================================ */}
-
+            {/* 6 — Licença e PI */}
             <section>
-              <h2>7. Licença e Propriedade Intelectual</h2>
+              <h2>6. Licença e Propriedade Intelectual</h2>
 
-              <h3>7.1 Licença de Uso</h3>
+              <h3>6.1 Licença de Uso</h3>
               <p>
                 Concedemos a você uma licença limitada, não exclusiva, intransferível e revogável para usar o Chainless, sujeita a estes Termos de Uso.
               </p>
 
-              <h3>7.2 Propriedade Intelectual</h3>
+              <h3>6.2 Propriedade Intelectual</h3>
               <p>
                 Todos os direitos, títulos e interesses no aplicativo e no conteúdo fornecido através do aplicativo são de propriedade da Chainless ou de seus licenciadores. Você não pode copiar, modificar, distribuir, vender ou arrendar qualquer parte do nosso serviço ou software.
               </p>
             </section>
 
-            {/* ================================================
-                8 — PRIVACIDADE
-                ================================================ */}
-
+            {/* 7 — Privacidade */}
             <section>
-              <h2>8. Política de Privacidade e Direitos dos Titulares</h2>
+              <h2>7. Política de Privacidade e Direitos dos Titulares</h2>
               <p>
                 Na Chainless, estamos comprometidos em proteger a privacidade e os direitos dos nossos usuários em conformidade com as diretrizes estabelecidas pela Lei Geral de Proteção de Dados (LGPD) do Brasil.
               </p>
@@ -414,55 +288,35 @@ export function TermsContent() {
                 Além disso, é importante ressaltar que ao utilizar a Chainless, as suas transações realizadas pela carteira de ativos digitais serão registradas na blockchain pública associada à respectiva criptomoeda ou token. Essas transações são públicas, imutáveis e não podem ser deletadas.
               </p>
 
-              <h3>8.1 Coleta e Uso de Dados Pessoais</h3>
+              <h3>7.1 Coleta e Uso de Dados Pessoais</h3>
               <p>Ao usar a Chainless, você concorda com a coleta e uso de seus dados pessoais conforme nossa Política de Privacidade.</p>
 
-              <h3>8.2 Direitos dos Titulares dos Dados</h3>
+              <h3>7.2 Direitos dos Titulares dos Dados</h3>
               <p>Você tem o direito de acessar, corrigir, atualizar e solicitar a exclusão de seus dados pessoais, conforme permitido pela lei.</p>
 
-              <h3>8.3 Política de Privacidade</h3>
+              <h3>7.3 Política de Privacidade</h3>
               <p>Nossa Política de Privacidade detalha nossas práticas de coleta, uso e proteção de dados pessoais.</p>
 
-              <h3>8.4 Dados na Blockchain</h3>
+              <h3>7.4 Dados na Blockchain</h3>
               <p>Ao utilizar a Chainless, suas transações serão registradas na blockchain pública associada à respectiva criptomoeda ou token. As transações na blockchain são públicas, imutáveis e não podem ser deletadas.</p>
 
-              <h3>8.5 Consentimento</h3>
+              <h3>7.5 Consentimento</h3>
               <p>Ao utilizar os serviços da Chainless, você concorda explicitamente com a coleta, uso e processamento dos seus dados pessoais conforme descrito em nossa Política de Privacidade. Você reconhece que seu consentimento é voluntário e pode ser retirado a qualquer momento, sujeito às limitações legais ou contratuais aplicáveis.</p>
             </section>
 
-            {/* ================================================
-                9 — LIMITAÇÃO DE RESPONSABILIDADE
-                ================================================ */}
-
+            {/* 8 — Limitação de Responsabilidade */}
             <section>
-              <h2>9. Limitação de Responsabilidade</h2>
+              <h2>8. Limitação de Responsabilidade</h2>
 
-              <h3>9.1 Isenção de Garantias</h3>
+              <h3>8.1 Isenção de Garantias</h3>
               <p>O Chainless é fornecido &ldquo;como está&rdquo; e &ldquo;conforme disponível&rdquo;, sem garantias de qualquer tipo, explícitas ou implícitas.</p>
 
-              <h3>9.2 Limitação de Danos</h3>
+              <h3>8.2 Limitação de Danos</h3>
               <p>
-                Em hipótese alguma, a Chainless, suas subsidiárias ou afiliadas, assim como seus respectivos diretores, acionistas, funcionários, agentes ou representantes serão responsáveis por quaisquer danos diretos, indiretos, incidentais, especiais, punitivos ou consequentes decorrentes do serviço, incluindo, sem limitação:
-              </p>
-              <ul>
-                <li>atrasos, retenções, suspensões ou recusas de operações PIX imputáveis a Provedores terceirizados ou a exigências regulatórias;</li>
-                <li>variação de preço de ativos digitais durante o processamento de operações;</li>
-                <li>liquidação de Colateral por Protocolos DeFi;</li>
-                <li>bugs, exploits ou ataques a Protocolos DeFi ou protocolos de bridge;</li>
-                <li>variação de taxas de juros ou rendimentos em Protocolos DeFi;</li>
-                <li>perda impermanente (<em>impermanent loss</em>) em pools de liquidez;</li>
-                <li>divergência (<em>depeg</em>) entre ativos tokenizados e seus equivalentes nativos;</li>
-                <li>alterações nos parâmetros de governança de Protocolos DeFi;</li>
-                <li>indisponibilidade, congestionamento ou falhas em redes blockchain ou provedores de conexão;</li>
-                <li>indisponibilidade da interface da Chainless, considerando que o usuário dispõe de acesso independente aos seus ativos conforme reconhecido na cláusula 5.7;</li>
-                <li>diferença entre rendimento estimado ou exibido e rendimento efetivamente obtido;</li>
-                <li>decisões de alocação ou investimento tomadas pelo usuário com base em dados exibidos na interface.</li>
-              </ul>
-              <p>
-                A responsabilidade total da Chainless não excederá o montante total real recebido pela Chainless do usuário para acessar o serviço.
+                Em hipótese alguma, a Chainless, suas subsidiárias ou afiliadas, assim como seus respectivos diretores, acionistas, funcionários, agentes ou representantes serão responsáveis por quaisquer danos diretos, indiretos, incidentais, especiais, punitivos ou consequentes decorrentes do serviço. A responsabilidade total da Chainless não excederá o montante total real recebido pela Chainless do usuário para acessar o serviço.
               </p>
 
-              <h3>9.3 Custódia de Ativos Digitais</h3>
+              <h3>8.3 Custódia de Ativos Digitais</h3>
               <p>A Chainless atua como uma carteira de ativos digitais onde a custódia é exclusivamente realizada pelo usuário.</p>
 
               <h3>9.4 Indenização</h3>
@@ -471,15 +325,13 @@ export function TermsContent() {
               </p>
             </section>
 
-            {/* ================================================
-                10–13 — BOILERPLATE
-                ================================================ */}
-
+            {/* 10 — Modificações */}
             <section>
               <h2>10. Modificações nos Termos</h2>
               <p>Podemos alterar estes Termos de Uso a qualquer momento. O uso contínuo do Chainless após a publicação das alterações será considerado como aceitação dos novos termos.</p>
             </section>
 
+            {/* 11 — Rescisão */}
             <section>
               <h2>11. Rescisão</h2>
 
@@ -490,6 +342,7 @@ export function TermsContent() {
               <p>Após a rescisão, você perde o direito de acessar o serviço e todas as informações associadas à sua conta podem ser excluídas.</p>
             </section>
 
+            {/* 12 — Lei Aplicável */}
             <section>
               <h2>12. Lei Aplicável e Jurisdição</h2>
 
@@ -503,6 +356,7 @@ export function TermsContent() {
               <p>Você expressamente se submete à jurisdição exclusiva dos referidos tribunais e consente com a intimação extraterritorial do processo.</p>
             </section>
 
+            {/* 13 — Disposições Gerais */}
             <section>
               <h2>13. Disposições Gerais</h2>
               <ul>

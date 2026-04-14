@@ -33,7 +33,6 @@ export function Footer() {
       { label: t.links.privacidade, href: "/politica-de-privacidade", forceLocale: "pt" },
       { label: t.links.termos, href: "/termos-de-uso", forceLocale: "pt" },
       { label: t.links.aml, href: "/politica-aml", forceLocale: "pt" },
-      { label: t.links.regulamentacao, href: "/transparencia", forceLocale: "pt" },
     ],
   };
 
