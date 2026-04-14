@@ -183,15 +183,5 @@
     "name": "Crypto Crya",
     "slug": "crypto-crya",
     "code": "CCRYA"
-  },
-  {
-    "name": "YouTube Chainless",
-    "slug": "chain",
-    "code": "CHAIN"
-  },
-  {
-    "name": "YouTube Chainless",
-    "slug": "btc21",
-    "code": "BTC21"
   }
 ]
