@@ -184,10 +184,9 @@
     ]
   },
   "cta": {
-    "eyebrow": "Get started",
-    "heading": "Your wealth deserves to be only yours.",
-    "description": "Every wealth platform asks you to hand your assets to a custodian. Chainless is the first where that is",
-    "impossible": "impossible",
+    "eyebrow": "Onchain or nothing",
+    "heading": "Banks hate us.",
+    "description": "Because we proved custody is a choice, not a requirement. Your wealth lives onchain, under your key, without asking anyone's permission.",
     "button": "Become Chainless",
     "trustAnchors": ["No custody", "No lock-up", "No middlemen"]
   },

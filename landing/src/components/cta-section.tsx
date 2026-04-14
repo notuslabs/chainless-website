@@ -83,7 +83,6 @@ export function CTASection() {
         {/* Eyebrow */}
         <FadeUp>
           <Eyebrow className="mb-8">
-            <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/60" />
             {t.eyebrow}
           </Eyebrow>
         </FadeUp>
@@ -97,8 +96,7 @@ export function CTASection() {
         </FadeUp>
         <FadeUp delay={0.25}>
           <p className="mt-8 max-w-[460px] text-lg font-light leading-[1.7] text-warm-300/70">
-            {t.description}{" "}
-            <span className="font-medium text-yellow-500/90">{t.impossible}</span>.
+            {t.description}
           </p>
         </FadeUp>
         <FadeUp delay={0.4}>
@@ -125,10 +123,10 @@ export function CTASection() {
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.6, ease: EASE_PREMIUM }}
             />
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium tracking-wide text-warm-300/50">
+            <div className="flex flex-wrap items-center justify-center gap-y-2 text-sm font-medium tracking-wide text-warm-300/50">
               {t.trustAnchors.map((anchor: string, i: number) => (
-                <span key={anchor}>
-                  {i > 0 && <span className="mr-6 inline-block h-3 w-px bg-warm-700/15" />}
+                <span key={anchor} className="flex items-center gap-6">
+                  {i > 0 && <span className="inline-block h-3 w-px bg-warm-700/15" />}
                   {anchor}
                 </span>
               ))}

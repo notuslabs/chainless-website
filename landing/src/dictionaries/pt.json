@@ -184,10 +184,9 @@
     ]
   },
   "cta": {
-    "eyebrow": "Comece agora",
-    "heading": "Seu patrimônio merece ser só seu.",
-    "description": "Toda plataforma de patrimônio pede que você entregue seus ativos a um custodiante. Chainless é a primeira onde isso é",
-    "impossible": "impossível",
+    "eyebrow": "Onchain or nothing",
+    "heading": "Os bancos nos odeiam.",
+    "description": "Porque provamos que custódia é escolha, não necessidade. Seu patrimônio vive onchain, sob sua chave, sem pedir permissão a ninguém.",
     "button": "Torne-se Chainless",
     "trustAnchors": ["Sem custódia", "Sem lock-up", "Sem intermediários"]
   },
