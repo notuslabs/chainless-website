@@ -1,7 +1,29 @@
 "use client";
 
 import { motion, useMotionValue, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+/* ── useMotionReady — gate animations until fonts are loaded + a small
+   buffer has passed. Use with FadeUp/TextReveal's `enabled` prop to
+   hold animations at their initial state through hydration jitter. ── */
+export function useMotionReady(bufferMs: number = 150) {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    let cancelled = false;
+    const fontsReady: Promise<unknown> =
+      typeof document !== "undefined" && (document as any).fonts?.ready
+        ? (document as any).fonts.ready
+        : Promise.resolve();
+    const bufferReady = new Promise<void>((r) => setTimeout(r, bufferMs));
+    Promise.all([fontsReady, bufferReady]).then(() => {
+      if (!cancelled) setReady(true);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [bufferMs]);
+  return ready;
+}
 
 /* ── Premium easing — custom cubic-bezier per soft-skill ── */
 export const EASE_PREMIUM = [0.32, 0.72, 0, 1] as const;
@@ -56,27 +78,46 @@ export function MagneticButton({
   );
 }
 
-/* ── FadeUp — blur-fade-up scroll entry ── */
+/* ── FadeUp — blur-fade-up scroll entry ──
+   If `enabled` is passed, the animation is gated by it (stays at
+   initial until enabled flips true). Used for above-the-fold
+   content that should wait through hydration jitter. Below-the-fold
+   callers omit `enabled` and get the usual whileInView behavior. */
 export function FadeUp({
   children,
   className = "",
   delay = 0,
+  enabled,
 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  enabled?: boolean;
 }) {
+  const hidden = { opacity: 0, y: 40, filter: "blur(10px)" };
+  const visible = { opacity: 1, y: 0, filter: "blur(0px)" };
+  const transition = { duration: 0.9, delay, ease: EASE_PREMIUM };
+
+  if (enabled !== undefined) {
+    return (
+      <motion.div
+        className={className}
+        initial={hidden}
+        animate={enabled ? visible : hidden}
+        transition={transition}
+      >
+        {children}
+      </motion.div>
+    );
+  }
+
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={hidden}
+      whileInView={visible}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{
-        duration: 0.9,
-        delay,
-        ease: EASE_PREMIUM,
-      }}
+      transition={transition}
     >
       {children}
     </motion.div>
@@ -191,19 +232,27 @@ export function TextReveal({
   children,
   className = "",
   delay = 0,
+  enabled,
 }: {
   children: string;
   className?: string;
   delay?: number;
+  enabled?: boolean;
 }) {
   const words = children.split(" ");
+  const animateProps =
+    enabled !== undefined
+      ? { animate: enabled ? "visible" : "hidden" }
+      : {
+          whileInView: "visible",
+          viewport: { once: true, margin: "-60px" as const },
+        };
 
   return (
     <motion.span
       className={className}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-60px" }}
+      {...animateProps}
     >
       {words.map((word, i) => (
         <motion.span

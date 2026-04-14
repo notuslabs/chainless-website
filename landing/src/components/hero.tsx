@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { FadeUp, TextReveal, EASE_PREMIUM } from "./motion";
+import { FadeUp, TextReveal, EASE_PREMIUM, useMotionReady } from "./motion";
 import { MeshGradient } from "./mesh-gradient";
 import { useMessages } from "next-intl";
 
@@ -56,6 +56,9 @@ export function Hero() {
   const t = dict.hero;
   const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const { videoRef, videoReady } = useDeferredHeroVideo();
+  /* Hold hero animations at initial state until fonts load + small buffer
+     — avoids the text-animating-while-browser-is-hydrating jitter. */
+  const motionReady = useMotionReady(100);
 
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-dark-500 py-20 md:py-32 [@media(max-height:820px)]:!justify-start [@media(max-height:820px)]:pt-40 [@media(max-height:820px)]:pb-12 [@media(max-height:700px)]:pt-32 [@media(max-height:700px)]:pb-8">
@@ -124,7 +127,7 @@ export function Hero() {
         <div className="max-w-[600px]">
 
           {/* Headline — Lora, massive, left-aligned */}
-          <FadeUp delay={0.2}>
+          <FadeUp delay={0.2} enabled={motionReady}>
             <h1
               data-weight-tier="hero"
               className="font-serif text-[length:var(--text-hero-heading)] font-normal leading-[1.03] tracking-[-0.02em] text-text-primary"
@@ -133,14 +136,14 @@ export function Hero() {
                   "0 0 40px rgba(10,9,8,0.4), 0 0 80px rgba(10,9,8,0.3), 0 0 160px rgba(10,9,8,0.25), 0 0 300px rgba(10,9,8,0.2)",
               }}
             >
-              <TextReveal delay={0.3}>
+              <TextReveal delay={0.3} enabled={motionReady}>
                 {t.headline}
               </TextReveal>
             </h1>
           </FadeUp>
 
           {/* Subheadline */}
-          <FadeUp delay={0.4}>
+          <FadeUp delay={0.4} enabled={motionReady}>
             <p
               className="mt-8 ml-[0.3em] max-w-[460px] text-[clamp(1.1rem,1rem+0.45vw,1.25rem)] font-normal leading-[1.7] text-white/90 [@media(max-height:820px)]:mt-5 [@media(max-height:700px)]:mt-4"
               style={{
@@ -162,8 +165,7 @@ export function Hero() {
                 aria-label={t.appStoreLabel}
                 className="doppelrand-hallmark-narrow group relative inline-flex items-center justify-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97] sm:justify-start"
                 initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                viewport={{ once: true }}
+                animate={motionReady ? { opacity: 1, y: 0, filter: "blur(0px)" } : { opacity: 0, y: 30, filter: "blur(8px)" }}
                 transition={{ duration: 0.8, delay: 0.55, ease: EASE_PREMIUM }}
                 style={{
                   background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 50%, rgba(255,255,255,0.08) 100%)",
@@ -195,8 +197,7 @@ export function Hero() {
                 aria-label={t.googlePlayLabel}
                 className="doppelrand-hallmark-narrow group relative inline-flex items-center justify-center gap-3.5 overflow-hidden rounded-2xl px-6 py-3.5 transition-all duration-500 ease-premium active:scale-[0.97] sm:justify-start"
                 initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                viewport={{ once: true }}
+                animate={motionReady ? { opacity: 1, y: 0, filter: "blur(0px)" } : { opacity: 0, y: 30, filter: "blur(8px)" }}
                 transition={{ duration: 0.8, delay: 0.7, ease: EASE_PREMIUM }}
                 style={{
                   background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 50%, rgba(255,255,255,0.08) 100%)",
@@ -222,7 +223,7 @@ export function Hero() {
             </div>
 
           {/* Trust signal strip */}
-          <FadeUp delay={0.7}>
+          <FadeUp delay={0.7} enabled={motionReady}>
             <div
               className="mt-20 flex flex-wrap items-center gap-x-7 gap-y-3 [@media(max-height:820px)]:mt-10 [@media(max-height:700px)]:mt-6"
               style={{
