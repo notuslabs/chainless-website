@@ -10,8 +10,8 @@ import { useMessages } from "next-intl";
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const pillarImages = [
-  `${BASE}/philosophy-1.jpg`,
-  `${BASE}/philosophy-2.jpg`,
+  `${BASE}/philosophy-1.webp`,
+  `${BASE}/philosophy-2.webp`,
 ];
 
 export function Philosophy() {
@@ -74,6 +74,7 @@ export function Philosophy() {
                         src={pillarImages[i]}
                         alt={pillar.imageAlt}
                         fill
+                        loading="lazy"
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 42vw"
                       />

@@ -1,8 +1,52 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { FadeUp } from "./motion";
 import { Eyebrow } from "./eyebrow";
 import { useMessages } from "next-intl";
+
+/* ── IO-gated looping video: no fetch until near viewport ── */
+function LazyLoopVideo({ src, className }: { src: string; className?: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    let loaded = false;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            if (!loaded) {
+              loaded = true;
+              video.load();
+            }
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        }
+      },
+      { rootMargin: "200px 0px" }
+    );
+    io.observe(video);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={ref}
+      muted
+      loop
+      playsInline
+      preload="none"
+      className={className}
+    >
+      <source src={src} type="video/mp4" />
+    </video>
+  );
+}
 
 export function SpendCredit() {
   const dict = useMessages() as any;
@@ -86,13 +130,8 @@ export function SpendCredit() {
             <div className="relative w-full max-w-[560px]">
               {/* Video + soft edge fades */}
               <div className="relative">
-                <video
+                <LazyLoopVideo
                   src={`${process.env.__NEXT_ROUTER_BASEPATH || ""}/card-hero-loop.mp4`}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
                   className="h-auto w-full"
                 />
 

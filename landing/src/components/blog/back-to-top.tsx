@@ -9,12 +9,20 @@ export function BackToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    let pending = 0;
     const handleScroll = () => {
-      setVisible(window.scrollY > 400);
+      if (pending) return;
+      pending = requestAnimationFrame(() => {
+        pending = 0;
+        setVisible(window.scrollY > 400);
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (pending) cancelAnimationFrame(pending);
+    };
   }, []);
 
   const scrollToTop = () => {

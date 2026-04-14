@@ -12,17 +12,17 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const testimonialMeta = [
   {
     initials: "RA",
-    photo: `${BASE}/testimonial-renato.jpg`,
+    photo: `${BASE}/testimonial-renato.webp`,
     gradient: "from-yellow-600/40 to-amber-900/60",
   },
   {
     initials: "MM",
-    photo: `${BASE}/testimonial-mychel.jpg`,
+    photo: `${BASE}/testimonial-mychel.webp`,
     gradient: "from-warm-600/40 to-warm-800/60",
   },
   {
     initials: "RC",
-    photo: `${BASE}/testimonial-ramon.jpg`,
+    photo: `${BASE}/testimonial-ramon.webp`,
     gradient: "from-yellow-700/30 to-warm-700/50",
   },
 ];
@@ -143,6 +143,7 @@ function Avatar({
             src={src}
             alt={alt || `Foto de ${initials}`}
             fill
+            loading="lazy"
             className="object-cover object-top"
             sizes={`${size}px`}
             onError={() => setFailed(true)}

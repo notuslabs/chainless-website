@@ -249,9 +249,10 @@ export function YieldSection() {
                 aria-hidden="true"
               >
                 <Image
-                  src={`${BASE}/bitcoin-coin.png`}
+                  src={`${BASE}/bitcoin-coin.webp`}
                   alt=""
                   fill
+                  loading="lazy"
                   className="object-cover object-[center_30%]"
                   sizes="(max-width: 768px) 100vw, 42vw"
                   style={{
