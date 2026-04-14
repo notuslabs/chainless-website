@@ -4,7 +4,10 @@
   <meta charset="utf-8"/>
   <meta http-equiv="refresh" content="0;url=/pt/redcast"/>
   <script>
-    var l = (navigator.language || "").startsWith("pt") ? "pt" : "en";
+    // PT is the default — only redirect to EN if the user's language(s) are explicitly English.
+    var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""]).map(function(x){return (x||"").toLowerCase();});
+    var isEnglish = langs.length > 0 && langs.every(function(x){return x.indexOf("en") === 0;});
+    var l = isEnglish ? "en" : "pt";
     window.location.replace("/" + l + "/redcast");
   </script>
 </head>

@@ -14,16 +14,11 @@ export function SpendCredit() {
       aria-labelledby="spend-heading"
       className="relative overflow-x-clip bg-black px-6 py-20 md:py-32 lg:py-44"
     >
-      {/* Warm yellow atmospheric glows — left side, away from video */}
+      {/* Warm yellow atmospheric glow — upper-left, contained so it doesn't bleed onto the card video */}
       <div
-        className="pointer-events-none absolute -left-[10%] top-[10%] h-[700px] w-[700px] rounded-full blur-[250px]"
+        className="pointer-events-none absolute -left-[20%] top-[5%] h-[420px] w-[420px] rounded-full blur-[180px] md:-left-[10%] md:h-[500px] md:w-[500px]"
         aria-hidden="true"
-        style={{ background: "rgba(255, 199, 61, 0.12)" }}
-      />
-      <div
-        className="pointer-events-none absolute -left-[5%] bottom-[5%] h-[var(--glow-lg)] w-[var(--glow-lg)] rounded-full blur-[var(--glow-blur-lg)]"
-        aria-hidden="true"
-        style={{ background: "rgba(204, 156, 0, 0.08)" }}
+        style={{ background: "rgba(255, 199, 61, 0.10)" }}
       />
 
       <div className="mx-auto max-w-[var(--container-content)]">

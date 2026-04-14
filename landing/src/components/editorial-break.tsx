@@ -191,7 +191,7 @@ export function EditorialBreak() {
     <section
       ref={sectionRef}
       aria-label={t.ariaLabel}
-      className={shouldReduceMotion ? "relative" : "relative h-[320vh]"}
+      className={shouldReduceMotion ? "relative" : "relative h-[200vh] md:h-[320vh]"}
     >
       {shouldReduceMotion ? (
         /* Reduced motion: static layout, both couplets visible, no scroll hijack */

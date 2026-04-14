@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Chainless — LinkedIn Cover</title>
+    <style>
+      @font-face {
+        font-family: "Zodiak";
+        src: url("landing/src/fonts/Zodiak-Light.woff2") format("woff2");
+        font-weight: 300; font-style: normal; font-display: block;
+      }
+      @font-face {
+        font-family: "Zodiak";
+        src: url("landing/src/fonts/Zodiak-Regular.woff2") format("woff2");
+        font-weight: 400; font-style: normal; font-display: block;
+      }
+      @font-face {
+        font-family: "Switzer";
+        src: url("landing/src/fonts/Switzer-Regular.woff2") format("woff2");
+        font-weight: 400; font-style: normal; font-display: block;
+      }
+      @font-face {
+        font-family: "Switzer";
+        src: url("landing/src/fonts/Switzer-Medium.woff2") format("woff2");
+        font-weight: 500; font-style: normal; font-display: block;
+      }
+      @font-face {
+        font-family: "Switzer";
+        src: url("landing/src/fonts/Switzer-SemiBold.woff2") format("woff2");
+        font-weight: 600; font-style: normal; font-display: block;
+      }
+
+      :root {
+        --yellow: #ffc73d;
+        --dark: #1c1b19;
+        --warm-300: #a4a097;
+        --warm-700: #3f3d3a;
+        --text: #f5f2ec;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body {
+        background: #0a0a09;
+        font-family: "Switzer", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .cover {
+        position: relative;
+        width: 1584px;
+        height: 396px;
+        background:
+          radial-gradient(ellipse 900px 500px at 85% 50%, rgba(255,199,61,0.09) 0%, transparent 60%),
+          radial-gradient(ellipse 600px 400px at 20% 120%, rgba(255,199,61,0.04) 0%, transparent 60%),
+          var(--dark);
+        overflow: hidden;
+        isolation: isolate;
+        color: var(--text);
+      }
+
+      /* Vertical hairline grid — Swiss/editorial spine */
+      .grid-line {
+        position: absolute;
+        top: 0; bottom: 0;
+        width: 1px;
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(245,242,236,0.05) 20%,
+          rgba(245,242,236,0.05) 80%,
+          transparent 100%
+        );
+        pointer-events: none;
+      }
+      .grid-line.l1 { left: 50%; }
+
+      /* Top-left meta — tiny type, tracked out */
+      .meta-tl {
+        position: absolute;
+        top: 40px;
+        left: 56px;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--warm-300);
+        opacity: 0.55;
+      }
+
+      /* Top-right wordmark */
+      .wordmark {
+        position: absolute;
+        top: 36px;
+        right: 56px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .wordmark .mark { display: block; height: 28px; width: auto; }
+      .wordmark .name {
+        font-family: "Zodiak", Georgia, serif;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        color: var(--text);
+      }
+
+      /* The headline — the whole composition */
+      .stage {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 180px;
+      }
+      h1 {
+        font-family: "Zodiak", Georgia, serif;
+        font-weight: 300;
+        font-size: 108px;
+        line-height: 0.98;
+        letter-spacing: -0.035em;
+        color: var(--text);
+        text-align: center;
+        max-width: 1200px;
+      }
+      h1 em {
+        font-style: italic;
+        font-weight: 400;
+        color: var(--text);
+      }
+      h1 .dot {
+        color: var(--yellow);
+        margin-left: -0.05em;
+      }
+
+      /* Bottom meta row — signature line */
+      .meta-bl {
+        position: absolute;
+        bottom: 38px;
+        left: 56px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+      .meta-bl .name {
+        color: var(--text);
+      }
+      .meta-bl .role {
+        color: var(--warm-300);
+        opacity: 0.65;
+      }
+      .meta-bl .sep {
+        width: 18px;
+        height: 1px;
+        background: rgba(255,199,61,0.5);
+        transform: translateY(-3px);
+      }
+
+      .meta-br {
+        position: absolute;
+        bottom: 38px;
+        right: 56px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--warm-300);
+        opacity: 0.55;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cover">
+      <div class="wordmark">
+        <svg class="mark" viewBox="0 0 190 136" fill="none" aria-hidden="true">
+          <path d="M72.4989 20.2766C73.6892 19.1586 75.2626 18.5368 76.8957 18.5368H184.964C190.346 18.5368 193.041 25.0439 189.235 28.8471L163.731 45.8215C162.528 47.0243 160.892 47.7027 159.189 47.7027H47.3435C45.8894 47.7027 45.1828 45.922 46.2443 44.9265L72.4958 20.2766H72.4989Z" fill="#ffc73d"/>
+          <path d="M47.3435 106.034H159.356C161.064 106.034 162.707 106.716 163.91 107.928L189.235 124.855C193.038 128.684 190.328 135.2 184.932 135.2H76.8925C75.2595 135.2 73.6861 134.578 72.4958 133.46L46.2443 108.811C45.1828 107.815 45.8894 106.034 47.3435 106.034Z" fill="#ffc73d"/>
+          <path d="M59.8891 62.2856H14.4208C13.5635 62.2856 12.7407 62.6311 12.1345 63.2404L0.926075 74.5996C-0.314425 75.8558 -0.308144 77.8783 0.941778 79.125L12.3293 90.5125C12.9322 91.1155 13.7488 91.4515 14.5998 91.4515H59.7697H105.238C106.095 91.4515 106.918 91.1061 107.524 90.4968L118.736 79.1407C119.976 77.8845 119.97 75.8621 118.72 74.6153L107.333 63.2278C106.73 62.6248 105.913 62.2888 105.062 62.2888H59.8922L59.8891 62.2856Z" fill="#ffc73d"/>
+        </svg>
+      </div>
+
+      <div class="stage">
+        <h1>Become <em>Chainless</em><span class="dot">.</span></h1>
+      </div>
+
+      <div class="meta-bl">
+        <span class="name">Kevin Voigt</span>
+        <span class="sep"></span>
+        <span class="role">CEO, Chainless</span>
+      </div>
+
+      <div class="meta-br">Sovereign Digital Wealth</div>
+    </div>
+  </body>
+</html>
