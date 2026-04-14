@@ -57,11 +57,10 @@ export function Hero() {
   const dict = useMessages() as any;
   const t = dict.hero;
   const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  /* On mobile: skip the MeshGradient's huge animated blurs and skip the
-     hero video entirely — both are heavy on mobile GPUs / CPUs and the
-     poster image alone looks nearly identical. */
+  /* Mobile: skip the MeshGradient's huge animated blurs (main jitter
+     source). Video still plays, just without AV1 — see sources below. */
   const isMobile = useIsMobile();
-  const { videoRef, videoReady } = useDeferredHeroVideo(isMobile);
+  const { videoRef, videoReady } = useDeferredHeroVideo(false);
   /* Hold hero animations at initial state until fonts load + small buffer
      — avoids the text-animating-while-browser-is-hydrating jitter. */
   const motionReady = useMotionReady(100);
@@ -92,26 +91,29 @@ export function Hero() {
             }}
           />
         </picture>
-        {!isMobile && (
-          <video
-            ref={videoRef}
-            muted
-            loop
-            playsInline
-            preload="none"
-            className="absolute inset-0 h-full w-full object-cover"
-            style={{
-              opacity: videoReady ? 0.85 : 0,
-              filter: "saturate(0.75) sepia(0.08)",
-              transform: "scaleX(-1)",
-              transition: "opacity 500ms ease-out",
-            }}
-          >
-            <source src={`${base}/hero-bg.av1.mp4`} type='video/mp4; codecs="av01.0.05M.08"' />
-            <source src={`${base}/hero-bg.webm`} type="video/webm" />
-            <source src={`${base}/hero-bg.mp4`} type="video/mp4" />
-          </video>
-        )}
+        <video
+          ref={videoRef}
+          muted
+          loop
+          playsInline
+          preload="none"
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{
+            opacity: videoReady ? 0.85 : 0,
+            filter: "saturate(0.75) sepia(0.08)",
+            transform: "scaleX(-1)",
+            transition: "opacity 500ms ease-out",
+          }}
+        >
+          {/* Desktop-only: AV1 (smallest, but software-decodes on most mobiles) */}
+          <source
+            src={`${base}/hero-bg.av1.mp4`}
+            type='video/mp4; codecs="av01.0.05M.08"'
+            media="(min-width: 768px)"
+          />
+          <source src={`${base}/hero-bg.webm`} type="video/webm" />
+          <source src={`${base}/hero-bg.mp4`} type="video/mp4" />
+        </video>
         {/* Bottom fade — dissolves video into dark surface below */}
         <div
           className="absolute bottom-0 left-0 right-0 h-[45%]"
