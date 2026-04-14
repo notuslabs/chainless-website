@@ -106,10 +106,26 @@ export function Footer() {
         <div className="mt-24 h-px bg-gradient-to-r from-transparent via-warm-700/25 to-transparent" />
 
         {/* Bottom bar — refined spacing */}
-        <div className="mt-8 flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-sm font-medium tracking-wide text-warm-400/50">
-            &copy; {new Date().getFullYear()} {t.copyright}
-          </p>
+        <div className="mt-8 flex flex-col items-start justify-between gap-6 md:flex-row md:items-start">
+          <div className="flex flex-col gap-2">
+            <p className="text-sm font-medium tracking-wide text-warm-400/50">
+              &copy; {new Date().getFullYear()} {t.copyright}
+            </p>
+            <p className="text-sm tracking-wide text-warm-400/50">
+              {t.builtWith}{" "}
+              <a
+                href="https://gsp.jubs.studio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono font-medium tracking-tight transition-colors duration-300"
+                style={{ color: "#FF3B30" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#FF6B61")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#FF3B30")}
+              >
+                /gsp ◇◇
+              </a>
+            </p>
+          </div>
           <p className="max-w-[520px] text-sm leading-relaxed tracking-wide text-warm-400/50 md:text-right">
             {t.disclaimer}
           </p>

@@ -211,7 +211,8 @@
       "regulamentacao": "Regulation"
     },
     "copyright": "Chainless. Sovereign digital wealth.",
-    "disclaimer": "Chainless is a product of Notus Labs Ltda. (CNPJ 41.212.785/0001-43). It is not an institution authorized by the Central Bank of Brazil, does not custody virtual assets, and has no access to user private keys. Technology provider under art. 9, §6 of BCB Resolution No. 520/2025."
+    "disclaimer": "Chainless is a product of Notus Labs Ltda. (CNPJ 41.212.785/0001-43). It is not an institution authorized by the Central Bank of Brazil, does not custody virtual assets, and has no access to user private keys. Technology provider under art. 9, §6 of BCB Resolution No. 520/2025.",
+    "builtWith": "Built with"
   },
   "influencer": {
     "subheadline": "Grow your wealth with full control.",
