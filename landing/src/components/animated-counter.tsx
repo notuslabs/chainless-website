@@ -23,7 +23,7 @@ export function AnimatedCounter({
   ariaLabel,
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   const shouldReduceMotion = useReducedMotion();
   const [displayValue, setDisplayValue] = useState(0);
   const hasAnimated = useRef(false);
