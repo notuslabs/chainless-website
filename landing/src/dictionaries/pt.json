@@ -84,7 +84,7 @@
       "title": "150+ ativos digitais. Sob seu controle absoluto.",
       "tokens": "Bitcoin, Ethereum, Solana e tokens globais",
       "gold": "Ouro tokenizado, metal precioso sem custódia física",
-      "keys": "Chaves geradas no seu dispositivo. Sempre."
+      "keys": "Chaves geradas no seu dispositivo."
     },
     "grow": {
       "label": "Crescer",
@@ -98,7 +98,7 @@
   "spend": {
     "eyebrow": "Cartão Chainless",
     "heading": "Compre dólares sem IOF e gaste globalmente.",
-    "description": "USDC ao câmbio real, sem spread oculto. Após a conversão, os ativos são seus. Na blockchain, sob sua chave.",
+    "description": "USDC ao câmbio real, sem spread oculto. Seu dólar digital sai direto da sua carteira para a maquininha.",
     "iofLabel": "IOF",
     "viaChainless": "via Chainless",
     "benefits": [

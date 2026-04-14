@@ -10,7 +10,7 @@ export function Hero() {
   const t = dict.hero;
 
   return (
-    <section className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden bg-dark-500 py-20 md:py-32">
+    <section className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden bg-dark-500 py-20 md:py-32 [@media(max-height:820px)]:py-10 [@media(max-height:700px)]:py-6">
       {/* Animated mesh gradient — sits behind video, ambient accent */}
       <MeshGradient />
 
@@ -72,7 +72,7 @@ export function Hero() {
           {/* Subheadline */}
           <FadeUp delay={0.4}>
             <p
-              className="mt-8 ml-[0.3em] max-w-[460px] text-[clamp(1.1rem,1rem+0.45vw,1.25rem)] font-normal leading-[1.7] text-white/90"
+              className="mt-8 ml-[0.3em] max-w-[460px] text-[clamp(1.1rem,1rem+0.45vw,1.25rem)] font-normal leading-[1.7] text-white/90 [@media(max-height:820px)]:mt-5 [@media(max-height:700px)]:mt-4"
               style={{
                 textShadow:
                   "0 1px 16px rgba(10,9,8,0.9), 0 2px 40px rgba(10,9,8,0.6)",
@@ -83,7 +83,7 @@ export function Hero() {
           </FadeUp>
 
           {/* Store buttons */}
-          <div className="mt-14 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+          <div className="mt-14 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4 [@media(max-height:820px)]:mt-8 [@media(max-height:700px)]:mt-6">
               {/* App Store */}
               <motion.a
                 href="https://apps.apple.com/br/app/chainless-cripto-com-pix/id6476666418"
@@ -154,7 +154,7 @@ export function Hero() {
           {/* Trust signal strip */}
           <FadeUp delay={0.7}>
             <div
-              className="mt-20 flex flex-wrap items-center gap-x-7 gap-y-3"
+              className="mt-20 flex flex-wrap items-center gap-x-7 gap-y-3 [@media(max-height:820px)]:mt-10 [@media(max-height:700px)]:mt-6"
               style={{
                 textShadow: "0 1px 10px rgba(10,9,8,0.9)",
               }}
