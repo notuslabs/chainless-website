@@ -208,6 +208,7 @@
       "privacidade": "Privacidade",
       "termos": "Termos de uso",
       "aml": "Política AML",
+      "gestaoDados": "Gestão de dados",
       "regulamentacao": "Regulamentação"
     },
     "copyright": "Chainless. Patrimônio digital soberano.",
@@ -324,6 +325,10 @@
     "aml": {
       "title": "Chainless | Política AML",
       "description": "Política de Prevenção à Lavagem de Dinheiro da Chainless. Conformidade regulatória para uma plataforma de autocustódia no Brasil."
+    },
+    "gestaoDados": {
+      "title": "Chainless | Gestão de Dados",
+      "description": "Como solicitar a exclusão de dados pessoais da Chainless. Processo de deleção, prazos e limitações aplicáveis a dados registrados em blockchain."
     },
     "influencer": {
       "titlePrefix": "Chainless | Convite de",

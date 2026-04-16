@@ -208,6 +208,7 @@
       "privacidade": "Privacy",
       "termos": "Terms of use",
       "aml": "AML Policy",
+      "gestaoDados": "Data management",
       "regulamentacao": "Regulation"
     },
     "copyright": "Chainless. Sovereign digital wealth.",
@@ -324,6 +325,10 @@
     "aml": {
       "title": "Chainless | AML Policy",
       "description": "Anti-Money Laundering, Counter-Terrorism Financing, and Weapons of Mass Destruction Proliferation Prevention Policy."
+    },
+    "gestaoDados": {
+      "title": "Chainless | Data Management",
+      "description": "How to request personal data deletion from Chainless. Deletion process, timelines, and limitations for data recorded on blockchain networks."
     },
     "influencer": {
       "titlePrefix": "Chainless | Invite from",
