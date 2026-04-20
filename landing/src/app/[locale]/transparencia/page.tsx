@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import { localeUrl } from "@/lib/urls";
 
 export function generateStaticParams() {
-  return [{ locale: "pt" }];
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export const dynamicParams = false;

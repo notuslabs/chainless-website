@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { TermsContent } from "@/components/terms-content";
+import { TermosAdesaoContent } from "@/components/termos-adesao-content";
 import { hasLocale } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -21,20 +21,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
-  const t = await getTranslations({ locale, namespace: "pages.termos" });
+  const t = await getTranslations({ locale, namespace: "pages.termosAdesao" });
   return {
     title: t("title"),
     description: t("description"),
-    alternates: { canonical: localeUrl("pt", "/termos-de-uso") },
+    alternates: { canonical: localeUrl("pt", "/termos-de-adesao") },
     openGraph: {
       title: t("title"),
       description: t("description"),
-      url: localeUrl("pt", "/termos-de-uso"),
+      url: localeUrl("pt", "/termos-de-adesao"),
     },
   };
 }
 
-export default async function TermosDeUsoPage({
+export default async function TermosDeAdesaoPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -46,7 +46,7 @@ export default async function TermosDeUsoPage({
   return (
     <>
       <Navbar />
-      <TermsContent />
+      <TermosAdesaoContent />
       <Footer />
     </>
   );

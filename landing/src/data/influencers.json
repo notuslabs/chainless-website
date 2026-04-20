@@ -193,5 +193,10 @@
     "name": "YouTube Chainless",
     "slug": "btc21",
     "code": "BTC21"
+  },
+  {
+    "name": "Alexandre Lemes",
+    "slug": "alexandrelemes",
+    "code": "LEMES"
   }
 ]
