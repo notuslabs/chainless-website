@@ -1,3 +1,6 @@
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { TransparencyContent } from "@/components/transparency-content";
 import { hasLocale } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -39,5 +42,12 @@ export default async function TransparenciaPage({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
-  notFound();
+
+  return (
+    <>
+      <Navbar />
+      <TransparencyContent />
+      <Footer />
+    </>
+  );
 }
